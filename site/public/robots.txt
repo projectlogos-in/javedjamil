@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://projectlogos-in.github.io/javedjamil/sitemap-index.xml

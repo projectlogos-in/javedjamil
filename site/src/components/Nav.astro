@@ -48,6 +48,8 @@ const current = Astro.url.pathname;
 
 <style>
   .site-nav {
+    position: relative;
+    z-index: 100;
     background: var(--ink);
     color: var(--parchment);
     border-bottom: 1px solid var(--ink-hairline);
@@ -150,10 +152,6 @@ const current = Astro.url.pathname;
       width: 100%;
       padding: 12px var(--section-pad-x);
       border-bottom: none;
-    }
-
-    .site-nav {
-      position: relative;
     }
   }
 </style>

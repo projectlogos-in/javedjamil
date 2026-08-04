@@ -1,5 +1,6 @@
 ---
 import Seal from "./Seal.astro";
+import { base } from "../lib/base";
 
 const year = new Date().getFullYear();
 ---
@@ -17,6 +18,7 @@ const year = new Date().getFullYear();
     <nav class="site-footer__social" aria-label="Social">
       <a href="https://www.facebook.com/javedjamil2015" target="_blank" rel="noopener noreferrer">Facebook</a>
       <a href="https://twitter.com/drjavedjamil" target="_blank" rel="noopener noreferrer">Twitter</a>
+      <a href={`${base}rss.xml`}>RSS</a>
     </nav>
 
     <div class="site-footer__meta">
