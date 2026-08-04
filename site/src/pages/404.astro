@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Seal from "../components/Seal.astro";
+import { base } from "../lib/base";
+---
+
+<BaseLayout title="Page Not Found">
+  <section class="not-found">
+    <Seal variant="geometric" mode="dark" size={90} class="not-found__seal" />
+    <div class="eyebrow">404</div>
+    <h1 class="not-found__title">This tier does not exist</h1>
+    <p class="not-found__desc">The page you're looking for has moved, or never existed at this address.</p>
+    <a href={base} class="button button--solid">Return home</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    background: var(--ink);
+    color: var(--parchment);
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px var(--section-pad-x);
+  }
+
+  .not-found__seal {
+    margin-bottom: 32px;
+  }
+
+  .not-found__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(28px, 4.4vw, 42px);
+    margin: 16px 0 14px;
+  }
+
+  .not-found__desc {
+    color: var(--ink-text-muted);
+    margin: 0 0 32px;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 13px 26px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .button--solid {
+    background: var(--accent);
+    color: #fff;
+  }
+</style>

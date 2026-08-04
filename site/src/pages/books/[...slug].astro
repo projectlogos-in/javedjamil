@@ -1,0 +1,101 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BookCover from "../../components/BookCover.astro";
+import { base } from "../../lib/base";
+
+const domainLabels: Record<string, string> = {
+  health: "Health",
+  economics: "Economics",
+  physics: "Physics",
+  political: "Political Thought",
+  quranic: "Qur'anic Studies",
+};
+
+export async function getStaticPaths() {
+  const books = await getCollection("books");
+  return books.map((book) => ({ params: { slug: book.id }, props: { book } }));
+}
+
+const { book } = Astro.props;
+---
+
+<BaseLayout title={book.data.title} description={book.data.synopsis}>
+  <section class="book-detail">
+    <div class="book-detail__inner">
+      <div class="book-detail__cover">
+        <BookCover title={book.data.title} domain={book.data.domain} color={book.data.color} />
+      </div>
+
+      <div class="book-detail__content">
+        <div class="eyebrow" style={`color:${book.data.color}`}>{domainLabels[book.data.domain] ?? book.data.domain}</div>
+        <h1 class="book-detail__title">{book.data.title}</h1>
+        <div class="book-detail__author">Dr. Javed Jamil</div>
+        <p class="book-detail__synopsis">{book.data.synopsis}</p>
+
+        <a href={`${base}books/`} class="book-detail__back">&larr; Back to the Works library</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .book-detail {
+    background: var(--parchment);
+    padding: var(--section-pad-y) var(--section-pad-x);
+    min-height: 70vh;
+  }
+
+  .book-detail__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .book-detail__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(30px, 4.4vw, 46px);
+    line-height: 1.08;
+    margin: 16px 0 10px;
+    color: var(--ink);
+  }
+
+  .book-detail__author {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--light-text-faint);
+    margin-bottom: 32px;
+  }
+
+  .book-detail__synopsis {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #33384a;
+    max-width: 62ch;
+    margin: 0 0 40px;
+  }
+
+  .book-detail__back {
+    font-size: 14px;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .book-detail__back:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 720px) {
+    .book-detail__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .book-detail__cover {
+      max-width: 220px;
+    }
+  }
+</style>

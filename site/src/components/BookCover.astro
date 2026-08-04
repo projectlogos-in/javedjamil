@@ -1,0 +1,93 @@
+---
+import Seal from "./Seal.astro";
+
+const domainLabels: Record<string, string> = {
+  health: "Health",
+  economics: "Economics",
+  physics: "Physics",
+  political: "Political Thought",
+  quranic: "Qur'anic Studies",
+};
+
+interface Props {
+  title: string;
+  domain: string;
+  color: string;
+}
+
+const { title, domain, color } = Astro.props;
+const label = domainLabels[domain] ?? domain;
+---
+
+<div class="book-cover" style={`--domain-color: ${color}`}>
+  <div class="book-cover__ring" aria-hidden="true">
+    <svg viewBox="0 0 300 300">
+      <g fill="none" stroke={color} stroke-width="1">
+        <circle cx="150" cy="150" r="70"></circle>
+        <circle cx="150" cy="150" r="115"></circle>
+        <circle cx="150" cy="150" r="160"></circle>
+      </g>
+    </svg>
+  </div>
+  <div class="book-cover__label eyebrow" style={`color: ${color}`}>{label}</div>
+  <div class="book-cover__title">{title}</div>
+  <div class="book-cover__band"></div>
+  <div class="book-cover__footer">
+    <span>Javed Jamil</span>
+    <Seal size={20} mode="foil" animated={false} />
+  </div>
+</div>
+
+<style>
+  .book-cover {
+    position: relative;
+    aspect-ratio: 3 / 4.5;
+    background: var(--ink);
+    border: 1px solid var(--ink-hairline);
+    border-radius: 3px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  .book-cover__ring {
+    position: absolute;
+    inset: 0;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .book-cover__label {
+    position: relative;
+    padding: 22px 22px 0;
+    font-size: 9.5px;
+  }
+
+  .book-cover__title {
+    position: relative;
+    flex: 1;
+    padding: 14px 22px 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 1.16;
+    color: var(--parchment);
+  }
+
+  .book-cover__band {
+    height: 7px;
+    background: var(--domain-color);
+  }
+
+  .book-cover__footer {
+    background: var(--ink-deep);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-display);
+    font-size: 12px;
+    color: var(--parchment);
+  }
+</style>

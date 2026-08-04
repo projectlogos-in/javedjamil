@@ -1,0 +1,266 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { base } from "../lib/base";
+
+interface SeriesInfo {
+  name: string;
+  part: number;
+  totalParts: number;
+  seriesHref: string;
+  prevHref?: string;
+  nextHref?: string;
+}
+
+interface Props {
+  title: string;
+  date: Date;
+  eyebrow: string;
+  excerpt?: string;
+  series?: SeriesInfo;
+  tags?: string[];
+}
+
+const { title, date, eyebrow, excerpt, series, tags = [] } = Astro.props;
+
+const dateLabel = date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+---
+
+<BaseLayout title={title} description={excerpt}>
+  <article class="post">
+    <header class="post__header">
+      <div class="eyebrow post__eyebrow">{eyebrow}</div>
+      <h1 class="post__title">{title}</h1>
+      <div class="post__meta">
+        <span>Dr. Javed Jamil</span>
+        <span aria-hidden="true">&middot;</span>
+        <time datetime={date.toISOString()}>{dateLabel}</time>
+      </div>
+
+      {
+        series && (
+          <div class="post__series">
+            <a href={series.seriesHref} class="post__series-link">
+              {series.name}
+            </a>
+            <span class="post__series-part">
+              Part {series.part} of {series.totalParts}
+            </span>
+          </div>
+        )
+      }
+    </header>
+
+    <div class="post__body">
+      <slot />
+    </div>
+
+    {
+      tags.length > 0 && (
+        <div class="post__tags">
+          {tags.map((tag) => (
+            <a href={`${base}tags/${tag}/`} class="post__tag">
+              #{tag}
+            </a>
+          ))}
+        </div>
+      )
+    }
+
+    {
+      series && (series.prevHref || series.nextHref) && (
+        <nav class="post__series-nav" aria-label="Series navigation">
+          <a href={series.prevHref || "#"} class:list={["post__series-nav-link", { "is-disabled": !series.prevHref }]}>
+            &larr; Previous part
+          </a>
+          <a href={series.seriesHref} class="post__series-nav-link post__series-nav-link--index">
+            All parts
+          </a>
+          <a href={series.nextHref || "#"} class:list={["post__series-nav-link", { "is-disabled": !series.nextHref }]}>
+            Next part &rarr;
+          </a>
+        </nav>
+      )
+    }
+  </article>
+</BaseLayout>
+
+<style>
+  .post {
+    max-width: var(--reading-max);
+    margin: 0 auto;
+    padding: 72px var(--section-pad-x) 100px;
+  }
+
+  .post__header {
+    margin-bottom: 44px;
+  }
+
+  .post__eyebrow {
+    margin-bottom: 18px;
+  }
+
+  .post__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(30px, 4.4vw, 46px);
+    line-height: 1.06;
+    margin: 0 0 14px;
+    color: var(--ink);
+  }
+
+  .post__meta {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--light-text-faint);
+    display: flex;
+    gap: 8px;
+  }
+
+  .post__series {
+    margin-top: 20px;
+    padding: 12px 16px;
+    background: var(--parchment);
+    border: 1px solid var(--light-hairline);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 13.5px;
+  }
+
+  .post__series-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .post__series-link:hover {
+    text-decoration: underline;
+  }
+
+  .post__series-part {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--light-text-faint);
+  }
+
+  .post__tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--light-hairline);
+  }
+
+  .post__tag {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--light-text-faint);
+    text-decoration: none;
+  }
+
+  .post__tag:hover {
+    color: var(--accent);
+  }
+
+  .post__series-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--light-hairline);
+    font-size: 13.5px;
+  }
+
+  .post__series-nav-link {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .post__series-nav-link--index {
+    color: var(--light-text-muted);
+  }
+
+  .post__series-nav-link.is-disabled {
+    color: var(--light-hairline);
+    pointer-events: none;
+  }
+
+  /* ---- rendered markdown body ---- */
+  .post__body {
+    font-family: var(--font-body);
+    font-size: 19px;
+    line-height: 1.72;
+    color: #26262b;
+  }
+
+  .post__body :global(p) {
+    margin: 0 0 22px;
+  }
+
+  .post__body :global(p:first-of-type)::first-letter {
+    float: left;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 74px;
+    line-height: 0.78;
+    padding: 6px 14px 0 0;
+    color: var(--accent);
+  }
+
+  .post__body :global(h2) {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(24px, 3.2vw, 32px);
+    line-height: 1.15;
+    margin: 44px 0 20px;
+    color: var(--ink);
+  }
+
+  .post__body :global(h3) {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 22px;
+    margin: 36px 0 16px;
+    color: var(--ink);
+  }
+
+  .post__body :global(blockquote) {
+    margin: 30px 0;
+    padding-left: 26px;
+    border-left: 3px solid var(--accent);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 25px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  .post__body :global(a) {
+    color: var(--accent);
+  }
+
+  .post__body :global(ul),
+  .post__body :global(ol) {
+    padding-left: 24px;
+    margin: 0 0 22px;
+  }
+
+  .post__body :global(img) {
+    border-radius: var(--radius-sm);
+    margin: 8px 0 22px;
+  }
+
+  .post__body :global(iframe) {
+    max-width: 100%;
+    border-radius: var(--radius-sm);
+  }
+
+  .post__body :global(figure) {
+    margin: 0 0 28px;
+  }
+</style>

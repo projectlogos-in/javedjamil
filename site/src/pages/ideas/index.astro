@@ -1,12 +1,203 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ComingSoon from "../../components/ComingSoon.astro";
+import { base } from "../../lib/base";
+import { slugify } from "../../lib/slugify";
+
+const allPosts = await getCollection("posts", ({ data }) => !data.draft);
+
+const articles = allPosts
+  .filter((p) => p.data.type === "article")
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const seriesPosts = allPosts.filter((p) => p.data.type === "series");
+const seriesMap = new Map<string, typeof seriesPosts>();
+for (const post of seriesPosts) {
+  const name = post.data.seriesName ?? "Untitled Series";
+  if (!seriesMap.has(name)) seriesMap.set(name, []);
+  seriesMap.get(name)!.push(post);
+}
+const seriesList = [...seriesMap.entries()]
+  .map(([name, parts]) => ({
+    name,
+    slug: slugify(name),
+    count: parts.length,
+    latestDate: Math.max(...parts.map((p) => p.data.date.valueOf())),
+  }))
+  .sort((a, b) => b.latestDate - a.latestDate);
 ---
 
-<BaseLayout title="Ideas">
-  <ComingSoon
-    eyebrow="Ideas"
-    title="Essays &amp; Series"
-    description="Long-form articles and multi-part series migrated from the original site — a physician's diagnosis of the modern world through the Qur'an."
-  />
+<BaseLayout title="Ideas" description="Long-form essays and multi-part series by Dr. Javed Jamil.">
+  <section class="ideas-hero">
+    <div class="ideas-hero__inner">
+      <div class="eyebrow">Ideas</div>
+      <h1 class="ideas-hero__title">Essays &amp; Series</h1>
+      <p class="ideas-hero__desc">A physician's diagnosis of the modern world, through the Qur'an.</p>
+    </div>
+  </section>
+
+  {
+    seriesList.length > 0 && (
+      <section class="series-section">
+        <div class="series-section__inner">
+          <div class="eyebrow">Series</div>
+          <div class="series-section__grid">
+            {seriesList.map((s) => (
+              <a href={`${base}ideas/series/${s.slug}/`} class="series-card">
+                <div class="series-card-title">{s.name}</div>
+                <div class="series-card-meta">{s.count} parts</div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="articles-section">
+    <div class="articles-section__inner">
+      <div class="eyebrow">Articles</div>
+      <div class="articles-list">
+        {
+          articles.map((post) => (
+            <a href={`${base}ideas/${post.id}/`} class="article-row">
+              <div class="article-row__meta">
+                <time datetime={post.data.date.toISOString()}>
+                  {post.data.date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
+                </time>
+              </div>
+              <div class="article-row__title">{post.data.title}</div>
+              {post.data.excerpt && <p class="article-row__excerpt">{post.data.excerpt}</p>}
+            </a>
+          ))
+        }
+        {articles.length === 0 && <p class="articles-empty">No standalone articles yet.</p>}
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .ideas-hero {
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 90px var(--section-pad-x) 70px;
+  }
+
+  .ideas-hero__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+
+  .ideas-hero__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(34px, 5.5vw, 58px);
+    line-height: 1.02;
+    margin: 16px 0 14px;
+  }
+
+  .ideas-hero__desc {
+    font-size: 17px;
+    color: var(--ink-text-muted);
+    margin: 0;
+  }
+
+  .series-section {
+    background: var(--bone);
+    padding: 56px var(--section-pad-x);
+    border-bottom: 1px solid var(--light-hairline);
+  }
+
+  .series-section__inner,
+  .articles-section__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+
+  .series-section .eyebrow,
+  .articles-section .eyebrow {
+    margin-bottom: 20px;
+  }
+
+  .series-section__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+  }
+
+  .series-card {
+    background: #fff;
+    border: 1px solid var(--light-hairline);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.15s ease;
+  }
+
+  .series-card:hover {
+    border-color: var(--accent);
+  }
+
+  .series-card-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+
+  .series-card-meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--light-text-faint);
+  }
+
+  .articles-section {
+    background: var(--parchment);
+    padding: 56px var(--section-pad-x) 100px;
+  }
+
+  .articles-list {
+    display: grid;
+    gap: 2px;
+  }
+
+  .article-row {
+    display: block;
+    padding: 22px 4px;
+    border-bottom: 1px solid var(--light-hairline);
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .article-row__meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--light-text-faint);
+    margin-bottom: 6px;
+  }
+
+  .article-row__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 21px;
+    margin-bottom: 6px;
+  }
+
+  .article-row:hover .article-row__title {
+    color: var(--accent);
+  }
+
+  .article-row__excerpt {
+    font-size: 14.5px;
+    color: var(--light-text-muted);
+    margin: 0;
+    max-width: 70ch;
+  }
+
+  .articles-empty {
+    color: var(--light-text-faint);
+    font-size: 14px;
+  }
+</style>

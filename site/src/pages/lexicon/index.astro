@@ -1,12 +1,103 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ComingSoon from "../../components/ComingSoon.astro";
+import { base } from "../../lib/base";
+import { slugify } from "../../lib/slugify";
+
+const terms = (await getCollection("lexicon")).sort((a, b) => a.data.term.localeCompare(b.data.term));
 ---
 
-<BaseLayout title="Lexicon">
-  <ComingSoon
-    eyebrow="The Lexicon"
-    title="Coined Terms, Defined"
-    description="Health Maximisation, Economic Fundamentalism, Natural World Order, Grand Peace, Applied Islamics — a glossary linking each term to the essays, series and books that develop it."
-  />
+<BaseLayout title="Lexicon" description="A glossary of terms coined by Dr. Javed Jamil.">
+  <section class="lexicon-hero">
+    <div class="lexicon-hero__inner">
+      <div class="eyebrow">The Lexicon</div>
+      <h1 class="lexicon-hero__title">Coined Terms, Defined</h1>
+      <p class="lexicon-hero__desc">
+        Health Maximisation, Economic Fundamentalism, Natural World Order, Grand Peace — each term linked to the
+        essays, series and books that develop it.
+      </p>
+    </div>
+  </section>
+
+  <section class="lexicon-list">
+    <div class="lexicon-list__inner">
+      {
+        terms.map((term) => (
+          <a href={`${base}lexicon/${term.id}/`} class="lexicon-card">
+            <span class="lexicon-card__term">{term.data.term}</span>
+            {term.data.category && <span class="lexicon-card__category">{term.data.category}</span>}
+          </a>
+        ))
+      }
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .lexicon-hero {
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 90px var(--section-pad-x) 60px;
+  }
+
+  .lexicon-hero__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+
+  .lexicon-hero__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(34px, 5.5vw, 58px);
+    line-height: 1.02;
+    margin: 16px 0 14px;
+  }
+
+  .lexicon-hero__desc {
+    font-size: 17px;
+    color: var(--ink-text-muted);
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  .lexicon-list {
+    background: var(--parchment);
+    padding: 56px var(--section-pad-x) 100px;
+  }
+
+  .lexicon-list__inner {
+    max-width: var(--reading-max);
+    margin: 0 auto;
+    display: grid;
+    gap: 10px;
+  }
+
+  .lexicon-card {
+    background: #fff;
+    border: 1px solid var(--light-hairline);
+    border-radius: var(--radius-md);
+    padding: 13px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.15s ease;
+  }
+
+  .lexicon-card:hover {
+    border-color: var(--accent);
+  }
+
+  .lexicon-card__term {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .lexicon-card__category {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--light-text-faint);
+  }
+</style>

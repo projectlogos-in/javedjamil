@@ -1,0 +1,72 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  date: Date;
+}
+
+const { title, date } = Astro.props;
+const dateLabel = date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+---
+
+<BaseLayout title={title}>
+  <article class="shayari">
+    <header class="shayari__header">
+      <div class="eyebrow">Shayari</div>
+      <h1 class="shayari__title">{title}</h1>
+      <time datetime={date.toISOString()} class="shayari__date">{dateLabel}</time>
+    </header>
+
+    <div class="shayari__body">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .shayari {
+    background: var(--ink);
+    color: var(--parchment);
+    min-height: 60vh;
+    padding: 90px var(--section-pad-x) 110px;
+  }
+
+  .shayari__header {
+    max-width: var(--reading-max);
+    margin: 0 auto 56px;
+    text-align: center;
+  }
+
+  .shayari__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(30px, 4.4vw, 46px);
+    line-height: 1.06;
+    margin: 16px 0 12px;
+  }
+
+  .shayari__date {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--ink-text-faint);
+  }
+
+  .shayari__body {
+    max-width: var(--reading-max);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .shayari__body :global(.poem) {
+    font-family: var(--font-urdu);
+    font-size: clamp(24px, 3.4vw, 32px);
+    line-height: 2.3;
+    color: #ede7da;
+  }
+
+  .shayari__body :global(p) {
+    margin: 0 0 20px;
+  }
+</style>

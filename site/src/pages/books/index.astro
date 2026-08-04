@@ -1,12 +1,121 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ComingSoon from "../../components/ComingSoon.astro";
+import BookCover from "../../components/BookCover.astro";
+import { base } from "../../lib/base";
+
+const books = (await getCollection("books")).sort((a, b) => a.data.order - b.data.order);
+
+const domainKey = [
+  { key: "health", label: "Health", color: "#0E6F62" },
+  { key: "economics", label: "Economics", color: "#9C5A2E" },
+  { key: "physics", label: "Physics", color: "#3A5A7A" },
+  { key: "political", label: "Political Thought", color: "#7A3741" },
+  { key: "quranic", label: "Qur'anic Studies", color: "#B5862E" },
+];
 ---
 
-<BaseLayout title="Works">
-  <ComingSoon
-    eyebrow="Mission Publications"
-    title="The Works Library"
-    description="Nineteen titles spanning Health, Economics, Physics, Political Thought and Qur'anic Studies, shelved with the domain-banded spine system from the brand identity."
-  />
+<BaseLayout title="Works" description="The book library of Dr. Javed Jamil.">
+  <section class="books-hero">
+    <div class="books-hero__inner">
+      <div class="eyebrow">Mission Publications</div>
+      <h1 class="books-hero__title">The Works Library</h1>
+      <p class="books-hero__desc">
+        {books.length} titles spanning Health, Economics, Physics, Political Thought and Qur'anic Studies.
+      </p>
+
+      <div class="domain-key">
+        {
+          domainKey.map((d) => (
+            <span class="domain-key__item">
+              <span class="domain-key__swatch" style={`background:${d.color}`} />
+              {d.label}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf">
+    <div class="shelf__grid">
+      {
+        books.map((book) => (
+          <a href={`${base}books/${book.id}/`} class="shelf__item">
+            <BookCover title={book.data.title} domain={book.data.domain} color={book.data.color} />
+          </a>
+        ))
+      }
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .books-hero {
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 90px var(--section-pad-x) 60px;
+  }
+
+  .books-hero__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+
+  .books-hero__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(34px, 5.5vw, 58px);
+    line-height: 1.02;
+    margin: 16px 0 14px;
+  }
+
+  .books-hero__desc {
+    font-size: 17px;
+    color: var(--ink-text-muted);
+    margin: 0 0 28px;
+  }
+
+  .domain-key {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .domain-key__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--ink-text-muted);
+  }
+
+  .domain-key__swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+  }
+
+  .shelf {
+    background: var(--parchment);
+    padding: 56px var(--section-pad-x) 100px;
+  }
+
+  .shelf__grid {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 24px;
+  }
+
+  .shelf__item {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.15s ease;
+  }
+
+  .shelf__item:hover {
+    transform: translateY(-4px);
+  }
+</style>

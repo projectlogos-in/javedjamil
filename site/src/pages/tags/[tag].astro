@@ -1,0 +1,99 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { base } from "../../lib/base";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts", ({ data }) => !data.draft);
+  const poems = await getCollection("shayari", ({ data }) => !data.draft);
+  const tags = new Set<string>();
+  posts.forEach((p) => p.data.tags.forEach((t) => tags.add(t)));
+  poems.forEach((p) => p.data.tags.forEach((t) => tags.add(t)));
+
+  return [...tags].map((tag) => {
+    const taggedPosts = posts
+      .filter((p) => p.data.tags.includes(tag))
+      .map((p) => ({ id: p.id, title: p.data.title, date: p.data.date, kind: "ideas" as const }));
+    const taggedPoems = poems
+      .filter((p) => p.data.tags.includes(tag))
+      .map((p) => ({ id: p.id, title: p.data.title, date: p.data.date, kind: "shayari" as const }));
+    const items = [...taggedPosts, ...taggedPoems].sort((a, b) => b.date.valueOf() - a.date.valueOf());
+    return { params: { tag }, props: { tag, items } };
+  });
+}
+
+const { tag, items } = Astro.props;
+---
+
+<BaseLayout title={`#${tag}`} description={`Everything tagged "${tag}" by Dr. Javed Jamil.`}>
+  <section class="tag-archive">
+    <div class="tag-archive__inner">
+      <div class="eyebrow">Tag</div>
+      <h1 class="tag-archive__title">#{tag}</h1>
+
+      <div class="tag-archive__list">
+        {
+          items.map((item) => (
+            <a href={`${base}${item.kind}/${item.id}/`} class="tag-archive__row">
+              <span class="tag-archive__row-title">{item.title}</span>
+              <time datetime={item.date.toISOString()}>
+                {item.date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
+              </time>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tag-archive {
+    background: var(--parchment);
+    padding: var(--section-pad-y) var(--section-pad-x);
+    min-height: 60vh;
+  }
+
+  .tag-archive__inner {
+    max-width: var(--reading-max);
+    margin: 0 auto;
+  }
+
+  .tag-archive__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(30px, 4.4vw, 46px);
+    margin: 16px 0 40px;
+    color: var(--ink);
+  }
+
+  .tag-archive__list {
+    display: grid;
+    gap: 2px;
+  }
+
+  .tag-archive__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 4px;
+    border-bottom: 1px solid var(--light-hairline);
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .tag-archive__row-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+  .tag-archive__row:hover .tag-archive__row-title {
+    color: var(--accent);
+  }
+
+  .tag-archive__row time {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--light-text-faint);
+  }
+</style>

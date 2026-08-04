@@ -1,0 +1,140 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { base } from "../../lib/base";
+
+export async function getStaticPaths() {
+  const terms = await getCollection("lexicon");
+  return terms.map((term) => ({ params: { slug: term.id }, props: { term } }));
+}
+
+const { term } = Astro.props;
+const { Content } = await render(term);
+
+const relatedPosts = (
+  await Promise.all((term.data.relatedPosts ?? []).map((id: string) => getEntry("posts", id)))
+).filter(Boolean);
+const relatedBooks = (
+  await Promise.all((term.data.relatedBooks ?? []).map((id: string) => getEntry("books", id)))
+).filter(Boolean);
+---
+
+<BaseLayout title={term.data.term} description={term.data.term}>
+  <section class="term">
+    <div class="term__inner">
+      <div class="eyebrow">{term.data.category ?? "Lexicon"}</div>
+      <h1 class="term__title">{term.data.term}</h1>
+
+      <div class="term__body">
+        <Content />
+      </div>
+
+      {
+        (relatedPosts.length > 0 || relatedBooks.length > 0) && (
+          <div class="term__related">
+            <div class="eyebrow">Related</div>
+            <ul class="term__related-list">
+              {relatedPosts.map((p) => (
+                <li>
+                  <a href={`${base}ideas/${p!.id}/`}>{p!.data.title}</a>
+                  <span class="term__related-kind">Article</span>
+                </li>
+              ))}
+              {relatedBooks.map((b) => (
+                <li>
+                  <a href={`${base}books/${b!.id}/`}>{b!.data.title}</a>
+                  <span class="term__related-kind">Book</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+
+      <a href={`${base}lexicon/`} class="term__back">&larr; Back to the Lexicon</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .term {
+    background: var(--parchment);
+    padding: var(--section-pad-y) var(--section-pad-x);
+    min-height: 60vh;
+  }
+
+  .term__inner {
+    max-width: var(--reading-max);
+    margin: 0 auto;
+  }
+
+  .term__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(30px, 4.4vw, 46px);
+    margin: 16px 0 32px;
+    color: var(--ink);
+  }
+
+  .term__body {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #33384a;
+    margin-bottom: 48px;
+  }
+
+  .term__body :global(strong) {
+    color: var(--ink);
+  }
+
+  .term__related {
+    margin-bottom: 40px;
+  }
+
+  .term__related .eyebrow {
+    margin-bottom: 14px;
+  }
+
+  .term__related-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  .term__related-list li {
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    border: 1px solid var(--light-hairline);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+  }
+
+  .term__related-list a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .term__related-list a:hover {
+    color: var(--accent);
+  }
+
+  .term__related-kind {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--light-text-faint);
+  }
+
+  .term__back {
+    font-size: 14px;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .term__back:hover {
+    text-decoration: underline;
+  }
+</style>

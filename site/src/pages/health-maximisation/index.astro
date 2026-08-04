@@ -1,12 +1,194 @@
 ---
+import { getCollection, getEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ComingSoon from "../../components/ComingSoon.astro";
+import Seal from "../../components/Seal.astro";
+import CosmicMotif from "../../components/CosmicMotif.astro";
+import BookCover from "../../components/BookCover.astro";
+import { base } from "../../lib/base";
+
+const TAG = "health-maximisation";
+
+const relatedPosts = (await getCollection("posts", ({ data }) => !data.draft && data.tags.includes(TAG))).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const healthBooks = (await getCollection("books", ({ data }) => data.domain === "health")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+const lexiconEntry = await getEntry("lexicon", "health-maximisation");
 ---
 
-<BaseLayout title="Health Maximisation">
-  <ComingSoon
-    eyebrow="The Dynamic Paradigm"
-    title="Health Maximisation"
-    description="The flagship theory: a civilisation should optimise for health and life, and subordinate politics and economics to that single end. This pillar page will gather every related article, series and book."
-  />
+<BaseLayout
+  title="Health Maximisation"
+  description="The Dynamic Paradigm of Health — Dr. Javed Jamil's flagship theory that a civilisation should optimise for health and life, not profit."
+>
+  <section class="hm-hero">
+    <CosmicMotif width={1200} height={520} cx={1080} cy={260} ringCount={4} ringStep={110} showPulseLine class="hm-hero__motif" />
+    <div class="hm-hero__inner">
+      <Seal size={60} mode="dark" class="hm-hero__seal" />
+      <div class="eyebrow">The Dynamic Paradigm</div>
+      <h1 class="hm-hero__title">Health Maximisation</h1>
+      <p class="hm-hero__desc">
+        A civilisation should optimise for health and life, and subordinate politics and economics to that single
+        end. Health is not a static state to be restored, but a living process to be sustained — the founding claim
+        behind Dr. Jamil's entire body of work.
+      </p>
+      {
+        lexiconEntry && (
+          <a href={`${base}lexicon/${lexiconEntry.id}/`} class="hm-hero__lexicon-link">
+            Read the full definition in the Lexicon &rarr;
+          </a>
+        )
+      }
+    </div>
+  </section>
+
+  {
+    relatedPosts.length > 0 && (
+      <section class="hm-section">
+        <div class="hm-section__inner">
+          <div class="eyebrow">Essays &amp; Series</div>
+          <div class="hm-section__list">
+            {relatedPosts.map((post) => (
+              <a href={`${base}ideas/${post.id}/`} class="hm-row">
+                <span class="hm-row__title">{post.data.title}</span>
+                <time datetime={post.data.date.toISOString()}>
+                  {post.data.date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
+                </time>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    healthBooks.length > 0 && (
+      <section class="hm-books">
+        <div class="hm-books__inner">
+          <div class="eyebrow">The Health Shelf</div>
+          <div class="hm-books__grid">
+            {healthBooks.map((book) => (
+              <a href={`${base}books/${book.id}/`} class="hm-books__item">
+                <BookCover title={book.data.title} domain={book.data.domain} color={book.data.color} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
 </BaseLayout>
+
+<style>
+  .hm-hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 90px var(--section-pad-x) 80px;
+    text-align: center;
+  }
+
+  .hm-hero__motif {
+    opacity: 0.5;
+  }
+
+  .hm-hero__inner {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hm-hero__seal {
+    margin-bottom: 28px;
+  }
+
+  .hm-hero__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(34px, 5.5vw, 58px);
+    line-height: 1.02;
+    margin: 16px 0 24px;
+  }
+
+  .hm-hero__desc {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-text-muted);
+    margin: 0 0 28px;
+  }
+
+  .hm-hero__lexicon-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .hm-hero__lexicon-link:hover {
+    text-decoration: underline;
+  }
+
+  .hm-section {
+    background: var(--parchment);
+    padding: 56px var(--section-pad-x);
+    border-bottom: 1px solid var(--light-hairline);
+  }
+
+  .hm-section__inner,
+  .hm-books__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+
+  .hm-section .eyebrow,
+  .hm-books .eyebrow {
+    margin-bottom: 20px;
+  }
+
+  .hm-section__list {
+    display: grid;
+    gap: 2px;
+  }
+
+  .hm-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 4px;
+    border-bottom: 1px solid var(--light-hairline);
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .hm-row__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+  .hm-row:hover .hm-row__title {
+    color: var(--accent);
+  }
+
+  .hm-row time {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--light-text-faint);
+  }
+
+  .hm-books {
+    background: var(--parchment);
+    padding: 56px var(--section-pad-x) 100px;
+  }
+
+  .hm-books__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+  }
+</style>

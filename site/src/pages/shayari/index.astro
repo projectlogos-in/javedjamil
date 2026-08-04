@@ -1,12 +1,93 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ComingSoon from "../../components/ComingSoon.astro";
+import { base } from "../../lib/base";
+
+const poems = (await getCollection("shayari", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
 ---
 
-<BaseLayout title="Shayari">
-  <ComingSoon
-    eyebrow="Shayari"
-    title="Urdu Poetry"
-    description="A collection of Dr. Jamil's Urdu poetry, set in Nastaliq with a dedicated reading template."
-  />
+<BaseLayout title="Shayari" description="Urdu poetry by Dr. Javed Jamil.">
+  <section class="shayari-index">
+    <div class="shayari-index__inner">
+      <div class="eyebrow">Shayari</div>
+      <h1 class="shayari-index__title">Urdu Poetry</h1>
+
+      <ul class="shayari-index__list">
+        {
+          poems.map((poem) => (
+            <li>
+              <a href={`${base}shayari/${poem.id}/`} class="shayari-index__item">
+                <span class="shayari-index__item-title">{poem.data.title}</span>
+                <time datetime={poem.data.date.toISOString()}>
+                  {poem.data.date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
+                </time>
+              </a>
+            </li>
+          ))
+        }
+        {poems.length === 0 && <p class="shayari-index__empty">No poems yet.</p>}
+      </ul>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .shayari-index {
+    background: var(--ink);
+    color: var(--parchment);
+    padding: var(--section-pad-y) var(--section-pad-x);
+    min-height: 60vh;
+  }
+
+  .shayari-index__inner {
+    max-width: var(--reading-max);
+    margin: 0 auto;
+  }
+
+  .shayari-index__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(30px, 4.4vw, 48px);
+    margin: 16px 0 44px;
+  }
+
+  .shayari-index__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 2px;
+  }
+
+  .shayari-index__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 18px 4px;
+    border-bottom: 1px solid var(--ink-hairline);
+    text-decoration: none;
+    color: var(--parchment);
+  }
+
+  .shayari-index__item:hover .shayari-index__item-title {
+    color: var(--accent);
+  }
+
+  .shayari-index__item-title {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  .shayari-index__item time {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-text-faint);
+  }
+
+  .shayari-index__empty {
+    color: var(--ink-text-faint);
+  }
+</style>

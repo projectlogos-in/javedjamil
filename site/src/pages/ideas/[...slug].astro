@@ -1,0 +1,42 @@
+---
+import { getCollection, render } from "astro:content";
+import PostLayout from "../../layouts/PostLayout.astro";
+import { base } from "../../lib/base";
+import { slugify } from "../../lib/slugify";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts", ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+let seriesInfo;
+if (post.data.type === "series" && post.data.seriesName) {
+  const allPosts = await getCollection("posts", ({ data }) => !data.draft);
+  const parts = allPosts
+    .filter((p) => p.data.seriesName === post.data.seriesName)
+    .sort((a, b) => (a.data.seriesPart ?? 0) - (b.data.seriesPart ?? 0));
+  const idx = parts.findIndex((p) => p.id === post.id);
+  seriesInfo = {
+    name: post.data.seriesName,
+    part: post.data.seriesPart ?? idx + 1,
+    totalParts: parts.length,
+    seriesHref: `${base}ideas/series/${slugify(post.data.seriesName)}/`,
+    prevHref: idx > 0 ? `${base}ideas/${parts[idx - 1].id}/` : undefined,
+    nextHref: idx < parts.length - 1 ? `${base}ideas/${parts[idx + 1].id}/` : undefined,
+  };
+}
+---
+
+<PostLayout
+  title={post.data.title}
+  date={post.data.date}
+  eyebrow={post.data.type === "series" ? "Series" : "Article"}
+  excerpt={post.data.excerpt}
+  tags={post.data.tags}
+  series={seriesInfo}
+>
+  <Content />
+</PostLayout>

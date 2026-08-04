@@ -1,0 +1,115 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { base } from "../../../lib/base";
+import { slugify } from "../../../lib/slugify";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts", ({ data }) => data.type === "series" && !data.draft);
+  const seriesNames = [...new Set(posts.map((p) => p.data.seriesName).filter(Boolean))] as string[];
+
+  return seriesNames.map((name) => {
+    const parts = posts
+      .filter((p) => p.data.seriesName === name)
+      .sort((a, b) => (a.data.seriesPart ?? 0) - (b.data.seriesPart ?? 0));
+    return { params: { series: slugify(name) }, props: { name, parts } };
+  });
+}
+
+const { name, parts } = Astro.props;
+---
+
+<BaseLayout title={name} description={`All parts of the series "${name}" by Dr. Javed Jamil.`}>
+  <section class="series-index">
+    <div class="series-index__inner">
+      <div class="eyebrow">Series</div>
+      <h1 class="series-index__title">{name}</h1>
+      <p class="series-index__count">{parts.length} parts</p>
+
+      <ol class="series-index__list">
+        {
+          parts.map((part, i) => (
+            <li>
+              <a href={`${base}ideas/${part.id}/`} class="series-index__item">
+                <span class="series-index__num">{String(i + 1).padStart(2, "0")}</span>
+                <span class="series-index__item-title">{part.data.title}</span>
+                <span class="series-index__arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .series-index {
+    background: var(--parchment);
+    padding: var(--section-pad-y) var(--section-pad-x);
+    min-height: 60vh;
+  }
+
+  .series-index__inner {
+    max-width: var(--reading-max);
+    margin: 0 auto;
+  }
+
+  .series-index__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(30px, 4.4vw, 48px);
+    line-height: 1.05;
+    margin: 16px 0 8px;
+  }
+
+  .series-index__count {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--light-text-faint);
+    margin: 0 0 40px;
+  }
+
+  .series-index__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 2px;
+  }
+
+  .series-index__item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 20px;
+    background: #fff;
+    border: 1px solid var(--light-hairline);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.15s ease;
+  }
+
+  .series-index__item:hover {
+    border-color: var(--accent);
+  }
+
+  .series-index__num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+    flex: 0 0 auto;
+  }
+
+  .series-index__item-title {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    flex: 1;
+  }
+
+  .series-index__arrow {
+    color: var(--accent);
+  }
+</style>
