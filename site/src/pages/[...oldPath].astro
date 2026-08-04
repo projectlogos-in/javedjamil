@@ -1,0 +1,54 @@
+---
+// Serves the old WordPress URLs (e.g. /2020/08/01/some-post/, /tag/shayari/,
+// /dr-javed-jamil/) as static redirect pages to their new location, so
+// existing inbound links and search results don't dead-end. Generated from
+// scripts/migrate.mjs's output at src/data/redirects.json.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { base } from "../lib/base";
+import redirects from "../data/redirects.json";
+
+export async function getStaticPaths() {
+  return redirects.map((r: { oldPath: string; newPath: string }) => ({
+    params: { oldPath: r.oldPath },
+    props: { newPath: r.newPath },
+  }));
+}
+
+const { newPath } = Astro.props;
+const target = `${base}${newPath}/`;
+---
+
+<BaseLayout title="Page Moved">
+  <Fragment slot="head">
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={new URL(target, Astro.site)} />
+    <meta name="robots" content="noindex" />
+  </Fragment>
+  <script define:vars={{ target }} is:inline>
+    window.location.replace(target);
+  </script>
+  <section class="redirect">
+    <p class="eyebrow">This page has moved</p>
+    <p>
+      Redirecting to <a href={target}>{target}</a>&hellip;
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .redirect {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--parchment);
+    text-align: center;
+    padding: 60px var(--section-pad-x);
+  }
+
+  .redirect a {
+    color: var(--accent);
+  }
+</style>

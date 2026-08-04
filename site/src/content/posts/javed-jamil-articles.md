@@ -1,0 +1,86 @@
+---
+title: "Javed Jamil Articles"
+date: "2016-09-07"
+type: "article"
+tags: ["javed-jamil","javed-jamil-articles"]
+excerpt: "Old Articles Dr Javed Jamil is India based thinker and writer with over a dozen books including his latest, “Muslim Vision of Secular India: Destination & Road-map”, “Qur’anic Pa radigms of Sciences & Society” (First Vol: Health), “Muslims Most Civilised, Yet Not Enough” and Other works include “The"
+originalSlug: "javed-jamil-articles"
+originalUrl: "https://javedjamil.home.blog/2016/09/07/javed-jamil-articles/"
+---
+![](https://javedjamilhome.wordpress.com/wp-content/uploads/2018/09/26ca5-1fifvynximajgek6i2r4spq.jpeg?w=736)  
+
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)
+
+* * *
+
+O**ld Articles**
+
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)
+
+* * *
+
+![](https://javedjamilhome.wordpress.com/wp-content/uploads/2018/09/5f603-0bwwlhakldnqf8sw4.png?w=736)  
+
+**Dr Javed Jamil is India based thinker and writer with over a dozen books including his latest, “Muslim Vision of Secular India: Destination & Road-map”, “Qur’anic Pa radigms of Sciences & Society” (First Vol: Health), “Muslims Most Civilised, Yet Not Enough” and Other works include “The Devil of Economic Fundamentalism”, “The Essence of the Divine Verses”, “The Killer Sex”, “Islam means Peace” and “Rediscovering the Universe”.**
+
+[**Read more..**](http://www.worldmuslimpedia.com/drjavedjamil?mc_cid=0a03f0f2fe&mc_eid=%5BUNIQID%5D "Read more..")
+
+* * *
+
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)  
+[https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8](https://javedjamil.com/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq-2b64ce6eadd8)

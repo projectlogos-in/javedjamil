@@ -1,0 +1,39 @@
+---
+title: "High Time Medical Sciences embraced Islam"
+date: "2020-05-26"
+type: "article"
+tags: ["islam","health-maximisation"]
+excerpt: "In the wake of Covid-19 outbreak, the latest news is that China has imposed ban on the meat of wild animals, specifically lions, bats, snakes and pangoins. These are all the animals the meat of which is prohibited in Islam. Almost all the other viral outbreaks in the last 120 years too have direct r"
+originalSlug: "high-time-medical-sciences-embraced-islam"
+originalUrl: "https://javedjamil.home.blog/2020/05/26/high-time-medical-sciences-embraced-islam/"
+---
+**In the wake of Covid-19 outbreak, the latest news is that China has imposed ban on the meat of wild animals, specifically lions, bats, snakes and pangoins. These are all the animals the meat of which is prohibited in Islam. Almost all the other viral outbreaks in the last 120 years too have direct relationship with Islamic guidelines.**
+
+<iframe loading="lazy" class="youtube-player" width="736" height="414" src="https://www.youtube.com/embed/Dl0zsgEZbnU?version=3&amp;rel=1&amp;showsearch=0&amp;showinfo=1&amp;iv_load_policy=1&amp;fs=1&amp;hl=en&amp;autohide=2&amp;wmode=transparent" allowfullscreen="true" style="border:0;" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation allow-popups-to-escape-sandbox"></iframe>
+
+If there is one branch of Sciences that has unequivocal reasons to embrace Islam, it is the medical sciences. Unfortunately though, instead of being the leader of all the sciences, it has stooped to become the slave of social sciences, especially political sciences and economics.
+
+In the wake of Covid-19 outbreak, the latest news is that China has imposed ban on the meat of wild animals, specifically lions, bats, snakes and pangoins. These are all the animals the meat of which is prohibited in Islam. Almost all the other viral outbreaks in the last 120 years too have direct relationship with Islamic guidelines. If pork had been under the banned category, more than 80 million would not have met the premature deaths due to Swine flu; if strict laws against promiscuity and homosexuality had been in force, around 38 million lives would not have been lost due to HIV/AIDS (another 50 million are languishing in the disease at present); millions of women would not have died of HPV-related Carcinoma Cervix if circumcision had been a worldwide ritual; and millions again would not have succumbed to Rabies if dogs had not been allowed in residential areas; and millions of people would have also not lost lives due to Hepatitis B (spread through blood transfusion and sexual route). In addition, if alcohol had been made totally illegal, hundreds of millions of lives had not been lost prematurely in last 50 years due to various diseases, accidents and crimes related to drinking. It is time for Medical Sciences to declare freedom from the rule of economics and political sciences and declare Islam’s Dynamic Paradigm of Health its new policy and it should not waste any more time in beginning to pursue its goals.
+
+The injunctions of Qur’an and the system they seek to build are not just health-friendly; health is in fact the essential criterion of these injunctions. It is not that Qur’anic system is beneficial for health; health is in fact an inseparable part of its ultimate objectives. What is good for heath is promoted, and what is bad for health is not acceptable. Islamic Paradigm of Health is uniquely different from the modern paradigm of health. It marks a massive paradigm shift. The modern health concepts have the stamp of the economic forces for which health too is nothing more than a money spinner. Where certain concepts of health support their economic designs, they exhibit an extraordinary enthusiasm to promote them; the health concepts that do neither support nor disturb their designs are given either a silent disapproval or a passive approval; and the health concepts that disturb their plans are simply not tolerable. Such concepts are either totally rejected or, if there is a rising demand in favour of them, it is tackled through political, social and ideological manoeuvring.
+
+It is this selfish approach of the dominant forces that has substantially undone the achievements of the scientists. With the rapid advancement of science and technology and with the amazing advancement of medical sciences, mankind should have become healthier and more peaceful. But we are living in a world which is certainly more chaotic than what it used to be 500 years back. We have got rid of certain diseases alright, but have invited perhaps a bigger number of diseases deadlier than the ones we have got rid of.  We have not been able to alleviate the sufferings that we could have had if we had not allowed the economics to outsmart religion and sciences.  If we had followed religion, we could never have allowed practices like gambling, drinking, smoking, homosexuality and promiscuity to take roots in society. If we had followed sciences, we could not have wasted any time in banning these evils as soon their devastating effects started emerging for all to see. We are now living in a world where the organisations like the World Health Organisation (WHO) claim to be working for attaining “highest standards of health” but are allowing the system to achieve highest standards of practices that threaten life. How the “highest standards of health” can be attained without establishing a highly health-protective system, is for these organisations to explain.
+
+The world must know that if Islamic principles are allowed to function properly, every year more than 80 million lives can be saved. These include
+
+*   2 million murders
+*   2.2 million suicides
+*   2.5 million deaths from AIDS
+*   5 million deaths from smoking
+*   2 million deaths associated with alcohol
+*   2 million deaths associated with smoking, gambling and drugs
+*   70 million cases of feticide;
+*   60000 deaths due to Rabies
+
+And of course, deadly epidemics like the Covid-19 could have been avoided or effectively contained.
+
+Even if feticide is excluded, more than 10 million people should have been saved every year from falling prey to the unwanted kinds of death had Islamic legal and socio-economic system been in force. These are no ordinary figures. These are staggering statistics from all accounts. If we add the figures of foeticide, more than 80 million lives are lost just because the laws of God are not followed. For a few thousands dead in terrorist attacks, the world is made hostage, trillions of dollars are put to the fire, cities are devastated and tens of thousands of innocents are killed. For millions of death as the result of the pursuance of socio-economic policies dictated by the forces of globalisation, virtually nothing is done except a few cosmetic measures.
+
+Unfortunately we are denizens of a world where religion – thanks to the designs of the forces of globalisation – is being presented as some kind of a demon, which needs to be vanquished. If uprooting it is not possible, they think, it should at least be contained. The truth is just the reverse. The need of the time is to engage and kill the monster of economic fundamentalism as soon as possible.
+
+**We need a system in place in the world, which decreases mortality and morbidity, reduces the global burden of diseases, increases total life expectancy (with conception being the starting point of life) and decreases the burden of the cost of maintaining health. The current world systems based on modern economic ideologies including capitalism and socialism do just the opposite by exposing people to the dangerous social practices, and try to minimise the damage through artificial means of treatment and vaccinations. In this rivalry between the economics and the health, the economics is the clear winner. Health Sciences must now look towards Islam to get the things right.**

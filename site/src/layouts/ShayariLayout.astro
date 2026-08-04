@@ -18,7 +18,7 @@ const dateLabel = date.toLocaleDateString("en-US", { year: "numeric", month: "lo
       <time datetime={date.toISOString()} class="shayari__date">{dateLabel}</time>
     </header>
 
-    <div class="shayari__body">
+    <div class="shayari__body" dir="rtl" lang="ur">
       <slot />
     </div>
   </article>
@@ -59,14 +59,12 @@ const dateLabel = date.toLocaleDateString("en-US", { year: "numeric", month: "lo
     text-align: center;
   }
 
+  .shayari__body :global(p),
   .shayari__body :global(.poem) {
     font-family: var(--font-urdu);
     font-size: clamp(24px, 3.4vw, 32px);
     line-height: 2.3;
     color: #ede7da;
-  }
-
-  .shayari__body :global(p) {
     margin: 0 0 20px;
   }
 </style>

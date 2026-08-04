@@ -1,0 +1,26 @@
+---
+title: "Rapes: Let the Provocation stop before blaming people for being provoked!"
+date: "2016-11-10"
+type: "article"
+tags: ["feminism","milli-gazette","new-articles","rape-culture"]
+excerpt: "This is in response to an article, “Milli Gazette and its shameless misogyny”, authored by Dr. Kauser Fatima, and published in Twocircles.net. I have not gone through the specific news item in Milli Gazzette attacked in this article but I know that MG is a sensible paper, which cares for all the sec"
+originalSlug: "rapes-let-the-provocation-stop-before-blaming-people-for-being-provoked"
+originalUrl: "https://javedjamil.home.blog/2016/11/10/rapes-let-the-provocation-stop-before-blaming-people-for-being-provoked/"
+---
+> This is in response to an article, “Milli Gazette and its shameless misogyny”, authored by Dr. Kauser Fatima, and published in Twocircles.net.
+
+![](https://cdn-images-1.medium.com/max/2000/0*t57C_MyQMW3XjOM2.)  
+
+I have not gone through the specific news item in Milli Gazzette attacked in this article but I know that MG is a sensible paper, which cares for all the sections of society including women and detests all forms of crimes against all the members of society. But after reading this article I can understand the mindset of the author and the movement he represents.
+
+I am pained by the fact how the corporate-controlled media and institutions have been spreading falsehood and nothing but falsehood in the name of rights, equality and justice. In a world where everything, from politics to society, from sciences to health, from law to ethics, are dictated by the forces of economics with the sole aims of advancing the economic interests of certain forces, what else can we expect. They have no concern for the over-all well being of individuals, the health of individuals and peace of families and society. Their only interest is in promoting concepts, policies and paradigms that suit their economic and/or political masters. Their so-called cry for the rights of women gets evaporated as soon as their positions on prostitution, promiscuity and abortions are discussed. They forget the human rights when more than 50 million foetuses are aborted worldwide everywhere just because putting a ban on abortion will mean a disfavor to promiscuity and prostitution. They forget that males and not the females are the major beneficiaries of both and females not males are the major sufferers. If they are so fond of equality, let men also become pregnant, let them abort or deliver and let them breastfeed children. If they can’t, rules will have to be formed whereby women are protected of the ill-effects of promiscuity and prostitution. And these (along with homosexuality) are so dangerous to life and healthiness of life that only the mad or the ones “enjoying” through this “freedom” or the ones making astronomical dollars through them can support them in the name of freedom of choice. “Freedom of Choice” is nothing but a license to the market to commercialise human weaknesses and susceptibilities.
+
+Rape of course is one of the ghastliest crimes against women. Islam prescribes nothing less than death sentence for the rapists. But if rapes are to be minimized, no isolated single solution will work. We have to punish the culprits and we have to stop provocation. In an environment where media, films, internet — everything is provoking sexual desires both in men and women, many men and women will succumb to sexual relations outside marriage, many men would throng to prostitutes and some men would turn into bigger devils raping women. But the corporate sponsored society only wants men to learn to control their personal provocation without any curb on the provocation by the environment. They want the system to be be provocative and individuals not to be provoked where provocation is against market interests. Provocation is acceptable if they indulge in sex with consent and if they go to prostitutes but not if they rape.
+
+Unfortunately, women have been made to believe that they are free in getting exploited and used by men. Unveiling their anatomy to as much as possible to the sheer delight of men is regarded as “freedom” and “empowerment” by them. Succumbing to the male advances is a sign of advancement, Earning through prostitution is “work”, which should be respected because males have made them believe it just for their own desires and business.
+
+Unless the world understands the role of the forces of economics cum politics, and unless the people understand the huge death and destruction caused by “Freedom of Choice” (alcohol, gambling, promiscuity, prostitution, pornography, homosexuality), the world cannot hope to achieve real peace where men, women and children live in peace and tranquillity with one another, where women have not to abort their own children and where children do not die in their mothers’ wombs just because their fathers and mothers want to enjoy sex without the associated risks. Let them count the deaths due to the “Freedom” — it comes out to more than 70 million every year — and then face the “Moralists” who are correct in their assertion but are too innocent to face the onslaught of the masters of machinations.
+
+* * *
+
+[http://twocircles.net/2016nov08/1478609698.html#.WCSQYvp95nI](http://twocircles.net/2016nov08/1478609698.html#.WCSQYvp95nI)

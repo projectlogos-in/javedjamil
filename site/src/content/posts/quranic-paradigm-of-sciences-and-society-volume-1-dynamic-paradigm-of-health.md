@@ -1,0 +1,135 @@
+---
+title: "Qur’anic Paradigm of Sciences and Society: Volume 1: Dynamic Paradigm of Health"
+date: "2017-01-09"
+type: "article"
+tags: ["book-review","books","islam","quranic-paradigms","religion","health-maximisation"]
+excerpt: "Facebook Page Preface The Holy Qur’an is no ordinary work of an ordinary mortal. For the adherents of Islam, it is no less than an absolute conviction that it is a Singular, Supreme and Majestic Work of a Singular, Supreme and Majestic Author — God, the Creator and the Lord of the universe. It is fo"
+originalSlug: "quranic-paradigm-of-sciences-and-society-volume-1-dynamic-paradigm-of-health"
+originalUrl: "https://javedjamil.home.blog/2017/01/09/quranic-paradigm-of-sciences-and-society-volume-1-dynamic-paradigm-of-health/"
+---
+[![](https://javedjamilhome.wordpress.com/wp-content/uploads/2018/09/ad12d-1xgl2sgxdvspxa2nnxvdzkq.png?w=736)](http://www.amazon.in/Paradigms-Sciences-Society-Dynamic-Paradigm-2014-06-18/dp/8188268119/)  
+
+![](https://javedjamilhome.wordpress.com/wp-content/uploads/2018/09/f1ec6-1-mdmk3jv8sqxot-nzqzqda.jpeg?w=736)  
+
+[![](https://javedjamilhome.wordpress.com/wp-content/uploads/2018/09/3a7ac-1_w2shji4kchlqi1cog_gzw.png?w=736)](http://www.amazon.in/Paradigms-Sciences-Society-Dynamic-Paradigm-2014-06-18/dp/8188268119/)  
+
+[**Facebook Page**](https://www.facebook.com/quranicparadigmsofhealth/)
+
+### Preface
+
+**The** Holy Qur’an is no ordinary work of an ordinary mortal. For the adherents of Islam, it is no less than an absolute conviction that it is a Singular, Supreme and Majestic Work of a Singular, Supreme and Majestic Author — God, the Creator and the Lord of the universe. It is for all times to come, for all parts of the world and for all human generations — the greatest of all miracles, “the living miracle”, bestowed by God on his Last Messenger, Muhammad (Peace be upon him!). No wonder then that with every passing day in the onward march of the world civilisation, an increasingly growing number of the people across the world are accepting and adopting the Book of God as the Ultimate Guide.
+
+Qur’an contains much more than what human brain can imagine, ponder or discover. This Book from the Creator of Universe is surely the Best Possible Book of Guidance for human beings. It not only enunciates social, moral and spiritual laws for human beings, as is usually believed, but it also provides clues to the _fundamental_ universal laws (of Nature) that govern the universe in its entirety, fundamental biological laws that govern living beings and the fundamental principles that govern the human health in all its dimensions. In the volumes of “Qur’anic Paradigms of Sciences & Society”, we will discuss many of these laws and principles, and will try to develop a number of paradigms of sciences and society based on the verses of Qur’an and their interpretation in words and practice by its original recipient, Muhammad (PBUH), the Last Messenger and Prophet of God.
+
+My methodology in this work will be to first describe what the contemporary theories and paradigms are, to critically analyse them in the light of the Qur’anic verses, present alternative concepts, discuss their consistence with the Word of God and study their implications. I will discuss a number of issues related to Health, Physics, Economics, Law, Society, Hereafter and Peace, not necessarily in the same order. Other subjects are also likely to be added at a later stage.
+
+The first volume focuses on health. Health relates to the very existence of human beings. Survival and the quality and of survival are undoubtedly the most important aspect of living, both as individuals and collectively as families, communities and societies. Unfortunately, while in principle, the modern world boasts of an extraordinary concern for human health, in truth the other interests have largely undermined the interests of health. It will hardly be an overstatement that health has in effect become the captive of economics. The international system of governance is not doing what it needs to do to attain the highest standards of health. Health needs to be liberated without delay and positioned in the driver’s seat with the brakes and the accelerator in its safe possession.
+
+In order to impart leadership role to health, religion has to play the central role because religion alone has the moral authority to make this possible. While every religion has something to offer for the well being of human lives, Islam provides the most comprehensive framework. The present work will highlight the discrepancy between the perception and the reality present in the field of health, and will then develop an alternative paradigm based on Qur’an and the other sources related to Qur’an. The new paradigm will surely be a huge advancement on the current paradigm of health being pursued by the world organisations and institutions.
+
+It is to be emphasised here that, although the work primarily revolves around the Islamic principles, the followers of other religions will also find it close to their hearts and minds. It will be worthwhile here to reiterate that, according to Islamic principles, Muhammad (PBUH) was not the only Messenger of God and Qur’an not the only Book of God. Islam, literally meaning peace and often defined as submission to God, is the Final Version of the System of God successively perfected by more than one hundred thousands of messengers of God and accomplished through a large number of small and large scriptures, Muhammad being the Final Messenger and Qur’an being the Final Book of God. Yet, faith in all the messengers of God that came to almost all the regions of the world and all the God-inspired messages remains an inseparable part of Islamic faith. With most of the world religions having a common origin, the paradigm of health developed here will largely if not wholly reflect the position of almost all of them. If they shed their prejudices, they can combine to make the world cleaner, purer and healthier.
+
+This work is entirely different from those of some of the renowned Islamic preachers of recent times who, with the aim of proving the divine nature of Qur’an, normally attempt to correlate new scientific researches with the Islamic positions. This one goes much beyond, and focuses on the critical appraisal of the current international concepts, theories, policies, models and paradigms. Instead of examining Islamic positions in the light of modern sciences, it examines the modern positions in the light of Islam.
+
+The idea about this work got an initial spark way back in 1977 when I was a student of Medicine in King George’s Medical College, Lucknow. While studying the anatomy of brain in the first professional of MBBS, the sensory and motor mapping of the organs of the body on the postcentral and precentral gyrus struck me with an amazing possibility of their correlation with the sequence of the actions performed in the Islamic Ablution (_Wudu_) and Prayer (_Salat_ or _Namaz_). Soon I was into writing a paper on “The Anatomical analysis of _Wudu_”. It was published in several Islamic journals. Incidentally, it was after more than three decades of the publication of the original article that Prof. Abdul Haleem who had become Head of Anatomy Department while I was still in the college discovered that paper in a magazine, and not remembering that I had been his student, he posted a letter to me. He wrote that “I have been a professor of Anatomy and I just wondered at the beauty of the paper, which brought many new aspects to my knowledge.” Then when around 1995 I authored, “Islam and Family Planning”, which critically examined the concept and methods of family planning from Islamic point of view, I received a letter from Prof. L M Nath, internationally renowned epidemiologist and then Director of All India Institute of Medical Sciences (AIIMS), New Delhi, India’s premier medical institute, saying that after reading the book on Family Planning, he strongly felt the need of a similar work on AIDS. In consultation with the Professor, I authored “Islamic Model for Control of AIDS” which he fore-worded; and on the occasion of its release ceremony he described the Model as “the most potent weapon against AIDS.” It was during the compilation of that work, I for the first time used the term “Economic Fundamentalism”, which subsequently became the pivot of almost all my major works. By then I had realised that the health policies of the world and the whole research in the field of medicine have been hijacked by the forces of economics. I started planning to write a full critical analysis of the current international paradigm of health and present an alternative paradigm based on the principles enshrined in Qur’an and Sunnah. As I had also extensively researched the role of the forces of the New World Order in the development of the theories of physics, economics and peace and I felt that most of these theories are not wholly consistent with Islamic positions, I later decided to club the analyses of all of them in a single treatise comprising four volumes.
+
+I would like to state at the very outset that the paradigms to be developed in this work represent _my_ understanding of the Holy Book, and human understanding is bound to have errors. What I am attempting is to describe in the language that we know in the modern world what God tells. With the passage of time, hopefully, there will emerge scholars who will understand things in much more comprehensive detail than what the current experts do.
+
+I hope this work will open new vistas in the field of knowledge in general and in the field of applied studies of Islam in particular. May God guide the mankind!
+
+Dr. Javed Jamil
+
+New Delhi, India
+
+27th Ramadhan, 1435 AH; 26th July, 2014
+
+[![](https://javedjamilhome.wordpress.com/wp-content/uploads/2018/09/a91c0-1_w2shji4kchlqi1cog_gzw.png?w=736)](http://www.amazon.in/Paradigms-Sciences-Society-Dynamic-Paradigm-2014-06-18/dp/8188268119/)  
+
+### Foreword
+
+Dr. Javed Jamil is a man of many facets: a medical doctor, who studied in the prestigious King George’s Medical College, Lucknow and had a decent practice for about three decades in his native city Saharanpur, and a firm devoted follower of Islam, both the religion and the concept of the literal meaning of the word Peace. The fusion of the doctor and the devotee in him has led to the birth of “Qur’anic Paradigms of Health”, which he also calls Dynamic Paradigm of Health.
+
+I first became aware of him many years ago when I saw a small monograph published by him on ‘Islam and Family Planning’. I was struck by the fact that a devout follower of the Qur’an should have the vision and courage to come to terms with the need for family planning and point out how several aspects of it were in consonance with the word of God. Subsequently he went on to publish another small book on the message of prevention of HIV/AIDS. I was therefore interested when he informed me of his new venture to focus on the interlinks and interdependent issues of economics, religion and health interpreted in the background of the Qur’an.
+
+He starts by pointing out that today we are living in a world where economics is a major factor influencing decisions and directions taken in most areas of development and “advancement”. He points out that the influence of economics has become all pervasive and overshadowed earlier concepts of ‘right or correct’ and ideology. The role of the big business has become too important to let any policy develop without their open or hidden support.
+
+He goes on to point out that even health has become a victim of the policies of the forces of economics. The health policies of the world are often decided in accordance with the interests and demands of these forces; and the current order in the world allows a large number of social practices that pose serious threats to the health of a very many people. The health of mankind as a whole suffers with the poorest communities paying the highest price.
+
+In the opinion of the writer, the onus to maintain health is not only on the individuals but it is also the responsibility of the system to protect health. The modern world on the other hand holds individuals responsible for their actions, and as a consequence people and communities are exposed to many practices which threaten their health. He has also come up with a definition of health, which suggests that both the family and social system are jointly responsible for maintaining highest standards of health.
+
+His concept and definition of health is wide ranging and finds consonance with the emerging concept of “social determinants of health”. In his book, he has stressed the importance of the social determinants, when he states:
+
+> “Health is arguably the most important gift of nature to man. Without health, life becomes a meaningless burden. But to maintain health requires exactly what the economic fundamentalists loathe: discipline in life with plenty of restrictions on activities. The worship of Hygieia is not tolerable for Mammon. “Restrictions” and “prohibitions” are words that do not exist in the lexicon of the market. As has been discussed earlier, Health is also perhaps or must be the most easily recognisable criterion of right and wrong (Scientific or Healthy Morality). In the simplest terms, right and wrong can be defined thus: what has a good overall impact on health is good, and what has a bad overall impact on health is bad.”
+
+This is a book that highlights many issues that need to be considered by all people, no matter what their religion or ideology. For more than a billion who believe that the Qur’an is the word of God, the messages here are very important and relevant. For others like me that were born to a different faith and belief sets, the social and moral issues raised are relevant regardless of the religion we follow. For those of us who are interested in “health” and not merely in “disease” the concepts are an important reaffirmation. It is to be hoped that these basic concepts will permeate to the health experts and policy makers and the institutions that regulate international affairs.
+
+**Prof. Lalit M Nath,**
+
+MBBS, MD, DrPH
+
+Former Director,
+
+All India Institute of Medical Sciences,
+
+New Delhi
+
+July 7th, 2014
+
+#### Contents
+
+![](https://javedjamilhome.wordpress.com/wp-content/uploads/2018/09/777e3-1d3up6n9jb66xck6r2jd_nq.png?w=736)  
+
+[![](https://javedjamilhome.wordpress.com/wp-content/uploads/2018/09/a91c0-1_w2shji4kchlqi1cog_gzw.png?w=736)](http://www.amazon.in/Paradigms-Sciences-Society-Dynamic-Paradigm-2014-06-18/dp/8188268119/)  
+
+#### **Media Reviews**
+
+[Muslim Mirror](http://muslimmirror.com/eng/quranic-paradigms-of-sciences-society-first-volume-dynamic-paradigm-of-health-by-dr-javed-jamil/)
+
+### **Review**
+
+#### **“Qur’anic Paradigms of Sciences & Society” First Volume: “Dynamic Paradigm of Health” by Dr. Javed Jamil**
+
+**Huge Paradigm Shift in Health System envisaged**
+
+> **He gives a new definition of health, which does not merely describe what health is but also how the onus of preserving the health of mankind falls not only on individuals but also on family and the socio-political system — national and international. This definition obviously is set to bring in a huge paradigm shift from the current internationally adopted paradigm of health, which puts the onus entirely on individuals, allowing the system to expose the people to items and practices associated with huge risks to health.**
+
+**By S.A.R Adil**
+
+If Dr. Javed Jamil has not attracted as much attention of the world so far as he deserves, the simple reason is that his whole mission is largely directed against the current forces ruling the world. Had it been the opposite, he would have become an international celebrity by now. But this is exactly the reason why he needs to be admired by the seekers of the truth. His contribution to both the philosophy in general as well as Islamic thought is unmatched in terms of depth as well as implications. They are not aimed at just joining the intellectual discourse but are meant for changing the very basis of the organised human existence. The most noteworthy aspect of his work is that he seems to be least awed, what to say overawed, by the so-called modern developments — philosophical as well as structural. With the passage of time, he has become increasingly dismissive of the current ideologies, which he finds unworthy of acceptance in a civilised society. He has effectively unveiled the designs of the forces that are spreading certain concepts, ideologies and programmes with the sole aim of monopolising the world.
+
+His work becomes even more important from the Islamic point of view because he does not view Islam simply as a religion or “way of life”; for him Islam is a system, which needs to be enforced in totality if the world is to be saved from the disastrous policies of the notorious forces that control the world today. He has recurrently called for “total ideological onslaught” against the New World Order, and argues that an overwhelming majority of the modern concepts are disastrous for peace and healthy living of mankind. He has succeeded in giving a new cloak to the Islamic response to the modern developments; instead of being defensive and apologetic like most of the Islamic clerics and scholars, he has embarked upon an aggressive, unapologetic, straightforward and dynamic approach in dealing with the world issues. Rather than studying Islam in the light of modern sciences, he critically analyses modern sciences in the light of Islam, and succeeds in giving devastating blows to a number of modern theories. He is not fighting in the realm of Islam but has taken the fight to the realm of the New World Order. In the process he has introduced many new terms, concepts and programmes, which have the potential to substantially change the world for the better.
+
+Dr Jamil’s at works like “The Devil of Economic Fundamentalism” and “The Killer Sex” unveiled the disaster and devastation that the ideology of economic fundamentalism has wrought all over the world. His last book, “Muslims Most Civilised, yet not Enough” successfully punctured the claims of West being “civilised” relative to Muslim World. The latest work, “Qur’anic Paradigm of Sciences & Society” is set to challenge the very foundations of the modern paradigms of sciences and society including Health, Physics, Economics and Law. The first volume of his four-volume work, “Dynamic Paradigm of Health”, which is to be released shortly, thrashes the current international order for its colossal disregard of health. His argument is simple, well thought out and elaborately enunciated. He argues that human life and the healthiness of life are the most important parameters of human existence, which cannot and should not be compromised at any costs. But thanks to the designs of the forces of economics along with their political stooges, economics has emerged the boss with health having been severely demeaned. All the legal, administrative and political decisions today by the countries and international organisations are taken not to save life and achieve highest standards of life but to protect the interests of the forces of economics, especially the corporate world.
+
+The ideological position of Islam on the other hand, argues Dr Jamil, is entirely different. In Islam; the life and the healthiness of life are the ultimate goals of the whole system it seeks to establish. Its three-dimensional system of Fundamental Rights, Fundamental Rights and Fundamental Prohibitions is a full-proof order to save life and safeguard health. Economic and all other policies will have to change in order to safeguard the health and move towards “highest standards of health”. He gives a new definition of health, which does not merely describe what health is but also how the onus of preserving the health of mankind falls not only on individuals but also on family system and the socio-political system — national and international. This definition obviously is set to bring in a huge paradigm shift from the current internationally adopted paradigm of health, which puts the onus entirely on individuals, allowing the system to expose the people to items and practices associated with huge risks to health. He also argues that strong family system is one of the most important factors in attaining highest orders of health. Violation of family system is invitation to death and destruction, abuse and exploitation. He also introduces several new concepts like comprehensive hygiene (including sexual hygiene), primary prevention, therapeutic sociology, and many others. He lambastes the World Health Organisation for acting like a mere pawn in the hands of the forces and failing to pressurise the international institutions for securing best standards of health by making the system health protective. In addition, he brings out several interesting aspects regarding _Wudu_, _Salat_, _Iddah_, breastfeeding and circumcision. He has also drafted comprehensive Islamic models for control of AIDS and Family Health.
+
+The great quality of almost all the works by Dr Jamil is that he produces enormous international statistics to prove his theories and presents comprehensive rather than half solutions. In this work too he has presented all the relevant statistics to show how the problems as well as the solutions have become big industries. The forces of economics first earn through creation and industrialisation of problems and then make huge earnings by industrialising solutions. Market is all that matters to them, irrespective of how it affects human beings. He has shown that despite the fact that more than 70 million human lives are lost on account of the vices prohibited in Islam, they are popularised, glorified and commercialised on the global level.
+
+The book is foreworded by internationally renowned expert of Community Medicine and Former Director, All India Institute of Medical Sciences, New Delhi, Prof. Lalit M Nath. His concluding remark is worth reading:
+
+> **“**This is a book that highlights many issues that need to be considered by all people, no matter what their religion or ideology. For more than a billion who believe that the Qur’an is the word of God, the messages here are very important and relevant. For others like me that were born to a different faith and belief sets, the social and moral issues raised are relevant regardless of the religion we follow. For those of us who are interested in “health” and not merely in “disease” the concepts are an important reaffirmation. It is to be hoped that these basic concepts will permeate to the health experts and policy makers and the institutions that regulate international affairs.”
+
+There is no doubt that this work is a kind of intellectual revolution in itself. The need of the time is to turn this intellectual revolution into a revolution of the whole system. The day the world recognises the value of his work, the beginning will be made for a cleaner, purer, healthier and more peaceful world. The Islamic world of course is duty bound not only to admire his work but do everything in power to convert his ideas into actions. The work needs to reach the academicians including medical experts, Islamic scholars and social reformers. Hopefully, the coming volumes will be equally effective in thrashing the current atheistic philosophies in the field of physics and economics. “New World Order” needs to be beheaded with the sword of ideological counterrevolution.
+
+[![](https://javedjamilhome.wordpress.com/wp-content/uploads/2018/09/a91c0-1_w2shji4kchlqi1cog_gzw.png?w=736)](http://www.amazon.in/Paradigms-Sciences-Society-Dynamic-Paradigm-2014-06-18/dp/8188268119/)  
+
+### **Interesting comments by**
+
+#### **Christof Lehmann**
+
+**Editor-in-Chief, nsnbc international**
+
+Dear Dr. Javed Jamil
+
+**I spent a couple of hours reviewing some of the chapters of your book and found it very interesting. I fully agree with your basic premises, for example that the public health sectors, worldwide, increasingly become driven by economic considerations rather than fundamental, ethical considerations and what could be described as best practice. In fact, one can observe a new, economic moral being introduced in public health sectors. Just to mention one example; governments in Europe are running extensive campaigns against smoking tobacco, moralizing that it costs the public sector and the tax payer millions a year for the treatment of smoking related syndromes. The focus is on public spending, not on health. I also find your religious angle to the discourse on public health extremely interesting, because readily available studies show that an ecological approach to health, that takes cultural factors into account, is more efficient than an approach that focuses on the syndromes as isolated entities, detached from their environmental and other context or even from the individual itself.**
+
+That said, I decided not to write a review because I have to take my position as editor of an independent newspaper into account when making decisions about reviews**. With all due respect for your personal views and religious affiliations, I cannot fully endorse a book whose author states that his particular religion has primacy, above all others**. I have been brought up in a Buddhist belief system with strong Christian influences and would not be able to endorse any book that proclaims the primacy of Buddhism or Christianity above all other religions either. I find it my ethical, personal and professional duty not to publicly endorse any position that declares the primacy of any religion, anywhere.
+
+To make the point. There are at least 2,700 religious belief systems which are being practised today. In [Nepal alone, for example](http://nsnbc.me/2012/07/16/nepal-privatized-and-sororized/), there are over 300.[nsnbc international](http://nsnbc.me/) is an independent and international newspaper that is, literally, being read by people in all countries. I was surprised to realize that we had achieved that after less than 10 month. That is quite a success, considering that it was established in February 2013. Please understand that my primary obligation is to keep it this way. I am confident that you understand my position and the fact that the world needs independent media more than you would need my endorsement of your book.
+
+With warm regards and best wishes for success with your book.
+
+[![](https://javedjamilhome.wordpress.com/wp-content/uploads/2018/09/a91c0-1_w2shji4kchlqi1cog_gzw.png?w=736)](http://www.amazon.in/Paradigms-Sciences-Society-Dynamic-Paradigm-2014-06-18/dp/8188268119/)  
+
+[https://javedjamil.com/books-by-dr-javed-jamil-90a5eb001efc](https://javedjamil.com/books-by-dr-javed-jamil-90a5eb001efc)  
+[https://javedjamil.com/books-by-dr-javed-jamil-90a5eb001efc](https://javedjamil.com/books-by-dr-javed-jamil-90a5eb001efc)

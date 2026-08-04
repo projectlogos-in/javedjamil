@@ -1,0 +1,24 @@
+---
+title: "WHO’S “Test, Test and Test” flawed in strategy"
+date: "2020-04-21"
+type: "article"
+tags: ["health","healthcare","who","health-maximisation"]
+excerpt: "I have always been critical of the World Health Organisation in formulating right policies to achieve its stated objective of “Highest standards of health” and have minced no words in calling it “the Failed Organisation”. I have repeatedly argued that the WHO has always acted in accordance with the "
+originalSlug: "whos-test-test-and-test-flawed-in-strategy"
+originalUrl: "https://javedjamil.home.blog/2020/04/21/whos-test-test-and-test-flawed-in-strategy/"
+---
+![](https://www.rev.com/blog/wp-content/uploads/2020/03/World-Health-Organization-Briefing-Coronavirus-Transcript-March-25.jpg)
+
+I have always been critical of the World Health Organisation in formulating right policies to achieve its stated objective of “Highest standards of health” and have minced no words in calling it “the Failed Organisation”. I have repeatedly argued that the WHO has always acted in accordance with the interests of the market forces. It has never stressed on natural preventive methods and has run huge campaigns for artificial preventive methods. When HIV pandemic started in the 1980s and reached a dangerous level in 1990s, the WHO never talked of anything like “Sexual distancing” despite the scientifically proven facts showing direct relationship between HIV and promiscuity, prostitution and homosexuality. At that time, its only slogan was “Condoms, condoms and condoms”. The result was that while the sex markets continued to prosper, the HIV statistics also prospered menacingly with the loss of more than 38 million lives. Still, more than 70 million people are living with HIV and hundreds of thousands die every year. Once the antiviral therapy against HIV started getting marketed, even the “Condoms, condoms and condoms” campaign went into hibernation. The market wants the HIV to continue because if the problem subsides, both “problem market” as well as “solution market” will nosedive. 
+
+With the spread of Covid-19 outbreak, again the WHO is busy raising the “Test, Test and Test” slogan. The WHO failed to call for ban on travelling from and to China at the right time and between other countries again at the right time. If the travelling g from and into Wuhan, then from China and into China had been controlled at the right moment, the Covid could not have become a pandemic. The WHO started sounding alarm of the disease turning into a pandemic as soon as in the initial days of January and yet failed to advise the governments to take steps that will stop the entry of Corona in their countries. But why should the WHO act in a way that hits the Transport and Travelling Industries?  The irony is that even after the world governments have put severe restrictions on travelling within their countries and between different countries, the WHO continues to say, “Test, Test and Test”. This formula again is going to help the testing kit manufacturing companies. Testing is extremely important but presenting it as the only solution will only worsen the situation. The WHO is hoping that the anti-Covid vaccines or treatment will soon emerge and then again, like HIV/AIDS, it will soften its sounds of alarm against the Covid. 
+
+I have always argued that economics is an essential constituent of life. It is like stomach, which provides energy to every single organ of the body. But let the stomach remain stomach and not assume the role of heart and brain. Just as the stomach plays its role effectively only if it is provided with good and not the harmful foods and drinks, the economics plays its good role only till it engages in healthy businesses. As soon as it starts providing dangerous choices to the people in the name of “Freedom of Choice”, the humanity starts getting ill. There cannot be anything more inhuman than letting the people getting ill because the healthcare industry needs patients and the markets of the causes of the problems need them.
+
+Covid-19 has given the world an opportunity to think about introducing what I called “Dynamic Paradigm of Health” in my book, “Economics First or Health First?”, released in August last year. Economics is to be strong but where there is a rivalry between economics and health, health must reign supreme. The onus of preserving health is not merely on the individuals; the system too has to be health protective and must take effective steps in disallowing people access to harmful items and practices.
+
+#### Also read
+
+**World Health Organisation (WHO): the Failed Organisation**
+
+[Too busy managing threats from World Order, WHO is unable to bring health into leadership role](https://counterview.org/2020/04/09/too-busy-managing-threats-from-world-order-who-is-unable-to-bring-health-into-leadership-role/)

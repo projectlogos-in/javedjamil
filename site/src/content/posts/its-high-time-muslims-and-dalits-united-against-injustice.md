@@ -1,0 +1,36 @@
+---
+title: "It’s High Time Muslims and Dalits united against injustice"
+date: "2016-08-25"
+type: "article"
+tags: ["dalit","hindutva","india","new-articles"]
+excerpt: "But Hindu leaders made constitutional provisions in their favour more out of the fear of Muslims beating them in numbers rather than out of any real love for Dalits. They provided them the reservation, in almost all institutions, social or political, which gave them a reason to stay in Hinduism. Had"
+originalSlug: "its-high-time-muslims-and-dalits-united-against-injustice"
+originalUrl: "https://javedjamil.home.blog/2016/08/25/its-high-time-muslims-and-dalits-united-against-injustice/"
+---
+#### But Hindu leaders made constitutional provisions in their favour more out of the fear of Muslims beating them in numbers rather than out of any real love for Dalits. They provided them the reservation, in almost all institutions, social or political, which gave them a reason to stay in Hinduism. Had the Hindus showed love towards them in real social life also, Dalits would not have felt as alienated as they are feeling.
+
+![](https://javedjamilhome.wordpress.com/wp-content/uploads/2018/09/88167-03uy2ur4suxm4pty0.jpg?w=736)  
+
+I t was a coincidence that on the same day (last Saturday), when about 100 Dalit families of Haryana converted to Islam publicly at Janta Mantar, I delivered a lecture at New Delhi calling upon Muslims to stand up against injustices irrespective of who the victims or the culprits are. It is being made to appear in the Media that Dalit families converted primarily in protest against the atrocities committed against them by Hindu upper classes and this conversion has nothing to do with any special appeal in the tenets of Islam. While this may be true that the original trigger for them might have been their sustained persecution at the hands of their fellow community members belonging to higher castes, if they decided to convert to Islam, it could not have been without their basic knowledge about unique Islamic concept of equality and brotherhood.
+
+This is common knowledge to even the Islam bashers that Islam stands for equality, and if there is any criterion of differentiation in Islam, it is based on the quality of performance. This quality of performance however makes one privileged in the eyes of God and not in terms of any social privileges in this world.
+
+**Equality is inherent in Islamic social system. The Qur’an speaks of the equality of the whole mankind by stating that all men and women had the same father and mother, Adam and Eve. The holy book shuns supremacy of man on any basis other than the superiority of deeds. Islam knows no races and castes; in religious matters, social obligations and also in the eyes of law all are equal..**
+
+Quran says:
+
+> Mankind! We created you from a combination of a male and female, and formed you into races and tribes so that you may get introduced to one another. The noblest among you in God’s view is the one who is best in dutifulness. (49: 13)
+
+> How would you know what the Path of Progress is! It is the granting of freedom to a slave; providing food at the time of widespread hunger to an orphan close to you or to the needy at the time of misery. (90: 12–16)
+
+When Muhammad announced his status as the Prophet of God, slavery was almost throughout the world in its most abominable form. Slaves were treated much worse than animals; they were purchased and sold like cattle. Islam started eradication of slavery in a systematic manner. Several steps were taken: First came the lessons of kindness towards slaves. They should be given to eat what the masters eat and to wear what the masters wear. This was followed by the Qur’anic directive to consider slaves for marriage; for believing slaves are better than non-believing slaves (4: 25). The Qur’an further directed that slave-girls cannot be forced into prostitution (verse 24:33). This was a clear warning that slave-girls can be taken as wife but cannot be forced into flesh trade. Another step that was taken by the Prophet was the directive that any slave-woman who became pregnant would become a free woman. This implies that a _mother can never be a slave_; and also that the _children of slaves would not be slaves_. The prophet did clearly express his displeasure at the practice of some companions to practise _azl_ (_coitus interruptus_) with slave-women so that, in case they became pregnant, they would not have to be given the status of free wives. The most important step that the Qur’an took that paved way for the eradication of slavery was that freeing slaves was declared an extraordinarily virtuous act (2: 177) for which man will be given special incentives in the Hereafter. This was further complemented by the declaration of freeing a slave as compensation or punishment of some crimes and mistakes (4:92; 5: 89; 58: 3). The Qur’an was kind to slaves in matters of punishment, too, declaring that the punishment for immorality by slaves will be half than that for the free women (4: 25).
+
+**The condition of Dalits in India, especially in the medieval period, has been no better than that of slaves in the pre-Islamic era. One of the foremost reasons of Muhammad’s revolution proving to be the biggest ever revolution in the history of mankind was its attraction for the deprived classes. And this combined with the concept of absolute Oneness of God, made people throng to the fold of Islam because they realised that the concept of oneness of Muslim Society emanated directly from the concept of the oneness of God. If the God of all is One, it automatically makes none more privileged than the other.**
+
+**If Dalits are now getting attracted towards Islam, it is natural**. The truth is that they might have thronged to Islam the same way as people elsewhere thronged had there not been some special measures by Hindu think-tank to stop this flow. But Hindu leaders made constitutional provisions in their favour more out of the fear of Muslims beating them in numbers rather than out of any real love for Dalits. They provided them the reservation, in almost all institutions, social or political, which gave them a reason to stay in Hinduism. Had the Hindus showed love towards them in real social life also, Dalits would not have felt as alienated as they are feeling.
+
+**Muslims need not be swayed by the politics of conversion. They must remain committed to justice, and should stand behind all the victims of injustices, be it the Kashmiri Brahamins or Dalits. But Dalits of course are in big numbers and are much bigger victims. Without letting it turn into a political issue, they must stand behind them wherever they are targeted. And as Muslims are victims of violence, neglect, harassment and atrocities themselves, they and Dalits have every reason to combine against victimisation in India. And they must not forget to take all those along, irrespective of their religion or caste, who are ready to support them in this noble cause.**
+
+At the same time, the Government has to ensure that no force or coercion is used by the opponents of conversion in reconverting them to their fold. Let them decide out of free will without being coerced by either Muslims or Hindus.
+
+![](https://javedjamilhome.wordpress.com/wp-content/uploads/2018/09/90cd6-16fsc3axnix6g_vxfx7muca.jpeg?w=736)

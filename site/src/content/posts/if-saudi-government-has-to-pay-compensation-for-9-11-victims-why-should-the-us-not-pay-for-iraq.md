@@ -1,0 +1,26 @@
+---
+title: "If Saudi Government has to pay compensation for 9/11 victims, why should the US not pay for Iraq…"
+date: "2016-09-30"
+type: "article"
+tags: ["isis","new-articles","saudi-arabia","west"]
+excerpt: "But Americans are always concerned with their own lives. They have least regard for the lives of others. Nobody bothers to peep into the lives of the families that lost their lives due to American bombs. And mind it. They are the families of not just 3000 victims; their numbers is at least 2 million"
+originalSlug: "if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq"
+originalUrl: "https://javedjamil.home.blog/2016/09/30/if-saudi-government-has-to-pay-compensation-for-9-11-victims-why-should-the-us-not-pay-for-iraq/"
+---
+> **But Americans are always concerned with their own lives. They have least regard for the lives of others. Nobody bothers to peep into the lives of the families that lost their lives due to American bombs. And mind it. They are the families of not just 3000 victims; their numbers is at least 2 millions. Senator Chuck Schumer, Democrat of New York, one of the legislation’s authors said, “This bill is near and dear to my heart as a New Yorker, because it would allow the victims of 9/11 to pursue some small measure of justice, finally giving them a legal avenue to pursue foreign sponsors of the terrorist attack that took from them the lives of their loved ones.” But who will tell these Senators about the importance of others’ lives? Who will ask him questions about America’s manslaughtrers in the Muslim lands?**
+
+![](https://javedjamilhome.wordpress.com/wp-content/uploads/2018/09/f0d89-1ae-nepmjdxxcwa8nmqgeta.jpeg?w=736)  
+
+For the first time in the history of the United States, a Presidential veto has been turned down by Congress. Congress on Wednesday voted overwhelmingly to override a veto by President for the first time, passing into law a bill that would allow the families of those killed in the Sept. 11, 2001 terrorist attacks to sue [Saudi Arabia](http://topics.nytimes.com/top/news/international/countriesandterritories/saudiarabia/index.html?inline=nyt-geo) for any role in the plot. Even Democrats joined in large numbers to override their own President. It ultimately turned out to be 97-to-1 vote in the Senate and the 348-to-77 vote in the House. According to reports, now American courts could seize Saudi assets to pay for any judgment obtained by Sept 11 families. Saudis are planning their own moves to counter the threat.
+
+Many questions galore. More than a dozen of the 18 persons allegedly involved in the execution of the plan were Saudi citizens. It is hard to believe how such an operation involving the assets and citizens of two allies can be planned and executed without any information whatsoever to the establishments of the two countries. If American Administration was taken totally unawares, how come then that President Bush announced within ten minutes that the plan was executed by Osama Ben Laden’s al-Qaeda? Why has no formal Commission ever submitted an inquiry report till this date? Why was Osama killed rather than tried in the Court? Did it risk his statements in the Court could have opened Pandora’s Box?
+
+And of course the biggest question is: If the families of the victims of 9/11 can demand compensation from the Saudi Government, why should the families of the Iraqi and Afghan innocent victims killed in American wars against the two countries not drag American government in the courts and demand compensation? While the Saudi Government has denied any involvement whatsoever in the 9/11 attack, the US can of course not deny its wars. It should have in fact offered them compensation itself by now if it had any conscience and regard to the humanity. Muslim countries of course do not have the will and the guts to challenge the US in the Courts.
+
+It is in fact some experts within America who have started fearing the possibility of American State being tried in the courts. According to New York Times report,
+
+> “_There were swift complications. Within hours of their vote, nearly 30 senators signed a letter expressing some reservations about the potential consequences of the law, including the prospect that the United States could face lawsuits in foreign courts “as a result of important military or intelligence activities.”_
+
+But Americans are always concerned with their own lives. They have least regard for the lives of others. Nobody bothers to peep into the lives of the families that lost their lives due to American bombs. And mind it. They are the families of not just 3000 victims; their numbers is at least 2 millions. Senator Chuck Schumer, Democrat of New York, one of the legislation’s authors said, “This bill is near and dear to my heart as a New Yorker, because it would allow the victims of 9/11 to pursue some small measure of justice, finally giving them a legal avenue to pursue foreign sponsors of the terrorist attack that took from them the lives of their loved ones.” But who will tell these Senators about the importance of others’ lives? Who will ask him questions about America’s manslaughtrers in the Muslim lands?
+
+![](https://javedjamilhome.wordpress.com/wp-content/uploads/2018/09/8112c-1jayrf-jnh7cvr5x6zo4nog.jpeg?w=736)
