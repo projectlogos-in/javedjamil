@@ -1,6 +1,7 @@
 ---
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import { base } from "../lib/base";
 import "../styles/tokens.css";
 
 interface Props {
@@ -34,7 +35,7 @@ const pageTitle = title === "Dr. Javed Jamil" ? title : `${title} — Dr. Javed 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@drjavedjamil" />
 
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

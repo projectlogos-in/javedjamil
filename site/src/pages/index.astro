@@ -2,14 +2,15 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Seal from "../components/Seal.astro";
 import CosmicMotif from "../components/CosmicMotif.astro";
+import { base } from "../lib/base";
 
 const crossLinks = [
-  { href: "/ideas/", label: "Ideas", desc: "Long-form essays and multi-part series." },
-  { href: "/health-maximisation/", label: "Health Maximisation", desc: "The Dynamic Paradigm of Health." },
-  { href: "/shayari/", label: "Shayari", desc: "Urdu poetry." },
-  { href: "/lexicon/", label: "Lexicon", desc: "Coined terms, defined." },
-  { href: "/books/", label: "Works", desc: "The book library." },
-  { href: "/about/", label: "About", desc: "Biography." },
+  { href: `${base}ideas/`, label: "Ideas", desc: "Long-form essays and multi-part series." },
+  { href: `${base}health-maximisation/`, label: "Health Maximisation", desc: "The Dynamic Paradigm of Health." },
+  { href: `${base}shayari/`, label: "Shayari", desc: "Urdu poetry." },
+  { href: `${base}lexicon/`, label: "Lexicon", desc: "Coined terms, defined." },
+  { href: `${base}books/`, label: "Works", desc: "The book library." },
+  { href: `${base}about/`, label: "About", desc: "Biography." },
 ];
 ---
 
@@ -40,8 +41,8 @@ const crossLinks = [
       </blockquote>
 
       <div class="hero__cta">
-        <a href="/ideas/" class="button button--solid">Read the essays</a>
-        <a href="/books/" class="button button--outline">The Works &rarr;</a>
+        <a href={`${base}ideas/`} class="button button--solid">Read the essays</a>
+        <a href={`${base}books/`} class="button button--outline">The Works &rarr;</a>
       </div>
     </div>
   </section>

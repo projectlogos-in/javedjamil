@@ -191,9 +191,22 @@ trilingual name lockup component.
 
 ---
 
-## Open items to confirm before/at Phase 1
+## Resolved during Phase 1
 
-- GitHub Pages target: a `username.github.io` project page, or a custom
-  domain (the brand doc's mockups use `javedjamil.com`)?
-- Repo name/location — create fresh repo here, or does one already exist
-  under the user's GitHub account to push to?
+- **GitHub Pages target:** project page at `projectlogos-in.github.io/javedjamil`.
+  `site/astro.config.mjs` sets `site`/`base` accordingly; all internal hrefs
+  route through `site/src/lib/base.ts` so they resolve correctly under the
+  `/javedjamil` base path. `.github/workflows/deploy.yml` builds `site/` and
+  deploys `site/dist` to Pages on push to `main` — not yet pushed; remote
+  push and enabling Pages in repo settings are still manual/confirmed steps.
+- **Git identity:** local-only `user.name`/`user.email` set on this repo
+  (not global) — commit author is "Ali Javed" (account holder), not the
+  site's subject.
+
+## Phase 1 status: done
+
+Astro scaffold, design tokens, `<Seal>` + `<CosmicMotif>` components,
+`Nav`/`Footer`, `BaseLayout`, home page hero, and placeholder pages for all
+six nav sections are built, verified in-browser against the brand doc, and
+committed. Next: Phase 2 (real templates for Ideas/Series/Shayari/Lexicon/
+Works/About against hand-written sample content, per §6 of this plan).

@@ -1,13 +1,14 @@
 ---
 import Seal from "./Seal.astro";
+import { base } from "../lib/base";
 
 const links = [
-  { href: "/ideas/", label: "Ideas" },
-  { href: "/health-maximisation/", label: "Health Maximisation" },
-  { href: "/shayari/", label: "Shayari" },
-  { href: "/lexicon/", label: "Lexicon" },
-  { href: "/books/", label: "Works" },
-  { href: "/about/", label: "About" },
+  { href: `${base}ideas/`, label: "Ideas" },
+  { href: `${base}health-maximisation/`, label: "Health Maximisation" },
+  { href: `${base}shayari/`, label: "Shayari" },
+  { href: `${base}lexicon/`, label: "Lexicon" },
+  { href: `${base}books/`, label: "Works" },
+  { href: `${base}about/`, label: "About" },
 ];
 
 const current = Astro.url.pathname;
@@ -15,7 +16,7 @@ const current = Astro.url.pathname;
 
 <header class="site-nav">
   <div class="site-nav__inner">
-    <a href="/" class="site-nav__brand" aria-label="Dr. Javed Jamil — home">
+    <a href={base} class="site-nav__brand" aria-label="Dr. Javed Jamil — home">
       <Seal size={30} mode="dark" />
       <span class="site-nav__name">Dr. Javed Jamil</span>
     </a>
