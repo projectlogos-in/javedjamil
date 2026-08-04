@@ -1,12 +1,267 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ComingSoon from "../../components/ComingSoon.astro";
+import Seal from "../../components/Seal.astro";
+import { base } from "../../lib/base";
+
+const awards = [
+  "Invited by the Iranian Government as one of nine Qur'anic scholars from around the world for the International Qur'anic Exhibition, 2007.",
+  "Invited to the Third International Conference on Islamic Media, jointly hosted by the Kingdom of Saudi Arabia and the Government of Indonesia, Jakarta, 2013.",
+  "Overseas guest of Australia's Multicultural Festival Society, delivering lectures including “New World Order in the Light of Islamic Principles” and “Islamic Model for Control of AIDS.”",
+  "Lectures on Islam and Science, and Family Welfare in Islam, at Aligarh Muslim University's Faculty of Islamic Studies and Faculty of Sunni Theology.",
+  "Delivered “The Devil of Economic Fundamentalism” to the Economics Society, Aligarh Muslim University.",
+  "Aditya Samman, awarded by the Government of Uttar Pradesh at the Saharanpur Mahotsava.",
+  "Declared Man of the Year 2014 by Muslim Mirror; profiled again as Man of the Year 2016.",
+];
 ---
 
-<BaseLayout title="About">
-  <ComingSoon
-    eyebrow="Biography"
-    title="About Dr. Javed Jamil"
-    description="Physician, Islamic scholar, and originator of Applied Islamics — a restructured, headed version of the existing biography is coming here."
-  />
+<BaseLayout
+  title="About"
+  description="Dr. Javed Jamil — physician, Islamic scholar, and originator of Applied Islamics. Biography, theories, and activism."
+>
+  <article class="about">
+    <header class="about__header">
+      <div class="eyebrow">Biography</div>
+      <h1 class="about__title">Dr. Javed Jamil</h1>
+      <p class="about__standfirst">
+        Dr. Javed Jamil may well be regarded as one of the most powerful thinkers of the current times in the Islamic
+        world. He has launched an ideological onslaught against the scientific and social philosophies of the New
+        World Order and their impact on humanity, presenting alternative Islamic paradigms in their place — while
+        preparing plans for the comprehensive empowerment of Muslims. His concern is for the whole of humanity: he
+        presents Islam not just for Muslims but for the benefit of all mankind. His works span medicine, religion,
+        economics, current affairs, physics, political science, philosophy, and Urdu poetry.
+      </p>
+      <div class="about__links">
+        <a href="https://drive.google.com/file/d/1aeQryZl7BmlsRe2Fembf5mhnO7RKhoUl/view" target="_blank" rel="noopener noreferrer">Download biography (ePUB)</a>
+        <span aria-hidden="true">&middot;</span>
+        <a href="https://drive.google.com/file/d/1slkDIl9m-nG0c4gbjbfUQwrE0FazoUkh/view" target="_blank" rel="noopener noreferrer">Download biography (PDF)</a>
+      </div>
+    </header>
+
+    <div class="about__body">
+      <p>
+        When President Obama, after his election, addressed the Muslim world, an organisation gathered the views of
+        one hundred prominent Muslims worldwide. Dr. Jamil was the only Muslim analyst from the Indian subcontinent
+        invited to respond. He wrote:
+      </p>
+
+      <blockquote>
+        “America can avenge the killing of 3,000 Americans by killing two million Muslims. Tell me how Muslims can
+        and should avenge the killing of two million Muslim innocents by Americans? If America cannot tolerate the
+        extremist Muslims, why should Muslims tolerate the extremist America?”
+      </blockquote>
+
+      <p>
+        He was also the first Indian Islamic scholar invited by the Iranian government to its annual Qur'anic
+        Exhibition, and the only Indian scholar at the Third International Conference on Islamic Media in Jakarta. In
+        1994 he became the first Indian Muslim scholar to publish in support of family planning from an Islamic
+        viewpoint — with important qualifications — in a book that traditional and Islamic scholars alike described
+        as balanced and methodologically sound.
+      </p>
+
+      <h2>A Man of Theories</h2>
+      <p>
+        Dr. Jamil is, above all, a man of theories — propounding unconventional positions across fields, almost all
+        of them rooted in Islamic principle but argued in both secular and Islamic frameworks.
+      </p>
+
+      <h3>Economic Fundamentalism</h3>
+      <p>
+        Dr. Jamil has waged what he calls a ruthless war of attrition against <strong>Economic Fundamentalism</strong>
+        — the ideology that gives predominance to economics over every other sphere of life, indifferent to its
+        effects on health, family peace, and social order. In his account, businessmen were once "cranes" waiting
+        for prey to come close; since the Industrial Revolution they have organised into "leopards" that roar and
+        rule — mastering the state, remaking law in their interest, and industrialising sex as the commodity that
+        "always lays golden eggs."
+      </p>
+
+      <h3>Peace Economics &amp; the Theory of Peace</h3>
+      <p>
+        Against Economic Fundamentalism, Dr. Jamil proposes <strong>Peace Economics</strong>: development that never
+        undermines <strong>Grand Peace</strong> — health of the individual, family peace, and social order taken
+        together. He rejects narrower definitions of peace, whether the political (absence of conflict), the mystic
+        (tranquillity of the soul), or the sociological (distribution of wealth), for a comprehensive one. His
+        alternative to the New World Order is the <strong>Natural World Order</strong>: a system built on equal
+        weight given to Fundamental Rights, Fundamental Duties, and — the one the corporate world abhors most —
+        Fundamental Prohibitions.
+      </p>
+
+      <h3>The Dynamic Paradigm of Health</h3>
+      <p>
+        Dr. Jamil argues that international health policy is itself governed by economic fundamentalism, not health.
+        "The worship of Hygeia is not tolerable for Mammon," he writes — health demands discipline and restriction,
+        and restriction is a word absent from the lexicon of the bazaar. His Dynamic Paradigm calls for health,
+        not profit, to set the terms for smoking, drinking, gambling, and commercial sex alike, and for family
+        health to be treated as a matter of civilisational, not merely individual, concern.
+      </p>
+
+      <h3>The Universal Theory of Relativity</h3>
+      <p>
+        Dr. Jamil has also turned his attention to physics, arguing that General Relativity and Big Bang cosmology
+        describe "a passive, clumsily stark looking collection of individual groups of matter" that has "lost its
+        virility" — an account of the universe with hardly any dynamic existence left in it. His proposed Universal
+        Theory of Relativity is an attempt to restore a governing order to that picture.
+      </p>
+
+      <h2>Applied Islamics</h2>
+      <p>
+        Dr. Jamil's unshakeable conviction that the Qur'an is the Book of God led him to found <strong>Applied
+        Islamics</strong> as a discipline in its own right — not the study of Islam through the lens of modern
+        developments, but the reverse: modern developments in social and scientific fields examined in the light
+        of Islamic principle, with alternative Islamic models proposed in their place. He holds that Islam is for
+        the whole world, not Muslims alone, and that Muslims must lead the fight against the evils pervading
+        society. His life's ambition is an international Institute of Applied Islamics, dedicated to exactly this
+        work.
+      </p>
+
+      <h2>Social Activist</h2>
+      <p>
+        Dr. Jamil founded PEACE, an NGO that has run national and district-level seminars on education, health, and
+        communal harmony, and has worked with the Government of India and SIFPSA/USAID on health and family welfare
+        projects. At 24, he organised the first major demonstration in Saharanpur against the Supreme Court's
+        verdict in the Shah Bano case — before the campaign it seeded became one of the most significant Muslim
+        mobilisations in independent India's history. In 1985 he launched the "Dakhla Lo" (Take Admission) campaign,
+        visiting more than 250 villages across Saharanpur district to lecture on health and education, and later
+        organised relief camps during communal violence in the region.
+      </p>
+
+      <h2>The Poet</h2>
+      <p>
+        Dr. Jamil has composed several hundred Urdu ghazals. His first collection, <em>Rahguzar</em>, was published
+        by the Fakhruddin Memorial Committee, an organisation of the Government of Uttar Pradesh; a second collection
+        followed. He remains lesser-known as a poet than as a thinker, largely by choice — he has generally declined
+        invitations to mushairas in favour of other commitments. His poetry carries the same charge as his prose: as
+        often aggressive as it is, at times, unguardedly romantic. A selection appears in the <a href={`${base}shayari/`}>Shayari</a> section
+        of this site.
+      </p>
+
+      <h2>Awards, Positions &amp; Lectures</h2>
+      <ul class="about__awards">
+        {awards.map((item) => <li>{item}</li>)}
+      </ul>
+
+      <p class="about__more-links">
+        The full list of Dr. Jamil's published books is in the <a href={`${base}books/`}>Works library</a>; his essays
+        and series are collected under <a href={`${base}ideas/`}>Ideas</a>.
+      </p>
+    </div>
+
+    <footer class="about__seal">
+      <Seal variant="geometric" mode="light" size={40} animated={false} />
+    </footer>
+  </article>
 </BaseLayout>
+
+<style>
+  .about {
+    max-width: var(--reading-max);
+    margin: 0 auto;
+    padding: 72px var(--section-pad-x) 60px;
+  }
+
+  .about__header {
+    margin-bottom: 44px;
+  }
+
+  .about__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(34px, 5.5vw, 58px);
+    line-height: 1.02;
+    margin: 16px 0 24px;
+    color: var(--ink);
+  }
+
+  .about__standfirst {
+    font-family: var(--font-body);
+    font-size: 19px;
+    line-height: 1.65;
+    color: #33384a;
+    margin: 0 0 24px;
+  }
+
+  .about__links {
+    font-size: 13.5px;
+  }
+
+  .about__links a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .about__links a:hover {
+    text-decoration: underline;
+  }
+
+  .about__links span {
+    margin: 0 10px;
+    color: var(--light-text-faint);
+  }
+
+  .about__body {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.72;
+    color: #26262b;
+  }
+
+  .about__body p {
+    margin: 0 0 22px;
+  }
+
+  .about__body h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(24px, 3.2vw, 32px);
+    line-height: 1.15;
+    margin: 48px 0 20px;
+    color: var(--ink);
+  }
+
+  .about__body h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 21px;
+    margin: 34px 0 14px;
+    color: var(--ink);
+  }
+
+  .about__body blockquote {
+    margin: 28px 0;
+    padding-left: 26px;
+    border-left: 3px solid var(--accent);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 23px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  .about__body a {
+    color: var(--accent);
+  }
+
+  .about__awards {
+    padding-left: 22px;
+    margin: 0 0 22px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .about__awards li {
+    font-size: 16.5px;
+    line-height: 1.55;
+  }
+
+  .about__more-links {
+    font-size: 15px;
+    color: var(--light-text-muted);
+    border-top: 1px solid var(--light-hairline);
+    padding-top: 24px;
+  }
+
+  .about__seal {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+</style>
