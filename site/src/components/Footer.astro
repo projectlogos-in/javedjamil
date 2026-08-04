@@ -1,0 +1,91 @@
+---
+import Seal from "./Seal.astro";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <Seal size={34} mode="dark" animated={false} />
+      <div>
+        <div class="site-footer__name">Dr. Javed Jamil</div>
+        <div class="site-footer__tag eyebrow">Applied Islamics</div>
+      </div>
+    </div>
+
+    <nav class="site-footer__social" aria-label="Social">
+      <a href="https://www.facebook.com/javedjamil2015" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://twitter.com/drjavedjamil" target="_blank" rel="noopener noreferrer">Twitter</a>
+    </nav>
+
+    <div class="site-footer__meta">
+      <span>&copy; {year} Dr. Javed Jamil</span>
+      <span class="site-footer__divider">&middot;</span>
+      <span>Design: The Living Order</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--ink);
+    color: var(--ink-text-muted);
+    border-top: 1px solid var(--ink-hairline);
+  }
+
+  .site-footer__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 48px var(--section-pad-x);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .site-footer__brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .site-footer__name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--parchment);
+  }
+
+  .site-footer__tag {
+    margin-top: 2px;
+  }
+
+  .site-footer__social {
+    display: flex;
+    gap: 22px;
+    font-size: 13px;
+  }
+
+  .site-footer__social a {
+    text-decoration: none;
+    color: var(--ink-text-muted);
+    transition: color 0.15s ease;
+  }
+
+  .site-footer__social a:hover {
+    color: var(--accent);
+  }
+
+  .site-footer__meta {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: var(--ink-text-faint);
+  }
+
+  .site-footer__divider {
+    margin: 0 6px;
+  }
+</style>

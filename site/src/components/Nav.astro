@@ -1,0 +1,158 @@
+---
+import Seal from "./Seal.astro";
+
+const links = [
+  { href: "/ideas/", label: "Ideas" },
+  { href: "/health-maximisation/", label: "Health Maximisation" },
+  { href: "/shayari/", label: "Shayari" },
+  { href: "/lexicon/", label: "Lexicon" },
+  { href: "/books/", label: "Works" },
+  { href: "/about/", label: "About" },
+];
+
+const current = Astro.url.pathname;
+---
+
+<header class="site-nav">
+  <div class="site-nav__inner">
+    <a href="/" class="site-nav__brand" aria-label="Dr. Javed Jamil — home">
+      <Seal size={30} mode="dark" />
+      <span class="site-nav__name">Dr. Javed Jamil</span>
+    </a>
+
+    <button class="site-nav__toggle" aria-label="Toggle menu" aria-expanded="false" data-nav-toggle>
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav__links" aria-label="Primary" data-nav-links>
+      {
+        links.map((link) => (
+          <a href={link.href} class:list={["site-nav__link", { "is-active": current.startsWith(link.href) }]}>
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const menu = document.querySelector("[data-nav-links]");
+  toggle?.addEventListener("click", () => {
+    const open = menu?.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+</script>
+
+<style>
+  .site-nav {
+    background: var(--ink);
+    color: var(--parchment);
+    border-bottom: 1px solid var(--ink-hairline);
+  }
+
+  .site-nav__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 18px var(--section-pad-x);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .site-nav__brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--parchment);
+    flex: 0 0 auto;
+  }
+
+  .site-nav__name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  .site-nav__links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 13.5px;
+    color: var(--ink-text-muted);
+  }
+
+  .site-nav__link {
+    text-decoration: none;
+    color: inherit;
+    white-space: nowrap;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .site-nav__link:hover,
+  .site-nav__link.is-active {
+    color: var(--parchment);
+    border-color: var(--accent);
+  }
+
+  .site-nav__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .site-nav__toggle span {
+    display: block;
+    height: 1.5px;
+    background: var(--parchment);
+  }
+
+  @media (max-width: 860px) {
+    .site-nav__toggle {
+      display: flex;
+    }
+
+    .site-nav__links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--ink);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease;
+    }
+
+    .site-nav__links.is-open {
+      max-height: 400px;
+      padding: 8px 0 20px;
+    }
+
+    .site-nav__link {
+      width: 100%;
+      padding: 12px var(--section-pad-x);
+      border-bottom: none;
+    }
+
+    .site-nav {
+      position: relative;
+    }
+  }
+</style>

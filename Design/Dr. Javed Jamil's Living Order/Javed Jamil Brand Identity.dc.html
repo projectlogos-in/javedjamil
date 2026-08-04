@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@400;500;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#0C1330; }
+  ::selection{ background:#0E6F62; color:#F3EEE3; }
+  @keyframes lo-pulse{ 0%{ transform:scale(1); opacity:.5; } 70%{ opacity:.06; } 100%{ transform:scale(4.4); opacity:0; } }
+  @keyframes lo-orbit{ to{ transform:rotate(360deg); } }
+  @keyframes lo-orbit-rev{ to{ transform:rotate(-360deg); } }
+  .lo-pulse{ transform-box:view-box; transform-origin:120px 120px; animation:lo-pulse 4.2s cubic-bezier(.2,.6,.3,1) infinite; }
+  .lo-orbit{ transform-box:view-box; transform-origin:120px 120px; animation:lo-orbit 64s linear infinite; }
+  .lo-orbit-rev{ transform-box:view-box; transform-origin:120px 120px; animation:lo-orbit-rev 90s linear infinite; }
+  @media (prefers-reduced-motion:reduce){ .lo-pulse,.lo-orbit,.lo-orbit-rev{ animation:none; } }
+</style>
+</helmet>
+<div style="--accent:{{ accentColor }}; background:#F3EEE3; color:#0C1330; font-family:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif; -webkit-font-smoothing:antialiased; line-height:1.5;">
+
+  <!-- ================= 00 · COVER ================= -->
+  <section style="position:relative; overflow:hidden; min-height:100vh; background:#0B1026; color:#F3EEE3; display:flex; flex-direction:column; justify-content:center; padding:80px 64px;">
+    <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position:absolute; inset:0; width:120%; height:120%; left:-10%; top:-10%; opacity:.10;">
+      <g fill="none" stroke="#F3EEE3" stroke-width="1">
+        <circle cx="500" cy="500" r="120"></circle>
+        <circle cx="500" cy="500" r="220"></circle>
+        <circle cx="500" cy="500" r="330"></circle>
+        <circle cx="500" cy="500" r="450"></circle>
+        <circle cx="500" cy="500" r="580"></circle>
+        <line x1="500" y1="-100" x2="500" y2="1100"></line>
+        <line x1="-100" y1="500" x2="1100" y2="500"></line>
+        <line x1="60" y1="60" x2="940" y2="940"></line>
+        <line x1="940" y1="60" x2="60" y2="940"></line>
+      </g>
+    </svg>
+
+    <div style="position:relative; max-width:1180px; margin:0 auto; width:100%; display:flex; flex-direction:column; align-items:center; text-align:center;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.34em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:48px;">Brand Identity System &nbsp;·&nbsp; The Living Order &nbsp;·&nbsp; v1.0</div>
+
+      <!-- PRIMARY SEAL -->
+      <svg viewBox="0 0 240 240" width="220" height="220" role="img" aria-label="Javed Jamil seal" style="margin-bottom:44px;">
+        <g class="lo-pulse" style="animation-delay:0s;"><circle cx="120" cy="120" r="26" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1.4"></circle></g>
+        <g class="lo-pulse" style="animation-delay:2.1s;"><circle cx="120" cy="120" r="26" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1.4"></circle></g>
+        <circle cx="120" cy="120" r="110" fill="none" stroke="#F3EEE3" stroke-width="2"></circle>
+        <circle cx="120" cy="120" r="103" fill="none" stroke="#F3EEE3" stroke-width=".6" opacity=".5"></circle>
+        <circle cx="120" cy="120" r="58" fill="none" stroke="#F3EEE3" stroke-width="1.2"></circle>
+        <g stroke="#F3EEE3" stroke-width="1.4">
+          <line x1="120" y1="14" x2="120" y2="26"></line>
+          <g transform="rotate(51.4 120 120)"><line x1="120" y1="14" x2="120" y2="26"></line></g>
+          <g transform="rotate(102.8 120 120)"><line x1="120" y1="14" x2="120" y2="26"></line></g>
+          <g transform="rotate(154.2 120 120)"><line x1="120" y1="14" x2="120" y2="26"></line></g>
+          <g transform="rotate(205.7 120 120)"><line x1="120" y1="14" x2="120" y2="26"></line></g>
+          <g transform="rotate(257.1 120 120)"><line x1="120" y1="14" x2="120" y2="26"></line></g>
+          <g transform="rotate(308.5 120 120)"><line x1="120" y1="14" x2="120" y2="26"></line></g>
+        </g>
+        <g class="lo-orbit">
+          <ellipse cx="120" cy="120" rx="92" ry="34" fill="none" stroke="#F3EEE3" stroke-width="1" stroke-dasharray="2 5" opacity=".75" transform="rotate(-24 120 120)"></ellipse>
+          <circle cx="206" cy="96" r="5.5" fill="var(--accent,#0E6F62)"></circle>
+        </g>
+        <circle cx="120" cy="120" r="24" fill="none" stroke="#F3EEE3" stroke-width="1.4"></circle>
+        <circle cx="120" cy="120" r="14" fill="var(--accent,#0E6F62)"></circle>
+      </svg>
+
+      <h1 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(44px,8vw,92px); line-height:.96; letter-spacing:.01em; margin:0 0 22px;">Dr.&nbsp;Javed&nbsp;Jamil</h1>
+
+      <div style="display:flex; gap:40px; align-items:center; flex-wrap:wrap; justify-content:center; margin-bottom:34px;">
+        <span dir="rtl" lang="ur" style="font-family:'Noto Nastaliq Urdu',serif; font-size:34px; line-height:2.1; color:#EDE7DA;">ڈاکٹر جاوید جمیل</span>
+        <span aria-hidden="true" style="width:1px; height:34px; background:rgba(243,238,234,.28);"></span>
+        <span dir="rtl" lang="ar" style="font-family:'Amiri',serif; font-size:34px; color:#EDE7DA;">د. جاويد جميل</span>
+      </div>
+
+      <div style="font-family:'IBM Plex Sans',sans-serif; font-weight:500; font-size:15px; letter-spacing:.04em; color:#9AA0BC; max-width:640px;">
+        Physician · Scholar · Originator of <span style="color:var(--accent,#0E6F62);">Applied&nbsp;Islamics</span>
+      </div>
+
+      <div style="margin-top:56px; padding-top:26px; border-top:1px solid rgba(243,238,234,.16); max-width:680px; font-family:'Bodoni Moda',serif; font-style:italic; font-size:clamp(17px,2.4vw,22px); line-height:1.5; color:#D7D2C6;">
+        A tiered, living cosmic order — with life and health at its centre.
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 01 · CONCEPT PLATFORM ================= -->
+  <section style="background:#F3EEE3; padding:104px 64px; border-bottom:1px solid rgba(12,19,48,.1);">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">01 — Concept Platform</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(32px,5vw,58px); line-height:1.02; margin:0 0 28px; max-width:18ch;">The Living Order</h2>
+      <p style="max-width:62ch; font-size:18px; line-height:1.65; color:#33384A; margin:0 0 64px;">One idea organises the entire system: a <strong style="font-weight:600;">living, concentric, tiered cosmic order with life at its centre.</strong> It carries all three personality vectors of the identity at once — without a single literal arabesque, dome, or crescent.</p>
+
+      <div style="display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center;">
+        <div style="display:grid; gap:26px;">
+          <div style="display:flex; gap:22px; align-items:flex-start;">
+            <div style="flex:0 0 44px; height:44px; border:1.5px solid #0C1330; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:13px;">01</div>
+            <div><div style="font-family:'Bodoni Moda',serif; font-size:22px; font-weight:600; margin-bottom:4px;">Cosmic geometric order</div><div style="font-size:15.5px; color:#4A4F60; line-height:1.55;">The seven cosmic tiers, orbits, relativity — authority and divine structure, built with compass-and-straightedge logic, not ornament.</div></div>
+          </div>
+          <div style="display:flex; gap:22px; align-items:flex-start;">
+            <div style="flex:0 0 44px; height:44px; border:1.5px solid #0C1330; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:13px;">02</div>
+            <div><div style="font-family:'Bodoni Moda',serif; font-size:22px; font-weight:600; margin-bottom:4px;">The deliberate re-centring</div><div style="font-size:15.5px; color:#4A4F60; line-height:1.55;">What sits at the middle is <em>life and health</em> — not the market. The challenger's inversion, encoded as geometry.</div></div>
+          </div>
+          <div style="display:flex; gap:22px; align-items:flex-start;">
+            <div style="flex:0 0 44px; height:44px; border:1.5px solid #0C1330; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono',monospace; font-size:13px;">03</div>
+            <div><div style="font-family:'Bodoni Moda',serif; font-size:22px; font-weight:600; margin-bottom:4px;">Motion as the Dynamic Paradigm</div><div style="font-size:15.5px; color:#4A4F60; line-height:1.55;">A pulse runs through the geometry — health as a living process, never a static state. Motion, not a medical heartbeat cliché.</div></div>
+          </div>
+        </div>
+
+        <div style="position:relative; aspect-ratio:1; background:#0B1026; border-radius:4px; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 240 240" width="78%" role="img" aria-label="Living Order diagram">
+            <g class="lo-pulse"><circle cx="120" cy="120" r="26" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1.2"></circle></g>
+            <circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="1" opacity=".5"></circle>
+            <circle cx="120" cy="120" r="78" fill="none" stroke="#F3EEE3" stroke-width="1" opacity=".7"></circle>
+            <circle cx="120" cy="120" r="52" fill="none" stroke="#F3EEE3" stroke-width="1"></circle>
+            <g class="lo-orbit-rev"><ellipse cx="120" cy="120" rx="104" ry="38" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1" transform="rotate(20 120 120)"></ellipse><circle cx="216" cy="100" r="4" fill="var(--accent,#0E6F62)"></circle></g>
+            <circle cx="120" cy="120" r="13" fill="var(--accent,#0E6F62)"></circle>
+            <text x="120" y="232" text-anchor="middle" fill="#9AA0BC" font-family="'IBM Plex Mono',monospace" font-size="9" letter-spacing="2">LIFE AT THE CENTRE</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 02 · PRIMARY SEAL / CONSTRUCTION ================= -->
+  <section style="background:#0B1026; color:#F3EEE3; padding:104px 64px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">02 — Primary Mark · The Seal</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.04; margin:0 0 16px; color:#F3EEE3;">Built with compass logic, not ornament</h2>
+      <p style="max-width:60ch; font-size:17px; line-height:1.6; color:#B7BCD0; margin:0 0 60px;">Every line resolves to a circle struck from the centre or a chord between fixed points — the discipline of Islamic geometric construction, abstracted to read as cosmic diagram. Seven outer ticks cite the seven heavens of <span style="font-style:italic; font-family:'Bodoni Moda',serif;">Qur'an 67:3–4</span>; the orbital arc carries relativity and motion; the vital centre is life.</p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
+        <div style="position:relative; background:#070B1E; border:1px solid rgba(243,238,234,.1); border-radius:4px; padding:40px; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 240 240" width="100%" style="max-width:380px;" role="img" aria-label="Seal construction">
+            <sc-if value="{{ constructionLines }}" hint-placeholder-val="{{ true }}">
+              <g stroke="#3A6E8C" stroke-width=".6" fill="none" opacity=".7">
+                <circle cx="120" cy="120" r="110" stroke-dasharray="2 4"></circle>
+                <circle cx="120" cy="120" r="84" stroke-dasharray="2 4"></circle>
+                <circle cx="120" cy="120" r="58" stroke-dasharray="2 4"></circle>
+                <circle cx="120" cy="120" r="24" stroke-dasharray="2 4"></circle>
+                <line x1="120" y1="6" x2="120" y2="234"></line>
+                <line x1="6" y1="120" x2="234" y2="120"></line>
+                <line x1="35" y1="35" x2="205" y2="205"></line>
+                <line x1="205" y1="35" x2="35" y2="205"></line>
+                <rect x="10" y="10" width="220" height="220" stroke-dasharray="1 5"></rect>
+              </g>
+            </sc-if>
+            <circle cx="120" cy="120" r="110" fill="none" stroke="#F3EEE3" stroke-width="2"></circle>
+            <circle cx="120" cy="120" r="58" fill="none" stroke="#F3EEE3" stroke-width="1.2"></circle>
+            <g stroke="#F3EEE3" stroke-width="1.4">
+              <line x1="120" y1="14" x2="120" y2="26"></line>
+              <g transform="rotate(51.4 120 120)"><line x1="120" y1="14" x2="120" y2="26"></line></g>
+              <g transform="rotate(102.8 120 120)"><line x1="120" y1="14" x2="120" y2="26"></line></g>
+              <g transform="rotate(154.2 120 120)"><line x1="120" y1="14" x2="120" y2="26"></line></g>
+              <g transform="rotate(205.7 120 120)"><line x1="120" y1="14" x2="120" y2="26"></line></g>
+              <g transform="rotate(257.1 120 120)"><line x1="120" y1="14" x2="120" y2="26"></line></g>
+              <g transform="rotate(308.5 120 120)"><line x1="120" y1="14" x2="120" y2="26"></line></g>
+            </g>
+            <ellipse cx="120" cy="120" rx="92" ry="34" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1.2" transform="rotate(-24 120 120)"></ellipse>
+            <circle cx="206" cy="96" r="5.5" fill="var(--accent,#0E6F62)"></circle>
+            <circle cx="120" cy="120" r="24" fill="none" stroke="#F3EEE3" stroke-width="1.4"></circle>
+            <circle cx="120" cy="120" r="14" fill="var(--accent,#0E6F62)"></circle>
+          </svg>
+        </div>
+        <div style="display:grid; gap:18px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent,#0E6F62);">Anatomy</div>
+          <div style="display:grid; gap:14px; font-size:14.5px;">
+            <div style="display:flex; gap:14px; border-bottom:1px solid rgba(243,238,234,.12); padding-bottom:13px;"><span style="font-family:'IBM Plex Mono',monospace; color:#7E84A0; flex:0 0 56px;">R&nbsp;110</span><span style="color:#D7D2C6;"><strong style="color:#F3EEE3;">Cosmic boundary.</strong> The outer order — the state-like universe.</span></div>
+            <div style="display:flex; gap:14px; border-bottom:1px solid rgba(243,238,234,.12); padding-bottom:13px;"><span style="font-family:'IBM Plex Mono',monospace; color:#7E84A0; flex:0 0 56px;">×7</span><span style="color:#D7D2C6;"><strong style="color:#F3EEE3;">Seven tiers.</strong> Radial ticks — the seven heavens (67:3–4).</span></div>
+            <div style="display:flex; gap:14px; border-bottom:1px solid rgba(243,238,234,.12); padding-bottom:13px;"><span style="font-family:'IBM Plex Mono',monospace; color:#7E84A0; flex:0 0 56px;">Orbit</span><span style="color:#D7D2C6;"><strong style="color:#F3EEE3;">Relativity &amp; motion.</strong> The arc + node — the Dynamic Paradigm.</span></div>
+            <div style="display:flex; gap:14px;"><span style="font-family:'IBM Plex Mono',monospace; color:var(--accent,#0E6F62); flex:0 0 56px;">Centre</span><span style="color:#D7D2C6;"><strong style="color:#F3EEE3;">Life &amp; health.</strong> The vital core the whole order serves.</span></div>
+          </div>
+          <div style="margin-top:8px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E84A0;">Toggle construction lines in the Tweaks panel ↗</div>
+        </div>
+      </div>
+
+      <!-- variants -->
+      <div style="margin-top:64px; display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
+        <div style="background:#F3EEE3; border-radius:4px; padding:30px; display:flex; flex-direction:column; align-items:center; gap:18px;">
+          <svg viewBox="0 0 240 240" width="96" aria-hidden="true"><circle cx="120" cy="120" r="110" fill="none" stroke="#0C1330" stroke-width="3"></circle><circle cx="120" cy="120" r="58" fill="none" stroke="#0C1330" stroke-width="2"></circle><ellipse cx="120" cy="120" rx="92" ry="34" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="2.4" transform="rotate(-24 120 120)"></ellipse><circle cx="206" cy="96" r="7" fill="var(--accent,#0E6F62)"></circle><circle cx="120" cy="120" r="15" fill="var(--accent,#0E6F62)"></circle></svg>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.15em; color:#0C1330;">LIGHT</span>
+        </div>
+        <div style="background:#0B1026; border-radius:4px; padding:30px; display:flex; flex-direction:column; align-items:center; gap:18px;">
+          <svg viewBox="0 0 240 240" width="96" aria-hidden="true"><circle cx="120" cy="120" r="110" fill="none" stroke="#F3EEE3" stroke-width="3"></circle><circle cx="120" cy="120" r="58" fill="none" stroke="#F3EEE3" stroke-width="2"></circle><ellipse cx="120" cy="120" rx="92" ry="34" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="2.4" transform="rotate(-24 120 120)"></ellipse><circle cx="206" cy="96" r="7" fill="var(--accent,#0E6F62)"></circle><circle cx="120" cy="120" r="15" fill="var(--accent,#0E6F62)"></circle></svg>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.15em; color:#F3EEE3;">DARK</span>
+        </div>
+        <div style="background:#E7DFCE; border-radius:4px; padding:30px; display:flex; flex-direction:column; align-items:center; gap:18px;">
+          <svg viewBox="0 0 240 240" width="96" aria-hidden="true"><circle cx="120" cy="120" r="110" fill="none" stroke="#23232A" stroke-width="3"></circle><circle cx="120" cy="120" r="58" fill="none" stroke="#23232A" stroke-width="2"></circle><ellipse cx="120" cy="120" rx="92" ry="34" fill="none" stroke="#23232A" stroke-width="2.4" transform="rotate(-24 120 120)"></ellipse><circle cx="206" cy="96" r="7" fill="#23232A"></circle><circle cx="120" cy="120" r="15" fill="#23232A"></circle></svg>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.15em; color:#23232A;">SINGLE&nbsp;COLOUR</span>
+        </div>
+        <div style="background:#0B1026; border-radius:4px; padding:30px; display:flex; flex-direction:column; align-items:center; gap:18px;">
+          <svg viewBox="0 0 240 240" width="96" aria-hidden="true"><defs><linearGradient id="foilA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4D88A"></stop><stop offset=".5" stop-color="#BE8A2C"></stop><stop offset="1" stop-color="#7A571A"></stop></linearGradient></defs><circle cx="120" cy="120" r="110" fill="none" stroke="url(#foilA)" stroke-width="3"></circle><circle cx="120" cy="120" r="58" fill="none" stroke="url(#foilA)" stroke-width="2"></circle><ellipse cx="120" cy="120" rx="92" ry="34" fill="none" stroke="url(#foilA)" stroke-width="2.4" transform="rotate(-24 120 120)"></ellipse><circle cx="206" cy="96" r="7" fill="url(#foilA)"></circle><circle cx="120" cy="120" r="15" fill="url(#foilA)"></circle></svg>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.15em; color:#F4D88A;">FOIL&nbsp;/&nbsp;BOOK</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 02·B · QUR'ANIC ANCHORING ================= -->
+  <section style="background:#0B1026; color:#F3EEE3; padding:104px 64px; border-top:1px solid rgba(243,238,234,.08);">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">02·B — Qur'anic Anchoring</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.04; margin:0 0 16px; color:#F3EEE3;">Let the order name its source</h2>
+      <p style="max-width:64ch; font-size:17px; line-height:1.6; color:#B7BCD0; margin:0 0 56px;">The seal already <em>is</em> the cosmology of <span style="font-style:italic; font-family:'Bodoni Moda',serif;">Qur'an 67:3</span> — but it cites it silently. So we do what classical Islamic seals and coins did: ring the mark with the very verse that describes it. The geometry is untouched; the Word becomes the outermost order, encircling life at the centre. No dome, crescent or arabesque — the relationship is made visible through inscription, not decoration.</p>
+
+      <!-- hero: ceremonial seal + anatomy -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
+        <div style="position:relative; background:#070B1E; border:1px solid rgba(243,238,234,.1); border-radius:4px; padding:44px; display:flex; flex-direction:column; align-items:center; gap:26px;">
+          <svg viewBox="0 0 280 280" width="100%" style="max-width:360px;" role="img" aria-label="Qur'anic ceremonial seal — verse 67:3 ringing the cosmology">
+            <defs>
+              <path id="qringHero" d="M140,266 a126,126 0 1,0 -0.01,0" fill="none"></path>
+            </defs>
+            <circle cx="140" cy="140" r="138" fill="none" stroke="#F3EEE3" stroke-width="1.6"></circle>
+            <circle cx="140" cy="140" r="112" fill="none" stroke="#F3EEE3" stroke-width=".7" opacity=".55"></circle>
+            <text dir="rtl" font-family="'Amiri',serif" font-size="19" font-weight="700" fill="#EDE7DA" letter-spacing="1">
+              <textPath href="#qringHero" startOffset="50%" text-anchor="middle">الَّذِي خَلَقَ سَبْعَ سَمَاوَاتٍ طِبَاقًا</textPath>
+            </text>
+            <!-- seven heavens, ṭibāqan — seven concentric tiers -->
+            <g fill="none" stroke="#F3EEE3" stroke-width=".8">
+              <circle cx="140" cy="140" r="34" opacity=".9"></circle>
+              <circle cx="140" cy="140" r="44" opacity=".8"></circle>
+              <circle cx="140" cy="140" r="54" opacity=".72"></circle>
+              <circle cx="140" cy="140" r="64" opacity=".64"></circle>
+              <circle cx="140" cy="140" r="74" opacity=".56"></circle>
+              <circle cx="140" cy="140" r="84" opacity=".48"></circle>
+              <circle cx="140" cy="140" r="94" opacity=".4"></circle>
+            </g>
+            <!-- orbital arc + node: relativity & motion -->
+            <ellipse cx="140" cy="140" rx="100" ry="38" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1.3" transform="rotate(-24 140 140)"></ellipse>
+            <circle cx="226" cy="114" r="5.5" fill="var(--accent,#0E6F62)"></circle>
+            <!-- vital centre -->
+            <circle cx="140" cy="140" r="23" fill="#070B1E"></circle>
+            <circle cx="140" cy="140" r="23" fill="none" stroke="#F3EEE3" stroke-width="1.3"></circle>
+            <circle cx="140" cy="140" r="13" fill="var(--accent,#0E6F62)"></circle>
+          </svg>
+          <div style="text-align:center; max-width:34ch;">
+            <div dir="rtl" lang="ar" style="font-family:'Amiri',serif; font-size:20px; color:#D7D2C6; line-height:1.6;">ٱلَّذِى خَلَقَ سَبْعَ سَمَـٰوَٰتٍ طِبَاقًۭا</div>
+            <div style="font-family:'IBM Plex Sans'; font-style:italic; font-size:13.5px; color:#9AA0BC; margin-top:8px;">“Who created seven heavens in layers.” — Al-Mulk 67:3</div>
+          </div>
+        </div>
+
+        <div style="display:grid; gap:18px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent,#0E6F62);">Every ring, a verse</div>
+          <div style="display:grid; gap:14px; font-size:14.5px;">
+            <div style="display:flex; gap:14px; border-bottom:1px solid rgba(243,238,234,.12); padding-bottom:13px;"><span style="font-family:'IBM Plex Mono',monospace; color:var(--accent,#0E6F62); flex:0 0 72px;">Ring</span><span style="color:#D7D2C6;"><strong style="color:#F3EEE3;">The inscription.</strong> Verse 67:3 set in Amiri — the cosmos that the seal draws, named in its own words.</span></div>
+            <div style="display:flex; gap:14px; border-bottom:1px solid rgba(243,238,234,.12); padding-bottom:13px;"><span style="font-family:'IBM Plex Mono',monospace; color:#7E84A0; flex:0 0 72px;">×7 tiers</span><span style="color:#D7D2C6;"><strong style="color:#F3EEE3;">Sabʿa samāwāt ṭibāqan.</strong> Seven concentric layers — the heavens <em>in strata</em>, now countable, not abstract.</span></div>
+            <div style="display:flex; gap:14px; border-bottom:1px solid rgba(243,238,234,.12); padding-bottom:13px;"><span style="font-family:'IBM Plex Mono',monospace; color:#7E84A0; flex:0 0 72px;">Orbit</span><span style="color:#D7D2C6;"><strong style="color:#F3EEE3;">Relativity &amp; motion.</strong> The arc and node — the Dynamic Paradigm — unchanged from the primary mark.</span></div>
+            <div style="display:flex; gap:14px;"><span style="font-family:'IBM Plex Mono',monospace; color:var(--accent,#0E6F62); flex:0 0 72px;">Centre</span><span style="color:#D7D2C6;"><strong style="color:#F3EEE3;">Life &amp; health.</strong> What the seven heavens — and the whole order — are built around.</span></div>
+          </div>
+          <div style="margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E84A0; line-height:1.7;">Word on the outside · cosmos in the middle · life at the core. The hierarchy reads from rim to centre.</div>
+        </div>
+      </div>
+
+      <!-- register ladder: preserve the primary, add the ceremonial -->
+      <div style="margin-top:64px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; color:#7E84A0; margin-bottom:18px;">TWO REGISTERS · ONE SYSTEM</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px;">
+          <!-- primary geometric (unchanged) -->
+          <div style="background:#070B1E; border:1px solid rgba(243,238,234,.12); border-radius:4px; padding:34px; display:flex; gap:28px; align-items:center;">
+            <svg viewBox="0 0 240 240" width="108" style="flex:0 0 auto;" aria-hidden="true"><circle cx="120" cy="120" r="110" fill="none" stroke="#F3EEE3" stroke-width="3"></circle><circle cx="120" cy="120" r="58" fill="none" stroke="#F3EEE3" stroke-width="2"></circle><ellipse cx="120" cy="120" rx="92" ry="34" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="2.4" transform="rotate(-24 120 120)"></ellipse><circle cx="206" cy="96" r="7" fill="var(--accent,#0E6F62)"></circle><circle cx="120" cy="120" r="15" fill="var(--accent,#0E6F62)"></circle></svg>
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.16em; color:#7E84A0; margin-bottom:8px;">PRIMARY · UNCHANGED</div>
+              <div style="font-family:'Bodoni Moda',serif; font-size:22px; font-weight:600; color:#F3EEE3; margin-bottom:8px;">Geometric seal</div>
+              <p style="font-size:13.5px; line-height:1.55; color:#B7BCD0; margin:0 0 12px;">The everyday mark. UI, avatars, app icons, signatures. Survives to 16px. This is what carries the identity at volume.</p>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; color:var(--accent,#0E6F62);">USE ≥ 16px · digital-first</div>
+            </div>
+          </div>
+          <!-- ceremonial qur'anic -->
+          <div style="background:#070B1E; border:2px solid var(--accent,#0E6F62); border-radius:4px; padding:34px; display:flex; gap:28px; align-items:center; position:relative;">
+            <div style="position:absolute; top:-12px; left:34px; background:var(--accent,#0E6F62); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.16em; padding:5px 11px; border-radius:2px;">CEREMONIAL</div>
+            <svg viewBox="0 0 280 280" width="116" style="flex:0 0 auto;" aria-hidden="true"><defs><path id="qringMini" d="M140,262 a122,122 0 1,0 -0.01,0" fill="none"></path></defs><circle cx="140" cy="140" r="134" fill="none" stroke="#F3EEE3" stroke-width="2"></circle><text dir="rtl" font-family="'Amiri',serif" font-size="17" font-weight="700" fill="#EDE7DA"><textPath href="#qringMini" startOffset="50%" text-anchor="middle">سَبْعَ سَمَاوَاتٍ طِبَاقًا</textPath></text><g fill="none" stroke="#F3EEE3" stroke-width="1.4"><circle cx="140" cy="140" r="58"></circle><circle cx="140" cy="140" r="76" opacity=".5"></circle></g><ellipse cx="140" cy="140" rx="92" ry="34" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="2.2" transform="rotate(-24 140 140)"></ellipse><circle cx="120" cy="120" r="14" fill="var(--accent,#0E6F62)"></circle></svg>
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.16em; color:var(--accent,#0E6F62); margin-bottom:8px;">CEREMONIAL · QUR'ANIC</div>
+              <div style="font-family:'Bodoni Moda',serif; font-size:22px; font-weight:600; color:#F3EEE3; margin-bottom:8px;">Inscription seal</div>
+              <p style="font-size:13.5px; line-height:1.55; color:#B7BCD0; margin:0 0 12px;">Book covers, title pages, certificates, the foil spine, the website crest. Where the Qur'anic relationship should be loud and unmissable.</p>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; color:var(--accent,#0E6F62);">USE ≥ 28mm · print &amp; hero</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:18px; background:#1A0E12; border:1px solid rgba(214,120,120,.3); border-radius:4px; padding:18px 24px; display:flex; align-items:center; gap:14px;">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.18em; color:#D67878; flex:0 0 auto;">NEVER</span>
+          <span style="font-size:13.5px; color:#D7D2C6; line-height:1.55;">Shrink the inscription seal below legibility, set the verse as a favicon, or distort the Arabic to fit. When the words can't be read with respect, fall back to the primary geometric mark.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 03 · MONOGRAM ROUTES ================= -->
+  <section style="background:#F3EEE3; padding:104px 64px; border-bottom:1px solid rgba(12,19,48,.1);">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">03 — Monogram Routes</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.04; margin:0 0 16px;">Three ways into the centre</h2>
+      <p style="max-width:60ch; font-size:17px; line-height:1.6; color:#33384A; margin:0 0 56px;">All three are constructed on the same concentric grid, so they interchange without breaking the system. One is recommended as the primary; the other two are sanctioned variants for specific registers.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; align-items:stretch;">
+        <!-- Route A -->
+        <div style="background:#fff; border:1px solid rgba(12,19,48,.1); border-radius:4px; padding:34px; display:flex; flex-direction:column;">
+          <div style="aspect-ratio:1.2; background:#0B1026; border-radius:3px; display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
+            <svg viewBox="0 0 240 240" width="62%" aria-label="Route A orbital JJ">
+              <circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="1" opacity=".35"></circle>
+              <path d="M104 66 L104 150 A26 26 0 0 1 52 150" fill="none" stroke="#F3EEE3" stroke-width="7" stroke-linecap="round"></path>
+              <path d="M150 66 L150 150 A26 26 0 0 1 98 150" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="7" stroke-linecap="round" opacity=".95"></path>
+              <circle cx="120" cy="120" r="6" fill="var(--accent,#0E6F62)"></circle>
+            </svg>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em; color:#7E8294; margin-bottom:8px;">ROUTE A</div>
+          <div style="font-family:'Bodoni Moda',serif; font-size:23px; font-weight:600; margin-bottom:8px;">Orbital JJ</div>
+          <p style="font-size:14px; line-height:1.55; color:#4A4F60; margin:0;">Two initials abstracted into nested orbital strokes. Warmest and most personal — strong for social and signature contexts.</p>
+        </div>
+        <!-- Route B -->
+        <div style="background:#fff; border:1px solid rgba(12,19,48,.1); border-radius:4px; padding:34px; display:flex; flex-direction:column;">
+          <div style="aspect-ratio:1.2; background:#0B1026; border-radius:3px; display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
+            <svg viewBox="0 0 240 240" width="62%" aria-label="Route B Arabic centre">
+              <circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="1" opacity=".35"></circle>
+              <circle cx="120" cy="120" r="72" fill="none" stroke="#F3EEE3" stroke-width="1.3"></circle>
+              <text x="120" y="150" text-anchor="middle" font-family="'Amiri',serif" font-size="118" fill="var(--accent,#0E6F62)">ج</text>
+            </svg>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em; color:#7E8294; margin-bottom:8px;">ROUTE B</div>
+          <div style="font-family:'Bodoni Moda',serif; font-size:23px; font-weight:600; margin-bottom:8px;">Arabic-letter centre</div>
+          <p style="font-size:14px; line-height:1.55; color:#4A4F60; margin:0;">The letter <span dir="rtl" lang="ar" style="font-family:'Amiri',serif;">ج</span> (jīm) seated in the rings. Reserved as the ceremonial / Qur'anic-anchoring variant.</p>
+        </div>
+        <!-- Route C (recommended) -->
+        <div style="background:#0B1026; border:2px solid var(--accent,#0E6F62); border-radius:4px; padding:34px; display:flex; flex-direction:column; position:relative;">
+          <div style="position:absolute; top:-12px; left:34px; background:var(--accent,#0E6F62); color:#fff; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.16em; padding:5px 11px; border-radius:2px;">RECOMMENDED</div>
+          <div style="aspect-ratio:1.2; background:#070B1E; border-radius:3px; display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
+            <svg viewBox="0 0 240 240" width="62%" aria-label="Route C geometric seal">
+              <circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="2"></circle>
+              <circle cx="120" cy="120" r="56" fill="none" stroke="#F3EEE3" stroke-width="1.2"></circle>
+              <g stroke="#F3EEE3" stroke-width="1.3"><line x1="120" y1="18" x2="120" y2="30"></line><g transform="rotate(51.4 120 120)"><line x1="120" y1="18" x2="120" y2="30"></line></g><g transform="rotate(102.8 120 120)"><line x1="120" y1="18" x2="120" y2="30"></line></g><g transform="rotate(154.2 120 120)"><line x1="120" y1="18" x2="120" y2="30"></line></g><g transform="rotate(205.7 120 120)"><line x1="120" y1="18" x2="120" y2="30"></line></g><g transform="rotate(257.1 120 120)"><line x1="120" y1="18" x2="120" y2="30"></line></g><g transform="rotate(308.5 120 120)"><line x1="120" y1="18" x2="120" y2="30"></line></g></g>
+              <ellipse cx="120" cy="120" rx="88" ry="32" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1.4" transform="rotate(-24 120 120)"></ellipse>
+              <circle cx="200" cy="98" r="5.5" fill="var(--accent,#0E6F62)"></circle>
+              <circle cx="120" cy="120" r="13" fill="var(--accent,#0E6F62)"></circle>
+            </svg>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em; color:var(--accent,#0E6F62); margin-bottom:8px;">ROUTE C</div>
+          <div style="font-family:'Bodoni Moda',serif; font-size:23px; font-weight:600; margin-bottom:8px; color:#F3EEE3;">Pure geometric seal</div>
+          <p style="font-size:14px; line-height:1.55; color:#B7BCD0; margin:0;">No letterform — the cosmology itself. The most universal, least insular, and the only route that survives a 16px avatar intact.</p>
+        </div>
+      </div>
+
+      <!-- 16px proof -->
+      <div style="margin-top:36px; display:flex; align-items:center; gap:28px; flex-wrap:wrap; background:#0B1026; border-radius:4px; padding:26px 34px;">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; color:#7E84A0;">AVATAR SCALE TEST · ROUTE C</span>
+        <div style="display:flex; align-items:flex-end; gap:22px;">
+          <div style="display:flex; flex-direction:column; align-items:center; gap:7px;"><svg viewBox="0 0 240 240" width="64"><circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="6"></circle><circle cx="120" cy="120" r="56" fill="none" stroke="#F3EEE3" stroke-width="4"></circle><ellipse cx="120" cy="120" rx="88" ry="32" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="5" transform="rotate(-24 120 120)"></ellipse><circle cx="120" cy="120" r="20" fill="var(--accent,#0E6F62)"></circle></svg><span style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#7E84A0;">64</span></div>
+          <div style="display:flex; flex-direction:column; align-items:center; gap:7px;"><svg viewBox="0 0 240 240" width="32"><circle cx="120" cy="120" r="100" fill="none" stroke="#F3EEE3" stroke-width="11"></circle><ellipse cx="120" cy="120" rx="86" ry="30" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="9" transform="rotate(-24 120 120)"></ellipse><circle cx="120" cy="120" r="30" fill="var(--accent,#0E6F62)"></circle></svg><span style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#7E84A0;">32</span></div>
+          <div style="display:flex; flex-direction:column; align-items:center; gap:7px;"><svg viewBox="0 0 240 240" width="16"><circle cx="120" cy="120" r="96" fill="none" stroke="#F3EEE3" stroke-width="18"></circle><circle cx="120" cy="120" r="44" fill="var(--accent,#0E6F62)"></circle></svg><span style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#7E84A0;">16</span></div>
+        </div>
+        <span style="font-size:13.5px; color:#B7BCD0; max-width:34ch;">At 16px the orbit collapses; ring + vital centre alone still reads as the mark.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 04 · TRILINGUAL LOCKUPS ================= -->
+  <section style="background:#0B1026; color:#F3EEE3; padding:104px 64px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">04 — Logo Lockups · Trilingual</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.04; margin:0 0 16px; color:#F3EEE3;">One name, three scripts, one optical weight</h2>
+      <p style="max-width:62ch; font-size:17px; line-height:1.6; color:#B7BCD0; margin:0 0 56px;">The lockup is engineered so Latin, Nastaliq and Naskh share a common cap/centre band. Nastaliq sits on a raised baseline to balance its descenders; Naskh is tracked to match the Latin's optical size, not its point size.</p>
+
+      <!-- horizontal light + dark -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-bottom:22px;">
+        <div style="background:#F3EEE3; border-radius:4px; padding:40px; display:flex; align-items:center; gap:24px;">
+          <svg viewBox="0 0 240 240" width="84" style="flex:0 0 auto;" aria-hidden="true"><circle cx="120" cy="120" r="108" fill="none" stroke="#0C1330" stroke-width="3.5"></circle><circle cx="120" cy="120" r="56" fill="none" stroke="#0C1330" stroke-width="2.2"></circle><ellipse cx="120" cy="120" rx="90" ry="33" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="2.6" transform="rotate(-24 120 120)"></ellipse><circle cx="202" cy="98" r="7" fill="var(--accent,#0E6F62)"></circle><circle cx="120" cy="120" r="15" fill="var(--accent,#0E6F62)"></circle></svg>
+          <div><div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:30px; line-height:1; color:#0C1330;">Dr. Javed Jamil</div><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:#0E6F62; margin-top:8px;">Applied Islamics</div></div>
+        </div>
+        <div style="background:#070B1E; border-radius:4px; padding:40px; display:flex; align-items:center; gap:24px;">
+          <svg viewBox="0 0 240 240" width="84" style="flex:0 0 auto;" aria-hidden="true"><circle cx="120" cy="120" r="108" fill="none" stroke="#F3EEE3" stroke-width="3.5"></circle><circle cx="120" cy="120" r="56" fill="none" stroke="#F3EEE3" stroke-width="2.2"></circle><ellipse cx="120" cy="120" rx="90" ry="33" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="2.6" transform="rotate(-24 120 120)"></ellipse><circle cx="202" cy="98" r="7" fill="var(--accent,#0E6F62)"></circle><circle cx="120" cy="120" r="15" fill="var(--accent,#0E6F62)"></circle></svg>
+          <div><div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:30px; line-height:1; color:#F3EEE3;">Dr. Javed Jamil</div><div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-top:8px;">Applied Islamics</div></div>
+        </div>
+      </div>
+
+      <!-- stacked + trilingual + foil -->
+      <div style="display:grid; grid-template-columns:1fr 1.25fr 1fr; gap:22px;">
+        <!-- stacked -->
+        <div style="background:#F3EEE3; border-radius:4px; padding:40px; display:flex; flex-direction:column; align-items:center; text-align:center; justify-content:center; gap:18px;">
+          <svg viewBox="0 0 240 240" width="78" aria-hidden="true"><circle cx="120" cy="120" r="108" fill="none" stroke="#0C1330" stroke-width="3.5"></circle><circle cx="120" cy="120" r="56" fill="none" stroke="#0C1330" stroke-width="2.2"></circle><ellipse cx="120" cy="120" rx="90" ry="33" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="2.6" transform="rotate(-24 120 120)"></ellipse><circle cx="202" cy="98" r="7" fill="var(--accent,#0E6F62)"></circle><circle cx="120" cy="120" r="15" fill="var(--accent,#0E6F62)"></circle></svg>
+          <div><div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:25px; line-height:1; color:#0C1330;">Dr. Javed Jamil</div><div style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.22em; text-transform:uppercase; color:#0E6F62; margin-top:9px;">Applied Islamics</div></div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.16em; color:#9A8F78;">STACKED</div>
+        </div>
+        <!-- trilingual stack -->
+        <div style="background:#070B1E; border-radius:4px; padding:40px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;">
+          <svg viewBox="0 0 240 240" width="56" style="margin-bottom:14px;" aria-hidden="true"><circle cx="120" cy="120" r="108" fill="none" stroke="#F3EEE3" stroke-width="4"></circle><ellipse cx="120" cy="120" rx="90" ry="33" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="3" transform="rotate(-24 120 120)"></ellipse><circle cx="120" cy="120" r="16" fill="var(--accent,#0E6F62)"></circle></svg>
+          <div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:27px; line-height:1; color:#F3EEE3;">Dr. Javed Jamil</div>
+          <div dir="rtl" lang="ur" style="font-family:'Noto Nastaliq Urdu',serif; font-size:21px; line-height:2; color:#EDE7DA;">ڈاکٹر جاوید جمیل</div>
+          <div dir="rtl" lang="ar" style="font-family:'Amiri',serif; font-size:22px; line-height:1.3; color:#EDE7DA;">د. جاويد جميل</div>
+          <div style="width:46px; height:1px; background:var(--accent,#0E6F62); margin:12px 0 8px;"></div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.16em; color:#7E84A0;">TRILINGUAL · PRIMARY</div>
+        </div>
+        <!-- foil -->
+        <div style="background:#0B1026; border-radius:4px; padding:40px; display:flex; flex-direction:column; align-items:center; text-align:center; justify-content:center; gap:18px;">
+          <svg viewBox="0 0 240 240" width="78" aria-hidden="true"><defs><linearGradient id="foilB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4D88A"></stop><stop offset=".5" stop-color="#BE8A2C"></stop><stop offset="1" stop-color="#7A571A"></stop></linearGradient></defs><circle cx="120" cy="120" r="108" fill="none" stroke="url(#foilB)" stroke-width="3.5"></circle><circle cx="120" cy="120" r="56" fill="none" stroke="url(#foilB)" stroke-width="2.2"></circle><ellipse cx="120" cy="120" rx="90" ry="33" fill="none" stroke="url(#foilB)" stroke-width="2.6" transform="rotate(-24 120 120)"></ellipse><circle cx="202" cy="98" r="7" fill="url(#foilB)"></circle><circle cx="120" cy="120" r="15" fill="url(#foilB)"></circle></svg>
+          <div><div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:25px; line-height:1; background:linear-gradient(135deg,#F4D88A,#BE8A2C 55%,#7A571A); -webkit-background-clip:text; background-clip:text; color:transparent;">Dr. Javed Jamil</div><div style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.22em; text-transform:uppercase; color:#C9A248; margin-top:9px;">Applied Islamics</div></div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.16em; color:#8C7A4E;">FOIL · BOOK SPINE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 05 · CLEAR SPACE & MIN SIZES ================= -->
+  <section style="background:#F3EEE3; padding:104px 64px; border-bottom:1px solid rgba(12,19,48,.1);">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">05 — Clear Space &amp; Minimum Sizes</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.04; margin:0 0 56px;">Give the order room to breathe</h2>
+      <div style="display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center;">
+        <div style="background:#fff; border:1px solid rgba(12,19,48,.1); border-radius:4px; padding:48px; display:flex; align-items:center; justify-content:center;">
+          <div style="position:relative; padding:54px;">
+            <div style="position:absolute; inset:0; border:1px dashed rgba(14,111,98,.55);"></div>
+            <div style="position:absolute; left:0; top:50%; transform:translateY(-50%); width:54px; height:1px; background:#0E6F62;"></div>
+            <div style="position:absolute; left:0; top:50%; transform:translateY(-50%); font-family:'IBM Plex Mono',monospace; font-size:11px; color:#0E6F62; background:#fff; padding:2px 5px; margin-left:8px;">x</div>
+            <svg viewBox="0 0 240 240" width="150" aria-hidden="true"><circle cx="120" cy="120" r="108" fill="none" stroke="#0C1330" stroke-width="3.5"></circle><circle cx="120" cy="120" r="56" fill="none" stroke="#0C1330" stroke-width="2.2"></circle><ellipse cx="120" cy="120" rx="90" ry="33" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="2.6" transform="rotate(-24 120 120)"></ellipse><circle cx="202" cy="98" r="7" fill="var(--accent,#0E6F62)"></circle><circle cx="120" cy="120" r="15" fill="var(--accent,#0E6F62)"></circle></svg>
+          </div>
+        </div>
+        <div style="display:grid; gap:26px;">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; color:var(--accent,#0E6F62); margin-bottom:8px;">CLEAR SPACE</div>
+            <p style="font-size:15.5px; line-height:1.6; color:#33384A; margin:0;">Minimum margin on all sides equals <strong>x</strong> — the radius of the vital centre disc. Nothing, no type or edge, enters this field.</p>
+          </div>
+          <div style="height:1px; background:rgba(12,19,48,.12);"></div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; color:var(--accent,#0E6F62); margin-bottom:14px;">MINIMUM SIZES</div>
+            <div style="display:grid; gap:12px; font-size:14.5px;">
+              <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(12,19,48,.1); padding-bottom:11px;"><span style="color:#4A4F60;">Seal · digital</span><span style="font-family:'IBM Plex Mono',monospace;">16&nbsp;px</span></div>
+              <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(12,19,48,.1); padding-bottom:11px;"><span style="color:#4A4F60;">Seal · print</span><span style="font-family:'IBM Plex Mono',monospace;">9&nbsp;mm</span></div>
+              <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(12,19,48,.1); padding-bottom:11px;"><span style="color:#4A4F60;">Horizontal lockup</span><span style="font-family:'IBM Plex Mono',monospace;">32&nbsp;mm</span></div>
+              <div style="display:flex; justify-content:space-between;"><span style="color:#4A4F60;">Trilingual lockup</span><span style="font-family:'IBM Plex Mono',monospace;">48&nbsp;mm</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 06 · COLOR ================= -->
+  <section style="background:#0B1026; color:#F3EEE3; padding:104px 64px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">06 — Colour</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.04; margin:0 0 16px; color:#F3EEE3;">A spine of ink and parchment, one vital pulse</h2>
+      <p style="max-width:60ch; font-size:17px; line-height:1.6; color:#B7BCD0; margin:0 0 56px;">Cosmic ink and warm parchment carry the scholarship and the book tradition. A single living accent does the work the green-and-mint cliché cannot.</p>
+
+      <!-- spine swatches -->
+      <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-bottom:18px;">
+        <div style="border-radius:4px; overflow:hidden; border:1px solid rgba(243,238,234,.12);"><div style="background:#0B1026; height:120px;"></div><div style="padding:14px; background:#070B1E;"><div style="font-size:13px; font-weight:600;">Cosmic Ink</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E84A0; margin-top:3px;">#0B1026</div><div style="font-size:11px; color:#9AA0BC; margin-top:6px;">Primary · grounds</div></div></div>
+        <div style="border-radius:4px; overflow:hidden; border:1px solid rgba(243,238,234,.12);"><div style="background:#23232A; height:120px;"></div><div style="padding:14px; background:#070B1E;"><div style="font-size:13px; font-weight:600;">Graphite</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E84A0; margin-top:3px;">#23232A</div><div style="font-size:11px; color:#9AA0BC; margin-top:6px;">Body text</div></div></div>
+        <div style="border-radius:4px; overflow:hidden; border:1px solid rgba(243,238,234,.12);"><div style="background:#E7DFCE; height:120px;"></div><div style="padding:14px; background:#070B1E;"><div style="font-size:13px; font-weight:600;">Bone</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E84A0; margin-top:3px;">#E7DFCE</div><div style="font-size:11px; color:#9AA0BC; margin-top:6px;">Panels</div></div></div>
+        <div style="border-radius:4px; overflow:hidden; border:1px solid rgba(243,238,234,.12);"><div style="background:#F3EEE3; height:120px;"></div><div style="padding:14px; background:#070B1E;"><div style="font-size:13px; font-weight:600;">Parchment</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E84A0; margin-top:3px;">#F3EEE3</div><div style="font-size:11px; color:#9AA0BC; margin-top:6px;">Reading ground</div></div></div>
+        <div style="border-radius:4px; overflow:hidden; border:2px solid var(--accent,#0E6F62);"><div style="background:var(--accent,#0E6F62); height:120px;"></div><div style="padding:14px; background:#070B1E;"><div style="font-size:13px; font-weight:600; color:var(--accent,#0E6F62);">Vital Accent</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E84A0; margin-top:3px;">live token</div><div style="font-size:11px; color:#9AA0BC; margin-top:6px;">Life · health · pulse</div></div></div>
+      </div>
+
+      <!-- accent head to head -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:42px;">
+        <div style="background:#070B1E; border:2px solid #0E6F62; border-radius:4px; padding:34px; position:relative;">
+          <div style="position:absolute; top:-12px; left:34px; background:#0E6F62; color:#fff; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.16em; padding:5px 11px; border-radius:2px;">RECOMMENDED</div>
+          <div style="display:flex; align-items:center; gap:20px; margin-bottom:18px;">
+            <div style="width:64px; height:64px; border-radius:50%; background:#0E6F62;"></div>
+            <div><div style="font-family:'Bodoni Moda',serif; font-size:24px; font-weight:600;">Vital Petrol</div><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7E84A0; margin-top:3px;">#0E6F62 · oklch(.52 .07 184)</div></div>
+          </div>
+          <p style="font-size:14.5px; line-height:1.6; color:#B7BCD0; margin:0;">A deep teal-petrol that reads <em>living</em>, never clinical. Blue-leaning enough to sidestep the Islam-and-medicine green trap, dark enough to hold gravitas beside the ink.</p>
+        </div>
+        <div style="background:#070B1E; border:1px solid rgba(243,238,234,.12); border-radius:4px; padding:34px;">
+          <div style="display:flex; align-items:center; gap:20px; margin-bottom:18px;">
+            <div style="width:64px; height:64px; border-radius:50%; background:#BE8A2C;"></div>
+            <div><div style="font-family:'Bodoni Moda',serif; font-size:24px; font-weight:600;">Manuscript Gold</div><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#7E84A0; margin-top:3px;">#BE8A2C · oklch(.66 .11 78)</div></div>
+          </div>
+          <p style="font-size:14.5px; line-height:1.6; color:#B7BCD0; margin:0;">A warm amber tied to the book tradition — the equally strong alternative. Reserved here as the <strong>foil / ceremonial</strong> tone. Switch the whole system to it in Tweaks.</p>
+        </div>
+      </div>
+
+      <!-- guardrails -->
+      <div style="margin-top:42px; background:#1A0E12; border:1px solid rgba(214,120,120,.3); border-radius:4px; padding:30px 34px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; color:#D67878; margin-bottom:18px;">HARD GUARDRAILS — NEVER</div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+          <div style="display:flex; align-items:center; gap:14px;"><div style="width:40px; height:40px; border-radius:6px; background:#1FA84A; position:relative; flex:0 0 auto;"><div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:26px; line-height:1;">⁄</div></div><span style="font-size:13.5px; color:#D7D2C6;">Islamic-flag kelly green</span></div>
+          <div style="display:flex; align-items:center; gap:14px;"><div style="width:40px; height:40px; border-radius:6px; background:#7FE5C3; position:relative; flex:0 0 auto;"><div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#1A0E12; font-size:26px; line-height:1;">⁄</div></div><span style="font-size:13.5px; color:#D7D2C6;">Pharma / medical mint</span></div>
+          <div style="display:flex; align-items:center; gap:14px;"><div style="width:40px; height:40px; border-radius:6px; background:linear-gradient(135deg,#3AA0FF,#7B61FF); position:relative; flex:0 0 auto;"><div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; font-size:26px; line-height:1;">⁄</div></div><span style="font-size:13.5px; color:#D7D2C6;">Tech-gradient blue</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 07 · TYPOGRAPHY ================= -->
+  <section style="background:#F3EEE3; padding:104px 64px; border-bottom:1px solid rgba(12,19,48,.1);">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">07 — Typography · Trilingual</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.04; margin:0 0 16px;">Civilisational depth meets empirical rigour</h2>
+      <p style="max-width:62ch; font-size:17px; line-height:1.6; color:#33384A; margin:0 0 56px;">A high-contrast serif with a sharp edge for gravitas; a precise grotesque for the clinical, data-bearing half. The pairing itself is the argument.</p>
+
+      <!-- Bodoni display -->
+      <div style="border-top:1px solid rgba(12,19,48,.14); padding:34px 0; display:grid; grid-template-columns:200px 1fr; gap:32px; align-items:baseline;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em; color:var(--accent,#0E6F62);">DISPLAY</div>
+          <div style="font-family:'IBM Plex Sans'; font-size:15px; font-weight:600; margin-top:8px;">Bodoni Moda</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E8294; margin-top:4px;">Regular · Semibold · Bold</div>
+        </div>
+        <div>
+          <div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(34px,6vw,68px); line-height:1.04;">The universe is a well-organised, state-like system.</div>
+          <div style="font-family:'Bodoni Moda',serif; font-size:18px; color:#7E8294; margin-top:14px; letter-spacing:.04em;">AÁBCDEÉFG abcdefghij 0123456789 &amp; ? — high contrast, sharp terminals</div>
+        </div>
+      </div>
+
+      <!-- Plex Sans text -->
+      <div style="border-top:1px solid rgba(12,19,48,.14); padding:34px 0; display:grid; grid-template-columns:200px 1fr; gap:32px; align-items:baseline;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em; color:var(--accent,#0E6F62);">TEXT · UI · DATA</div>
+          <div style="font-family:'IBM Plex Sans'; font-size:15px; font-weight:600; margin-top:8px;">IBM Plex Sans</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E8294; margin-top:4px;">+ IBM Plex Mono for data</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Sans'; font-size:21px; line-height:1.55; max-width:54ch; color:#23232A;">Health belongs in the driver's seat — subordinating politics and economics. The optimisation target of a civilisation should be health and life, not profit.</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:14px; color:#0E6F62; margin-top:16px; letter-spacing:.02em;">80,000,000 lives · $6.5T spend · 67:3–4 · n = 1,000</div>
+        </div>
+      </div>
+
+      <!-- Urdu -->
+      <div style="border-top:1px solid rgba(12,19,48,.14); padding:34px 0; display:grid; grid-template-columns:200px 1fr; gap:32px; align-items:center;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em; color:var(--accent,#0E6F62);">URDU · NASTALIQ</div>
+          <div style="font-family:'IBM Plex Sans'; font-size:15px; font-weight:600; margin-top:8px;">Noto Nastaliq Urdu</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E8294; margin-top:4px;">Literary · S-Asian register</div>
+        </div>
+        <div dir="rtl" lang="ur" style="font-family:'Noto Nastaliq Urdu',serif; font-size:30px; line-height:2.4; color:#23232A;">کائنات ایک منظم، ریاست جیسا نظام ہے</div>
+      </div>
+
+      <!-- Arabic -->
+      <div style="border-top:1px solid rgba(12,19,48,.14); border-bottom:1px solid rgba(12,19,48,.14); padding:34px 0; display:grid; grid-template-columns:200px 1fr; gap:32px; align-items:center;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em; color:var(--accent,#0E6F62);">ARABIC · NASKH</div>
+          <div style="font-family:'IBM Plex Sans'; font-size:15px; font-weight:600; margin-top:8px;">Amiri</div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E8294; margin-top:4px;">Qur'anic anchoring</div>
+        </div>
+        <div>
+          <div dir="rtl" lang="ar" style="font-family:'Amiri',serif; font-size:34px; line-height:1.7; color:#23232A;">الَّذِي خَلَقَ سَبْعَ سَمَاوَاتٍ طِبَاقًا</div>
+          <div style="font-family:'IBM Plex Sans'; font-style:italic; font-size:14px; color:#7E8294; margin-top:8px;">“Who created seven heavens in layers.” — Al-Mulk 67:3</div>
+        </div>
+      </div>
+
+      <!-- the hard part -->
+      <div style="margin-top:40px; background:#0B1026; border-radius:4px; padding:34px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:28px;">
+        <div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.16em; color:var(--accent,#0E6F62); margin-bottom:10px;">OPTICAL WEIGHT</div><p style="font-size:13.5px; line-height:1.55; color:#B7BCD0; margin:0;">Match the <em>visual</em> grey of each script, not its point size. Nastaliq runs lighter — set it ~1.15× the Latin cap height.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.16em; color:var(--accent,#0E6F62); margin-bottom:10px;">BASELINE / CENTRE</div><p style="font-size:13.5px; line-height:1.55; color:#B7BCD0; margin:0;">Align the three scripts on a shared centre band; raise Nastaliq's baseline to absorb its deep descenders cleanly.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.16em; color:var(--accent,#0E6F62); margin-bottom:10px;">RTL HANDLING</div><p style="font-size:13.5px; line-height:1.55; color:#B7BCD0; margin:0;">Every Urdu/Arabic run carries <span style="font-family:'IBM Plex Mono',monospace; color:#fff;">dir="rtl"</span> + <span style="font-family:'IBM Plex Mono',monospace; color:#fff;">lang</span>; punctuation and numerals mirror with the flow.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 08 · MOTIF & PATTERN ================= -->
+  <section style="background:#0B1026; color:#F3EEE3; padding:104px 64px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">08 — Motif &amp; Pattern System</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.04; margin:0 0 16px; color:#F3EEE3;">Cosmic diagram, not wallpaper</h2>
+      <p style="max-width:62ch; font-size:17px; line-height:1.6; color:#B7BCD0; margin:0 0 48px;">Concentric tiers and orbital arcs struck from a single off-frame centre, with an abstracted life-rhythm line woven through. It reads as scientific diagrammatics and scales from a full card to a hairline divider.</p>
+
+      <!-- big pattern panel -->
+      <div style="border-radius:4px; overflow:hidden; border:1px solid rgba(243,238,234,.1); margin-bottom:22px;">
+        <svg viewBox="0 0 1200 440" width="100%" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Cosmic pattern field">
+          <rect width="1200" height="440" fill="#070B1E"></rect>
+          <g fill="none" stroke="#F3EEE3" stroke-width="1" opacity=".16">
+            <circle cx="120" cy="500" r="240"></circle><circle cx="120" cy="500" r="360"></circle><circle cx="120" cy="500" r="480"></circle><circle cx="120" cy="500" r="600"></circle><circle cx="120" cy="500" r="720"></circle><circle cx="120" cy="500" r="860"></circle><circle cx="120" cy="500" r="1010"></circle><circle cx="120" cy="500" r="1170"></circle>
+          </g>
+          <g stroke="#F3EEE3" stroke-width="1" opacity=".12">
+            <line x1="120" y1="500" x2="1180" y2="40"></line><line x1="120" y1="500" x2="980" y2="-40"></line><line x1="120" y1="500" x2="600" y2="-80"></line>
+          </g>
+          <ellipse cx="760" cy="210" rx="240" ry="80" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1.4" opacity=".7" transform="rotate(-16 760 210)"></ellipse>
+          <circle cx="975" cy="150" r="6" fill="var(--accent,#0E6F62)"></circle>
+          <path d="M0 250 Q 100 200 200 250 T 400 250 T 600 250 T 800 250 T 1000 250 T 1200 250" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1.6" opacity=".85"></path>
+          <circle cx="760" cy="210" r="9" fill="var(--accent,#0E6F62)"></circle>
+        </svg>
+      </div>
+
+      <!-- scale specimens -->
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
+        <div style="background:#070B1E; border:1px solid rgba(243,238,234,.1); border-radius:4px; overflow:hidden;">
+          <div style="height:120px; display:flex; align-items:center; justify-content:center;">
+            <svg viewBox="0 0 360 120" width="100%"><line x1="0" y1="60" x2="150" y2="60" stroke="#F3EEE3" stroke-width="1" opacity=".4"></line><line x1="210" y1="60" x2="360" y2="60" stroke="#F3EEE3" stroke-width="1" opacity=".4"></line><path d="M150 60 Q 165 44 180 60 T 210 60" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1.6"></path><circle cx="180" cy="60" r="4" fill="var(--accent,#0E6F62)"></circle></svg>
+          </div>
+          <div style="padding:16px; border-top:1px solid rgba(243,238,234,.1);"><div style="font-size:13px; font-weight:600;">Section divider</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E84A0; margin-top:3px;">Hairline + pulse node</div></div>
+        </div>
+        <div style="background:#070B1E; border:1px solid rgba(243,238,234,.1); border-radius:4px; overflow:hidden;">
+          <div style="height:120px; padding:20px;">
+            <div style="position:relative; width:100%; height:100%; border:1px solid rgba(243,238,234,.25);">
+              <div style="position:absolute; top:-1px; left:-1px; width:14px; height:14px; border-top:2px solid var(--accent,#0E6F62); border-left:2px solid var(--accent,#0E6F62);"></div>
+              <div style="position:absolute; bottom:-1px; right:-1px; width:14px; height:14px; border-bottom:2px solid var(--accent,#0E6F62); border-right:2px solid var(--accent,#0E6F62);"></div>
+              <svg viewBox="0 0 240 70" width="100%" style="position:absolute; bottom:8px; left:0;"><g fill="none" stroke="#F3EEE3" stroke-width="1" opacity=".2"><circle cx="0" cy="90" r="60"></circle><circle cx="0" cy="90" r="110"></circle></g></svg>
+            </div>
+          </div>
+          <div style="padding:16px; border-top:1px solid rgba(243,238,234,.1);"><div style="font-size:13px; font-weight:600;">Report data-frame</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E84A0; margin-top:3px;">Corner ticks + arc base</div></div>
+        </div>
+        <div style="background:#070B1E; border:1px solid rgba(243,238,234,.1); border-radius:4px; overflow:hidden;">
+          <div style="height:120px; display:flex;">
+            <div style="width:34px; background:var(--accent,#0E6F62); position:relative; overflow:hidden;"><svg viewBox="0 0 34 120" width="34" height="120" style="position:absolute; inset:0;"><g fill="none" stroke="#070B1E" stroke-width="1" opacity=".4"><circle cx="0" cy="0" r="20"></circle><circle cx="0" cy="0" r="40"></circle><circle cx="0" cy="120" r="20"></circle><circle cx="0" cy="120" r="40"></circle></g></svg></div>
+            <div style="flex:1; display:flex; align-items:flex-end; padding:14px;"><span style="font-family:'Bodoni Moda',serif; font-size:15px; color:#F3EEE3;">Health</span></div>
+          </div>
+          <div style="padding:16px; border-top:1px solid rgba(243,238,234,.1);"><div style="font-size:13px; font-weight:600;">Book banding</div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E84A0; margin-top:3px;">Domain spine colour</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 09 · SOCIAL ================= -->
+  <section style="background:#F3EEE3; padding:104px 64px; border-bottom:1px solid rgba(12,19,48,.1);">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">09 — Social System</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.04; margin:0 0 56px;">Built to travel — and to be quoted</h2>
+
+      <!-- avatar + profile row -->
+      <div style="display:grid; grid-template-columns:auto 1fr; gap:40px; align-items:center; margin-bottom:40px;">
+        <div style="display:flex; gap:24px; align-items:center;">
+          <div style="width:108px; height:108px; border-radius:50%; background:#0B1026; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">
+            <svg viewBox="0 0 240 240" width="72"><circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="5"></circle><ellipse cx="120" cy="120" rx="88" ry="32" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="4.5" transform="rotate(-24 120 120)"></ellipse><circle cx="120" cy="120" r="18" fill="var(--accent,#0E6F62)"></circle></svg>
+          </div>
+          <div style="width:64px; height:64px; border-radius:50%; background:#F3EEE3; border:1px solid rgba(12,19,48,.15); display:flex; align-items:center; justify-content:center; flex:0 0 auto;">
+            <svg viewBox="0 0 240 240" width="44"><circle cx="120" cy="120" r="104" fill="none" stroke="#0C1330" stroke-width="7"></circle><ellipse cx="120" cy="120" rx="88" ry="32" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="6" transform="rotate(-24 120 120)"></ellipse><circle cx="120" cy="120" r="22" fill="var(--accent,#0E6F62)"></circle></svg>
+          </div>
+        </div>
+        <div style="background:#fff; border:1px solid rgba(12,19,48,.1); border-radius:8px; padding:18px 22px; display:flex; align-items:center; gap:16px;">
+          <div style="width:52px; height:52px; border-radius:50%; background:#0B1026; display:flex; align-items:center; justify-content:center; flex:0 0 auto;"><svg viewBox="0 0 240 240" width="34"><circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="8"></circle><ellipse cx="120" cy="120" rx="88" ry="32" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="7" transform="rotate(-24 120 120)"></ellipse><circle cx="120" cy="120" r="24" fill="var(--accent,#0E6F62)"></circle></svg></div>
+          <div><div style="display:flex; align-items:center; gap:6px;"><span style="font-weight:600; font-size:15px; color:#0C1330;">Dr. Javed Jamil</span><span style="color:var(--accent,#0E6F62);">✦</span></div><div style="font-size:13px; color:#7E8294;">@JavedJamil · Doctor of the World</div></div>
+        </div>
+      </div>
+
+      <!-- X header 3:1 -->
+      <div style="border-radius:8px; overflow:hidden; margin-bottom:22px; border:1px solid rgba(12,19,48,.1);">
+        <div style="position:relative; aspect-ratio:3/1; background:#0B1026; overflow:hidden;">
+          <svg viewBox="0 0 1500 500" preserveAspectRatio="xMidYMid slice" style="position:absolute; inset:0; width:100%; height:100%;"><rect width="1500" height="500" fill="#070B1E"></rect><g fill="none" stroke="#F3EEE3" stroke-width="1" opacity=".14"><circle cx="1320" cy="250" r="160"></circle><circle cx="1320" cy="250" r="280"></circle><circle cx="1320" cy="250" r="400"></circle><circle cx="1320" cy="250" r="540"></circle></g><ellipse cx="1320" cy="250" rx="360" ry="120" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1.6" opacity=".7" transform="rotate(-18 1320 250)"></ellipse><circle cx="1320" cy="250" r="14" fill="var(--accent,#0E6F62)"></circle><path d="M0 250 Q 100 215 200 250 T 400 250 T 600 250 T 800 250" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="2" opacity=".55"></path></svg>
+          <div style="position:absolute; left:48px; top:50%; transform:translateY(-50%);">
+            <div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(22px,3.4vw,44px); color:#F3EEE3; line-height:1;">Dr. Javed Jamil</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:clamp(9px,1.1vw,13px); letter-spacing:.22em; color:var(--accent,#0E6F62); margin-top:12px; text-transform:uppercase;">Examining the modern world through the Qur'an</div>
+          </div>
+          <div style="position:absolute; right:20px; bottom:14px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.16em; color:#5A6080;">X · 1500×500</div>
+        </div>
+      </div>
+
+      <!-- LinkedIn + YouTube -->
+      <div style="display:grid; grid-template-columns:1.6fr 1fr; gap:22px;">
+        <div style="border-radius:8px; overflow:hidden; border:1px solid rgba(12,19,48,.1);">
+          <div style="position:relative; aspect-ratio:4/1; background:#F3EEE3; overflow:hidden;">
+            <svg viewBox="0 0 1584 396" preserveAspectRatio="xMidYMid slice" style="position:absolute; inset:0; width:100%; height:100%;"><rect width="1584" height="396" fill="#EDE7DA"></rect><g fill="none" stroke="#0C1330" stroke-width="1" opacity=".12"><circle cx="160" cy="198" r="150"></circle><circle cx="160" cy="198" r="260"></circle><circle cx="160" cy="198" r="380"></circle></g><circle cx="160" cy="198" r="11" fill="var(--accent,#0E6F62)"></circle></svg>
+            <div style="position:absolute; right:44px; top:50%; transform:translateY(-50%); text-align:right;"><div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(18px,2.6vw,34px); color:#0C1330; line-height:1;">Health in the driver's seat.</div><div style="font-family:'IBM Plex Mono',monospace; font-size:clamp(8px,1vw,11px); letter-spacing:.18em; color:#0E6F62; margin-top:10px; text-transform:uppercase;">The Dynamic Paradigm of Health</div></div>
+            <div style="position:absolute; right:18px; bottom:12px; font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.14em; color:#9A8F78;">LINKEDIN · 1584×396</div>
+          </div>
+        </div>
+        <div style="border-radius:8px; overflow:hidden; border:1px solid rgba(12,19,48,.1);">
+          <div style="position:relative; aspect-ratio:16/9; background:#0B1026; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+            <svg viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" style="position:absolute; inset:0; width:100%; height:100%;"><rect width="640" height="360" fill="#070B1E"></rect><g fill="none" stroke="#F3EEE3" stroke-width="1" opacity=".12"><circle cx="320" cy="180" r="90"></circle><circle cx="320" cy="180" r="150"></circle><circle cx="320" cy="180" r="220"></circle></g></svg>
+            <div style="position:relative; text-align:center;"><svg viewBox="0 0 240 240" width="44" style="margin-bottom:10px;"><circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="6"></circle><ellipse cx="120" cy="120" rx="88" ry="32" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="5" transform="rotate(-24 120 120)"></ellipse><circle cx="120" cy="120" r="18" fill="var(--accent,#0E6F62)"></circle></svg><div style="font-family:'Bodoni Moda',serif; font-size:18px; color:#F3EEE3;">Javed Jamil</div></div>
+            <div style="position:absolute; left:0; right:0; top:18%; bottom:18%; border:1px dashed rgba(243,238,234,.18);"></div>
+            <div style="position:absolute; right:10px; bottom:8px; font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:.12em; color:#5A6080;">YT · SAFE AREA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 09b · SOCIAL CARDS ================= -->
+  <section style="background:#0B1026; color:#F3EEE3; padding:90px 64px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; color:#7E84A0; margin-bottom:34px;">QUOTE · STAT · THUMBNAIL · CAROUSEL</div>
+
+      <!-- quote + stat -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-bottom:22px;">
+        <!-- aphorism card -->
+        <div style="position:relative; aspect-ratio:1; background:#070B1E; border-radius:8px; overflow:hidden; padding:48px; display:flex; flex-direction:column; justify-content:space-between;">
+          <svg viewBox="0 0 500 500" style="position:absolute; right:-120px; top:-120px; width:380px; opacity:.5;"><g fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1" opacity=".4"><circle cx="250" cy="250" r="90"></circle><circle cx="250" cy="250" r="150"></circle><circle cx="250" cy="250" r="210"></circle></g></svg>
+          <svg viewBox="0 0 240 240" width="40" style="position:relative;"><circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="7"></circle><ellipse cx="120" cy="120" rx="88" ry="32" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="6" transform="rotate(-24 120 120)"></ellipse><circle cx="120" cy="120" r="20" fill="var(--accent,#0E6F62)"></circle></svg>
+          <div style="position:relative;">
+            <div style="font-family:'Bodoni Moda',serif; font-style:italic; font-weight:500; font-size:clamp(22px,3vw,30px); line-height:1.32; color:#F3EEE3;">“Islam is, perforce, a future-oriented world-view.”</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.16em; color:var(--accent,#0E6F62); margin-top:22px; text-transform:uppercase;">— Dr. Javed Jamil</div>
+          </div>
+        </div>
+        <!-- stat card -->
+        <div style="position:relative; aspect-ratio:1; background:var(--accent,#0E6F62); border-radius:8px; overflow:hidden; padding:48px; display:flex; flex-direction:column; justify-content:space-between; color:#F3EEE3;">
+          <svg viewBox="0 0 500 500" style="position:absolute; left:-160px; bottom:-160px; width:420px; opacity:.5;"><g fill="none" stroke="#F3EEE3" stroke-width="1" opacity=".4"><circle cx="250" cy="250" r="110"></circle><circle cx="250" cy="250" r="180"></circle><circle cx="250" cy="250" r="250"></circle></g></svg>
+          <div style="position:relative; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; opacity:.85;">The empirical claim</div>
+          <div style="position:relative;">
+            <div style="font-family:'Bodoni Moda',serif; font-weight:700; font-size:clamp(56px,9vw,104px); line-height:.9; letter-spacing:-.01em;">80M</div>
+            <div style="font-size:clamp(15px,2vw,19px); line-height:1.4; margin-top:14px; max-width:24ch;">lives lost worldwide every year to a civilisation optimised for profit, not health.</div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; margin-top:18px; opacity:.8;">SOURCE · HEALTH MAXIMISATION</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- thumbnail + lower third -->
+      <div style="display:grid; grid-template-columns:1.5fr 1fr; gap:22px; margin-bottom:22px;">
+        <div style="position:relative; aspect-ratio:16/9; background:#070B1E; border-radius:8px; overflow:hidden;">
+          <svg width="100%" height="100%" style="position:absolute; inset:0;"><defs><pattern id="stripeA" width="10" height="10" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#10162E"></rect><line x1="0" y1="0" x2="0" y2="10" stroke="#161D3A" stroke-width="6"></line></pattern></defs><rect width="55%" height="100%" fill="url(#stripeA)"></rect></svg>
+          <div style="position:absolute; left:18%; top:42%; transform:translateY(-50%); font-family:'IBM Plex Mono',monospace; font-size:11px; color:#5A6080; letter-spacing:.14em;">[ portrait ]</div>
+          <div style="position:absolute; right:44px; top:50%; transform:translateY(-50%); text-align:right; max-width:52%;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; color:var(--accent,#0E6F62); text-transform:uppercase; margin-bottom:12px;">Lecture 04</div>
+            <div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(20px,3vw,38px); line-height:1.06; color:#F3EEE3;">Why economics must serve health</div>
+          </div>
+          <div style="position:absolute; left:0; bottom:0; padding:14px 20px; background:linear-gradient(90deg,rgba(11,16,38,.95),transparent); display:flex; align-items:center; gap:12px;"><svg viewBox="0 0 240 240" width="26"><circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="9"></circle><circle cx="120" cy="120" r="30" fill="var(--accent,#0E6F62)"></circle></svg><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.14em; color:#9AA0BC;">16:9 THUMBNAIL</span></div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:16px; justify-content:center;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em; color:#7E84A0;">LOWER THIRD</div>
+          <div style="position:relative; padding:16px 20px; background:rgba(7,11,30,.7); border-left:3px solid var(--accent,#0E6F62); border-radius:0 4px 4px 0;">
+            <div style="font-family:'Bodoni Moda',serif; font-size:22px; font-weight:600; color:#F3EEE3;">Dr. Javed Jamil</div>
+            <div style="font-size:13px; color:#9AA0BC; margin-top:2px;">Physician · Originator of Applied Islamics</div>
+          </div>
+          <div style="position:relative; padding:14px 20px; background:var(--accent,#0E6F62); border-radius:4px; display:flex; align-items:center; justify-content:space-between;">
+            <div dir="rtl" lang="ur" style="font-family:'Noto Nastaliq Urdu',serif; font-size:18px; line-height:1.9; color:#F3EEE3;">ڈاکٹر جاوید جمیل</div>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.12em; color:rgba(243,238,234,.7);">URDU VARIANT</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- carousel -->
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
+        <div style="aspect-ratio:4/5; background:#070B1E; border-radius:8px; padding:30px; display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden;">
+          <svg viewBox="0 0 400 500" style="position:absolute; left:-100px; bottom:-100px; width:320px; opacity:.4;"><g fill="none" stroke="#F3EEE3" stroke-width="1" opacity=".4"><circle cx="200" cy="250" r="90"></circle><circle cx="200" cy="250" r="150"></circle><circle cx="200" cy="250" r="210"></circle></g></svg>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.18em; color:var(--accent,#0E6F62);">01 / 03</div>
+          <div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:26px; line-height:1.08; color:#F3EEE3;">The Natural World Order</div>
+        </div>
+        <div style="aspect-ratio:4/5; background:#F3EEE3; border-radius:8px; padding:30px; display:flex; flex-direction:column; justify-content:space-between; color:#0C1330;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.18em; color:#0E6F62;">02 / 03</div>
+          <div style="font-size:16px; line-height:1.5; color:#33384A;">Not the New World Order of markets — a tiered system where <strong>health and life</strong> sit at the centre, and economics serves them.</div>
+        </div>
+        <div style="aspect-ratio:4/5; background:var(--accent,#0E6F62); border-radius:8px; padding:30px; display:flex; flex-direction:column; justify-content:space-between; color:#F3EEE3;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.18em; opacity:.85;">03 / 03</div>
+          <div><div style="font-family:'Bodoni Moda',serif; font-style:italic; font-size:22px; line-height:1.3;">Read the full essay →</div><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.14em; margin-top:14px; opacity:.85;">JAVEDJAMIL.COM</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 10 · WEBSITE ================= -->
+  <section style="background:#F3EEE3; padding:104px 64px; border-bottom:1px solid rgba(12,19,48,.1);">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">10 — Website</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.04; margin:0 0 56px;">First, a place to read</h2>
+
+      <!-- browser frame: hero -->
+      <div style="border-radius:10px; overflow:hidden; box-shadow:0 24px 60px rgba(12,19,48,.18); border:1px solid rgba(12,19,48,.12); margin-bottom:48px;">
+        <div style="background:#0B1026; padding:12px 16px; display:flex; align-items:center; gap:8px; border-bottom:1px solid rgba(243,238,234,.08);">
+          <span style="width:11px; height:11px; border-radius:50%; background:#3A4060;"></span><span style="width:11px; height:11px; border-radius:50%; background:#3A4060;"></span><span style="width:11px; height:11px; border-radius:50%; background:#3A4060;"></span>
+          <div style="flex:1; margin-left:12px; background:#070B1E; border-radius:5px; padding:5px 12px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#7E84A0;">javedjamil.com</div>
+        </div>
+        <!-- nav -->
+        <div style="background:#0B1026; color:#F3EEE3; padding:0 36px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:18px 0; border-bottom:1px solid rgba(243,238,234,.08);">
+            <div style="display:flex; align-items:center; gap:14px;"><svg viewBox="0 0 240 240" width="30"><circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="9"></circle><ellipse cx="120" cy="120" rx="88" ry="32" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="8" transform="rotate(-24 120 120)"></ellipse><circle cx="120" cy="120" r="26" fill="var(--accent,#0E6F62)"></circle></svg><span style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:18px;">Javed Jamil</span></div>
+            <div style="display:flex; align-items:center; gap:28px; font-size:13.5px; color:#B7BCD0;"><span>Works</span><span>Ideas</span><span>Health Maximisation</span><span>About</span>
+              <div style="display:flex; border:1px solid rgba(243,238,234,.2); border-radius:20px; overflow:hidden; font-family:'IBM Plex Mono',monospace; font-size:11px;"><span style="padding:5px 11px; background:var(--accent,#0E6F62); color:#fff;">EN</span><span style="padding:5px 11px; color:#9AA0BC;">اردو</span><span style="padding:5px 11px; color:#9AA0BC;">عربي</span></div>
+            </div>
+          </div>
+        </div>
+        <!-- hero -->
+        <div style="position:relative; background:#0B1026; color:#F3EEE3; padding:80px 36px 90px; overflow:hidden;">
+          <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" style="position:absolute; inset:0; width:100%; height:100%; opacity:.5;"><g fill="none" stroke="#F3EEE3" stroke-width="1" opacity=".12"><circle cx="1080" cy="300" r="160"></circle><circle cx="1080" cy="300" r="300"></circle><circle cx="1080" cy="300" r="460"></circle><circle cx="1080" cy="300" r="640"></circle></g><ellipse cx="1080" cy="300" rx="420" ry="150" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1.5" opacity=".6" transform="rotate(-18 1080 300)"></ellipse><circle cx="1080" cy="300" r="13" fill="var(--accent,#0E6F62)"></circle></svg>
+          <div style="position:relative; max-width:680px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.22em; color:var(--accent,#0E6F62); text-transform:uppercase; margin-bottom:22px;">Applied Islamics</div>
+            <h3 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(34px,5.5vw,60px); line-height:1.02; margin:0 0 24px;">Examining the modern world through the Qur'an — never the reverse.</h3>
+            <p style="font-size:17px; line-height:1.6; color:#B7BCD0; max-width:54ch; margin:0 0 32px;">A physician's diagnosis of a civilisation: a tiered, living order with health and life at its centre. Aggressive, not defensive. For all of mankind.</p>
+            <div style="display:flex; gap:14px;"><span style="background:var(--accent,#0E6F62); color:#fff; padding:13px 26px; border-radius:3px; font-size:14px; font-weight:500;">Read the essays</span><span style="border:1px solid rgba(243,238,234,.25); color:#F3EEE3; padding:13px 26px; border-radius:3px; font-size:14px;">The Works →</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- reading specimen -->
+      <div style="display:grid; grid-template-columns:1fr; gap:0; max-width:720px; margin:0 auto 56px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; color:var(--accent,#0E6F62); margin-bottom:16px;">ESSAY · LONG-FORM READING</div>
+        <h3 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,46px); line-height:1.06; margin:0 0 10px;">Health in the driver's seat</h3>
+        <div style="font-family:'IBM Plex Sans'; font-size:13px; color:#7E8294; margin-bottom:30px;">Dr. Javed Jamil · 14 min read</div>
+        <p style="font-family:'IBM Plex Sans'; font-size:19px; line-height:1.72; color:#26262B; margin:0 0 22px;"><span style="float:left; font-family:'Bodoni Moda',serif; font-weight:600; font-size:74px; line-height:.78; padding:6px 14px 0 0; color:var(--accent,#0E6F62);">F</span>or three centuries the modern world has placed economics at the centre of its order, and demanded that everything — including life itself — orbit the market. The result is measurable, and it is catastrophic.</p>
+        <p style="font-family:'IBM Plex Sans'; font-size:19px; line-height:1.72; color:#26262B; margin:0 0 22px;">The Dynamic Paradigm of Health proposes the inversion: a civilisation should optimise for health and life, and subordinate politics and economics to that single end. Health is not a static state to be restored, but a living process to be sustained.</p>
+        <blockquote style="margin:30px 0; padding-left:26px; border-left:3px solid var(--accent,#0E6F62); font-family:'Bodoni Moda',serif; font-style:italic; font-size:25px; line-height:1.4; color:#0C1330;">The physician's task is no longer the patient alone, but the civilisation. He becomes the Doctor of the World.</blockquote>
+      </div>
+
+      <!-- works + lexicon -->
+      <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:36px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; color:var(--accent,#0E6F62); margin-bottom:18px;">THE WORKS LIBRARY</div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
+            <div style="aspect-ratio:3/4.4; background:#0B1026; border-radius:3px; padding:16px; display:flex; flex-direction:column; justify-content:space-between; border-left:4px solid var(--accent,#0E6F62);"><span style="font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.1em; color:#7E84A0;">HEALTH</span><span style="font-family:'Bodoni Moda',serif; font-size:15px; font-weight:600; color:#F3EEE3; line-height:1.12;">The Devil's Economics</span></div>
+            <div style="aspect-ratio:3/4.4; background:#0B1026; border-radius:3px; padding:16px; display:flex; flex-direction:column; justify-content:space-between; border-left:4px solid #B5564E;"><span style="font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.1em; color:#7E84A0;">POLITICS</span><span style="font-family:'Bodoni Moda',serif; font-size:15px; font-weight:600; color:#F3EEE3; line-height:1.12;">Muslims Most Civilised</span></div>
+            <div style="aspect-ratio:3/4.4; background:#0B1026; border-radius:3px; padding:16px; display:flex; flex-direction:column; justify-content:space-between; border-left:4px solid #C6922F;"><span style="font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.1em; color:#7E84A0;">QUR'ANIC</span><span style="font-family:'Bodoni Moda',serif; font-size:15px; font-weight:600; color:#F3EEE3; line-height:1.12;">The Essence of the Divine Verses</span></div>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; color:var(--accent,#0E6F62); margin-bottom:18px;">IDEAS · THE LEXICON</div>
+          <div style="display:grid; gap:10px;">
+            <div style="background:#fff; border:1px solid rgba(12,19,48,.1); border-radius:4px; padding:13px 16px; display:flex; justify-content:space-between; align-items:center;"><span style="font-family:'Bodoni Moda',serif; font-size:16px; font-weight:600;">Grand Peace</span><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#7E8294;">3 levels</span></div>
+            <div style="background:#fff; border:1px solid rgba(12,19,48,.1); border-radius:4px; padding:13px 16px; display:flex; justify-content:space-between; align-items:center;"><span style="font-family:'Bodoni Moda',serif; font-size:16px; font-weight:600;">Economic Fundamentalism</span><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#7E8294;">term</span></div>
+            <div style="background:#fff; border:1px solid rgba(12,19,48,.1); border-radius:4px; padding:13px 16px; display:flex; justify-content:space-between; align-items:center;"><span style="font-family:'Bodoni Moda',serif; font-size:16px; font-weight:600;">Health Maximisation</span><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#7E8294;">paradigm</span></div>
+            <div style="background:#fff; border:1px solid rgba(12,19,48,.1); border-radius:4px; padding:13px 16px; display:flex; justify-content:space-between; align-items:center;"><span style="font-family:'Bodoni Moda',serif; font-size:16px; font-weight:600;">Natural World Order</span><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#7E8294;">vs. NWO</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 11 · BOOKS ================= -->
+  <section style="background:#0B1026; color:#F3EEE3; padding:104px 64px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">11 — Book System · Mission Publications</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.04; margin:0 0 16px; color:#F3EEE3;">Nine titles, one oeuvre</h2>
+      <p style="max-width:62ch; font-size:17px; line-height:1.6; color:#B7BCD0; margin:0 0 52px;">A fixed armature — ink ground, foil seal, Bodoni title, mono metadata — with a domain band that colour-codes the spine for shelf coherence. Five domains: Health · Economics · Physics · Political Thought · Qur'anic Studies.</p>
+
+      <!-- 3 covers -->
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:48px;">
+        <!-- Health -->
+        <div style="aspect-ratio:3/4.5; background:#0B1026; border:1px solid rgba(243,238,234,.12); border-radius:3px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 18px 40px rgba(0,0,0,.4);">
+          <div style="flex:1; padding:30px; position:relative; overflow:hidden;">
+            <svg viewBox="0 0 300 300" style="position:absolute; right:-90px; top:-90px; width:240px; opacity:.6;"><g fill="none" stroke="#0E6F62" stroke-width="1"><circle cx="150" cy="150" r="70"></circle><circle cx="150" cy="150" r="115"></circle><circle cx="150" cy="150" r="160"></circle></g></svg>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.2em; color:#0E6F62;">HEALTH</div>
+            <div style="margin-top:26%; font-family:'Bodoni Moda',serif; font-weight:600; font-size:27px; line-height:1.08;">Health<br>Maximisation</div>
+            <div style="font-family:'IBM Plex Sans'; font-size:12.5px; color:#9AA0BC; margin-top:14px; line-height:1.5;">The dynamic paradigm — putting life in the driver's seat.</div>
+          </div>
+          <div style="height:8px; background:#0E6F62;"></div>
+          <div style="background:#070B1E; padding:16px 20px; display:flex; align-items:center; justify-content:space-between;"><span style="font-family:'Bodoni Moda',serif; font-size:13px;">Javed Jamil</span><svg viewBox="0 0 240 240" width="22"><circle cx="120" cy="120" r="104" fill="none" stroke="#C6A24A" stroke-width="10"></circle><circle cx="120" cy="120" r="34" fill="#C6A24A"></circle></svg></div>
+        </div>
+        <!-- Economics + Urdu -->
+        <div style="aspect-ratio:3/4.5; background:#0B1026; border:1px solid rgba(243,238,234,.12); border-radius:3px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 18px 40px rgba(0,0,0,.4);">
+          <div style="flex:1; padding:30px; position:relative; overflow:hidden;">
+            <svg viewBox="0 0 300 300" style="position:absolute; left:-110px; bottom:-50px; width:240px; opacity:.6;"><g fill="none" stroke="#9C5A2E" stroke-width="1"><circle cx="150" cy="150" r="70"></circle><circle cx="150" cy="150" r="115"></circle><circle cx="150" cy="150" r="160"></circle></g></svg>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.2em; color:#C58A55;">ECONOMICS</div>
+            <div style="margin-top:22%; font-family:'Bodoni Moda',serif; font-weight:600; font-size:27px; line-height:1.08;">The Devil's<br>Economics</div>
+            <div dir="rtl" lang="ur" style="font-family:'Noto Nastaliq Urdu',serif; font-size:17px; line-height:2.1; color:#D7D2C6; margin-top:14px;">امن کی معیشت</div>
+          </div>
+          <div style="height:8px; background:#9C5A2E;"></div>
+          <div style="background:#070B1E; padding:16px 20px; display:flex; align-items:center; justify-content:space-between;"><span style="font-family:'Bodoni Moda',serif; font-size:13px;">Javed Jamil</span><svg viewBox="0 0 240 240" width="22"><circle cx="120" cy="120" r="104" fill="none" stroke="#C6A24A" stroke-width="10"></circle><circle cx="120" cy="120" r="34" fill="#C6A24A"></circle></svg></div>
+        </div>
+        <!-- Qur'anic + Arabic -->
+        <div style="aspect-ratio:3/4.5; background:#0B1026; border:1px solid rgba(243,238,234,.12); border-radius:3px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 18px 40px rgba(0,0,0,.4);">
+          <div style="flex:1; padding:30px; position:relative; overflow:hidden;">
+            <svg viewBox="0 0 300 300" style="position:absolute; right:-90px; top:-70px; width:240px; opacity:.6;"><g fill="none" stroke="#B5862E" stroke-width="1"><circle cx="150" cy="150" r="70"></circle><circle cx="150" cy="150" r="115"></circle><circle cx="150" cy="150" r="160"></circle></g></svg>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.2em; color:#C6A24A;">QUR'ANIC STUDIES</div>
+            <div dir="rtl" lang="ar" style="font-family:'Amiri',serif; font-size:26px; line-height:1.5; color:#F3EEE3; margin-top:22%;">سَبْعَ سَمَاوَاتٍ طِبَاقًا</div>
+            <div style="font-family:'Bodoni Moda',serif; font-style:italic; font-size:18px; line-height:1.2; margin-top:12px;">Seven Heavens in Layers</div>
+          </div>
+          <div style="height:8px; background:#B5862E;"></div>
+          <div style="background:#070B1E; padding:16px 20px; display:flex; align-items:center; justify-content:space-between;"><span style="font-family:'Bodoni Moda',serif; font-size:13px;">Javed Jamil</span><svg viewBox="0 0 240 240" width="22"><circle cx="120" cy="120" r="104" fill="none" stroke="#C6A24A" stroke-width="10"></circle><circle cx="120" cy="120" r="34" fill="#C6A24A"></circle></svg></div>
+        </div>
+      </div>
+
+      <!-- spine system -->
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.2em; color:#7E84A0; margin-bottom:18px;">SPINE SYSTEM · SERIES BANDING</div>
+      <div style="display:flex; gap:8px; height:300px;">
+        <div style="width:46px; background:#0B1026; border:1px solid rgba(243,238,234,.12); border-radius:2px; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:14px 0;"><svg viewBox="0 0 240 240" width="18"><circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="12"></circle><circle cx="120" cy="120" r="38" fill="#0E6F62"></circle></svg><span style="writing-mode:vertical-rl; font-family:'Bodoni Moda',serif; font-size:13px; color:#F3EEE3;">Health Maximisation</span><div style="width:18px; height:6px; background:#0E6F62;"></div></div>
+        <div style="width:46px; background:#0B1026; border:1px solid rgba(243,238,234,.12); border-radius:2px; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:14px 0;"><svg viewBox="0 0 240 240" width="18"><circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="12"></circle><circle cx="120" cy="120" r="38" fill="#9C5A2E"></circle></svg><span style="writing-mode:vertical-rl; font-family:'Bodoni Moda',serif; font-size:13px; color:#F3EEE3;">The Devil's Economics</span><div style="width:18px; height:6px; background:#9C5A2E;"></div></div>
+        <div style="width:46px; background:#0B1026; border:1px solid rgba(243,238,234,.12); border-radius:2px; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:14px 0;"><svg viewBox="0 0 240 240" width="18"><circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="12"></circle><circle cx="120" cy="120" r="38" fill="#3A5A7A"></circle></svg><span style="writing-mode:vertical-rl; font-family:'Bodoni Moda',serif; font-size:13px; color:#F3EEE3;">Relativity &amp; the Cosmos</span><div style="width:18px; height:6px; background:#3A5A7A;"></div></div>
+        <div style="width:46px; background:#0B1026; border:1px solid rgba(243,238,234,.12); border-radius:2px; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:14px 0;"><svg viewBox="0 0 240 240" width="18"><circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="12"></circle><circle cx="120" cy="120" r="38" fill="#7A3741"></circle></svg><span style="writing-mode:vertical-rl; font-family:'Bodoni Moda',serif; font-size:13px; color:#F3EEE3;">Muslims Most Civilised</span><div style="width:18px; height:6px; background:#7A3741;"></div></div>
+        <div style="width:46px; background:#0B1026; border:1px solid rgba(243,238,234,.12); border-radius:2px; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:14px 0;"><svg viewBox="0 0 240 240" width="18"><circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="12"></circle><circle cx="120" cy="120" r="38" fill="#B5862E"></circle></svg><span style="writing-mode:vertical-rl; font-family:'Bodoni Moda',serif; font-size:13px; color:#F3EEE3;">Essence of Divine Verses</span><div style="width:18px; height:6px; background:#B5862E;"></div></div>
+        <div style="flex:1; background:#070B1E; border:1px dashed rgba(243,238,234,.16); border-radius:2px; display:flex; flex-direction:column; justify-content:center; padding:0 28px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em; color:#7E84A0; margin-bottom:14px;">DOMAIN KEY</div>
+          <div style="display:grid; gap:9px; font-size:13px; color:#B7BCD0;">
+            <div style="display:flex; align-items:center; gap:10px;"><span style="width:14px; height:14px; background:#0E6F62; border-radius:2px;"></span>Health</div>
+            <div style="display:flex; align-items:center; gap:10px;"><span style="width:14px; height:14px; background:#9C5A2E; border-radius:2px;"></span>Economics</div>
+            <div style="display:flex; align-items:center; gap:10px;"><span style="width:14px; height:14px; background:#3A5A7A; border-radius:2px;"></span>Physics</div>
+            <div style="display:flex; align-items:center; gap:10px;"><span style="width:14px; height:14px; background:#7A3741; border-radius:2px;"></span>Political Thought</div>
+            <div style="display:flex; align-items:center; gap:10px;"><span style="width:14px; height:14px; background:#B5862E; border-radius:2px;"></span>Qur'anic Studies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 12 · ACADEMIC & REPORTS ================= -->
+  <section style="background:#F3EEE3; padding:104px 64px; border-bottom:1px solid rgba(12,19,48,.1);">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">12 — Academic Papers &amp; Reports</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.04; margin:0 0 52px;">Instrument-grade on the page</h2>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start;">
+        <!-- academic paper -->
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em; color:#7E8294; margin-bottom:16px;">JOURNAL ARTICLE · TITLE PAGE</div>
+          <div style="background:#fff; box-shadow:0 14px 40px rgba(12,19,48,.12); border:1px solid rgba(12,19,48,.08); padding:42px 40px; aspect-ratio:1/1.32;">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #0C1330; padding-bottom:8px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.12em; color:#7E8294;"><span>JOURNAL OF APPLIED ISLAMICS · 3(2)</span><span>114</span></div>
+            <div style="margin-top:26px;">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.18em; color:var(--accent,#0E6F62); text-transform:uppercase;">Research Article</div>
+              <h4 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:24px; line-height:1.12; margin:10px 0 12px; color:#0C1330;">Health Maximisation as the Optimisation Target of a Civilisation</h4>
+              <div style="font-family:'IBM Plex Sans'; font-size:12.5px; color:#26262B;">Javed Jamil<span style="vertical-align:super; font-size:9px; color:var(--accent,#0E6F62);">1</span></div>
+              <div style="font-family:'IBM Plex Sans'; font-size:10.5px; color:#7E8294; margin-top:3px;">1 · Centre for Applied Islamics</div>
+            </div>
+            <div style="margin-top:22px; background:#F3EEE3; border-left:3px solid var(--accent,#0E6F62); padding:14px 16px;">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.16em; color:var(--accent,#0E6F62); margin-bottom:7px;">ABSTRACT</div>
+              <p style="font-family:'IBM Plex Sans'; font-size:11px; line-height:1.6; color:#33384A; margin:0;">We argue that prevailing economic paradigms systematically subordinate health to profit, and propose an inversion in which life and health become the optimisation target. Empirical estimates suggest 80M annual preventable deaths attributable to this misordering.</p>
+            </div>
+            <div style="margin-top:18px; columns:2; column-gap:18px; font-family:'IBM Plex Sans'; font-size:9.5px; line-height:1.55; color:#4A4F60; text-align:justify;">
+              <p style="margin:0 0 8px;">The modern order places economics at its centre and demands that all systems orbit the market. This paper formalises the Dynamic Paradigm of Health as an alternative ordering principle, in which clinical and civilisational health are treated as a single continuous process rather than discrete states.</p>
+              <p style="margin:0;">Section 2 develops the measurement framework; Section 3 reports expenditure–outcome divergence across 41 economies.</p>
+            </div>
+            <div style="margin-top:14px; border-top:1px solid rgba(12,19,48,.15); padding-top:8px; font-family:'IBM Plex Mono',monospace; font-size:8px; color:#9A8F78;">Received 12 Mar · Accepted 04 Jun · doi:10.0000/jai.3.2.114</div>
+          </div>
+          <div style="margin-top:14px; background:#fff; border:1px solid rgba(12,19,48,.08); border-radius:4px; padding:16px 18px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.16em; color:#7E8294; margin-bottom:8px;">CITATION STYLE</div>
+            <div style="font-family:'IBM Plex Sans'; font-size:11.5px; color:#26262B; line-height:1.55;">Jamil, J. (2026). Health Maximisation as the optimisation target of a civilisation. <em>J. Appl. Islamics</em>, <strong>3</strong>(2), 114–139.</div>
+          </div>
+        </div>
+
+        <!-- report -->
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em; color:#7E8294; margin-bottom:16px;">POLICY BRIEF · COVER + DATA</div>
+          <!-- report cover dark -->
+          <div style="background:#0B1026; border-radius:4px; overflow:hidden; padding:34px; position:relative; margin-bottom:14px;">
+            <svg viewBox="0 0 400 200" style="position:absolute; right:-60px; top:-60px; width:280px; opacity:.5;"><g fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1"><circle cx="200" cy="100" r="60"></circle><circle cx="200" cy="100" r="100"></circle><circle cx="200" cy="100" r="140"></circle></g></svg>
+            <div style="position:relative; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.2em; color:var(--accent,#0E6F62); text-transform:uppercase;">Policy Brief · 03</div>
+            <h4 style="position:relative; font-family:'Bodoni Moda',serif; font-weight:600; font-size:26px; line-height:1.08; color:#F3EEE3; margin:14px 0 0;">The Right to Health</h4>
+            <p style="position:relative; font-family:'IBM Plex Sans'; font-size:12px; color:#9AA0BC; margin:8px 0 0;">A three-dimensional constitutional proposal — Rights · Duties · Prohibitions.</p>
+          </div>
+          <!-- exec summary + chart -->
+          <div style="background:#fff; border:1px solid rgba(12,19,48,.08); border-radius:4px; padding:22px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.16em; color:var(--accent,#0E6F62); margin-bottom:10px;">EXECUTIVE SUMMARY</div>
+            <!-- pull stat -->
+            <div style="display:flex; gap:18px; align-items:baseline; margin-bottom:18px; padding-bottom:18px; border-bottom:1px solid rgba(12,19,48,.1);">
+              <div><div style="font-family:'Bodoni Moda',serif; font-weight:700; font-size:38px; line-height:.9; color:#0C1330;">$6.5T</div><div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#7E8294; margin-top:4px;">GLOBAL HEALTH SPEND</div></div>
+              <div style="flex:1; font-family:'IBM Plex Sans'; font-size:11.5px; line-height:1.5; color:#4A4F60;">…yet outcomes diverge sharply from expenditure. The misordering is structural, not fiscal.</div>
+            </div>
+            <!-- bar chart: life expectancy vs spend -->
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:.1em; color:#7E8294; margin-bottom:10px;">FIG 1 · SPEND VS. LIFE EXPECTANCY (INDEX)</div>
+            <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:10px; align-items:end; height:96px;">
+              <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><div style="width:100%; background:#C9C0AC; height:40%;"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:7.5px; color:#7E8294;">A</span></div>
+              <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><div style="width:100%; background:var(--accent,#0E6F62); height:78%;"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:7.5px; color:#7E8294;">B</span></div>
+              <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><div style="width:100%; background:#C9C0AC; height:55%;"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:7.5px; color:#7E8294;">C</span></div>
+              <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><div style="width:100%; background:var(--accent,#0E6F62); height:92%;"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:7.5px; color:#7E8294;">D</span></div>
+              <div style="display:flex; flex-direction:column; align-items:center; gap:5px;"><div style="width:100%; background:#C9C0AC; height:34%;"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:7.5px; color:#7E8294;">E</span></div>
+            </div>
+            <!-- table -->
+            <div style="margin-top:18px; font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:.1em; color:#7E8294; margin-bottom:8px;">TABLE 1 · EXPENDITURE</div>
+            <div style="font-family:'IBM Plex Sans'; font-size:10.5px;">
+              <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1.5px solid #0C1330; font-weight:600; color:#0C1330;"><span>Economy</span><span>$ / capita</span><span>LE (yrs)</span></div>
+              <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid rgba(12,19,48,.1); color:#26262B;"><span>United States</span><span style="font-variant-numeric:tabular-nums;">12,914</span><span style="font-variant-numeric:tabular-nums;">76.4</span></div>
+              <div style="display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid rgba(12,19,48,.1); color:#26262B;"><span>Cuba</span><span style="font-variant-numeric:tabular-nums;">1,186</span><span style="font-variant-numeric:tabular-nums; color:var(--accent,#0E6F62); font-weight:600;">78.8</span></div>
+              <div style="display:flex; justify-content:space-between; padding:6px 0; color:#26262B;"><span>India</span><span style="font-variant-numeric:tabular-nums;">74</span><span style="font-variant-numeric:tabular-nums;">70.1</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 13 · SUPPORTING ================= -->
+  <section style="background:#0B1026; color:#F3EEE3; padding:104px 64px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">13 — Supporting Collateral</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.04; margin:0 0 52px; color:#F3EEE3;">Stationery, signature, stage</h2>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px;">
+        <!-- email signature -->
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em; color:#7E84A0; margin-bottom:14px;">EMAIL SIGNATURE</div>
+          <div style="background:#fff; border-radius:6px; padding:24px 26px; display:flex; gap:20px; align-items:center;">
+            <div style="width:66px; height:66px; border-radius:50%; background:#0B1026; display:flex; align-items:center; justify-content:center; flex:0 0 auto;"><svg viewBox="0 0 240 240" width="44"><circle cx="120" cy="120" r="104" fill="none" stroke="#F3EEE3" stroke-width="8"></circle><ellipse cx="120" cy="120" rx="88" ry="32" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="7" transform="rotate(-24 120 120)"></ellipse><circle cx="120" cy="120" r="22" fill="var(--accent,#0E6F62)"></circle></svg></div>
+            <div style="border-left:2px solid var(--accent,#0E6F62); padding-left:18px;">
+              <div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:19px; color:#0C1330;">Dr. Javed Jamil</div>
+              <div style="font-family:'IBM Plex Sans'; font-size:12px; color:#0E6F62; margin:2px 0 8px;">Physician · Originator of Applied Islamics</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#7E8294; line-height:1.6;">doctorforu@hotmail.com · javedjamil.com<br>Mission Publications · New Delhi</div>
+            </div>
+          </div>
+        </div>
+        <!-- letterhead -->
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em; color:#7E84A0; margin-bottom:14px;">LETTERHEAD</div>
+          <div style="background:#fff; border-radius:6px; overflow:hidden; aspect-ratio:1/0.62; display:flex; flex-direction:column; box-shadow:0 14px 36px rgba(0,0,0,.35);">
+            <div style="padding:22px 28px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(12,19,48,.12);">
+              <div style="display:flex; align-items:center; gap:14px;"><svg viewBox="0 0 240 240" width="34"><circle cx="120" cy="120" r="104" fill="none" stroke="#0C1330" stroke-width="9"></circle><ellipse cx="120" cy="120" rx="88" ry="32" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="8" transform="rotate(-24 120 120)"></ellipse><circle cx="120" cy="120" r="26" fill="var(--accent,#0E6F62)"></circle></svg><div><div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:18px; color:#0C1330;">Dr. Javed Jamil</div><div style="font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:.16em; color:#0E6F62;">APPLIED ISLAMICS</div></div></div>
+              <div dir="rtl" lang="ar" style="font-family:'Amiri',serif; font-size:20px; color:#0C1330;">جاويد جميل</div>
+            </div>
+            <div style="flex:1; padding:22px 28px;"><div style="height:8px; width:40%; background:#EDE7DA; border-radius:3px; margin-bottom:10px;"></div><div style="height:6px; width:80%; background:#F0EAE0; border-radius:3px; margin-bottom:8px;"></div><div style="height:6px; width:72%; background:#F0EAE0; border-radius:3px;"></div></div>
+            <div style="padding:12px 28px; border-top:1px solid rgba(12,19,48,.12); font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:.1em; color:#9A8F78; display:flex; justify-content:space-between;"><span>javedjamil.com</span><span>MISSION PUBLICATIONS</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- presentation master -->
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em; color:#7E84A0; margin-bottom:14px;">PRESENTATION MASTER · 16:9</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+        <!-- title slide -->
+        <div style="aspect-ratio:16/9; background:#0B1026; border-radius:6px; overflow:hidden; position:relative; padding:44px; display:flex; flex-direction:column; justify-content:center;">
+          <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" style="position:absolute; inset:0; width:100%; height:100%; opacity:.5;"><g fill="none" stroke="#F3EEE3" stroke-width="1" opacity=".12"><circle cx="720" cy="225" r="120"></circle><circle cx="720" cy="225" r="220"></circle><circle cx="720" cy="225" r="340"></circle></g><ellipse cx="720" cy="225" rx="280" ry="100" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="1.4" opacity=".6" transform="rotate(-18 720 225)"></ellipse><circle cx="720" cy="225" r="11" fill="var(--accent,#0E6F62)"></circle></svg>
+          <div style="position:relative;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.2em; color:var(--accent,#0E6F62); text-transform:uppercase; margin-bottom:16px;">Keynote · 2026</div><div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:32px; line-height:1.06; color:#F3EEE3; max-width:16ch;">The Doctor of the World</div><div style="font-family:'IBM Plex Sans'; font-size:13px; color:#9AA0BC; margin-top:14px;">Dr. Javed Jamil</div></div>
+        </div>
+        <!-- content slide -->
+        <div style="aspect-ratio:16/9; background:#F3EEE3; border-radius:6px; overflow:hidden; display:flex; flex-direction:column;">
+          <div style="padding:22px 30px 14px; border-bottom:2px solid var(--accent,#0E6F62);"><div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.18em; color:var(--accent,#0E6F62);">02 · THE INVERSION</div><div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:23px; color:#0C1330; margin-top:6px;">Health in the driver's seat</div></div>
+          <div style="flex:1; padding:18px 30px; display:flex; flex-direction:column; gap:12px; justify-content:center;">
+            <div style="display:flex; gap:12px; align-items:flex-start;"><span style="width:7px; height:7px; border-radius:50%; background:var(--accent,#0E6F62); margin-top:7px; flex:0 0 auto;"></span><span style="font-family:'IBM Plex Sans'; font-size:14px; color:#33384A;">Economics &amp; politics subordinated to life</span></div>
+            <div style="display:flex; gap:12px; align-items:flex-start;"><span style="width:7px; height:7px; border-radius:50%; background:var(--accent,#0E6F62); margin-top:7px; flex:0 0 auto;"></span><span style="font-family:'IBM Plex Sans'; font-size:14px; color:#33384A;">Health as a living process, not a state</span></div>
+            <div style="display:flex; gap:12px; align-items:flex-start;"><span style="width:7px; height:7px; border-radius:50%; background:var(--accent,#0E6F62); margin-top:7px; flex:0 0 auto;"></span><span style="font-family:'IBM Plex Sans'; font-size:14px; color:#33384A;">The optimisation target is health, not profit</span></div>
+          </div>
+          <div style="padding:10px 30px; border-top:1px solid rgba(12,19,48,.12); display:flex; justify-content:space-between; align-items:center;"><svg viewBox="0 0 240 240" width="16"><circle cx="120" cy="120" r="104" fill="none" stroke="#0C1330" stroke-width="14"></circle><circle cx="120" cy="120" r="40" fill="var(--accent,#0E6F62)"></circle></svg><span style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:#9A8F78;">javedjamil.com · 02</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 14 · VOICE & DO/DON'T ================= -->
+  <section style="background:#F3EEE3; padding:104px 64px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--accent,#0E6F62); margin-bottom:20px;">14 — Voice &amp; Guardrails</div>
+      <h2 style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.04; margin:0 0 52px;">A physician diagnosing a civilisation</h2>
+
+      <!-- voice -->
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin-bottom:32px;">
+        <div style="background:#fff; border:1px solid rgba(12,19,48,.1); border-radius:4px; padding:26px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.16em; color:var(--accent,#0E6F62); margin-bottom:10px;">REGISTER</div><div style="font-family:'Bodoni Moda',serif; font-size:20px; font-weight:600; margin-bottom:6px;">Clinical clarity, metaphysical depth</div><p style="font-size:13.5px; line-height:1.55; color:#4A4F60; margin:0;">Precise and evidence-led, but unafraid to make civilisational claims. Diagnosis, not sermon.</p></div>
+        <div style="background:#fff; border:1px solid rgba(12,19,48,.1); border-radius:4px; padding:26px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.16em; color:var(--accent,#0E6F62); margin-bottom:10px;">STANCE</div><div style="font-family:'Bodoni Moda',serif; font-size:20px; font-weight:600; margin-bottom:6px;">Aggressive, not defensive</div><p style="font-size:13.5px; line-height:1.55; color:#4A4F60; margin:0;">Addressed outward to scientists, policymakers and other faiths. Confident, exact, never apologetic.</p></div>
+        <div style="background:#fff; border:1px solid rgba(12,19,48,.1); border-radius:4px; padding:26px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.16em; color:var(--accent,#0E6F62); margin-bottom:10px;">AVOID</div><div style="font-family:'Bodoni Moda',serif; font-size:20px; font-weight:600; margin-bottom:6px;">Piety &amp; ungrounded jargon</div><p style="font-size:13.5px; line-height:1.55; color:#4A4F60; margin:0;">No ornamental devotion, no defensive apologetics, no terminology without empirical anchoring.</p></div>
+      </div>
+
+      <div style="background:#0B1026; border-radius:4px; padding:40px; margin-bottom:48px; text-align:center;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.2em; color:var(--accent,#0E6F62); margin-bottom:18px;">THE VOICE, IN ONE LINE</div>
+        <div style="font-family:'Bodoni Moda',serif; font-style:italic; font-size:clamp(20px,3vw,30px); line-height:1.4; color:#F3EEE3; max-width:30ch; margin:0 auto;">“The modern world is the patient on the table; the Qur'an is the lens.”</div>
+      </div>
+
+      <!-- do / don't -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+        <div style="background:#fff; border:1px solid rgba(14,111,98,.4); border-radius:4px; padding:30px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.18em; color:var(--accent,#0E6F62); margin-bottom:20px;">DO</div>
+          <div style="display:grid; gap:14px; font-size:14.5px; color:#26262B;">
+            <div style="display:flex; gap:12px;"><span style="color:var(--accent,#0E6F62); font-weight:700;">+</span><span>Build marks from compass-and-straightedge geometry</span></div>
+            <div style="display:flex; gap:12px;"><span style="color:var(--accent,#0E6F62); font-weight:700;">+</span><span>Keep life &amp; health at the literal centre</span></div>
+            <div style="display:flex; gap:12px;"><span style="color:var(--accent,#0E6F62); font-weight:700;">+</span><span>Set all three scripts as a real, weighted lockup</span></div>
+            <div style="display:flex; gap:12px;"><span style="color:var(--accent,#0E6F62); font-weight:700;">+</span><span>Pair Bodoni gravitas with Plex precision</span></div>
+            <div style="display:flex; gap:12px;"><span style="color:var(--accent,#0E6F62); font-weight:700;">+</span><span>Let the accent carry the pulse — used sparingly</span></div>
+          </div>
+        </div>
+        <div style="background:#fff; border:1px solid rgba(181,86,78,.4); border-radius:4px; padding:30px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.18em; color:#B5564E; margin-bottom:20px;">DON'T</div>
+          <div style="display:grid; gap:14px; font-size:14.5px; color:#26262B;">
+            <div style="display:flex; gap:12px;"><span style="color:#B5564E; font-weight:700;">×</span><span>Caduceus, stethoscope, cross or heartbeat-line logos</span></div>
+            <div style="display:flex; gap:12px;"><span style="color:#B5564E; font-weight:700;">×</span><span>Domes, minarets or crescents as decoration</span></div>
+            <div style="display:flex; gap:12px;"><span style="color:#B5564E; font-weight:700;">×</span><span>Flag-green-and-gold arabesque wallpaper</span></div>
+            <div style="display:flex; gap:12px;"><span style="color:#B5564E; font-weight:700;">×</span><span>Pharma-mint or tech-gradient blue</span></div>
+            <div style="display:flex; gap:12px;"><span style="color:#B5564E; font-weight:700;">×</span><span>Haloed, glowing portrait treatments</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div style="margin-top:72px; padding-top:34px; border-top:1px solid rgba(12,19,48,.14); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+        <div style="display:flex; align-items:center; gap:16px;"><svg viewBox="0 0 240 240" width="38"><circle cx="120" cy="120" r="104" fill="none" stroke="#0C1330" stroke-width="6"></circle><ellipse cx="120" cy="120" rx="88" ry="32" fill="none" stroke="var(--accent,#0E6F62)" stroke-width="5" transform="rotate(-24 120 120)"></ellipse><circle cx="120" cy="120" r="17" fill="var(--accent,#0E6F62)"></circle></svg><div><div style="font-family:'Bodoni Moda',serif; font-weight:600; font-size:16px;">Dr. Javed Jamil — The Living Order</div><div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.14em; color:#7E8294;">BRAND IDENTITY SYSTEM · v1.0</div></div></div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; color:#9A8F78;">EXTENSIBLE TO · CENTRE FOR APPLIED ISLAMICS</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Petrol (recommended)&quot;,&quot;Gold (alternative)&quot;],&quot;default&quot;:&quot;Petrol (recommended)&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;constructionLines&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Theme&quot;}}">
+class Component extends DCLogic {
+  renderVals(){
+    const mode = this.props.accentMode ?? 'Petrol (recommended)';
+    const accentColor = String(mode).indexOf('Gold') === 0 ? '#BE8A2C' : '#0E6F62';
+    return { accentColor, constructionLines: this.props.constructionLines ?? true };
+  }
+}
+</script>
+</body>
+</html>

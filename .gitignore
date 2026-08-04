@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Node / Astro (site/)
+site/node_modules/
+site/dist/
+site/.astro/
+site/.vscode/launch.json
+npm-debug.log*
+
+# editor
+.vscode/*
+!.vscode/extensions.json

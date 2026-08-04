@@ -1,0 +1,165 @@
+/*
+  Design tokens — "The Living Order"
+  Source of truth: Design/Dr. Javed Jamil's Living Order/Javed Jamil Brand Identity.dc.html
+  Do not introduce colors/fonts outside this file without updating the brand doc first.
+*/
+
+:root {
+  /* ---- Color: spine of ink and parchment, one vital pulse ---- */
+  --ink: #0b1026;          /* Cosmic Ink — primary dark ground */
+  --ink-deep: #070b1e;     /* panels/cards on dark ground */
+  --graphite: #23232a;     /* body text on light ground */
+  --bone: #e7dfce;         /* secondary panel */
+  --parchment: #f3eee3;    /* reading ground */
+
+  --accent: #0e6f62;       /* Vital Petrol — recommended primary accent */
+  --accent-oklch: oklch(0.52 0.07 184);
+  --gold: #be8a2c;         /* Manuscript Gold — foil / ceremonial accent */
+  --gold-oklch: oklch(0.66 0.11 78);
+
+  /* accent is swappable system-wide: set --accent: var(--gold) to switch modes */
+
+  /* text/hairline on dark ground */
+  --ink-text-muted: #b7bcd0;
+  --ink-text-faint: #7e84a0;
+  --ink-hairline: rgba(243, 238, 234, 0.12);
+
+  /* text/hairline on light ground */
+  --light-text-muted: #4a4f60;
+  --light-text-faint: #7e8294;
+  --light-hairline: rgba(12, 19, 48, 0.12);
+
+  /* domain key — book spines / tag coloring */
+  --domain-health: #0e6f62;
+  --domain-economics: #9c5a2e;
+  --domain-physics: #3a5a7a;
+  --domain-political: #7a3741;
+  --domain-quranic: #b5862e;
+
+  /* guardrail colors — reference only, never apply as design color */
+  --guardrail-flag-green: #1fa84a;
+  --guardrail-pharma-mint: #7fe5c3;
+  --guardrail-tech-blue: #3aa0ff;
+
+  /* ---- Type ---- */
+  --font-display: "Bodoni Moda", serif;       /* headlines, pull quotes, drop caps */
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; /* body/UI */
+  --font-mono: "IBM Plex Mono", monospace;    /* data, labels, eyebrows */
+  --font-urdu: "Noto Nastaliq Urdu", serif;   /* Urdu — raised baseline, ~1.15x Latin cap height */
+  --font-arabic: "Amiri", serif;              /* Qur'anic citations */
+
+  /* ---- Spacing / shape ---- */
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --section-pad-x: 64px;
+  --section-pad-y: 104px;
+  --content-max: 1180px;
+  --reading-max: 720px;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --section-pad-x: 24px;
+    --section-pad-y: 64px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--parchment);
+  color: var(--graphite);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--parchment);
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---- Living Order motion: the pulse and the orbit ---- */
+@keyframes lo-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.06;
+  }
+  100% {
+    transform: scale(4.4);
+    opacity: 0;
+  }
+}
+
+@keyframes lo-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lo-orbit-rev {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.lo-pulse {
+  transform-box: view-box;
+  transform-origin: 120px 120px;
+  animation: lo-pulse 4.2s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
+}
+
+.lo-orbit {
+  transform-box: view-box;
+  transform-origin: 120px 120px;
+  animation: lo-orbit 64s linear infinite;
+}
+
+.lo-orbit-rev {
+  transform-box: view-box;
+  transform-origin: 120px 120px;
+  animation: lo-orbit-rev 90s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lo-pulse,
+  .lo-orbit,
+  .lo-orbit-rev {
+    animation: none;
+  }
+}
+
+/* ---- Shared eyebrow / label pattern used throughout the brand doc ---- */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+}

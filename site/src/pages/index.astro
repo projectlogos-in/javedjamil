@@ -1,0 +1,361 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Seal from "../components/Seal.astro";
+import CosmicMotif from "../components/CosmicMotif.astro";
+
+const crossLinks = [
+  { href: "/ideas/", label: "Ideas", desc: "Long-form essays and multi-part series." },
+  { href: "/health-maximisation/", label: "Health Maximisation", desc: "The Dynamic Paradigm of Health." },
+  { href: "/shayari/", label: "Shayari", desc: "Urdu poetry." },
+  { href: "/lexicon/", label: "Lexicon", desc: "Coined terms, defined." },
+  { href: "/books/", label: "Works", desc: "The book library." },
+  { href: "/about/", label: "About", desc: "Biography." },
+];
+---
+
+<BaseLayout title="Dr. Javed Jamil">
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <CosmicMotif width={1200} height={900} cx={1080} cy={450} ringCount={5} ringStep={130} class="hero__motif" />
+
+    <div class="hero__inner">
+      <div class="eyebrow hero__eyebrow">Applied Islamics</div>
+
+      <Seal variant="ceremonial" mode="dark" size={200} class="hero__seal" />
+
+      <h1 class="hero__title">Dr. Javed Jamil</h1>
+
+      <div class="hero__scripts">
+        <span dir="rtl" lang="ur" class="hero__urdu">ڈاکٹر جاوید جمیل</span>
+        <span class="hero__divider" aria-hidden="true"></span>
+        <span dir="rtl" lang="ar" class="hero__arabic">د. جاويد جميل</span>
+      </div>
+
+      <p class="hero__subtitle">
+        Physician &middot; Scholar &middot; Originator of <span class="hero__accent-text">Applied Islamics</span>
+      </p>
+
+      <blockquote class="hero__quote">
+        A tiered, living cosmic order — with life and health at its centre.
+      </blockquote>
+
+      <div class="hero__cta">
+        <a href="/ideas/" class="button button--solid">Read the essays</a>
+        <a href="/books/" class="button button--outline">The Works &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONCEPT ================= -->
+  <section class="concept">
+    <div class="concept__inner">
+      <div class="eyebrow">The Living Order</div>
+      <h2 class="concept__title">Health in the driver's seat</h2>
+      <p class="concept__lead">
+        For three centuries the modern world has placed economics at the centre of its order, and demanded that
+        everything — including life itself — orbit the market. Dr. Jamil's work proposes the inversion: a
+        civilisation should optimise for health and life, and subordinate politics and economics to that single end.
+      </p>
+
+      <div class="concept__grid">
+        <div class="concept__point">
+          <div class="concept__num">01</div>
+          <div>
+            <div class="concept__point-title">Cosmic geometric order</div>
+            <p>The seven cosmic tiers, orbits, relativity — authority and divine structure.</p>
+          </div>
+        </div>
+        <div class="concept__point">
+          <div class="concept__num">02</div>
+          <div>
+            <div class="concept__point-title">The deliberate re-centring</div>
+            <p>What sits at the middle is life and health — not the market.</p>
+          </div>
+        </div>
+        <div class="concept__point">
+          <div class="concept__num">03</div>
+          <div>
+            <div class="concept__point-title">Motion as the Dynamic Paradigm</div>
+            <p>Health as a living process, sustained — never a static state to be restored.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CROSS-LINKS ================= -->
+  <section class="explore">
+    <div class="explore__inner">
+      <div class="eyebrow">Begin here</div>
+      <div class="explore__grid">
+        {
+          crossLinks.map((link) => (
+            <a href={link.href} class="explore__card">
+              <div class="explore__card-title">{link.label}</div>
+              <p class="explore__card-desc">{link.desc}</p>
+              <span class="explore__card-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--ink);
+    color: var(--parchment);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 96px var(--section-pad-x) 100px;
+  }
+
+  .hero__motif {
+    opacity: 0.5;
+  }
+
+  .hero__inner {
+    position: relative;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__eyebrow {
+    margin-bottom: 40px;
+  }
+
+  .hero__seal {
+    margin-bottom: 40px;
+  }
+
+  .hero__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(40px, 8vw, 84px);
+    line-height: 0.98;
+    letter-spacing: 0.01em;
+    margin: 0 0 24px;
+  }
+
+  .hero__scripts {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+
+  .hero__urdu {
+    font-family: var(--font-urdu);
+    font-size: 30px;
+    line-height: 2;
+    color: #ede7da;
+  }
+
+  .hero__arabic {
+    font-family: var(--font-arabic);
+    font-size: 30px;
+    color: #ede7da;
+  }
+
+  .hero__divider {
+    width: 1px;
+    height: 30px;
+    background: var(--ink-hairline);
+  }
+
+  .hero__subtitle {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    color: var(--ink-text-muted);
+    margin: 0 0 44px;
+  }
+
+  .hero__accent-text {
+    color: var(--accent);
+  }
+
+  .hero__quote {
+    margin: 0 0 44px;
+    padding-top: 22px;
+    border-top: 1px solid var(--ink-hairline);
+    max-width: 560px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(16px, 2.2vw, 20px);
+    line-height: 1.5;
+    color: #d7d2c6;
+  }
+
+  .hero__cta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 13px 26px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .button:hover {
+    opacity: 0.85;
+  }
+
+  .button--solid {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .button--outline {
+    border: 1px solid var(--ink-hairline);
+    color: var(--parchment);
+  }
+
+  .concept {
+    background: var(--parchment);
+    padding: var(--section-pad-y) var(--section-pad-x);
+    border-bottom: 1px solid var(--light-hairline);
+  }
+
+  .concept__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+
+  .concept__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(30px, 4.4vw, 52px);
+    line-height: 1.04;
+    margin: 16px 0 26px;
+    max-width: 18ch;
+  }
+
+  .concept__lead {
+    max-width: 68ch;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--light-text-muted);
+    margin: 0 0 56px;
+  }
+
+  .concept__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .concept__point {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .concept__num {
+    flex: 0 0 40px;
+    height: 40px;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+
+  .concept__point-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .concept__point p {
+    font-size: 14.5px;
+    color: var(--light-text-muted);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .explore {
+    background: var(--ink);
+    padding: var(--section-pad-y) var(--section-pad-x);
+  }
+
+  .explore__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+
+  .explore .eyebrow {
+    margin-bottom: 24px;
+  }
+
+  .explore__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .explore__card {
+    position: relative;
+    display: block;
+    background: var(--ink-deep);
+    border: 1px solid var(--ink-hairline);
+    border-radius: var(--radius-md);
+    padding: 26px;
+    text-decoration: none;
+    color: var(--parchment);
+    transition: border-color 0.15s ease;
+  }
+
+  .explore__card:hover {
+    border-color: var(--accent);
+  }
+
+  .explore__card-title {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .explore__card-desc {
+    font-size: 13.5px;
+    color: var(--ink-text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .explore__card-arrow {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    color: var(--accent);
+  }
+
+  @media (max-width: 860px) {
+    .concept__grid,
+    .explore__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
