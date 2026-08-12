@@ -12,9 +12,21 @@ const relatedPosts = (await getCollection("posts", ({ data }) => !data.draft && 
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 
-const healthBooks = (await getCollection("books", ({ data }) => data.domain === "health")).sort(
-  (a, b) => a.data.order - b.data.order
-);
+// The canon is ordered by movement, not by subject, so the health shelf is
+// named explicitly — these are the titles that carry the paradigm directly.
+const HEALTH_SLUGS = [
+  "economics-first-or-health-first",
+  "quranic-paradigms-of-sciences-and-society",
+  "prevention-and-management-of-viral-pandemics",
+  "cancer-preventive-measures",
+  "islamic-model-for-control-of-aids",
+  "in-search-of-a-comprehensive-solution-for-aids",
+  "islam-and-family-planning",
+  "the-killer-sex",
+];
+
+const allBooks = await getCollection("books");
+const healthBooks = HEALTH_SLUGS.map((slug) => allBooks.find((b) => b.id === slug)).filter(Boolean) as typeof allBooks;
 
 const lexiconEntry = await getEntry("lexicon", "health-maximisation");
 
@@ -148,7 +160,14 @@ const propositions = [
           <div class="hm-shelf__grid" data-stagger>
             {healthBooks.map((book) => (
               <a href={`${base}books/${book.id}/`} class="hm-shelf__item" data-tilt="10">
-                <BookCover title={book.data.title} domain={book.data.domain} color={book.data.color} />
+                <BookCover
+                  title={book.data.title}
+                  subtitle={book.data.subtitle}
+                  movement={book.data.movement}
+                  shelf={book.data.shelf}
+                  cover={book.data.cover}
+                  year={book.data.year}
+                />
               </a>
             ))}
           </div>

@@ -1,8 +1,10 @@
 ---
-title: "Islam Means Peace"
-domain: "quranic"
-color: "#B5862E"
-synopsis: "Islam Means Peace dismantles the post-9/11 caricature by reconstructing Islam as an integrated system of duties, prohibitions and rights rather than a checklist of rituals. Dr. Jamil walks through its health-protective social order and its economic and political architecture, setting crime and addiction statistics from \"civilised\" societies against those of the Muslim world. It ends not in defence but in a proposed Natural World Order — an agenda, not an apology."
-sourceFile: "Islam Means Peace-Dr Javed Jamil.docx"
-order: 7
+title: "Islam means Peace"
+movement: "reconstruction"
+shelf: "III·4"
+year: "2006"
+sortYear: 2006
+language: "English"
+synopsis: "The statement of the house upon its faith: that Islam means peace — argued, not merely asserted."
+order: 16
 ---

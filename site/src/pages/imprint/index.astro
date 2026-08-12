@@ -1,0 +1,453 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import Seal from "../../components/Seal.astro";
+import { base } from "../../lib/base";
+import { MOVEMENTS, HOUSE, FOREWORDS } from "../../lib/movements";
+
+const books = await getCollection("books");
+const byId = new Map(books.map((b) => [b.id, b]));
+
+// the roll of forewords, newest first, resolved to their titles
+const roll = FOREWORDS.map((f) => {
+  const book = byId.get(f.book);
+  return book ? { year: f.year, title: book.data.title, slug: book.id, name: book.data.foreword } : null;
+})
+  .filter(Boolean)
+  .sort((a, b) => Number(b!.year.slice(0, 4)) - Number(a!.year.slice(0, 4)));
+
+const years = books.map((b) => b.data.sortYear);
+const span = `${Math.min(...years)}–${Math.max(...years)}`;
+
+const facts = [
+  ["Established", HOUSE.established],
+  ["The record", `${books.length} titles · ${span}`],
+  ["Constitution", HOUSE.legal],
+  ["Address", HOUSE.address],
+  ["Correspondence", HOUSE.email],
+].filter(([, v]) => Boolean(v)) as [string, string][];
+---
+
+<BaseLayout
+  title="The Imprint"
+  description="Mission Publications — the house that carries the work of Dr. Javed Jamil. Purpose, record, and correspondence."
+>
+  <PageHero
+    eyebrow="Mission Publications"
+    title="The imprint"
+    lead={HOUSE.credo}
+    meta={[HOUSE.established, `${books.length} titles`].filter(Boolean)}
+    align="center"
+  >
+    <div class="motto" data-reveal data-reveal-delay="300">
+      <span dir="rtl" lang="ar" class="motto__ar">{HOUSE.motto}</span>
+      <span class="motto__gloss">{HOUSE.mottoGloss}</span>
+    </div>
+  </PageHero>
+
+  <!-- ---- the four movements ---- -->
+  <section class="movements">
+    <div class="movements__inner">
+      <div class="movements__head" data-reveal>
+        <div class="eyebrow">The architecture</div>
+        <h2>Four movements, one line</h2>
+        <p>
+          The canon is not a list. It is ordered as an argument: the sources recovered, the present named, the
+          programme set out, the teaching grounded.
+        </p>
+      </div>
+
+      <div class="movements__list">
+        {
+          MOVEMENTS.map((m) => (
+            <a
+              href={`${base}books/#${m.key}`}
+              class="mvcard"
+              data-reveal
+              style={`--mv: var(--mv-${m.key}); --mv-lum: var(--mv-${m.key}-lum)`}
+            >
+              <span class="mvcard__rule" aria-hidden="true" />
+              <span class="mvcard__num">{m.numeral}</span>
+              <span class="mvcard__name">{m.name}</span>
+              <span class="mvcard__gloss">{m.gloss}</span>
+              <span class="mvcard__statement">{m.statement}</span>
+              <span class="mvcard__count">
+                {books.filter((b) => b.data.movement === m.key).length} titles &rarr;
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- forewords ---- -->
+  {
+    roll.length > 0 && (
+      <section class="forewords">
+        <div class="forewords__inner">
+          <div class="forewords__head" data-reveal>
+            <div class="eyebrow">The roll of forewords</div>
+            <h2>Who has stood behind the work</h2>
+            <p>
+              A former Prime Minister, a former Chief Election Commissioner, Vice-Chancellors, and Directors of the
+              All India Institute of Medical Sciences.
+            </p>
+          </div>
+
+          <ol class="forewords__list" data-stagger>
+            {roll.map((f) => (
+              <li>
+                <a href={`${base}books/${f!.slug}/`} class="fw">
+                  <span class="fw__year">{f!.year}</span>
+                  <span class="fw__body">
+                    <span class="fw__name">{f!.name}</span>
+                    <span class="fw__book">{f!.title}</span>
+                  </span>
+                  <span class="fw__arrow" aria-hidden="true">
+                    &rarr;
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- ---- the house ---- -->
+  <section class="house">
+    <div class="house__inner">
+      <Seal variant="geometric" mode="dark" size={58} class="house__seal" />
+      <div class="eyebrow" data-reveal="fade">The house</div>
+      <h2 data-reveal>{HOUSE.tagline}</h2>
+
+      <dl class="house__facts" data-stagger>
+        {
+          facts.map(([k, v]) => (
+            <div class="house__row">
+              <dt>{k}</dt>
+              <dd>{k === "Correspondence" ? <a href={`mailto:${v}`} class="link-draw">{v}</a> : v}</dd>
+            </div>
+          ))
+        }
+      </dl>
+
+      <p class="house__note" data-reveal>
+        Titles are available by correspondence with the house; the listed editions may also be ordered through
+        Amazon India from each title's page.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .motto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 34px;
+  }
+
+  .motto__ar {
+    font-family: var(--font-arabic);
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    color: var(--accent-lum);
+  }
+
+  .motto__gloss {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-text-faint);
+  }
+
+  /* ---- movements ---- */
+  .movements {
+    background: var(--parchment);
+    color: var(--graphite);
+    padding: clamp(60px, 10vh, 116px) var(--section-pad-x);
+  }
+
+  .movements__inner,
+  .forewords__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+
+  .movements__head,
+  .forewords__head {
+    max-width: 60ch;
+    margin-bottom: 40px;
+  }
+
+  .movements__head h2,
+  .forewords__head h2 {
+    font-size: var(--step-xl);
+    margin: 16px 0 16px;
+  }
+
+  .movements__head p,
+  .forewords__head p {
+    font-size: var(--step-md);
+    line-height: 1.68;
+    color: var(--light-text-muted);
+    margin: 0;
+  }
+
+  .movements__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .mvcard {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "rule rule"
+      "num name"
+      "num gloss"
+      "stmt stmt"
+      "count count";
+    gap: 6px 14px;
+    padding: 28px 30px 24px;
+    background: var(--paper);
+    border: 1px solid var(--light-hairline);
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
+  }
+
+  .mvcard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--lift-paper);
+  }
+
+  .mvcard__rule {
+    grid-area: rule;
+    height: 2px;
+    background: var(--mv);
+    margin-bottom: 16px;
+  }
+
+  .mvcard__num {
+    grid-area: num;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--mv);
+    border: 1px solid var(--mv);
+    padding: 3px 8px;
+    align-self: start;
+  }
+
+  .mvcard__name {
+    grid-area: name;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+    line-height: 1.1;
+  }
+
+  .mvcard__gloss {
+    grid-area: gloss;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.98rem;
+    color: var(--light-text-faint);
+  }
+
+  .mvcard__statement {
+    grid-area: stmt;
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 1.66;
+    color: var(--light-text-muted);
+  }
+
+  .mvcard__count {
+    grid-area: count;
+    margin-top: 16px;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mv);
+  }
+
+  /* ---- forewords ---- */
+  .forewords {
+    background: var(--void);
+    padding: clamp(60px, 10vh, 116px) var(--section-pad-x);
+  }
+
+  .forewords__head h2 {
+    color: var(--ink-text);
+  }
+
+  .forewords__head p {
+    color: var(--ink-text-muted);
+  }
+
+  .forewords__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--ink-hairline);
+  }
+
+  .fw {
+    display: grid;
+    grid-template-columns: 76px 1fr 24px;
+    gap: 22px;
+    align-items: baseline;
+    padding: 22px 8px;
+    border-bottom: 1px solid var(--ink-hairline);
+    text-decoration: none;
+    color: var(--ink-text);
+    transition: padding-left var(--dur) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+  }
+
+  .fw:hover {
+    padding-left: 18px;
+    background: rgba(201, 155, 65, 0.07);
+  }
+
+  .fw__year {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent-lum);
+  }
+
+  .fw__body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .fw__name {
+    font-family: var(--font-display);
+    font-size: clamp(1.02rem, 1.7vw, 1.28rem);
+    line-height: 1.3;
+  }
+
+  .fw__book {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-text-faint);
+  }
+
+  .fw__arrow {
+    justify-self: end;
+    color: var(--accent-lum);
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+  }
+
+  .fw:hover .fw__arrow {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ---- house ---- */
+  .house {
+    background: var(--ink);
+    padding: clamp(60px, 10vh, 116px) var(--section-pad-x) clamp(70px, 11vh, 130px);
+    text-align: center;
+  }
+
+  .house__inner {
+    max-width: 620px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .house__seal {
+    margin-bottom: 24px;
+  }
+
+  .house h2 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--step-lg);
+    margin: 14px 0 34px;
+    color: var(--ink-text);
+  }
+
+  .house__facts {
+    width: 100%;
+    margin: 0 0 28px;
+    text-align: left;
+    border-top: 1px solid var(--ink-hairline);
+  }
+
+  .house__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--ink-hairline);
+  }
+
+  .house__row dt {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-text-faint);
+    flex: 0 0 auto;
+  }
+
+  .house__row dd {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    text-align: right;
+    color: var(--ink-text);
+  }
+
+  .house__row dd a {
+    color: var(--accent-lum);
+    text-decoration: none;
+  }
+
+  .house__note {
+    font-size: 15px;
+    line-height: 1.66;
+    color: var(--ink-text-muted);
+    margin: 0;
+  }
+
+  @media (max-width: 860px) {
+    .movements__list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .fw {
+      grid-template-columns: 60px 1fr;
+    }
+
+    .fw__arrow {
+      display: none;
+    }
+
+    .house__row {
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .house__row dd {
+      text-align: left;
+    }
+  }
+</style>

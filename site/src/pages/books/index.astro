@@ -4,60 +4,73 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
 import BookCover from "../../components/BookCover.astro";
 import { base } from "../../lib/base";
+import { MOVEMENTS, HOUSE } from "../../lib/movements";
 
 const books = (await getCollection("books")).sort((a, b) => a.data.order - b.data.order);
 
-const domains = [
-  { key: "health", label: "Health", color: "#0E6F62" },
-  { key: "economics", label: "Economics", color: "#9C5A2E" },
-  { key: "physics", label: "Physics", color: "#3A5A7A" },
-  { key: "political", label: "Political Thought", color: "#7A3741" },
-  { key: "quranic", label: "Qur'anic Studies", color: "#B5862E" },
-];
-
-const grouped = domains.map((d) => ({
-  ...d,
-  books: books.filter((b) => b.data.domain === d.key),
+const grouped = MOVEMENTS.map((m) => ({
+  ...m,
+  books: books.filter((b) => b.data.movement === m.key).sort((a, b) => a.data.sortYear - b.data.sortYear),
 }));
+
+const years = books.map((b) => b.data.sortYear);
+const span = `${Math.min(...years)}–${Math.max(...years)}`;
 ---
 
-<BaseLayout title="Works" description="The book library of Dr. Javed Jamil — eighteen titles across health, economics, physics, political thought and Qur'anic studies.">
+<BaseLayout
+  title="The Canon"
+  description="Twenty-five titles by Dr. Javed Jamil, published by Mission Publications — one argument in four movements."
+>
   <PageHero
     eyebrow="Mission Publications"
-    title="The Works"
-    lead="Eighteen titles, one continuous argument — colour-banded by field so the shelf reads as a single body of work rather than a bibliography."
-    meta={[`${books.length} titles`, "5 fields"]}
+    title="One argument, in four movements"
+    lead="Twenty-five titles. The house has published a single author because it was founded to carry a single argument: the sources recovered, the present diagnosed, the programme set out, the teaching grounded."
+    meta={[`${books.length} titles`, span, HOUSE.motto ? `${HOUSE.mottoGloss}` : ""].filter(Boolean)}
   >
-    <div class="domain-key" data-reveal data-reveal-delay="280">
+    <div class="mv-key" data-reveal data-reveal-delay="280">
       {
-        grouped.map((d) => (
-          <a href={`#${d.key}`} class="domain-key__item" style={`--c: ${d.color}`}>
-            <span class="domain-key__swatch" />
-            <span class="domain-key__label">{d.label}</span>
-            <span class="domain-key__n">{d.books.length}</span>
+        grouped.map((m) => (
+          <a href={`#${m.key}`} class="mv-key__item" style={`--mv: var(--mv-${m.key}-lum)`}>
+            <span class="mv-key__num">{m.numeral}</span>
+            <span class="mv-key__name">{m.name}</span>
+            <span class="mv-key__n">{m.books.length}</span>
           </a>
         ))
       }
     </div>
   </PageHero>
 
-  <div class="library">
+  <div class="canon">
     {
-      grouped.map((group) => (
-        <section class="field" id={group.key} style={`--c: ${group.color}`}>
-          <div class="field__head" data-reveal>
-            <span class="field__marker" aria-hidden="true" />
-            <h2 class="field__title">{group.label}</h2>
-            <span class="field__count">
-              {group.books.length} {group.books.length === 1 ? "title" : "titles"}
-            </span>
+      grouped.map((m) => (
+        <section class="mv" id={m.key} style={`--mv: var(--mv-${m.key}); --mv-lum: var(--mv-${m.key}-lum)`}>
+          <div class="mv__head" data-reveal>
+            <div class="mv__title-row">
+              <span class="mv__numeral">{m.numeral}</span>
+              <h2 class="mv__name">{m.name}</h2>
+              <span class="mv__gloss">— {m.gloss}</span>
+            </div>
+            <p class="mv__statement">{m.statement}</p>
           </div>
 
-          <div class="field__shelf" data-stagger>
-            {group.books.map((book) => (
-              <a href={`${base}books/${book.id}/`} class="field__item" data-tilt="10">
-                <BookCover title={book.data.title} domain={book.data.domain} color={book.data.color} />
-                <span class="field__item-title">{book.data.title}</span>
+          <div class="mv__shelf" data-stagger>
+            {m.books.map((book) => (
+              <a href={`${base}books/${book.id}/`} class="shelf-item" data-tilt="8">
+                <BookCover
+                  title={book.data.title}
+                  subtitle={book.data.subtitle}
+                  movement={book.data.movement}
+                  shelf={book.data.shelf}
+                  cover={book.data.cover}
+                  year={book.data.year}
+                />
+                <span class="shelf-item__meta">
+                  <span class="shelf-item__title">{book.data.title}</span>
+                  <span class="shelf-item__year">
+                    {book.data.year}
+                    {book.data.language !== "English" ? ` · ${book.data.language}` : ""}
+                  </span>
+                </span>
               </a>
             ))}
           </div>
@@ -68,106 +81,118 @@ const grouped = domains.map((d) => ({
 </BaseLayout>
 
 <style>
-  .domain-key {
+  .mv-key {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     margin-top: 34px;
   }
 
-  .domain-key__item {
+  .mv-key__item {
     display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    padding: 9px 15px;
+    align-items: baseline;
+    gap: 10px;
+    padding: 10px 16px;
     border: 1px solid var(--ink-hairline);
-    border-radius: 100px;
     text-decoration: none;
     color: var(--ink-text-muted);
-    font-size: 12.5px;
     transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out),
       transform var(--dur-fast) var(--ease-out);
   }
 
-  .domain-key__item:hover {
-    border-color: var(--c);
+  .mv-key__item:hover {
+    border-color: var(--mv);
     color: var(--ink-text);
     transform: translateY(-2px);
   }
 
-  .domain-key__swatch {
-    width: 9px;
-    height: 9px;
-    border-radius: 2px;
-    background: var(--c);
-    box-shadow: 0 0 12px color-mix(in srgb, var(--c) 70%, transparent);
+  .mv-key__num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--mv);
   }
 
-  .domain-key__n {
+  .mv-key__name {
+    font-family: var(--font-display);
+    font-size: 16px;
+  }
+
+  .mv-key__n {
     font-family: var(--font-mono);
     font-size: 10px;
     color: var(--ink-text-faint);
   }
 
-  .library {
+  .canon {
     background: var(--void);
     padding: clamp(48px, 7vh, 80px) var(--section-pad-x) clamp(70px, 11vh, 130px);
   }
 
-  .field {
+  .mv {
     max-width: var(--content-max);
     margin: 0 auto;
-    padding: clamp(34px, 5vh, 56px) 0;
+    padding: clamp(38px, 6vh, 64px) 0;
     border-top: 1px solid var(--ink-hairline);
     scroll-margin-top: 96px;
   }
 
-  .field:first-child {
+  .mv:first-child {
     border-top: none;
     padding-top: 0;
   }
 
-  .field__head {
+  .mv__head {
+    margin-bottom: 34px;
+    max-width: 72ch;
+  }
+
+  .mv__title-row {
     display: flex;
     align-items: baseline;
-    gap: 16px;
-    margin-bottom: 30px;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
   }
 
-  .field__marker {
-    width: 24px;
-    height: 3px;
-    border-radius: 2px;
-    background: var(--c);
-    box-shadow: 0 0 16px color-mix(in srgb, var(--c) 70%, transparent);
-    align-self: center;
-    flex: 0 0 auto;
+  .mv__numeral {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--mv-lum);
+    border: 1px solid var(--mv-lum);
+    padding: 3px 8px;
   }
 
-  .field__title {
-    font-size: clamp(1.35rem, 2.6vw, 2rem);
+  .mv__name {
+    font-size: clamp(1.6rem, 3.2vw, 2.5rem);
     color: var(--ink-text);
   }
 
-  .field__count {
-    font-family: var(--font-mono);
-    font-size: 10.5px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+  .mv__gloss {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.05rem;
     color: var(--ink-text-faint);
   }
 
-  .field__shelf {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(178px, 1fr));
-    gap: clamp(18px, 2.6vw, 34px);
-    perspective: 1500px;
+  .mv__statement {
+    font-size: clamp(1.02rem, 1.4vw, 1.2rem);
+    line-height: 1.7;
+    color: var(--ink-text-muted);
+    margin: 0;
   }
 
-  .field__item {
+  .mv__shelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+    gap: clamp(20px, 2.8vw, 36px);
+    perspective: 1600px;
+  }
+
+  .shelf-item {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 13px;
     text-decoration: none;
     color: var(--ink-text-muted);
     transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
@@ -175,17 +200,30 @@ const grouped = domains.map((d) => ({
     transition: transform 0.45s var(--ease-out), color var(--dur-fast) var(--ease-out);
   }
 
-  .field__item:hover {
+  .shelf-item:hover {
     color: var(--ink-text);
   }
 
-  .field__item-title {
-    font-size: 13px;
-    line-height: 1.45;
+  .shelf-item__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
 
-  @media (max-width: 600px) {
-    .field__shelf {
+  .shelf-item__title {
+    font-family: var(--font-display);
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .shelf-item__year {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-text-faint);
+  }
+
+  @media (max-width: 560px) {
+    .mv__shelf {
       grid-template-columns: repeat(2, 1fr);
     }
   }

@@ -1,0 +1,89 @@
+{
+  "movements": [
+    {
+      "key": "recovery",
+      "name": "Recovery",
+      "numeral": "I",
+      "color": "var(--mp-recovery)",
+      "gloss": "the sources",
+      "statement": "The sources, read whole. The Recovery movement returns to the Qurʾān and its verses — systematic study, essence and paradigm — so that the Book may govern the argument rather than decorate it."
+    },
+    {
+      "key": "diagnosis",
+      "name": "Diagnosis",
+      "numeral": "II",
+      "color": "var(--mp-diagnosis)",
+      "gloss": "the present",
+      "statement": "The present, named exactly. The Diagnosis movement examines the modern condition — the economy made absolute, justice imprisoned, society unsettled — and names the hand of the market wherever it finds it."
+    },
+    {
+      "key": "reconstruction",
+      "name": "Reconstruction",
+      "numeral": "III",
+      "color": "var(--mp-reconstruction)",
+      "gloss": "the programme",
+      "statement": "The programme. The Reconstruction movement sets out what is to be done — family planning, the control of epidemics, the prevention of disease, a destination and roadmap for community and country — several works carried in collaboration with the Government of India."
+    },
+    {
+      "key": "foundations",
+      "name": "Foundations",
+      "numeral": "IV",
+      "color": "var(--mp-foundations)",
+      "gloss": "the teaching",
+      "statement": "The teaching, and the letters. The Foundations movement grounds the argument — the universe from first principles, prayer and fasting read for their benefit, and the literary works of the house in Urdu and Hindi."
+    }
+  ],
+  "movementOrder": [
+    "recovery",
+    "diagnosis",
+    "reconstruction",
+    "foundations"
+  ],
+  "forewords": [
+    {
+      "year": "1995",
+      "book": "islamic-model-for-control-of-aids"
+    },
+    {
+      "year": "1999",
+      "book": "the-devil-of-economic-fundamentalism"
+    },
+    {
+      "year": "2003",
+      "book": "essence-of-the-divine-verses"
+    },
+    {
+      "year": "2015",
+      "book": "quranic-paradigms-of-sciences-and-society"
+    },
+    {
+      "year": "2019",
+      "book": "economics-first-or-health-first"
+    },
+    {
+      "year": "2020",
+      "book": "justice-imprisoned"
+    },
+    {
+      "year": "2021",
+      "book": "a-systematic-study-of-the-holy-quran"
+    }
+  ],
+  "featured": [
+    "contemporary-sciences-in-the-light-of-the-quran",
+    "why-a-big-no-to-uniform-civil-code",
+    "cancer-preventive-measures",
+    "prayer-and-fasting"
+  ],
+  "house": {
+    "motto": "الوحدة في الكثرة",
+    "mottoGloss": "unity in multiplicity",
+    "credo": "A canon, recovered and reconstructed — read as one line.",
+    "tagline": "from metaphysics to masses",
+    "established": "Est. 1994 · reconstituted MMXXVI",
+    "legal": "A Section 8 non-profit company · CIN U22110DL2026NPL000000",
+    "address": "14 Nizamuddin East, New Delhi 110013",
+    "email": "enquiries@missionpublications.in",
+    "range": "25 titles · 1988 – 2026"
+  }
+}

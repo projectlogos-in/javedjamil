@@ -33,11 +33,29 @@ const books = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/books" }),
   schema: z.object({
     title: z.string(),
-    domain: z.enum(["health", "economics", "physics", "political", "quranic"]),
-    color: z.string(),
+    subtitle: z.string().optional(),
+    /** which of the four movements of the canon this title belongs to */
+    movement: z.enum(["recovery", "diagnosis", "reconstruction", "foundations"]),
+    /** house shelfmark, e.g. "II·1" */
+    shelf: z.string(),
+    year: z.string(),
+    sortYear: z.number(),
+    language: z.string().default("English"),
     synopsis: z.string(),
-    sourceFile: z.string().optional(),
-    externalLink: z.string().optional(),
+    foreword: z.string().optional(),
+    /** path under public/, e.g. "covers/slug.jpg" — absent titles fall back
+        to the typographic house cover */
+    cover: z.string().optional(),
+    apparatus: z
+      .object({
+        isbn: z.string().optional(),
+        pages: z.number().optional(),
+        edition: z.string().optional(),
+        price: z.string().optional(),
+        kindle: z.boolean().default(false),
+        amazon: z.string().optional(),
+      })
+      .optional(),
     order: z.number().default(0),
   }),
 });

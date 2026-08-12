@@ -1,8 +1,18 @@
 ---
 title: "The Killer Sex"
-domain: "health"
-color: "#0E6F62"
-synopsis: "The Killer Sex indicts the global sex industry as the most lucrative and lethal business Economic Fundamentalism ever built, tracing how sex uncoupled from its natural boundaries has become a vector for disease, family collapse and social decay. Dr. Jamil writes as a physician cataloguing casualties, not a moralist cataloguing sins — the argument is epidemiological before it is religious. It calls for reclaiming sex as an agent of life rather than an instrument of commerce."
-sourceFile: "The Killer Sex-Dr Javed Jamil.docx"
-order: 18
+movement: "diagnosis"
+shelf: "II·2"
+year: "2005"
+sortYear: 2005
+language: "English"
+synopsis: "Examines the commercialisation of sex and its consequences for public health and the social order — the diagnosis of the market pressed into its most guarded quarter."
+cover: "covers/the-killer-sex.jpg"
+apparatus:
+  isbn: "978-81-88268-02-3"
+  edition: "1st edition · 2004"
+  price: "₹57"
+  kindle: true
+  amazon: "https://www.amazon.in/killer-Javed-Jamil-Adrienne-Hughes/dp/818826802X"
+order: 7
 ---
+The Killer Sex offers a bold and thought-provoking critique of the modern sexual revolution and its social, psychological, and health consequences. Drawing on research, history, and ethical analysis, the authors examine how changing sexual norms have impacted individuals, families, and society. Challenging mainstream narratives, this book encourages readers to rethink contemporary debates on sexuality, freedom, morality, and public health through a critical and evidence-based perspective. Suitable for readers interested in sociology, ethics, public health, and contemporary social issues.

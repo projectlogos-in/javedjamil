@@ -1,62 +1,73 @@
 /*
-  Design system — "Seven Tiers"
+  Design system — "Seven Tiers", on the Mission Publications house tokens.
 
   The organising metaphor is Qur'an 67:3 — seven heavens in layers. The site is
   built as a stack of z-planes you descend through: ancient compass-and-
   straightedge geometry rendered with the instrumentation of a modern
-  laboratory. Tradition supplies the forms; modernity supplies the precision.
+  laboratory.
+
+  Typography carries the same split. EB Garamond sets everything meant to be
+  read — it is the house's book face, and the work is a body of books. Inter and
+  Plex Mono are reserved for apparatus: labels, shelfmarks, ISBNs, figures.
+  Tradition holds the text; modernity holds the instruments around it.
 */
 
 :root {
-  /* ---- Ground: the night, in layers of depth ---- */
-  --void: #04060e;         /* deepest plane — behind everything */
-  --ink: #080c1c;          /* primary dark ground */
-  --ink-raised: #0e1430;   /* cards/panels lifted off the ground */
-  --ink-lifted: #161d40;   /* hover / highest dark plane */
+  /* ---- Ground: indigo night, in layers of depth ---- */
+  --void: #100e2e;         /* deepest plane — behind everything */
+  --ink: #1e1b4b;          /* house indigo — primary dark ground */
+  --ink-raised: #262163;   /* cards/panels lifted off the ground */
+  --ink-lifted: #2e2875;   /* hover / highest dark plane */
 
   /* ---- Ground: the page ---- */
-  --parchment: #f4f0e6;    /* reading ground */
-  --parchment-deep: #eae3d4;
-  --paper: #fbf9f4;        /* cards on parchment */
-  --graphite: #22222a;     /* body text on light */
+  --parchment: #f0e7d2;    /* house cream — reading ground */
+  --parchment-deep: #e4d9be;
+  --paper: #f7f3ea;        /* cards on cream */
+  --graphite: #1e1b4b;     /* body text is indigo, never grey */
 
-  /* ---- The pulse ---- */
-  --accent: #0e6f62;       /* Vital Petrol */
-  --accent-lum: #2fa795;   /* luminous variant — glows, hairlines on dark */
-  --accent-glow: rgba(47, 167, 149, 0.22);
+  /* ---- The accent: gold ---- */
+  --accent: #a8843a;
+  --accent-lum: #c99b41;   /* luminous variant — glows, hairlines on indigo */
+  --accent-glow: rgba(201, 155, 65, 0.22);
 
-  --gold: #c9973a;         /* Manuscript Gold — the tradition/foil register */
-  --gold-lum: #e8c578;
-  --gold-glow: rgba(232, 197, 120, 0.18);
+  --gold: #a8843a;
+  --gold-lum: #d8ae5c;
+  --gold-glow: rgba(216, 174, 92, 0.2);
 
-  --crimson: #96434e;      /* tension / the polemic register */
+  --crimson: #a5392a;      /* the polemic register (Diagnosis) */
 
-  /* text + hairlines on dark */
-  --ink-text: #e8e4da;
-  --ink-text-muted: #b0b6ce;
-  --ink-text-faint: #7a80a0;
-  --ink-hairline: rgba(232, 228, 218, 0.11);
-  --ink-hairline-strong: rgba(232, 228, 218, 0.2);
+  /* text + hairlines on indigo */
+  --ink-text: #ece6d6;
+  --ink-text-muted: #c9c6dc;
+  --ink-text-faint: #9a96b8;
+  --ink-hairline: rgba(236, 230, 214, 0.12);
+  --ink-hairline-strong: rgba(236, 230, 214, 0.22);
 
-  /* text + hairlines on light */
-  --light-text-muted: #474c5e;
-  --light-text-faint: #7b7f92;
-  --light-hairline: rgba(8, 12, 28, 0.11);
-  --light-hairline-strong: rgba(8, 12, 28, 0.2);
+  /* text + hairlines on cream */
+  --light-text-muted: #3a3752;
+  --light-text-faint: #8a86a0;
+  --light-hairline: rgba(30, 27, 75, 0.14);
+  --light-hairline-strong: rgba(30, 27, 75, 0.26);
 
-  /* domain key — the five fields of the work */
-  --domain-health: #0e6f62;
-  --domain-economics: #9c5a2e;
-  --domain-physics: #3a5a7a;
-  --domain-political: #7a3741;
-  --domain-quranic: #b5862e;
+  /* the four movements of the canon */
+  --mv-recovery: #a8843a;
+  --mv-diagnosis: #a5392a;
+  --mv-reconstruction: #3e3e93;
+  --mv-foundations: #4c6152;
+  /* brighter, for use on the indigo ground */
+  --mv-recovery-lum: #c99b41;
+  --mv-diagnosis-lum: #cf5748;
+  --mv-reconstruction-lum: #6f6fc4;
+  --mv-foundations-lum: #6f8c78;
 
   /* ---- Type ---- */
-  --font-display: "Bodoni Moda", "Times New Roman", serif;
-  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-display: "EB Garamond", "Brill", Georgia, serif;
+  --font-body: "EB Garamond", "Brill", Georgia, serif;
+  --font-ui: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
   --font-urdu: "Noto Nastaliq Urdu", serif;
   --font-arabic: "Amiri", serif;
+  --font-devanagari: "Noto Serif Devanagari", serif;
 
   /* fluid display scale — big jumps, deliberate contrast.
      The hero step is bounded by viewport *height* as well as width, so the
@@ -65,13 +76,16 @@
   --step-xxl: clamp(2.6rem, 6.4vw, 5.4rem);
   --step-xl: clamp(2.1rem, 4.6vw, 3.6rem);
   --step-lg: clamp(1.6rem, 3vw, 2.4rem);
-  --step-md: clamp(1.15rem, 1.7vw, 1.35rem);
-  --step-body: clamp(1rem, 1.15vw, 1.1rem);
+  /* Garamond has a small x-height — everything readable runs a step larger
+     than it would in a grotesque, and leading is looser to match. */
+  --step-md: clamp(1.24rem, 1.85vw, 1.5rem);
+  --step-body: clamp(1.08rem, 1.25vw, 1.2rem);
 
   /* ---- Shape / space ---- */
-  --radius-sm: 3px;
-  --radius-md: 6px;
-  --radius-lg: 14px;
+  /* the house sets radius 0 — authority from reduction */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
   --section-pad-x: clamp(24px, 6vw, 88px);
   --section-pad-y: clamp(72px, 12vh, 160px);
   --content-max: 1240px;
@@ -121,7 +135,8 @@ body {
   color: var(--ink-text);
   font-family: var(--font-body);
   font-size: var(--step-body);
-  line-height: 1.6;
+  line-height: 1.66;
+  letter-spacing: 0.005em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -153,8 +168,9 @@ h3,
 h4 {
   font-family: var(--font-display);
   font-weight: 600;
-  line-height: 1.03;
-  letter-spacing: -0.015em;
+  line-height: 1.08;
+  /* Garamond needs no negative tracking — it is already tightly fitted */
+  letter-spacing: 0;
   margin: 0;
   text-wrap: balance;
 }
@@ -166,9 +182,10 @@ p {
 /* ================= SHARED PATTERNS ================= */
 
 .eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-ui);
+  font-weight: 500;
   font-size: clamp(10px, 1vw, 11.5px);
-  letter-spacing: 0.3em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--accent-lum);
   display: block;
@@ -204,12 +221,13 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 15px 30px;
-  border-radius: 2px;
-  font-family: var(--font-body);
-  font-size: 14.5px;
+  padding: 14px 28px;
+  /* the house sets radius 0 — corners stay square */
+  border-radius: 0;
+  font-family: var(--font-ui);
+  font-size: 13.5px;
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.015em;
   text-decoration: none;
   position: relative;
   overflow: hidden;

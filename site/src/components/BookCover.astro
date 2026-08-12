@@ -1,159 +1,169 @@
 ---
-import Seal from "./Seal.astro";
+/*
+  A title's cover. Where the house holds a real plate we show it; where it does
+  not, we fall back to the typographic house cover — the same locked 2:3 field,
+  set in Garamond with the movement's rule at the foot, so an incomplete shelf
+  still reads as one shelf.
+*/
+import { base } from "../lib/base";
 
-const domainLabels: Record<string, string> = {
-  health: "Health",
-  economics: "Economics",
-  physics: "Physics",
-  political: "Political Thought",
-  quranic: "Qur'anic Studies",
+const MOVEMENTS: Record<string, { label: string; numeral: string }> = {
+  recovery: { label: "Recovery", numeral: "I" },
+  diagnosis: { label: "Diagnosis", numeral: "II" },
+  reconstruction: { label: "Reconstruction", numeral: "III" },
+  foundations: { label: "Foundations", numeral: "IV" },
 };
 
 interface Props {
   title: string;
-  domain: string;
-  color: string;
-  /** render the spine edge — gives the object real thickness */
-  spine?: boolean;
+  subtitle?: string;
+  movement: string;
+  shelf?: string;
+  cover?: string;
+  year?: string;
+  loading?: "lazy" | "eager";
 }
 
-const { title, domain, color, spine = true } = Astro.props;
-const label = domainLabels[domain] ?? domain;
+const { title, subtitle, movement, shelf, cover, year, loading = "lazy" } = Astro.props;
+const mv = MOVEMENTS[movement] ?? { label: movement, numeral: "" };
 ---
 
-<div class="book" style={`--domain: ${color}`}>
-  {spine && <div class="book__spine" aria-hidden="true"></div>}
+<div class:list={["cover", { "cover--plate": !!cover }]} style={`--mv: var(--mv-${movement}); --mv-lum: var(--mv-${movement}-lum)`}>
+  {
+    cover ? (
+      <img src={`${base}${cover}`} alt={`Cover of ${title}`} class="cover__img" loading={loading} width="400" height="600" />
+    ) : (
+      <div class="cover__set">
+        <div class="cover__rule" aria-hidden="true" />
+        <div class="cover__movement">
+          {mv.numeral} · {mv.label}
+        </div>
+        <div class="cover__title">{title}</div>
+        {subtitle && <div class="cover__subtitle">{subtitle}</div>}
+        <div class="cover__foot">
+          <span>Javed Jamil</span>
+          {year && <span class="cover__year">{year}</span>}
+        </div>
+      </div>
+    )
+  }
 
-  <div class="book__face">
-    <div class="book__rings" aria-hidden="true">
-      <svg viewBox="0 0 300 300">
-        <g fill="none" stroke={color} stroke-width="1">
-          <circle cx="150" cy="150" r="52" opacity="0.9"></circle>
-          <circle cx="150" cy="150" r="86" opacity="0.7"></circle>
-          <circle cx="150" cy="150" r="122" opacity="0.5"></circle>
-          <circle cx="150" cy="150" r="162" opacity="0.32"></circle>
-        </g>
-        <circle cx="150" cy="150" r="6" fill={color}></circle>
-      </svg>
-    </div>
-
-    <div class="book__label">{label}</div>
-    <div class="book__title">{title}</div>
-
-    <div class="book__band" aria-hidden="true"></div>
-    <div class="book__foot">
-      <span>Javed Jamil</span>
-      <Seal size={18} mode="foil" animated={false} />
-    </div>
-  </div>
-
-  <div class="book__gloss" aria-hidden="true"></div>
+  {shelf && <span class="cover__shelf" aria-hidden="true">{shelf}</span>}
+  <span class="cover__gloss" aria-hidden="true"></span>
 </div>
 
 <style>
-  .book {
+  .cover {
     position: relative;
-    aspect-ratio: 3 / 4.5;
-    border-radius: 2px 5px 5px 2px;
-    transform-style: preserve-3d;
+    aspect-ratio: 2 / 3;
+    background: var(--paper);
     box-shadow: var(--lift-2);
+    overflow: hidden;
     transition: box-shadow var(--dur) var(--ease-out);
   }
 
-  .book:hover {
-    box-shadow: var(--lift-3), 0 0 46px -12px color-mix(in srgb, var(--domain) 55%, transparent);
+  .cover:hover {
+    box-shadow: var(--lift-3), 0 0 40px -14px color-mix(in srgb, var(--mv-lum) 60%, transparent);
   }
 
-  /* the spine edge — a sliver of the domain colour, so a shelf of these reads
-     as a real shelf rather than a grid of rectangles */
-  .book__spine {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 9px;
-    border-radius: 2px 0 0 2px;
-    background: linear-gradient(90deg, color-mix(in srgb, var(--domain) 78%, #000) 0%, var(--domain) 55%, color-mix(in srgb, var(--domain) 60%, #000) 100%);
-    z-index: 2;
+  .cover__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
-  .book__face {
+  /* ---- typographic fallback ---- */
+  .cover__set {
     position: absolute;
     inset: 0;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    border-radius: 2px 5px 5px 2px;
-    background: linear-gradient(150deg, var(--ink-raised) 0%, var(--ink) 48%, var(--void) 100%);
-    border: 1px solid var(--ink-hairline);
-    padding-left: 9px;
+    padding: 12% 11% 10%;
+    background: linear-gradient(178deg, var(--paper) 0%, var(--parchment) 100%);
+    color: var(--ink);
   }
 
-  .book__rings {
-    position: absolute;
-    right: -34%;
-    top: -14%;
-    width: 108%;
-    opacity: 0.55;
-    pointer-events: none;
+  .cover__rule {
+    height: 2px;
+    background: var(--mv);
+    margin-bottom: 14%;
   }
 
-  .book__label {
-    position: relative;
-    padding: 20px 20px 0;
-    font-family: var(--font-mono);
-    font-size: 8.5px;
-    letter-spacing: 0.22em;
+  .cover__movement {
+    font-family: var(--font-ui);
+    font-size: clamp(7px, 0.85vw, 9px);
+    font-weight: 500;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--domain);
-    filter: brightness(1.5);
+    color: var(--mv);
+    margin-bottom: 8%;
   }
 
-  .book__title {
-    position: relative;
-    flex: 1;
-    padding: 16px 20px 0;
+  .cover__title {
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: clamp(0.95rem, 1.35vw, 1.22rem);
-    line-height: 1.14;
-    color: var(--ink-text);
-    letter-spacing: -0.005em;
+    font-size: clamp(0.95rem, 1.5vw, 1.32rem);
+    line-height: 1.16;
   }
 
-  .book__band {
-    height: 6px;
-    background: var(--domain);
+  .cover__subtitle {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(0.72rem, 1vw, 0.9rem);
+    line-height: 1.3;
+    color: var(--light-text-muted);
+    margin-top: 6%;
   }
 
-  .book__foot {
-    background: rgba(4, 6, 14, 0.86);
-    padding: 11px 16px;
+  .cover__foot {
+    margin-top: auto;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     gap: 8px;
     font-family: var(--font-display);
-    font-size: 11.5px;
-    color: var(--ink-text-muted);
+    font-size: clamp(0.7rem, 0.95vw, 0.85rem);
+    color: var(--light-text-muted);
+    border-top: 1px solid var(--light-hairline);
+    padding-top: 7%;
   }
 
-  /* specular sheet that follows the pointer via --gloss-x/y from the tilt engine */
-  .book__gloss {
+  .cover__year {
+    font-family: var(--font-mono);
+    font-size: 0.78em;
+    color: var(--light-text-faint);
+  }
+
+  /* ---- shelfmark tab ---- */
+  .cover__shelf {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 5px 9px;
+    background: var(--mv);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.06em;
+    z-index: 2;
+  }
+
+  /* specular sheet tracking the pointer, via --gloss-x/y from the tilt engine */
+  .cover__gloss {
     position: absolute;
     inset: 0;
-    border-radius: 2px 5px 5px 2px;
     pointer-events: none;
     opacity: 0;
     background: radial-gradient(
-      44% 44% at var(--gloss-x, 50%) var(--gloss-y, 50%),
-      rgba(255, 255, 255, 0.16) 0%,
-      rgba(255, 255, 255, 0) 72%
+      46% 46% at var(--gloss-x, 50%) var(--gloss-y, 50%),
+      rgba(255, 255, 255, 0.22) 0%,
+      rgba(255, 255, 255, 0) 74%
     );
     transition: opacity var(--dur) var(--ease-out);
   }
 
-  .book:hover .book__gloss {
+  .cover:hover .cover__gloss {
     opacity: 1;
   }
 </style>
