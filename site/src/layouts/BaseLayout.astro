@@ -1,32 +1,36 @@
 ---
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import Grain from "../components/Grain.astro";
 import { base } from "../lib/base";
 import "../styles/tokens.css";
 
 interface Props {
   title: string;
   description?: string;
-  /** Set true for the reading-focused templates (posts, shayari) that want a parchment scroll ground. */
   bodyClass?: string;
+  /** show the thin scroll-progress rule under the nav (article templates) */
+  readProgress?: boolean;
 }
 
 const {
   title,
   description = "Dr. Javed Jamil — physician, Islamic scholar, and originator of Applied Islamics. Examining the modern world through the Qur'an.",
   bodyClass = "",
+  readProgress = false,
 } = Astro.props;
 
 const pageTitle = title === "Dr. Javed Jamil" ? title : `${title} — Dr. Javed Jamil`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#080c1c" />
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()} />
 
     <meta property="og:type" content="website" />
@@ -44,13 +48,86 @@ const pageTitle = title === "Dr. Javed Jamil" ? title : `${title} — Dr. Javed 
       rel="stylesheet"
     />
 
+    <!-- Flip the no-js guard before first paint so reveal targets never flash
+         as hidden, and stay visible if the module below fails to load. -->
+    <script is:inline>
+      document.documentElement.classList.remove("no-js");
+    </script>
+
     <slot name="head" />
   </head>
   <body class={bodyClass}>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <Nav />
-    <main>
+    {readProgress && <div class="read-progress"><span data-read-progress></span></div>}
+
+    <main id="main">
       <slot />
     </main>
+
     <Footer />
+    <Grain />
+
+    <script>
+      import "../scripts/motion.js";
+    </script>
+
+    <style is:global>
+      /* Without JS the observer never fires — show everything rather than
+         leaving the page blank. */
+      .no-js [data-reveal],
+      .no-js [data-stagger] > * {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .no-js .reveal-lines .line > span {
+        transform: none !important;
+      }
+
+      .no-js [data-draw] {
+        stroke-dashoffset: 0 !important;
+      }
+    </style>
+
+    <style>
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        z-index: 10000;
+        background: var(--accent);
+        color: #fff;
+        padding: 12px 20px;
+        font-size: 14px;
+        text-decoration: none;
+      }
+
+      .skip-link:focus {
+        left: 12px;
+        top: 12px;
+      }
+
+      .read-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        z-index: 999;
+        background: transparent;
+        pointer-events: none;
+      }
+
+      .read-progress span {
+        display: block;
+        height: 100%;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        background: linear-gradient(90deg, var(--accent), var(--accent-lum), var(--gold-lum));
+      }
+    </style>
   </body>
 </html>

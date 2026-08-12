@@ -1,0 +1,201 @@
+---
+/*
+  TierField — the site's signature depth object.
+
+  Seven concentric tiers (Qur'an 67:3, "seven heavens in layers") struck from a
+  single centre, wrapped in orbital ellipses and a life-rhythm line. Rendered as
+  separate absolutely-positioned planes so the scroll engine can move each at a
+  different rate: the far tiers barely drift, the near orbitals swing. That
+  differential is what reads as depth.
+*/
+
+interface Props {
+  /** horizontal centre of the tier system, as a % of the field */
+  cx?: number;
+  /** vertical centre, as a % of the field */
+  cy?: number;
+  /** scale multiplier on the whole system */
+  scale?: number;
+  /** render the pulse-line across the field */
+  pulseLine?: boolean;
+  /** attach pointer-parallax depth hooks (hero only) */
+  pointer?: boolean;
+  class?: string;
+}
+
+const {
+  cx = 74,
+  cy = 46,
+  scale = 1,
+  pulseLine = true,
+  pointer = false,
+  class: className = "",
+} = Astro.props;
+
+// seven tiers, growing outward — radii chosen so the gaps widen with distance,
+// the way orbital shells actually do
+const tiers = [58, 104, 160, 228, 310, 408, 524];
+---
+
+<div class:list={["tier-field", className]} aria-hidden="true" style={`--cx:${cx}%; --cy:${cy}%; --scale:${scale};`}>
+  <!-- plane 1 (deepest): the outer tiers, barely move -->
+  <div class="tier-field__plane tier-field__plane--far" data-parallax="0.04" {...(pointer ? { "data-pointer-depth": "6" } : {})}>
+    <svg class="tier-field__svg" viewBox="-600 -600 1200 1200" fill="none">
+      {tiers.slice(4).map((r, i) => (
+        <circle cx="0" cy="0" r={r} stroke="var(--ink-text)" stroke-width="1" opacity={0.09 - i * 0.015} />
+      ))}
+      <!-- radial struts, the compass-and-straightedge register -->
+      {[0, 34, 68, 102, 136, 170, 204, 238, 272, 306].map((deg) => (
+        <line
+          x1="0"
+          y1="0"
+          x2={Math.cos((deg * Math.PI) / 180) * 560}
+          y2={Math.sin((deg * Math.PI) / 180) * 560}
+          stroke="var(--ink-text)"
+          stroke-width="1"
+          opacity="0.045"
+        />
+      ))}
+    </svg>
+  </div>
+
+  <!-- plane 2: mid tiers -->
+  <div class="tier-field__plane tier-field__plane--mid" data-parallax="0.09" {...(pointer ? { "data-pointer-depth": "14" } : {})}>
+    <svg class="tier-field__svg" viewBox="-600 -600 1200 1200" fill="none">
+      {tiers.slice(1, 4).map((r, i) => (
+        <circle cx="0" cy="0" r={r} stroke="var(--ink-text)" stroke-width="1" opacity={0.16 - i * 0.03} />
+      ))}
+      <!-- tick marks on the third tier: instrumentation, not decoration -->
+      <g class="spin-slow">
+        {Array.from({ length: 48 }).map((_, i) => {
+          const a = (i * 7.5 * Math.PI) / 180;
+          const inner = 228;
+          const outer = i % 4 === 0 ? 244 : 236;
+          return (
+            <line
+              x1={Math.cos(a) * inner}
+              y1={Math.sin(a) * inner}
+              x2={Math.cos(a) * outer}
+              y2={Math.sin(a) * outer}
+              stroke="var(--gold-lum)"
+              stroke-width="1"
+              opacity={i % 4 === 0 ? 0.3 : 0.14}
+            />
+          );
+        })}
+      </g>
+    </svg>
+  </div>
+
+  <!-- plane 3: the orbitals — the most motion -->
+  <div class="tier-field__plane tier-field__plane--near" data-parallax="0.16" {...(pointer ? { "data-pointer-depth": "26" } : {})}>
+    <svg class="tier-field__svg" viewBox="-600 -600 1200 1200" fill="none">
+      <g class="spin-med" style="transform: rotate(-24deg);">
+        <ellipse cx="0" cy="0" rx="392" ry="146" stroke="var(--accent-lum)" stroke-width="1.4" opacity="0.4" />
+        <circle cx="392" cy="0" r="7" fill="var(--accent-lum)" />
+      </g>
+      <g class="spin-rev" style="transform: rotate(38deg);">
+        <ellipse cx="0" cy="0" rx="286" ry="102" stroke="var(--gold-lum)" stroke-width="1.2" opacity="0.3" />
+        <circle cx="-286" cy="0" r="5" fill="var(--gold-lum)" opacity="0.85" />
+      </g>
+      <circle cx="0" cy="0" r={tiers[0]} stroke="var(--ink-text)" stroke-width="1" opacity="0.2" />
+    </svg>
+  </div>
+
+  <!-- plane 4 (nearest): the vital centre -->
+  <div class="tier-field__plane tier-field__plane--core" data-parallax="0.22" {...(pointer ? { "data-pointer-depth": "40" } : {})}>
+    <svg class="tier-field__svg" viewBox="-600 -600 1200 1200" fill="none">
+      <circle cx="0" cy="0" r="26" fill="var(--accent-lum)" opacity="0.28" class="ping" />
+      <circle cx="0" cy="0" r="17" fill="var(--accent)" class="breathe" />
+      <circle cx="0" cy="0" r="17" stroke="var(--accent-lum)" stroke-width="1.2" opacity="0.7" />
+    </svg>
+  </div>
+
+  {
+    pulseLine && (
+      <div class="tier-field__pulse" data-parallax="0.06">
+        <svg viewBox="0 0 1600 200" preserveAspectRatio="none" fill="none">
+          <path
+            d="M0 100 Q 80 46 160 100 T 320 100 T 480 100 T 640 100 T 800 100 T 960 100 T 1120 100 T 1280 100 T 1440 100 T 1600 100"
+            stroke="var(--accent-lum)"
+            stroke-width="1.4"
+            opacity="0.32"
+          />
+        </svg>
+      </div>
+    )
+  }
+
+  <div class="bleed bleed--petrol tier-field__bleed tier-field__bleed--a"></div>
+  <div class="bleed bleed--gold tier-field__bleed tier-field__bleed--b"></div>
+</div>
+
+<style>
+  .tier-field {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .tier-field__plane {
+    position: absolute;
+    inset: 0;
+    will-change: transform;
+  }
+
+  .tier-field__svg {
+    position: absolute;
+    left: var(--cx);
+    top: var(--cy);
+    width: calc(1500px * var(--scale));
+    height: calc(1500px * var(--scale));
+    max-width: none;
+    /* --px/--py come from the pointer-parallax engine; default to 0 */
+    transform: translate(calc(-50% + var(--px, 0px)), calc(-50% + var(--py, 0px)));
+    transition: transform 0.1s linear;
+  }
+
+  .tier-field__pulse {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--cy);
+    height: 200px;
+    transform: translateY(-50%);
+    will-change: transform;
+  }
+
+  .tier-field__pulse svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .tier-field__bleed {
+    width: 46vw;
+    height: 46vw;
+    max-width: 720px;
+    max-height: 720px;
+  }
+
+  .tier-field__bleed--a {
+    left: calc(var(--cx) - 23vw);
+    top: calc(var(--cy) - 23vw);
+    opacity: 0.9;
+  }
+
+  .tier-field__bleed--b {
+    left: -12vw;
+    bottom: -18vw;
+    top: auto;
+    opacity: 0.55;
+  }
+
+  @media (max-width: 900px) {
+    .tier-field__svg {
+      width: calc(1200px * var(--scale));
+      height: calc(1200px * var(--scale));
+    }
+  }
+</style>

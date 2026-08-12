@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import TierField from "../../components/TierField.astro";
 import { base } from "../../lib/base";
 
 export async function getStaticPaths() {
@@ -17,14 +18,24 @@ const relatedPosts = (
 const relatedBooks = (
   await Promise.all((term.data.relatedBooks ?? []).map((id: string) => getEntry("books", id)))
 ).filter(Boolean);
+
+const all = (await getCollection("lexicon")).sort((a, b) => a.data.term.localeCompare(b.data.term));
+const others = all.filter((t) => t.id !== term.id);
 ---
 
-<BaseLayout title={term.data.term} description={term.data.term}>
-  <section class="term">
-    <div class="term__inner">
-      <div class="eyebrow">{term.data.category ?? "Lexicon"}</div>
-      <h1 class="term__title">{term.data.term}</h1>
+<BaseLayout title={term.data.term} description={`${term.data.term} — a term from the lexicon of Dr. Javed Jamil.`}>
+  <article class="term">
+    <section class="term__head">
+      <TierField cx={78} cy={44} scale={0.85} pulseLine={false} class="term__field" />
 
+      <div class="term__head-inner">
+        <a href={`${base}lexicon/`} class="term__back link-draw">&larr; Lexicon</a>
+        <div class="eyebrow" data-reveal="fade">{term.data.category ?? "Lexicon"}</div>
+        <h1 class="term__title" data-reveal>{term.data.term}</h1>
+      </div>
+    </section>
+
+    <section class="term__sheet">
       <div class="term__body">
         <Content />
       </div>
@@ -32,109 +43,216 @@ const relatedBooks = (
       {
         (relatedPosts.length > 0 || relatedBooks.length > 0) && (
           <div class="term__related">
-            <div class="eyebrow">Related</div>
-            <ul class="term__related-list">
+            <div class="eyebrow term__related-head">Where it is developed</div>
+            <div class="term__related-list">
               {relatedPosts.map((p) => (
-                <li>
-                  <a href={`${base}ideas/${p!.id}/`}>{p!.data.title}</a>
-                  <span class="term__related-kind">Article</span>
-                </li>
+                <a href={`${base}ideas/${p!.id}/`} class="related">
+                  <span class="related__kind">Essay</span>
+                  <span class="related__title">{p!.data.title}</span>
+                  <span class="related__arrow" aria-hidden="true">&rarr;</span>
+                </a>
               ))}
               {relatedBooks.map((b) => (
-                <li>
-                  <a href={`${base}books/${b!.id}/`}>{b!.data.title}</a>
-                  <span class="term__related-kind">Book</span>
-                </li>
+                <a href={`${base}books/${b!.id}/`} class="related">
+                  <span class="related__kind">Book</span>
+                  <span class="related__title">{b!.data.title}</span>
+                  <span class="related__arrow" aria-hidden="true">&rarr;</span>
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
         )
       }
+    </section>
 
-      <a href={`${base}lexicon/`} class="term__back">&larr; Back to the Lexicon</a>
-    </div>
-  </section>
+    <section class="term__more">
+      <div class="term__more-inner">
+        <div class="eyebrow eyebrow--dim">Elsewhere in the lexicon</div>
+        <div class="term__more-list">
+          {
+            others.map((t) => (
+              <a href={`${base}lexicon/${t.id}/`} class="term__more-item">
+                {t.data.term}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </article>
 </BaseLayout>
 
 <style>
-  .term {
-    background: var(--parchment);
-    padding: var(--section-pad-y) var(--section-pad-x);
-    min-height: 60vh;
+  .term__head {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--ink) 0%, var(--void) 100%);
+    padding: clamp(44px, 7vh, 70px) var(--section-pad-x) clamp(70px, 11vh, 118px);
   }
 
-  .term__inner {
-    max-width: var(--reading-max);
+  .term__head::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(100deg, var(--void) 0%, rgba(4, 6, 14, 0.62) 34%, rgba(4, 6, 14, 0) 72%);
+  }
+
+  .term__head-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 860px;
     margin: 0 auto;
   }
 
-  .term__title {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(30px, 4.4vw, 46px);
-    margin: 16px 0 32px;
-    color: var(--ink);
-  }
-
-  .term__body {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #33384a;
-    margin-bottom: 48px;
-  }
-
-  .term__body :global(strong) {
-    color: var(--ink);
-  }
-
-  .term__related {
+  .term__back {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-text-faint);
+    text-decoration: none;
     margin-bottom: 40px;
   }
 
-  .term__related .eyebrow {
-    margin-bottom: 14px;
+  .term__back:hover {
+    color: var(--accent-lum);
+  }
+
+  .term__title {
+    font-size: clamp(2.2rem, 6vw, 4.4rem);
+    line-height: 1.02;
+    margin-top: 18px;
+    color: var(--ink-text);
+  }
+
+  .term__sheet {
+    position: relative;
+    z-index: 3;
+    max-width: 820px;
+    margin: -50px auto 0;
+    background: var(--paper);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--lift-3);
+    padding: clamp(38px, 5vw, 66px) clamp(24px, 5vw, 66px);
+  }
+
+  .term__body {
+    font-size: clamp(1.1rem, 1.45vw, 1.3rem);
+    line-height: 1.74;
+    color: #26262b;
+  }
+
+  .term__body :global(p) {
+    margin: 0 0 22px;
+  }
+
+  .term__body :global(p:first-child) {
+    font-family: var(--font-display);
+    font-size: 1.22em;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .term__body :global(strong) {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .term__related {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--light-hairline);
+  }
+
+  .term__related-head {
+    color: var(--accent);
+    margin-bottom: 18px;
   }
 
   .term__related-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: grid;
     gap: 8px;
   }
 
-  .term__related-list li {
-    display: flex;
-    justify-content: space-between;
-    background: #fff;
+  .related {
+    display: grid;
+    grid-template-columns: 62px 1fr 20px;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 18px;
     border: 1px solid var(--light-hairline);
     border-radius: var(--radius-sm);
-    padding: 12px 16px;
-  }
-
-  .term__related-list a {
-    color: var(--ink);
     text-decoration: none;
-    font-weight: 500;
+    color: var(--graphite);
+    transition: border-color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
   }
 
-  .term__related-list a:hover {
-    color: var(--accent);
+  .related:hover {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 5%, transparent);
   }
 
-  .term__related-kind {
+  .related__kind {
     font-family: var(--font-mono);
-    font-size: 10px;
+    font-size: 9.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
     color: var(--light-text-faint);
   }
 
-  .term__back {
-    font-size: 14px;
-    color: var(--accent);
-    text-decoration: none;
+  .related__title {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.4;
   }
 
-  .term__back:hover {
-    text-decoration: underline;
+  .related__arrow {
+    color: var(--accent);
+    opacity: 0;
+    transition: opacity var(--dur-fast) var(--ease-out);
+  }
+
+  .related:hover .related__arrow {
+    opacity: 1;
+  }
+
+  .term__more {
+    background: var(--void);
+    padding: clamp(56px, 9vh, 100px) var(--section-pad-x);
+    margin-top: clamp(48px, 8vh, 84px);
+    border-top: 1px solid var(--ink-hairline);
+  }
+
+  .term__more-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .term__more-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .term__more-item {
+    padding: 11px 20px;
+    border: 1px solid var(--ink-hairline);
+    border-radius: 100px;
+    font-family: var(--font-display);
+    font-size: 15px;
+    text-decoration: none;
+    color: var(--ink-text-muted);
+    transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out),
+      transform var(--dur-fast) var(--ease-out);
+  }
+
+  .term__more-item:hover {
+    border-color: var(--accent-lum);
+    color: var(--ink-text);
+    transform: translateY(-2px);
   }
 </style>

@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BookCover from "../../components/BookCover.astro";
+import TierField from "../../components/TierField.astro";
 import { base } from "../../lib/base";
 
 const domainLabels: Record<string, string> = {
@@ -18,84 +19,291 @@ export async function getStaticPaths() {
 }
 
 const { book } = Astro.props;
+
+const all = (await getCollection("books")).sort((a, b) => a.data.order - b.data.order);
+const sameField = all.filter((b) => b.data.domain === book.data.domain && b.id !== book.id).slice(0, 4);
+const idx = all.findIndex((b) => b.id === book.id);
+const next = all[(idx + 1) % all.length];
 ---
 
 <BaseLayout title={book.data.title} description={book.data.synopsis}>
-  <section class="book-detail">
-    <div class="book-detail__inner">
-      <div class="book-detail__cover">
-        <BookCover title={book.data.title} domain={book.data.domain} color={book.data.color} />
-      </div>
+  <article class="bookpage" style={`--c: ${book.data.color}`}>
+    <section class="bookpage__head">
+      <TierField cx={80} cy={46} scale={0.9} pulseLine={false} class="bookpage__field" />
 
-      <div class="book-detail__content">
-        <div class="eyebrow" style={`color:${book.data.color}`}>{domainLabels[book.data.domain] ?? book.data.domain}</div>
-        <h1 class="book-detail__title">{book.data.title}</h1>
-        <div class="book-detail__author">Dr. Javed Jamil</div>
-        <p class="book-detail__synopsis">{book.data.synopsis}</p>
+      <div class="bookpage__inner">
+        <a href={`${base}books/`} class="bookpage__back link-draw">&larr; The Works</a>
 
-        <a href={`${base}books/`} class="book-detail__back">&larr; Back to the Works library</a>
+        <div class="bookpage__grid">
+          <div class="bookpage__cover" data-reveal="scale" data-tilt="12">
+            <BookCover title={book.data.title} domain={book.data.domain} color={book.data.color} />
+          </div>
+
+          <div class="bookpage__detail">
+            <div class="bookpage__field-tag" data-reveal="fade">
+              <span class="bookpage__dot" aria-hidden="true"></span>
+              {domainLabels[book.data.domain] ?? book.data.domain}
+            </div>
+
+            <h1 class="bookpage__title" data-reveal>{book.data.title}</h1>
+            <div class="bookpage__author" data-reveal data-reveal-delay="90">Dr. Javed Jamil</div>
+            <p class="bookpage__synopsis" data-reveal data-reveal-delay="150">{book.data.synopsis}</p>
+
+            <div class="bookpage__actions" data-stagger data-reveal-delay="220">
+              <a href={`${base}ideas/`} class="button button--solid">Related essays</a>
+              <a href={`${base}books/`} class="button button--outline">All 18 titles</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    {
+      sameField.length > 0 && (
+        <section class="alsoin">
+          <div class="alsoin__inner">
+            <div class="alsoin__head" data-reveal>
+              <span class="alsoin__marker" aria-hidden="true" />
+              <h2>Also in {domainLabels[book.data.domain]}</h2>
+            </div>
+            <div class="alsoin__shelf" data-stagger>
+              {sameField.map((b) => (
+                <a href={`${base}books/${b.id}/`} class="alsoin__item" data-tilt="9">
+                  <BookCover title={b.data.title} domain={b.data.domain} color={b.data.color} />
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    <a href={`${base}books/${next.id}/`} class="nextbook" style={`--nc: ${next.data.color}`}>
+      <span class="nextbook__label">Next in the library</span>
+      <span class="nextbook__title">{next.data.title}</span>
+      <span class="nextbook__arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  </article>
 </BaseLayout>
 
 <style>
-  .book-detail {
-    background: var(--parchment);
-    padding: var(--section-pad-y) var(--section-pad-x);
-    min-height: 70vh;
+  .bookpage__head {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--ink) 0%, var(--void) 100%);
+    padding: clamp(40px, 6vh, 64px) var(--section-pad-x) clamp(64px, 10vh, 110px);
   }
 
-  .book-detail__inner {
+  .bookpage__head::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(60% 60% at 30% 50%, rgba(4, 6, 14, 0.72) 0%, rgba(4, 6, 14, 0) 100%);
+  }
+
+  .bookpage__inner {
+    position: relative;
+    z-index: 2;
     max-width: var(--content-max);
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 56px;
-    align-items: start;
   }
 
-  .book-detail__title {
+  .bookpage__back {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-text-faint);
+    text-decoration: none;
+    margin-bottom: 44px;
+  }
+
+  .bookpage__back:hover {
+    color: var(--accent-lum);
+  }
+
+  .bookpage__grid {
+    display: grid;
+    grid-template-columns: minmax(200px, 290px) 1fr;
+    gap: clamp(34px, 6vw, 82px);
+    align-items: center;
+  }
+
+  .bookpage__cover {
+    perspective: 1200px;
+    transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    transform-style: preserve-3d;
+    transition: transform 0.5s var(--ease-out);
+  }
+
+  .bookpage__field-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--c);
+    filter: brightness(1.45);
+  }
+
+  .bookpage__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--c);
+    box-shadow: 0 0 14px color-mix(in srgb, var(--c) 80%, transparent);
+  }
+
+  .bookpage__title {
+    font-size: clamp(1.9rem, 4.4vw, 3.4rem);
+    line-height: 1.05;
+    margin: 18px 0 12px;
+    color: var(--ink-text);
+  }
+
+  .bookpage__author {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-text-faint);
+    margin-bottom: 30px;
+  }
+
+  .bookpage__synopsis {
+    font-size: clamp(1.02rem, 1.4vw, 1.2rem);
+    line-height: 1.72;
+    color: var(--ink-text-muted);
+    max-width: 60ch;
+    margin: 0 0 36px;
+  }
+
+  .bookpage__actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* ---- also in field ---- */
+  .alsoin {
+    background: var(--void);
+    padding: clamp(48px, 8vh, 86px) var(--section-pad-x);
+    border-top: 1px solid var(--ink-hairline);
+  }
+
+  .alsoin__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+
+  .alsoin__head {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 28px;
+  }
+
+  .alsoin__marker {
+    width: 22px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--c);
+    flex: 0 0 auto;
+  }
+
+  .alsoin__head h2 {
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    color: var(--ink-text);
+  }
+
+  .alsoin__shelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: clamp(16px, 2.4vw, 30px);
+    perspective: 1400px;
+  }
+
+  .alsoin__item {
+    display: block;
+    text-decoration: none;
+    transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    transform-style: preserve-3d;
+    transition: transform 0.45s var(--ease-out);
+  }
+
+  /* ---- next ---- */
+  .nextbook {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: var(--ink);
+    border-top: 1px solid var(--ink-hairline);
+    padding: clamp(36px, 6vh, 60px) var(--section-pad-x);
+    text-decoration: none;
+    color: var(--ink-text);
+    position: relative;
+    overflow: hidden;
+    transition: background-color var(--dur) var(--ease-out);
+  }
+
+  .nextbook::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, color-mix(in srgb, var(--nc) 16%, transparent), transparent 55%);
+    opacity: 0;
+    transition: opacity var(--dur) var(--ease-out);
+  }
+
+  .nextbook:hover::before {
+    opacity: 1;
+  }
+
+  .nextbook > * {
+    position: relative;
+  }
+
+  .nextbook__label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-text-faint);
+    flex: 0 0 auto;
+  }
+
+  .nextbook__title {
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: clamp(30px, 4.4vw, 46px);
-    line-height: 1.08;
-    margin: 16px 0 10px;
-    color: var(--ink);
+    font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+    flex: 1;
   }
 
-  .book-detail__author {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--light-text-faint);
-    margin-bottom: 32px;
+  .nextbook__arrow {
+    color: var(--nc);
+    filter: brightness(1.5);
+    font-size: 1.3rem;
+    transition: transform var(--dur) var(--ease-out);
   }
 
-  .book-detail__synopsis {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #33384a;
-    max-width: 62ch;
-    margin: 0 0 40px;
+  .nextbook:hover .nextbook__arrow {
+    transform: translateX(8px);
   }
 
-  .book-detail__back {
-    font-size: 14px;
-    color: var(--accent);
-    text-decoration: none;
-  }
-
-  .book-detail__back:hover {
-    text-decoration: underline;
-  }
-
-  @media (max-width: 720px) {
-    .book-detail__inner {
+  @media (max-width: 780px) {
+    .bookpage__grid {
       grid-template-columns: 1fr;
+      gap: 32px;
     }
 
-    .book-detail__cover {
-      max-width: 220px;
+    .bookpage__cover {
+      max-width: 210px;
     }
   }
 </style>

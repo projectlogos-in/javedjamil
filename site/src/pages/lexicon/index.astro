@@ -1,31 +1,31 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
 import { base } from "../../lib/base";
-import { slugify } from "../../lib/slugify";
 
 const terms = (await getCollection("lexicon")).sort((a, b) => a.data.term.localeCompare(b.data.term));
 ---
 
-<BaseLayout title="Lexicon" description="A glossary of terms coined by Dr. Javed Jamil.">
-  <section class="lexicon-hero">
-    <div class="lexicon-hero__inner">
-      <div class="eyebrow">The Lexicon</div>
-      <h1 class="lexicon-hero__title">Coined Terms, Defined</h1>
-      <p class="lexicon-hero__desc">
-        Health Maximisation, Economic Fundamentalism, Natural World Order, Grand Peace — each term linked to the
-        essays, series and books that develop it.
-      </p>
-    </div>
-  </section>
+<BaseLayout title="Lexicon" description="A glossary of the terms Dr. Javed Jamil coined to make his argument.">
+  <PageHero
+    eyebrow="The Lexicon"
+    title="He had to coin the terms first"
+    lead="An argument this far outside the consensus needs vocabulary the consensus doesn't supply. Each entry links to the essays and books that build it."
+    meta={[`${terms.length} entries`]}
+  />
 
-  <section class="lexicon-list">
-    <div class="lexicon-list__inner">
+  <section class="terms">
+    <div class="terms__inner" data-stagger>
       {
-        terms.map((term) => (
-          <a href={`${base}lexicon/${term.id}/`} class="lexicon-card">
-            <span class="lexicon-card__term">{term.data.term}</span>
-            {term.data.category && <span class="lexicon-card__category">{term.data.category}</span>}
+        terms.map((term, i) => (
+          <a href={`${base}lexicon/${term.id}/`} class="term-card">
+            <span class="term-card__index">{String(i + 1).padStart(2, "0")}</span>
+            <span class="term-card__body">
+              <span class="term-card__term">{term.data.term}</span>
+              {term.data.category && <span class="term-card__cat">{term.data.category}</span>}
+            </span>
+            <span class="term-card__arrow" aria-hidden="true">&rarr;</span>
           </a>
         ))
       }
@@ -34,70 +34,108 @@ const terms = (await getCollection("lexicon")).sort((a, b) => a.data.term.locale
 </BaseLayout>
 
 <style>
-  .lexicon-hero {
-    background: var(--ink);
-    color: var(--parchment);
-    padding: 90px var(--section-pad-x) 60px;
+  .terms {
+    background: var(--void);
+    padding: clamp(48px, 8vh, 86px) var(--section-pad-x) clamp(70px, 11vh, 130px);
   }
 
-  .lexicon-hero__inner {
-    max-width: var(--content-max);
-    margin: 0 auto;
-  }
-
-  .lexicon-hero__title {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(34px, 5.5vw, 58px);
-    line-height: 1.02;
-    margin: 16px 0 14px;
-  }
-
-  .lexicon-hero__desc {
-    font-size: 17px;
-    color: var(--ink-text-muted);
-    margin: 0;
-    max-width: 60ch;
-  }
-
-  .lexicon-list {
-    background: var(--parchment);
-    padding: 56px var(--section-pad-x) 100px;
-  }
-
-  .lexicon-list__inner {
-    max-width: var(--reading-max);
+  .terms__inner {
+    max-width: 940px;
     margin: 0 auto;
     display: grid;
-    gap: 10px;
+    gap: 14px;
   }
 
-  .lexicon-card {
-    background: #fff;
-    border: 1px solid var(--light-hairline);
-    border-radius: var(--radius-md);
-    padding: 13px 16px;
-    display: flex;
-    justify-content: space-between;
+  .term-card {
+    display: grid;
+    grid-template-columns: 46px 1fr 30px;
     align-items: center;
+    gap: 20px;
+    padding: 28px 30px;
+    background: var(--ink-raised);
+    border: 1px solid var(--ink-hairline);
+    border-radius: var(--radius-md);
     text-decoration: none;
-    color: var(--ink);
-    transition: border-color 0.15s ease;
+    color: var(--ink-text);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out),
+      background-color var(--dur-fast) var(--ease-out);
   }
 
-  .lexicon-card:hover {
-    border-color: var(--accent);
+  .term-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--accent-lum), var(--gold-lum));
+    transform: scaleY(0);
+    transform-origin: 50% 0;
+    transition: transform var(--dur) var(--ease-out);
   }
 
-  .lexicon-card__term {
+  .term-card:hover {
+    transform: translateX(8px);
+    background: var(--ink-lifted);
+    border-color: var(--ink-hairline-strong);
+  }
+
+  .term-card:hover::before {
+    transform: scaleY(1);
+  }
+
+  .term-card__index {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--accent-lum);
+  }
+
+  .term-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .term-card__term {
     font-family: var(--font-display);
-    font-size: 16px;
     font-weight: 600;
+    font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+    line-height: 1.14;
   }
 
-  .lexicon-card__category {
+  .term-card__cat {
     font-family: var(--font-mono);
     font-size: 10px;
-    color: var(--light-text-faint);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-text-faint);
+  }
+
+  .term-card__arrow {
+    justify-self: end;
+    color: var(--accent-lum);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+  }
+
+  .term-card:hover .term-card__arrow {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (max-width: 620px) {
+    .term-card {
+      grid-template-columns: 34px 1fr;
+      padding: 22px 20px;
+      gap: 14px;
+    }
+
+    .term-card__arrow {
+      display: none;
+    }
   }
 </style>

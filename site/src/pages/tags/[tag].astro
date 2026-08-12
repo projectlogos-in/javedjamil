@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
 import { base } from "../../lib/base";
 
 export async function getStaticPaths() {
@@ -23,77 +24,88 @@ export async function getStaticPaths() {
 }
 
 const { tag, items } = Astro.props;
+const readable = tag.replace(/-/g, " ");
 ---
 
-<BaseLayout title={`#${tag}`} description={`Everything tagged "${tag}" by Dr. Javed Jamil.`}>
-  <section class="tag-archive">
-    <div class="tag-archive__inner">
-      <div class="eyebrow">Tag</div>
-      <h1 class="tag-archive__title">#{tag}</h1>
+<BaseLayout title={`#${tag}`} description={`Everything tagged "${readable}" by Dr. Javed Jamil.`}>
+  <PageHero eyebrow="Tag" title={readable} meta={[`${items.length} ${items.length === 1 ? "piece" : "pieces"}`]} />
 
-      <div class="tag-archive__list">
-        {
-          items.map((item) => (
-            <a href={`${base}${item.kind}/${item.id}/`} class="tag-archive__row">
-              <span class="tag-archive__row-title">{item.title}</span>
-              <time datetime={item.date.toISOString()}>
-                {item.date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
-              </time>
-            </a>
-          ))
-        }
-      </div>
+  <section class="tagged">
+    <div class="tagged__inner" data-stagger>
+      {
+        items.map((item) => (
+          <a href={`${base}${item.kind}/${item.id}/`} class="tagged__row">
+            <span class="tagged__kind">{item.kind === "shayari" ? "Ghazal" : "Essay"}</span>
+            <span class="tagged__title">{item.title}</span>
+            <time class="tagged__date" datetime={item.date.toISOString()}>
+              {item.date.toLocaleDateString("en-GB", { year: "numeric", month: "short" })}
+            </time>
+          </a>
+        ))
+      }
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .tag-archive {
-    background: var(--parchment);
-    padding: var(--section-pad-y) var(--section-pad-x);
-    min-height: 60vh;
+  .tagged {
+    background: var(--void);
+    padding: clamp(48px, 8vh, 86px) var(--section-pad-x) clamp(70px, 11vh, 130px);
   }
 
-  .tag-archive__inner {
-    max-width: var(--reading-max);
+  .tagged__inner {
+    max-width: 940px;
     margin: 0 auto;
+    border-top: 1px solid var(--ink-hairline);
   }
 
-  .tag-archive__title {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(30px, 4.4vw, 46px);
-    margin: 16px 0 40px;
-    color: var(--ink);
-  }
-
-  .tag-archive__list {
+  .tagged__row {
     display: grid;
-    gap: 2px;
-  }
-
-  .tag-archive__row {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 4px;
-    border-bottom: 1px solid var(--light-hairline);
+    grid-template-columns: 72px 1fr auto;
+    gap: 22px;
+    align-items: baseline;
+    padding: 22px 8px;
+    border-bottom: 1px solid var(--ink-hairline);
     text-decoration: none;
-    color: var(--ink);
+    color: var(--ink-text);
+    transition: padding-left var(--dur) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
   }
 
-  .tag-archive__row-title {
+  .tagged__row:hover {
+    padding-left: 18px;
+    background: rgba(47, 167, 149, 0.06);
+  }
+
+  .tagged__kind {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-lum);
+  }
+
+  .tagged__title {
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 17px;
+    font-size: clamp(1.02rem, 1.7vw, 1.28rem);
+    line-height: 1.28;
   }
 
-  .tag-archive__row:hover .tag-archive__row-title {
-    color: var(--accent);
-  }
-
-  .tag-archive__row time {
+  .tagged__date {
     font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--light-text-faint);
+    font-size: 10.5px;
+    color: var(--ink-text-faint);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 620px) {
+    .tagged__row {
+      grid-template-columns: 1fr auto;
+      gap: 8px 16px;
+    }
+
+    .tagged__title {
+      grid-column: 1 / -1;
+    }
   }
 </style>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Seal from "../../components/Seal.astro";
+import TierField from "../../components/TierField.astro";
 import { base } from "../../lib/base";
 
 const awards = [
@@ -12,6 +13,33 @@ const awards = [
   "Aditya Samman, awarded by the Government of Uttar Pradesh at the Saharanpur Mahotsava.",
   "Declared Man of the Year 2014 by Muslim Mirror; profiled again as Man of the Year 2016.",
 ];
+
+const theories = [
+  {
+    tag: "Economics",
+    color: "var(--domain-economics)",
+    title: "Economic Fundamentalism",
+    body: "A ruthless war of attrition against the ideology that gives economics predominance over every other sphere of life, indifferent to its effects on health, family peace and social order. In his account, businessmen were once “cranes” waiting for prey to come close; since the Industrial Revolution they have organised into “leopards” that roar and rule — mastering the state, remaking law in their interest, and industrialising sex as the commodity that “always lays golden eggs.”",
+  },
+  {
+    tag: "Peace",
+    color: "var(--domain-political)",
+    title: "Peace Economics & Grand Peace",
+    body: "Against Economic Fundamentalism he sets Peace Economics: development that never undermines Grand Peace — health of the individual, family peace and social order taken together. He rejects the narrower definitions, whether political (absence of conflict), mystic (tranquillity of the soul) or sociological (distribution of wealth), for a comprehensive one, and proposes the Natural World Order in place of the New: equal weight on Fundamental Rights, Fundamental Duties, and the Fundamental Prohibitions the corporate world abhors.",
+  },
+  {
+    tag: "Health",
+    color: "var(--domain-health)",
+    title: "The Dynamic Paradigm of Health",
+    body: "International health policy, he argues, is governed by economic fundamentalism rather than by health. “The worship of Hygeia is not tolerable for Mammon” — health demands discipline and restriction, and restriction is a word absent from the lexicon of the bazaar. The paradigm asks that health, not profit, set the terms for smoking, drinking, gambling and commercial sex alike.",
+  },
+  {
+    tag: "Physics",
+    color: "var(--domain-physics)",
+    title: "The Universal Theory of Relativity",
+    body: "General Relativity and Big Bang cosmology, on his reading, describe “a passive, clumsily stark looking collection of individual groups of matter” that has “lost its virility” — a universe with hardly any dynamic existence left in it, hollowing as it expands. His proposed Universal Theory of Relativity is an attempt to restore a governing order to that picture.",
+  },
+];
 ---
 
 <BaseLayout
@@ -19,249 +47,533 @@ const awards = [
   description="Dr. Javed Jamil — physician, Islamic scholar, and originator of Applied Islamics. Biography, theories, and activism."
 >
   <article class="about">
-    <header class="about__header">
-      <div class="eyebrow">Biography</div>
-      <h1 class="about__title">Dr. Javed Jamil</h1>
-      <p class="about__standfirst">
-        Dr. Javed Jamil may well be regarded as one of the most powerful thinkers of the current times in the Islamic
-        world. He has launched an ideological onslaught against the scientific and social philosophies of the New
-        World Order and their impact on humanity, presenting alternative Islamic paradigms in their place — while
-        preparing plans for the comprehensive empowerment of Muslims. His concern is for the whole of humanity: he
-        presents Islam not just for Muslims but for the benefit of all mankind. His works span medicine, religion,
-        economics, current affairs, physics, political science, philosophy, and Urdu poetry.
-      </p>
-      <div class="about__links">
-        <a href="https://drive.google.com/file/d/1aeQryZl7BmlsRe2Fembf5mhnO7RKhoUl/view" target="_blank" rel="noopener noreferrer">Download biography (ePUB)</a>
-        <span aria-hidden="true">&middot;</span>
-        <a href="https://drive.google.com/file/d/1slkDIl9m-nG0c4gbjbfUQwrE0FazoUkh/view" target="_blank" rel="noopener noreferrer">Download biography (PDF)</a>
+    <!-- ---- masthead ---- -->
+    <header class="about__masthead">
+      <TierField cx={80} cy={44} scale={1} class="about__field" />
+
+      <div class="about__masthead-inner">
+        <div class="eyebrow" data-reveal="fade">Biography</div>
+        <h1 class="about__title reveal-lines" data-reveal="fade">
+          <span class="line"><span>Dr. Javed Jamil</span></span>
+        </h1>
+        <div class="about__scripts" data-reveal data-reveal-delay="180">
+          <span dir="rtl" lang="ur">ڈاکٹر جاوید جمیل</span>
+          <span class="about__script-div" aria-hidden="true"></span>
+          <span dir="rtl" lang="ar">د. جاويد جميل</span>
+        </div>
+        <p class="about__standfirst" data-reveal data-reveal-delay="260">
+          One of the most forceful thinkers at work in the Islamic world today — an ideological onslaught against
+          the scientific and social philosophies of the New World Order, with alternative paradigms proposed in
+          their place. His concern is the whole of humanity: he presents Islam not for Muslims alone but for the
+          benefit of all mankind. The work spans medicine, religion, economics, current affairs, physics, political
+          science, philosophy and Urdu poetry.
+        </p>
+        <div class="about__downloads" data-reveal data-reveal-delay="330">
+          <a
+            href="https://drive.google.com/file/d/1aeQryZl7BmlsRe2Fembf5mhnO7RKhoUl/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button button--outline">Biography · ePUB</a
+          >
+          <a
+            href="https://drive.google.com/file/d/1slkDIl9m-nG0c4gbjbfUQwrE0FazoUkh/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button button--outline">Biography · PDF</a
+          >
+        </div>
       </div>
     </header>
 
-    <div class="about__body">
-      <p>
-        When President Obama, after his election, addressed the Muslim world, an organisation gathered the views of
-        one hundred prominent Muslims worldwide. Dr. Jamil was the only Muslim analyst from the Indian subcontinent
-        invited to respond. He wrote:
-      </p>
+    <!-- ---- the opening anecdote ---- -->
+    <section class="about__sheet">
+      <div class="about__prose">
+        <p>
+          When President Obama, after his election, addressed the Muslim world, an organisation gathered the views
+          of one hundred prominent Muslims worldwide. Dr. Jamil was the only Muslim analyst from the Indian
+          subcontinent invited to respond. He wrote:
+        </p>
 
-      <blockquote>
-        “America can avenge the killing of 3,000 Americans by killing two million Muslims. Tell me how Muslims can
-        and should avenge the killing of two million Muslim innocents by Americans? If America cannot tolerate the
-        extremist Muslims, why should Muslims tolerate the extremist America?”
-      </blockquote>
+        <blockquote>
+          “America can avenge the killing of 3,000 Americans by killing two million Muslims. Tell me how Muslims
+          can and should avenge the killing of two million Muslim innocents by Americans? If America cannot
+          tolerate the extremist Muslims, why should Muslims tolerate the extremist America?”
+        </blockquote>
 
-      <p>
-        He was also the first Indian Islamic scholar invited by the Iranian government to its annual Qur'anic
-        Exhibition, and the only Indian scholar at the Third International Conference on Islamic Media in Jakarta. In
-        1994 he became the first Indian Muslim scholar to publish in support of family planning from an Islamic
-        viewpoint — with important qualifications — in a book that traditional and Islamic scholars alike described
-        as balanced and methodologically sound.
-      </p>
+        <p>
+          He was also the first Indian Islamic scholar invited by the Iranian government to its annual Qur'anic
+          Exhibition, and the only Indian scholar at the Third International Conference on Islamic Media in
+          Jakarta. In 1994 he became the first Indian Muslim scholar to publish in support of family planning from
+          an Islamic viewpoint — with important qualifications — in a book that traditional and Islamic scholars
+          alike described as balanced and methodologically sound.
+        </p>
+      </div>
+    </section>
 
-      <h2>A Man of Theories</h2>
-      <p>
-        Dr. Jamil is, above all, a man of theories — propounding unconventional positions across fields, almost all
-        of them rooted in Islamic principle but argued in both secular and Islamic frameworks.
-      </p>
+    <!-- ---- a man of theories ---- -->
+    <section class="theories">
+      <div class="theories__inner">
+        <div class="theories__head" data-reveal>
+          <div class="eyebrow">A man of theories</div>
+          <h2>Unconventional positions, argued in both frameworks</h2>
+          <p>
+            Almost all of it is rooted in Islamic principle, but presented in secular as well as Islamic terms — he
+            distinguishes atheistic secularism from religious secularism, and argues in whichever register the
+            audience works in.
+          </p>
+        </div>
 
-      <h3>Economic Fundamentalism</h3>
-      <p>
-        Dr. Jamil has waged what he calls a ruthless war of attrition against <strong>Economic Fundamentalism</strong>
-        — the ideology that gives predominance to economics over every other sphere of life, indifferent to its
-        effects on health, family peace, and social order. In his account, businessmen were once "cranes" waiting
-        for prey to come close; since the Industrial Revolution they have organised into "leopards" that roar and
-        rule — mastering the state, remaking law in their interest, and industrialising sex as the commodity that
-        "always lays golden eggs."
-      </p>
+        <div class="theories__list">
+          {
+            theories.map((t) => (
+              <article class="theory" data-reveal style={`--c: ${t.color}`}>
+                <div class="theory__tag">
+                  <span class="theory__dot" aria-hidden="true" />
+                  {t.tag}
+                </div>
+                <h3 class="theory__title">{t.title}</h3>
+                <p class="theory__body">{t.body}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
 
-      <h3>Peace Economics &amp; the Theory of Peace</h3>
-      <p>
-        Against Economic Fundamentalism, Dr. Jamil proposes <strong>Peace Economics</strong>: development that never
-        undermines <strong>Grand Peace</strong> — health of the individual, family peace, and social order taken
-        together. He rejects narrower definitions of peace, whether the political (absence of conflict), the mystic
-        (tranquillity of the soul), or the sociological (distribution of wealth), for a comprehensive one. His
-        alternative to the New World Order is the <strong>Natural World Order</strong>: a system built on equal
-        weight given to Fundamental Rights, Fundamental Duties, and — the one the corporate world abhors most —
-        Fundamental Prohibitions.
-      </p>
+    <!-- ---- applied islamics ---- -->
+    <section class="discipline">
+      <div class="discipline__inner">
+        <Seal variant="geometric" mode="dark" size={64} class="discipline__seal" />
+        <div class="eyebrow" data-reveal="fade">The discipline</div>
+        <h2 data-reveal>Applied Islamics</h2>
+        <p data-reveal>
+          Not Islam studied through the lens of modernity, but the reverse: modern developments in social and
+          scientific fields examined in the light of Islamic principle, with alternative models proposed in place of
+          what the analysis dismantles. He holds that Islam is for the whole world, not Muslims alone, and that
+          Muslims must lead the fight against the evils pervading society. His life's ambition is an international
+          Institute of Applied Islamics dedicated to exactly this work.
+        </p>
+        <a href={`${base}books/applied-islamics/`} class="button button--solid" data-reveal>The founding book</a>
+      </div>
+    </section>
 
-      <h3>The Dynamic Paradigm of Health</h3>
-      <p>
-        Dr. Jamil argues that international health policy is itself governed by economic fundamentalism, not health.
-        "The worship of Hygeia is not tolerable for Mammon," he writes — health demands discipline and restriction,
-        and restriction is a word absent from the lexicon of the bazaar. His Dynamic Paradigm calls for health,
-        not profit, to set the terms for smoking, drinking, gambling, and commercial sex alike, and for family
-        health to be treated as a matter of civilisational, not merely individual, concern.
-      </p>
+    <!-- ---- activism + poetry ---- -->
+    <section class="two-up">
+      <div class="two-up__inner">
+        <article class="panel" data-reveal>
+          <div class="eyebrow">Social activist</div>
+          <h3>PEACE, and a campaign that started at 24</h3>
+          <p>
+            Dr. Jamil founded PEACE, an NGO running national and district-level seminars on education, health and
+            communal harmony, and has worked with the Government of India and SIFPSA/USAID on health and family
+            welfare projects. At 24 he organised the first major demonstration in Saharanpur against the Supreme
+            Court's verdict in the Shah Bano case — before the campaign it seeded became one of the most significant
+            Muslim mobilisations in independent India's history.
+          </p>
+          <p>
+            In 1985 he launched the “Dakhla Lo” (Take Admission) campaign, visiting more than 250 villages across
+            Saharanpur district to lecture on health and education, and later organised relief camps during communal
+            violence in the region.
+          </p>
+        </article>
 
-      <h3>The Universal Theory of Relativity</h3>
-      <p>
-        Dr. Jamil has also turned his attention to physics, arguing that General Relativity and Big Bang cosmology
-        describe "a passive, clumsily stark looking collection of individual groups of matter" that has "lost its
-        virility" — an account of the universe with hardly any dynamic existence left in it. His proposed Universal
-        Theory of Relativity is an attempt to restore a governing order to that picture.
-      </p>
+        <article class="panel panel--gold" data-reveal data-reveal-delay="120">
+          <div class="eyebrow eyebrow--gold">The poet</div>
+          <h3>Several hundred ghazals, kept largely private</h3>
+          <p>
+            His first collection, <em>Rahguzar</em>, was published by the Fakhruddin Memorial Committee, an
+            organisation of the Government of Uttar Pradesh; a second followed. He remains lesser known as a poet
+            than as a thinker, largely by choice — he has generally declined invitations to mushairas in favour of
+            other commitments.
+          </p>
+          <p>The poetry carries the same charge as the prose: as often aggressive as it is, at times, unguardedly romantic.</p>
+          <a href={`${base}shayari/`} class="panel__link link-draw">Read the shayari &rarr;</a>
+        </article>
+      </div>
+    </section>
 
-      <h2>Applied Islamics</h2>
-      <p>
-        Dr. Jamil's unshakeable conviction that the Qur'an is the Book of God led him to found <strong>Applied
-        Islamics</strong> as a discipline in its own right — not the study of Islam through the lens of modern
-        developments, but the reverse: modern developments in social and scientific fields examined in the light
-        of Islamic principle, with alternative Islamic models proposed in their place. He holds that Islam is for
-        the whole world, not Muslims alone, and that Muslims must lead the fight against the evils pervading
-        society. His life's ambition is an international Institute of Applied Islamics, dedicated to exactly this
-        work.
-      </p>
-
-      <h2>Social Activist</h2>
-      <p>
-        Dr. Jamil founded PEACE, an NGO that has run national and district-level seminars on education, health, and
-        communal harmony, and has worked with the Government of India and SIFPSA/USAID on health and family welfare
-        projects. At 24, he organised the first major demonstration in Saharanpur against the Supreme Court's
-        verdict in the Shah Bano case — before the campaign it seeded became one of the most significant Muslim
-        mobilisations in independent India's history. In 1985 he launched the "Dakhla Lo" (Take Admission) campaign,
-        visiting more than 250 villages across Saharanpur district to lecture on health and education, and later
-        organised relief camps during communal violence in the region.
-      </p>
-
-      <h2>The Poet</h2>
-      <p>
-        Dr. Jamil has composed several hundred Urdu ghazals. His first collection, <em>Rahguzar</em>, was published
-        by the Fakhruddin Memorial Committee, an organisation of the Government of Uttar Pradesh; a second collection
-        followed. He remains lesser-known as a poet than as a thinker, largely by choice — he has generally declined
-        invitations to mushairas in favour of other commitments. His poetry carries the same charge as his prose: as
-        often aggressive as it is, at times, unguardedly romantic. A selection appears in the <a href={`${base}shayari/`}>Shayari</a> section
-        of this site.
-      </p>
-
-      <h2>Awards, Positions &amp; Lectures</h2>
-      <ul class="about__awards">
-        {awards.map((item) => <li>{item}</li>)}
-      </ul>
-
-      <p class="about__more-links">
-        The full list of Dr. Jamil's published books is in the <a href={`${base}books/`}>Works library</a>; his essays
-        and series are collected under <a href={`${base}ideas/`}>Ideas</a>.
-      </p>
-    </div>
-
-    <footer class="about__seal">
-      <Seal variant="geometric" mode="light" size={40} animated={false} />
-    </footer>
+    <!-- ---- awards ---- -->
+    <section class="awards">
+      <div class="awards__inner">
+        <div class="awards__head" data-reveal>
+          <div class="eyebrow">Selected</div>
+          <h2>Awards, positions &amp; lectures</h2>
+        </div>
+        <ol class="awards__list" data-stagger>
+          {
+            awards.map((item, i) => (
+              <li class="award">
+                <span class="award__n">{String(i + 1).padStart(2, "0")}</span>
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ol>
+        <p class="awards__more" data-reveal>
+          The full body of published work is in the <a href={`${base}books/`} class="link-draw">Works library</a>; the
+          essays and series are collected under <a href={`${base}ideas/`} class="link-draw">Ideas</a>.
+        </p>
+      </div>
+    </section>
   </article>
 </BaseLayout>
 
 <style>
-  .about {
-    max-width: var(--reading-max);
-    margin: 0 auto;
-    padding: 72px var(--section-pad-x) 60px;
+  /* ---- masthead ---- */
+  .about__masthead {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--ink) 0%, var(--void) 100%);
+    padding: clamp(60px, 10vh, 116px) var(--section-pad-x) clamp(80px, 13vh, 140px);
   }
 
-  .about__header {
-    margin-bottom: 44px;
+  .about__masthead::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(100deg, var(--void) 0%, rgba(4, 6, 14, 0.7) 32%, rgba(4, 6, 14, 0) 70%);
+  }
+
+  .about__masthead-inner {
+    position: relative;
+    z-index: 2;
+    max-width: var(--content-max);
+    margin: 0 auto;
   }
 
   .about__title {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(34px, 5.5vw, 58px);
-    line-height: 1.02;
-    margin: 16px 0 24px;
-    color: var(--ink);
+    font-size: var(--step-xxl);
+    margin: 18px 0 20px;
+    color: var(--ink-text);
+  }
+
+  .about__scripts {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+    color: var(--ink-text-muted);
+  }
+
+  .about__scripts span:first-child {
+    font-family: var(--font-urdu);
+    font-size: clamp(17px, 2vw, 23px);
+    line-height: 2.1;
+  }
+
+  .about__scripts span:last-child {
+    font-family: var(--font-arabic);
+    font-size: clamp(18px, 2.1vw, 24px);
+  }
+
+  .about__script-div {
+    width: 1px;
+    height: 22px;
+    background: var(--ink-hairline-strong);
   }
 
   .about__standfirst {
-    font-family: var(--font-body);
-    font-size: 19px;
-    line-height: 1.65;
-    color: #33384a;
+    font-size: clamp(1.08rem, 1.55vw, 1.32rem);
+    line-height: 1.68;
+    color: var(--ink-text-muted);
+    max-width: 62ch;
+    margin: 0 0 32px;
+  }
+
+  .about__downloads {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* ---- the lifted sheet ---- */
+  .about__sheet {
+    position: relative;
+    z-index: 3;
+    max-width: 820px;
+    margin: -58px auto 0;
+    background: var(--paper);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--lift-3);
+    padding: clamp(38px, 5vw, 66px) clamp(24px, 5vw, 66px);
+  }
+
+  .about__prose {
+    max-width: var(--reading-max);
+    margin: 0 auto;
+    font-size: clamp(1.05rem, 1.3vw, 1.18rem);
+    line-height: 1.76;
+    color: #26262b;
+  }
+
+  .about__prose p {
     margin: 0 0 24px;
   }
 
-  .about__links {
-    font-size: 13.5px;
+  .about__prose blockquote {
+    margin: 30px 0;
+    padding: 4px 0 4px 28px;
+    border-left: 2px solid var(--accent);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.22em;
+    line-height: 1.46;
+    color: var(--ink);
   }
 
-  .about__links a {
+  /* ---- theories ---- */
+  .theories {
+    background: var(--parchment);
+    color: var(--graphite);
+    padding: clamp(70px, 11vh, 130px) var(--section-pad-x) clamp(56px, 9vh, 100px);
+    margin-top: clamp(48px, 8vh, 86px);
+  }
+
+  .theories__inner,
+  .awards__inner,
+  .two-up__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+
+  .theories__head {
+    margin-bottom: 44px;
+    max-width: 60ch;
+  }
+
+  .theories__head h2 {
+    font-size: var(--step-xl);
+    margin: 16px 0 16px;
+  }
+
+  .theories__head p {
+    font-size: var(--step-md);
+    line-height: 1.65;
+    color: var(--light-text-muted);
+    margin: 0;
+  }
+
+  .theories__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .theory {
+    background: var(--paper);
+    border: 1px solid var(--light-hairline);
+    border-radius: var(--radius-md);
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
+  }
+
+  .theory::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--c);
+  }
+
+  .theory:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--lift-paper);
+  }
+
+  .theory__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c);
+  }
+
+  .theory__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--c);
+  }
+
+  .theory__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.25rem, 2.2vw, 1.62rem);
+    line-height: 1.15;
+    margin: 14px 0 14px;
+  }
+
+  .theory__body {
+    font-size: 15px;
+    line-height: 1.68;
+    color: var(--light-text-muted);
+    margin: 0;
+  }
+
+  /* ---- discipline ---- */
+  .discipline {
+    background: var(--ink);
+    padding: clamp(70px, 11vh, 130px) var(--section-pad-x);
+    text-align: center;
+  }
+
+  .discipline__inner {
+    max-width: 660px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .discipline__seal {
+    margin-bottom: 26px;
+  }
+
+  .discipline h2 {
+    font-size: var(--step-xl);
+    margin: 16px 0 20px;
+    color: var(--ink-text);
+  }
+
+  .discipline p {
+    font-size: var(--step-md);
+    line-height: 1.7;
+    color: var(--ink-text-muted);
+    margin: 0 0 32px;
+  }
+
+  /* ---- two-up ---- */
+  .two-up {
+    background: var(--void);
+    padding: clamp(60px, 10vh, 110px) var(--section-pad-x);
+  }
+
+  .two-up__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .panel {
+    background: var(--ink-raised);
+    border: 1px solid var(--ink-hairline);
+    border-radius: var(--radius-md);
+    padding: clamp(28px, 3.6vw, 44px);
+  }
+
+  .panel--gold {
+    background: linear-gradient(158deg, var(--ink-raised) 0%, var(--ink) 100%);
+    border-color: color-mix(in srgb, var(--gold-lum) 20%, transparent);
+  }
+
+  .panel h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    line-height: 1.18;
+    margin: 16px 0 18px;
+    color: var(--ink-text);
+  }
+
+  .panel p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-text-muted);
+    margin: 0 0 16px;
+  }
+
+  .panel em {
+    font-style: italic;
+    color: var(--ink-text);
+  }
+
+  .panel__link {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-lum);
+    text-decoration: none;
+    margin-top: 6px;
+  }
+
+  /* ---- awards ---- */
+  .awards {
+    background: var(--parchment);
+    color: var(--graphite);
+    padding: clamp(60px, 10vh, 110px) var(--section-pad-x) clamp(70px, 11vh, 130px);
+  }
+
+  .awards__head {
+    margin-bottom: 34px;
+  }
+
+  .awards__head h2 {
+    font-size: var(--step-lg);
+    margin-top: 16px;
+  }
+
+  .awards__list {
+    list-style: none;
+    margin: 0 0 34px;
+    padding: 0;
+    border-top: 1px solid var(--light-hairline);
+  }
+
+  .award {
+    display: grid;
+    grid-template-columns: 46px 1fr;
+    gap: 20px;
+    padding: 18px 6px;
+    border-bottom: 1px solid var(--light-hairline);
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--light-text-muted);
+  }
+
+  .award__n {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+  }
+
+  .awards__more {
+    font-size: 15px;
+    color: var(--light-text-muted);
+  }
+
+  .awards__more a {
     color: var(--accent);
     text-decoration: none;
   }
 
-  .about__links a:hover {
-    text-decoration: underline;
+  @media (max-width: 860px) {
+    .theories__list,
+    .two-up__inner {
+      grid-template-columns: 1fr;
+    }
   }
 
-  .about__links span {
-    margin: 0 10px;
-    color: var(--light-text-faint);
-  }
+  @media (max-width: 700px) {
+    .about__sheet {
+      margin-top: -34px;
+      border-radius: var(--radius-md);
+    }
 
-  .about__body {
-    font-family: var(--font-body);
-    font-size: 18px;
-    line-height: 1.72;
-    color: #26262b;
-  }
-
-  .about__body p {
-    margin: 0 0 22px;
-  }
-
-  .about__body h2 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(24px, 3.2vw, 32px);
-    line-height: 1.15;
-    margin: 48px 0 20px;
-    color: var(--ink);
-  }
-
-  .about__body h3 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 21px;
-    margin: 34px 0 14px;
-    color: var(--ink);
-  }
-
-  .about__body blockquote {
-    margin: 28px 0;
-    padding-left: 26px;
-    border-left: 3px solid var(--accent);
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 23px;
-    line-height: 1.4;
-    color: var(--ink);
-  }
-
-  .about__body a {
-    color: var(--accent);
-  }
-
-  .about__awards {
-    padding-left: 22px;
-    margin: 0 0 22px;
-    display: grid;
-    gap: 12px;
-  }
-
-  .about__awards li {
-    font-size: 16.5px;
-    line-height: 1.55;
-  }
-
-  .about__more-links {
-    font-size: 15px;
-    color: var(--light-text-muted);
-    border-top: 1px solid var(--light-hairline);
-    padding-top: 24px;
-  }
-
-  .about__seal {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
+    .award {
+      grid-template-columns: 32px 1fr;
+      gap: 12px;
+    }
   }
 </style>

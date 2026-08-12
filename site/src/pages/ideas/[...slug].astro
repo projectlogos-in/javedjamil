@@ -26,8 +26,14 @@ if (post.data.type === "series" && post.data.seriesName) {
     seriesHref: `${base}ideas/series/${slugify(post.data.seriesName)}/`,
     prevHref: idx > 0 ? `${base}ideas/${parts[idx - 1].id}/` : undefined,
     nextHref: idx < parts.length - 1 ? `${base}ideas/${parts[idx + 1].id}/` : undefined,
+    prevTitle: idx > 0 ? parts[idx - 1].data.title : undefined,
+    nextTitle: idx < parts.length - 1 ? parts[idx + 1].data.title : undefined,
   };
 }
+
+// rough reading time from the raw markdown — good enough to set expectations
+const words = post.body?.split(/\s+/).length ?? 0;
+const readingMinutes = Math.max(1, Math.round(words / 220));
 ---
 
 <PostLayout
@@ -37,6 +43,7 @@ if (post.data.type === "series" && post.data.seriesName) {
   excerpt={post.data.excerpt}
   tags={post.data.tags}
   series={seriesInfo}
+  readingMinutes={readingMinutes}
 >
   <Content />
 </PostLayout>

@@ -1,121 +1,192 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
 import BookCover from "../../components/BookCover.astro";
 import { base } from "../../lib/base";
 
 const books = (await getCollection("books")).sort((a, b) => a.data.order - b.data.order);
 
-const domainKey = [
+const domains = [
   { key: "health", label: "Health", color: "#0E6F62" },
   { key: "economics", label: "Economics", color: "#9C5A2E" },
   { key: "physics", label: "Physics", color: "#3A5A7A" },
   { key: "political", label: "Political Thought", color: "#7A3741" },
   { key: "quranic", label: "Qur'anic Studies", color: "#B5862E" },
 ];
+
+const grouped = domains.map((d) => ({
+  ...d,
+  books: books.filter((b) => b.data.domain === d.key),
+}));
 ---
 
-<BaseLayout title="Works" description="The book library of Dr. Javed Jamil.">
-  <section class="books-hero">
-    <div class="books-hero__inner">
-      <div class="eyebrow">Mission Publications</div>
-      <h1 class="books-hero__title">The Works Library</h1>
-      <p class="books-hero__desc">
-        {books.length} titles spanning Health, Economics, Physics, Political Thought and Qur'anic Studies.
-      </p>
-
-      <div class="domain-key">
-        {
-          domainKey.map((d) => (
-            <span class="domain-key__item">
-              <span class="domain-key__swatch" style={`background:${d.color}`} />
-              {d.label}
-            </span>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class="shelf">
-    <div class="shelf__grid">
+<BaseLayout title="Works" description="The book library of Dr. Javed Jamil — eighteen titles across health, economics, physics, political thought and Qur'anic studies.">
+  <PageHero
+    eyebrow="Mission Publications"
+    title="The Works"
+    lead="Eighteen titles, one continuous argument — colour-banded by field so the shelf reads as a single body of work rather than a bibliography."
+    meta={[`${books.length} titles`, "5 fields"]}
+  >
+    <div class="domain-key" data-reveal data-reveal-delay="280">
       {
-        books.map((book) => (
-          <a href={`${base}books/${book.id}/`} class="shelf__item">
-            <BookCover title={book.data.title} domain={book.data.domain} color={book.data.color} />
+        grouped.map((d) => (
+          <a href={`#${d.key}`} class="domain-key__item" style={`--c: ${d.color}`}>
+            <span class="domain-key__swatch" />
+            <span class="domain-key__label">{d.label}</span>
+            <span class="domain-key__n">{d.books.length}</span>
           </a>
         ))
       }
     </div>
-  </section>
+  </PageHero>
+
+  <div class="library">
+    {
+      grouped.map((group) => (
+        <section class="field" id={group.key} style={`--c: ${group.color}`}>
+          <div class="field__head" data-reveal>
+            <span class="field__marker" aria-hidden="true" />
+            <h2 class="field__title">{group.label}</h2>
+            <span class="field__count">
+              {group.books.length} {group.books.length === 1 ? "title" : "titles"}
+            </span>
+          </div>
+
+          <div class="field__shelf" data-stagger>
+            {group.books.map((book) => (
+              <a href={`${base}books/${book.id}/`} class="field__item" data-tilt="10">
+                <BookCover title={book.data.title} domain={book.data.domain} color={book.data.color} />
+                <span class="field__item-title">{book.data.title}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))
+    }
+  </div>
 </BaseLayout>
 
 <style>
-  .books-hero {
-    background: var(--ink);
-    color: var(--parchment);
-    padding: 90px var(--section-pad-x) 60px;
-  }
-
-  .books-hero__inner {
-    max-width: var(--content-max);
-    margin: 0 auto;
-  }
-
-  .books-hero__title {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(34px, 5.5vw, 58px);
-    line-height: 1.02;
-    margin: 16px 0 14px;
-  }
-
-  .books-hero__desc {
-    font-size: 17px;
-    color: var(--ink-text-muted);
-    margin: 0 0 28px;
-  }
-
   .domain-key {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
+    margin-top: 34px;
   }
 
   .domain-key__item {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-size: 13px;
+    gap: 9px;
+    padding: 9px 15px;
+    border: 1px solid var(--ink-hairline);
+    border-radius: 100px;
+    text-decoration: none;
     color: var(--ink-text-muted);
+    font-size: 12.5px;
+    transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out),
+      transform var(--dur-fast) var(--ease-out);
+  }
+
+  .domain-key__item:hover {
+    border-color: var(--c);
+    color: var(--ink-text);
+    transform: translateY(-2px);
   }
 
   .domain-key__swatch {
-    width: 12px;
-    height: 12px;
+    width: 9px;
+    height: 9px;
     border-radius: 2px;
+    background: var(--c);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--c) 70%, transparent);
   }
 
-  .shelf {
-    background: var(--parchment);
-    padding: 56px var(--section-pad-x) 100px;
+  .domain-key__n {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-text-faint);
   }
 
-  .shelf__grid {
+  .library {
+    background: var(--void);
+    padding: clamp(48px, 7vh, 80px) var(--section-pad-x) clamp(70px, 11vh, 130px);
+  }
+
+  .field {
     max-width: var(--content-max);
     margin: 0 auto;
+    padding: clamp(34px, 5vh, 56px) 0;
+    border-top: 1px solid var(--ink-hairline);
+    scroll-margin-top: 96px;
+  }
+
+  .field:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .field__head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+
+  .field__marker {
+    width: 24px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--c);
+    box-shadow: 0 0 16px color-mix(in srgb, var(--c) 70%, transparent);
+    align-self: center;
+    flex: 0 0 auto;
+  }
+
+  .field__title {
+    font-size: clamp(1.35rem, 2.6vw, 2rem);
+    color: var(--ink-text);
+  }
+
+  .field__count {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-text-faint);
+  }
+
+  .field__shelf {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(178px, 1fr));
+    gap: clamp(18px, 2.6vw, 34px);
+    perspective: 1500px;
   }
 
-  .shelf__item {
-    display: block;
+  .field__item {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
     text-decoration: none;
-    transition: transform 0.15s ease;
+    color: var(--ink-text-muted);
+    transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    transform-style: preserve-3d;
+    transition: transform 0.45s var(--ease-out), color var(--dur-fast) var(--ease-out);
   }
 
-  .shelf__item:hover {
-    transform: translateY(-4px);
+  .field__item:hover {
+    color: var(--ink-text);
+  }
+
+  .field__item-title {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 600px) {
+    .field__shelf {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 </style>

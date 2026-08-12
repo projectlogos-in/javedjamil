@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
 import { base } from "../../lib/base";
 import { slugify } from "../../lib/slugify";
 
@@ -25,14 +26,43 @@ const seriesList = [...seriesMap.entries()]
     latestDate: Math.max(...parts.map((p) => p.data.date.valueOf())),
   }))
   .sort((a, b) => b.latestDate - a.latestDate);
+
+// group the archive by year so 300+ pieces stay navigable
+const byYear = new Map<number, typeof articles>();
+for (const post of articles) {
+  const y = post.data.date.getFullYear();
+  if (!byYear.has(y)) byYear.set(y, []);
+  byYear.get(y)!.push(post);
+}
+const years = [...byYear.entries()].sort((a, b) => b[0] - a[0]);
+const featured = articles.slice(0, 3);
 ---
 
 <BaseLayout title="Ideas" description="Long-form essays and multi-part series by Dr. Javed Jamil.">
-  <section class="ideas-hero">
-    <div class="ideas-hero__inner">
-      <div class="eyebrow">Ideas</div>
-      <h1 class="ideas-hero__title">Essays &amp; Series</h1>
-      <p class="ideas-hero__desc">A physician's diagnosis of the modern world, through the Qur'an.</p>
+  <PageHero
+    eyebrow="Ideas"
+    title="Essays & Series"
+    lead="A physician's diagnosis of the modern world, argued through the Qur'an — across medicine, economics, cosmology, law and politics."
+    meta={[`${articles.length} essays`, `${seriesList.length} series`, `${years.length} years`]}
+  />
+
+  <!-- ---- featured: the three most recent, given room ---- -->
+  <section class="featured">
+    <div class="featured__inner" data-stagger>
+      {
+        featured.map((post, i) => (
+          <a href={`${base}ideas/${post.id}/`} class:list={["feature", { "feature--lead": i === 0 }]}>
+            <span class="feature__meta">
+              <time datetime={post.data.date.toISOString()}>
+                {post.data.date.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}
+              </time>
+            </span>
+            <span class="feature__title">{post.data.title}</span>
+            {post.data.excerpt && <span class="feature__excerpt">{post.data.excerpt}</span>}
+            <span class="feature__more">Read &rarr;</span>
+          </a>
+        ))
+      }
     </div>
   </section>
 
@@ -40,12 +70,21 @@ const seriesList = [...seriesMap.entries()]
     seriesList.length > 0 && (
       <section class="series-section">
         <div class="series-section__inner">
-          <div class="eyebrow">Series</div>
-          <div class="series-section__grid">
+          <div class="section-head" data-reveal>
+            <div class="eyebrow">Series</div>
+            <h2>Arguments built across instalments</h2>
+          </div>
+
+          <div class="series-grid" data-stagger>
             {seriesList.map((s) => (
               <a href={`${base}ideas/series/${s.slug}/`} class="series-card">
-                <div class="series-card-title">{s.name}</div>
-                <div class="series-card-meta">{s.count} parts</div>
+                <span class="series-card__rail" aria-hidden="true">
+                  {Array.from({ length: Math.min(s.count, 8) }).map(() => (
+                    <span />
+                  ))}
+                </span>
+                <span class="series-card__title">{s.name}</span>
+                <span class="series-card__count">{s.count} parts</span>
               </a>
             ))}
           </div>
@@ -54,150 +93,314 @@ const seriesList = [...seriesMap.entries()]
     )
   }
 
-  <section class="articles-section">
-    <div class="articles-section__inner">
-      <div class="eyebrow">Articles</div>
-      <div class="articles-list">
-        {
-          articles.map((post) => (
-            <a href={`${base}ideas/${post.id}/`} class="article-row">
-              <div class="article-row__meta">
-                <time datetime={post.data.date.toISOString()}>
-                  {post.data.date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
-                </time>
-              </div>
-              <div class="article-row__title">{post.data.title}</div>
-              {post.data.excerpt && <p class="article-row__excerpt">{post.data.excerpt}</p>}
-            </a>
-          ))
-        }
-        {articles.length === 0 && <p class="articles-empty">No standalone articles yet.</p>}
+  <!-- ---- the full archive, by year ---- -->
+  <section class="archive">
+    <div class="archive__inner">
+      <div class="section-head section-head--light" data-reveal>
+        <div class="eyebrow">The archive</div>
+        <h2>Everything, by year</h2>
       </div>
+
+      {
+        years.map(([year, posts]) => (
+          <div class="year">
+            <div class="year__label" data-reveal="fade">
+              <span class="year__num">{year}</span>
+              <span class="year__count">{posts.length}</span>
+            </div>
+            <ol class="year__list">
+              {posts.map((post) => (
+                <li>
+                  <a href={`${base}ideas/${post.id}/`} class="entry">
+                    <span class="entry__title">{post.data.title}</span>
+                    <time class="entry__date" datetime={post.data.date.toISOString()}>
+                      {post.data.date.toLocaleDateString("en-GB", { month: "short", day: "2-digit" })}
+                    </time>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))
+      }
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .ideas-hero {
-    background: var(--ink);
-    color: var(--parchment);
-    padding: 90px var(--section-pad-x) 70px;
+  /* ---- featured ---- */
+  .featured {
+    background: var(--void);
+    padding: clamp(48px, 8vh, 84px) var(--section-pad-x);
   }
 
-  .ideas-hero__inner {
+  .featured__inner {
     max-width: var(--content-max);
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
   }
 
-  .ideas-hero__title {
+  .feature {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 30px;
+    background: var(--ink-raised);
+    border: 1px solid var(--ink-hairline);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--ink-text);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--dur) var(--ease-out), border-color var(--dur-fast) var(--ease-out),
+      background-color var(--dur-fast) var(--ease-out);
+  }
+
+  /* a petrol wash rises from the base on hover */
+  .feature::before {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-lum));
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform var(--dur) var(--ease-out);
+  }
+
+  .feature:hover {
+    transform: translateY(-5px);
+    background: var(--ink-lifted);
+    border-color: var(--ink-hairline-strong);
+  }
+
+  .feature:hover::before {
+    transform: scaleX(1);
+  }
+
+  .feature--lead {
+    grid-row: span 1;
+  }
+
+  .feature__meta {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-lum);
+  }
+
+  .feature__title {
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: clamp(34px, 5.5vw, 58px);
-    line-height: 1.02;
-    margin: 16px 0 14px;
+    font-size: clamp(1.2rem, 1.9vw, 1.55rem);
+    line-height: 1.16;
   }
 
-  .ideas-hero__desc {
-    font-size: 17px;
+  .feature__excerpt {
+    font-size: 14.5px;
+    line-height: 1.6;
     color: var(--ink-text-muted);
-    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
+  .feature__more {
+    margin-top: auto;
+    padding-top: 8px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-text-faint);
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+
+  .feature:hover .feature__more {
+    color: var(--accent-lum);
+  }
+
+  /* ---- section heads ---- */
+  .section-head {
+    margin-bottom: 34px;
+  }
+
+  .section-head h2 {
+    font-size: var(--step-xl);
+    margin-top: 16px;
+    color: var(--ink-text);
+  }
+
+  .section-head--light h2 {
+    color: var(--ink);
+  }
+
+  /* ---- series ---- */
   .series-section {
-    background: var(--bone);
-    padding: 56px var(--section-pad-x);
-    border-bottom: 1px solid var(--light-hairline);
+    background: var(--ink);
+    padding: clamp(56px, 9vh, 100px) var(--section-pad-x);
+    border-top: 1px solid var(--ink-hairline);
   }
 
-  .series-section__inner,
-  .articles-section__inner {
+  .series-section__inner {
     max-width: var(--content-max);
     margin: 0 auto;
   }
 
-  .series-section .eyebrow,
-  .articles-section .eyebrow {
-    margin-bottom: 20px;
-  }
-
-  .series-section__grid {
+  .series-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
   }
 
   .series-card {
-    background: #fff;
-    border: 1px solid var(--light-hairline);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 26px;
+    background: var(--ink-raised);
+    border: 1px solid var(--ink-hairline);
     border-radius: var(--radius-md);
-    padding: 20px;
     text-decoration: none;
-    color: var(--ink);
-    transition: border-color 0.15s ease;
+    color: var(--ink-text);
+    transition: transform var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
   }
 
   .series-card:hover {
-    border-color: var(--accent);
+    transform: translateY(-4px);
+    border-color: var(--accent-lum);
   }
 
-  .series-card-title {
+  .series-card__rail {
+    display: flex;
+    gap: 4px;
+  }
+
+  .series-card__rail span {
+    display: block;
+    width: 18px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--accent-lum);
+    opacity: 0.4;
+  }
+
+  .series-card:hover .series-card__rail span {
+    opacity: 1;
+  }
+
+  .series-card__title {
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 17px;
-    margin-bottom: 6px;
+    font-size: 1.12rem;
+    line-height: 1.2;
   }
 
-  .series-card-meta {
+  .series-card__count {
     font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--light-text-faint);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-text-faint);
   }
 
-  .articles-section {
+  /* ---- archive ---- */
+  .archive {
     background: var(--parchment);
-    padding: 56px var(--section-pad-x) 100px;
+    color: var(--graphite);
+    padding: clamp(56px, 9vh, 100px) var(--section-pad-x) clamp(70px, 11vh, 130px);
   }
 
-  .articles-list {
+  .archive__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+
+  .year {
     display: grid;
-    gap: 2px;
+    grid-template-columns: 120px 1fr;
+    gap: 28px;
+    padding: 28px 0;
+    border-top: 1px solid var(--light-hairline);
   }
 
-  .article-row {
-    display: block;
-    padding: 22px 4px;
-    border-bottom: 1px solid var(--light-hairline);
-    text-decoration: none;
+  .year__label {
+    position: sticky;
+    top: 104px;
+    align-self: start;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .year__num {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.6rem;
     color: var(--ink);
   }
 
-  .article-row__meta {
+  .year__count {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 10.5px;
     color: var(--light-text-faint);
-    margin-bottom: 6px;
   }
 
-  .article-row__title {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 21px;
-    margin-bottom: 6px;
+  .year__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
-  .article-row:hover .article-row__title {
+  .entry {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 10px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: inherit;
+    transition: background-color var(--dur-fast) var(--ease-out), padding-left var(--dur-fast) var(--ease-out);
+  }
+
+  .entry:hover {
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+    padding-left: 18px;
+  }
+
+  .entry__title {
+    font-size: 15.5px;
+    line-height: 1.45;
+  }
+
+  .entry:hover .entry__title {
     color: var(--accent);
   }
 
-  .article-row__excerpt {
-    font-size: 14.5px;
-    color: var(--light-text-muted);
-    margin: 0;
-    max-width: 70ch;
+  .entry__date {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--light-text-faint);
+    white-space: nowrap;
   }
 
-  .articles-empty {
-    color: var(--light-text-faint);
-    font-size: 14px;
+  @media (max-width: 900px) {
+    .featured__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .year {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .year__label {
+      position: static;
+    }
   }
 </style>

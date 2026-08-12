@@ -1,72 +1,113 @@
 /*
-  Design tokens — "The Living Order"
-  Source of truth: Design/Dr. Javed Jamil's Living Order/Javed Jamil Brand Identity.dc.html
-  Do not introduce colors/fonts outside this file without updating the brand doc first.
+  Design system — "Seven Tiers"
+
+  The organising metaphor is Qur'an 67:3 — seven heavens in layers. The site is
+  built as a stack of z-planes you descend through: ancient compass-and-
+  straightedge geometry rendered with the instrumentation of a modern
+  laboratory. Tradition supplies the forms; modernity supplies the precision.
 */
 
 :root {
-  /* ---- Color: spine of ink and parchment, one vital pulse ---- */
-  --ink: #0b1026;          /* Cosmic Ink — primary dark ground */
-  --ink-deep: #070b1e;     /* panels/cards on dark ground */
-  --graphite: #23232a;     /* body text on light ground */
-  --bone: #e7dfce;         /* secondary panel */
-  --parchment: #f3eee3;    /* reading ground */
+  /* ---- Ground: the night, in layers of depth ---- */
+  --void: #04060e;         /* deepest plane — behind everything */
+  --ink: #080c1c;          /* primary dark ground */
+  --ink-raised: #0e1430;   /* cards/panels lifted off the ground */
+  --ink-lifted: #161d40;   /* hover / highest dark plane */
 
-  --accent: #0e6f62;       /* Vital Petrol — recommended primary accent */
-  --accent-oklch: oklch(0.52 0.07 184);
-  --gold: #be8a2c;         /* Manuscript Gold — foil / ceremonial accent */
-  --gold-oklch: oklch(0.66 0.11 78);
+  /* ---- Ground: the page ---- */
+  --parchment: #f4f0e6;    /* reading ground */
+  --parchment-deep: #eae3d4;
+  --paper: #fbf9f4;        /* cards on parchment */
+  --graphite: #22222a;     /* body text on light */
 
-  /* accent is swappable system-wide: set --accent: var(--gold) to switch modes */
+  /* ---- The pulse ---- */
+  --accent: #0e6f62;       /* Vital Petrol */
+  --accent-lum: #2fa795;   /* luminous variant — glows, hairlines on dark */
+  --accent-glow: rgba(47, 167, 149, 0.22);
 
-  /* text/hairline on dark ground */
-  --ink-text-muted: #b7bcd0;
-  --ink-text-faint: #7e84a0;
-  --ink-hairline: rgba(243, 238, 234, 0.12);
+  --gold: #c9973a;         /* Manuscript Gold — the tradition/foil register */
+  --gold-lum: #e8c578;
+  --gold-glow: rgba(232, 197, 120, 0.18);
 
-  /* text/hairline on light ground */
-  --light-text-muted: #4a4f60;
-  --light-text-faint: #7e8294;
-  --light-hairline: rgba(12, 19, 48, 0.12);
+  --crimson: #96434e;      /* tension / the polemic register */
 
-  /* domain key — book spines / tag coloring */
+  /* text + hairlines on dark */
+  --ink-text: #e8e4da;
+  --ink-text-muted: #b0b6ce;
+  --ink-text-faint: #7a80a0;
+  --ink-hairline: rgba(232, 228, 218, 0.11);
+  --ink-hairline-strong: rgba(232, 228, 218, 0.2);
+
+  /* text + hairlines on light */
+  --light-text-muted: #474c5e;
+  --light-text-faint: #7b7f92;
+  --light-hairline: rgba(8, 12, 28, 0.11);
+  --light-hairline-strong: rgba(8, 12, 28, 0.2);
+
+  /* domain key — the five fields of the work */
   --domain-health: #0e6f62;
   --domain-economics: #9c5a2e;
   --domain-physics: #3a5a7a;
   --domain-political: #7a3741;
   --domain-quranic: #b5862e;
 
-  /* guardrail colors — reference only, never apply as design color */
-  --guardrail-flag-green: #1fa84a;
-  --guardrail-pharma-mint: #7fe5c3;
-  --guardrail-tech-blue: #3aa0ff;
-
   /* ---- Type ---- */
-  --font-display: "Bodoni Moda", serif;       /* headlines, pull quotes, drop caps */
-  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; /* body/UI */
-  --font-mono: "IBM Plex Mono", monospace;    /* data, labels, eyebrows */
-  --font-urdu: "Noto Nastaliq Urdu", serif;   /* Urdu — raised baseline, ~1.15x Latin cap height */
-  --font-arabic: "Amiri", serif;              /* Qur'anic citations */
+  --font-display: "Bodoni Moda", "Times New Roman", serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-urdu: "Noto Nastaliq Urdu", serif;
+  --font-arabic: "Amiri", serif;
 
-  /* ---- Spacing / shape ---- */
+  /* fluid display scale — big jumps, deliberate contrast.
+     The hero step is bounded by viewport *height* as well as width, so the
+     name never pushes the call-to-action below the fold on short laptops. */
+  --step-hero: clamp(2.9rem, min(10vw, 13.5vh), 9rem);
+  --step-xxl: clamp(2.6rem, 6.4vw, 5.4rem);
+  --step-xl: clamp(2.1rem, 4.6vw, 3.6rem);
+  --step-lg: clamp(1.6rem, 3vw, 2.4rem);
+  --step-md: clamp(1.15rem, 1.7vw, 1.35rem);
+  --step-body: clamp(1rem, 1.15vw, 1.1rem);
+
+  /* ---- Shape / space ---- */
   --radius-sm: 3px;
-  --radius-md: 4px;
-  --radius-lg: 8px;
-  --section-pad-x: 64px;
-  --section-pad-y: 104px;
-  --content-max: 1180px;
-  --reading-max: 720px;
+  --radius-md: 6px;
+  --radius-lg: 14px;
+  --section-pad-x: clamp(24px, 6vw, 88px);
+  --section-pad-y: clamp(72px, 12vh, 160px);
+  --content-max: 1240px;
+  --wide-max: 1500px;
+  --reading-max: 700px;
+
+  /* ---- Elevation ---- */
+  --lift-1: 0 2px 10px rgba(4, 6, 14, 0.18);
+  --lift-2: 0 12px 34px rgba(4, 6, 14, 0.3);
+  --lift-3: 0 30px 70px rgba(4, 6, 14, 0.45);
+  --lift-paper: 0 18px 44px rgba(8, 12, 28, 0.13);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.28s;
+  --dur: 0.62s;
+  --dur-slow: 1.1s;
 }
 
 @media (max-width: 720px) {
   :root {
-    --section-pad-x: 24px;
-    --section-pad-y: 64px;
+    --reading-max: 100%;
   }
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* the scroll engine reads this; keeps sticky sections honest */
+  scroll-padding-top: 84px;
 }
 
 html,
@@ -76,16 +117,19 @@ body {
 }
 
 body {
-  background: var(--parchment);
-  color: var(--graphite);
+  background: var(--ink);
+  color: var(--ink-text);
   font-family: var(--font-body);
-  line-height: 1.5;
+  font-size: var(--step-body);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--parchment);
+  background: var(--accent-lum);
+  color: var(--void);
 }
 
 [dir="rtl"] {
@@ -97,69 +141,362 @@ a {
 }
 
 img,
-svg {
+svg,
+video {
   max-width: 100%;
   display: block;
 }
 
-/* ---- Living Order motion: the pulse and the orbit ---- */
-@keyframes lo-pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-  70% {
-    opacity: 0.06;
-  }
-  100% {
-    transform: scale(4.4);
-    opacity: 0;
-  }
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.03;
+  letter-spacing: -0.015em;
+  margin: 0;
+  text-wrap: balance;
 }
 
-@keyframes lo-orbit {
+p {
+  text-wrap: pretty;
+}
+
+/* ================= SHARED PATTERNS ================= */
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: clamp(10px, 1vw, 11.5px);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-lum);
+  display: block;
+}
+
+.eyebrow--gold {
+  color: var(--gold-lum);
+}
+
+.eyebrow--dim {
+  color: var(--ink-text-faint);
+}
+
+/* a hairline that carries a node, per the motif language */
+.rule-node {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.rule-node::before,
+.rule-node::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: currentColor;
+  opacity: 0.22;
+}
+
+/* ---- buttons ---- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 2px;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+
+.button--solid {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 0 rgba(47, 167, 149, 0);
+}
+
+.button--solid:hover {
+  background: var(--accent-lum);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.button--outline {
+  border: 1px solid var(--ink-hairline-strong);
+  color: var(--ink-text);
+}
+
+.button--outline:hover {
+  border-color: var(--accent-lum);
+  color: var(--accent-lum);
+  transform: translateY(-2px);
+}
+
+.button--ghost-light {
+  border: 1px solid var(--light-hairline-strong);
+  color: var(--graphite);
+}
+
+.button--ghost-light:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ---- link with an underline that draws in ---- */
+.link-draw {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--dur-fast) var(--ease-out);
+}
+
+.link-draw:hover {
+  background-size: 100% 1px;
+}
+
+/* ================= DEPTH ATMOSPHERE ================= */
+
+/* radial light bleed — placed inside dark sections for luminosity */
+.bleed {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.bleed--petrol {
+  background: radial-gradient(circle, var(--accent-glow) 0%, rgba(47, 167, 149, 0) 70%);
+}
+
+.bleed--gold {
+  background: radial-gradient(circle, var(--gold-glow) 0%, rgba(232, 197, 120, 0) 70%);
+}
+
+/* film grain — one fixed overlay, set in BaseLayout */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+
+/* ================= MOTION PRIMITIVES ================= */
+
+/* Elements opt in with data-reveal; the scroll engine adds .is-in.
+   Everything degrades to visible if JS never runs (see the no-js guard). */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+  will-change: opacity, transform;
+}
+
+[data-reveal="fade"] {
+  transform: none;
+}
+
+[data-reveal="left"] {
+  transform: translate3d(-32px, 0, 0);
+}
+
+[data-reveal="right"] {
+  transform: translate3d(32px, 0, 0);
+}
+
+[data-reveal="scale"] {
+  transform: scale(0.94);
+}
+
+[data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* headline that wipes up line by line */
+.reveal-lines .line {
+  display: block;
+  overflow: hidden;
+}
+
+.reveal-lines .line > span {
+  display: block;
+  transform: translate3d(0, 105%, 0);
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.reveal-lines.is-in .line > span {
+  transform: none;
+}
+
+.reveal-lines .line:nth-child(2) > span {
+  transition-delay: 0.09s;
+}
+.reveal-lines .line:nth-child(3) > span {
+  transition-delay: 0.18s;
+}
+.reveal-lines .line:nth-child(4) > span {
+  transition-delay: 0.27s;
+}
+
+/* staggered children */
+[data-stagger] > * {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+}
+
+[data-stagger].is-in > * {
+  opacity: 1;
+  transform: none;
+}
+
+[data-stagger].is-in > *:nth-child(1) { transition-delay: 0.02s; }
+[data-stagger].is-in > *:nth-child(2) { transition-delay: 0.09s; }
+[data-stagger].is-in > *:nth-child(3) { transition-delay: 0.16s; }
+[data-stagger].is-in > *:nth-child(4) { transition-delay: 0.23s; }
+[data-stagger].is-in > *:nth-child(5) { transition-delay: 0.3s; }
+[data-stagger].is-in > *:nth-child(6) { transition-delay: 0.37s; }
+[data-stagger].is-in > *:nth-child(7) { transition-delay: 0.44s; }
+[data-stagger].is-in > *:nth-child(8) { transition-delay: 0.51s; }
+
+/* SVG stroke that draws itself in */
+[data-draw] {
+  stroke-dasharray: var(--len, 1200);
+  stroke-dashoffset: var(--len, 1200);
+  transition: stroke-dashoffset 2s var(--ease-out);
+}
+
+[data-draw].is-in {
+  stroke-dashoffset: 0;
+}
+
+/* ---- ambient loops ---- */
+@keyframes so-spin {
   to {
     transform: rotate(360deg);
   }
 }
 
-@keyframes lo-orbit-rev {
+@keyframes so-spin-rev {
   to {
     transform: rotate(-360deg);
   }
 }
 
-.lo-pulse {
-  transform-box: view-box;
-  transform-origin: 120px 120px;
-  animation: lo-pulse 4.2s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
-}
-
-.lo-orbit {
-  transform-box: view-box;
-  transform-origin: 120px 120px;
-  animation: lo-orbit 64s linear infinite;
-}
-
-.lo-orbit-rev {
-  transform-box: view-box;
-  transform-origin: 120px 120px;
-  animation: lo-orbit-rev 90s linear infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .lo-pulse,
-  .lo-orbit,
-  .lo-orbit-rev {
-    animation: none;
+@keyframes so-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.09);
+    opacity: 1;
   }
 }
 
-/* ---- Shared eyebrow / label pattern used throughout the brand doc ---- */
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--accent);
+@keyframes so-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(4.6);
+    opacity: 0;
+  }
+}
+
+@keyframes so-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.spin-slow {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: so-spin 120s linear infinite;
+}
+
+.spin-med {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: so-spin 64s linear infinite;
+}
+
+.spin-rev {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: so-spin-rev 90s linear infinite;
+}
+
+.breathe {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: so-breathe 5.5s var(--ease-in-out) infinite;
+}
+
+.ping {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: so-ping 4.6s var(--ease-out) infinite;
+}
+
+.drift {
+  animation: so-drift 7s var(--ease-in-out) infinite;
+}
+
+/* ================= REDUCED MOTION ================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  [data-reveal],
+  [data-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .reveal-lines .line > span {
+    transform: none !important;
+  }
+
+  [data-draw] {
+    stroke-dashoffset: 0 !important;
+  }
+
+  [data-parallax] {
+    transform: none !important;
+  }
 }

@@ -3,91 +3,195 @@ import Seal from "./Seal.astro";
 import { base } from "../lib/base";
 
 const year = new Date().getFullYear();
+
+const columns = [
+  {
+    title: "The Work",
+    links: [
+      { href: `${base}ideas/`, label: "Ideas" },
+      { href: `${base}health-maximisation/`, label: "Health Maximisation" },
+      { href: `${base}books/`, label: "Works" },
+    ],
+  },
+  {
+    title: "Reference",
+    links: [
+      { href: `${base}lexicon/`, label: "Lexicon" },
+      { href: `${base}shayari/`, label: "Shayari" },
+      { href: `${base}about/`, label: "About" },
+    ],
+  },
+  {
+    title: "Elsewhere",
+    links: [
+      { href: "https://www.facebook.com/javedjamil2015", label: "Facebook", external: true },
+      { href: "https://twitter.com/drjavedjamil", label: "Twitter", external: true },
+      { href: `${base}rss.xml`, label: "RSS" },
+    ],
+  },
+];
 ---
 
 <footer class="site-footer">
+  <div class="site-footer__glow bleed bleed--petrol"></div>
+
   <div class="site-footer__inner">
-    <div class="site-footer__brand">
-      <Seal size={34} mode="dark" animated={false} />
+    <div class="site-footer__masthead">
+      <Seal variant="geometric" mode="dark" size={54} />
       <div>
         <div class="site-footer__name">Dr. Javed Jamil</div>
-        <div class="site-footer__tag eyebrow">Applied Islamics</div>
+        <div class="site-footer__scripts">
+          <span dir="rtl" lang="ur">ڈاکٹر جاوید جمیل</span>
+        </div>
+        <p class="site-footer__blurb">
+          Examining the modern world through the Qur'an — never the reverse.
+        </p>
       </div>
     </div>
 
-    <nav class="site-footer__social" aria-label="Social">
-      <a href="https://www.facebook.com/javedjamil2015" target="_blank" rel="noopener noreferrer">Facebook</a>
-      <a href="https://twitter.com/drjavedjamil" target="_blank" rel="noopener noreferrer">Twitter</a>
-      <a href={`${base}rss.xml`}>RSS</a>
-    </nav>
-
-    <div class="site-footer__meta">
-      <span>&copy; {year} Dr. Javed Jamil</span>
-      <span class="site-footer__divider">&middot;</span>
-      <span>Design: The Living Order</span>
+    <div class="site-footer__cols">
+      {
+        columns.map((col) => (
+          <div class="site-footer__col">
+            <div class="eyebrow eyebrow--dim">{col.title}</div>
+            <ul>
+              {col.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="link-draw"
+                    {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
     </div>
+  </div>
+
+  <div class="site-footer__base">
+    <span>&copy; {year} Dr. Javed Jamil</span>
+    <span class="site-footer__dot" aria-hidden="true">&middot;</span>
+    <span>Mission Publications &middot; New Delhi</span>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    background: var(--ink);
-    color: var(--ink-text-muted);
+    position: relative;
+    overflow: hidden;
+    background: var(--void);
+    color: var(--ink-text);
     border-top: 1px solid var(--ink-hairline);
+    padding: clamp(56px, 9vh, 96px) var(--section-pad-x) 0;
+  }
+
+  .site-footer__glow {
+    width: 60vw;
+    height: 40vw;
+    left: 50%;
+    bottom: -30vw;
+    transform: translateX(-50%);
+    opacity: 0.5;
   }
 
   .site-footer__inner {
-    max-width: var(--content-max);
+    position: relative;
+    z-index: 1;
+    max-width: var(--wide-max);
     margin: 0 auto;
-    padding: 48px var(--section-pad-x);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+    display: grid;
+    grid-template-columns: minmax(280px, 1.3fr) 2fr;
+    gap: clamp(40px, 6vw, 90px);
+    padding-bottom: 56px;
   }
 
-  .site-footer__brand {
+  .site-footer__masthead {
     display: flex;
-    align-items: center;
-    gap: 14px;
+    gap: 20px;
+    align-items: flex-start;
   }
 
   .site-footer__name {
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 16px;
-    color: var(--parchment);
+    font-size: 24px;
+    line-height: 1;
   }
 
-  .site-footer__tag {
+  .site-footer__scripts {
+    font-family: var(--font-urdu);
+    font-size: 17px;
+    line-height: 2.2;
+    color: var(--ink-text-muted);
     margin-top: 2px;
   }
 
-  .site-footer__social {
-    display: flex;
-    gap: 22px;
-    font-size: 13px;
+  .site-footer__blurb {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-text-faint);
+    margin: 8px 0 0;
+    max-width: 34ch;
   }
 
-  .site-footer__social a {
-    text-decoration: none;
+  .site-footer__cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .site-footer__col ul {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 11px;
+  }
+
+  .site-footer__col a {
+    font-size: 14.5px;
     color: var(--ink-text-muted);
-    transition: color 0.15s ease;
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease-out);
   }
 
-  .site-footer__social a:hover {
-    color: var(--accent);
+  .site-footer__col a:hover {
+    color: var(--accent-lum);
   }
 
-  .site-footer__meta {
+  .site-footer__base {
+    position: relative;
+    z-index: 1;
+    max-width: var(--wide-max);
+    margin: 0 auto;
+    border-top: 1px solid var(--ink-hairline);
+    padding: 22px 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     font-family: var(--font-mono);
-    font-size: 10.5px;
+    font-size: 11px;
     letter-spacing: 0.08em;
     color: var(--ink-text-faint);
   }
 
-  .site-footer__divider {
-    margin: 0 6px;
+  .site-footer__dot {
+    opacity: 0.5;
+  }
+
+  @media (max-width: 860px) {
+    .site-footer__inner {
+      grid-template-columns: 1fr;
+      gap: 44px;
+    }
+
+    .site-footer__cols {
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
   }
 </style>

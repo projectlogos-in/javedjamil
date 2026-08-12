@@ -1,60 +1,101 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Seal from "../components/Seal.astro";
+import TierField from "../components/TierField.astro";
 import { base } from "../lib/base";
+
+const routes = [
+  { href: `${base}ideas/`, label: "Ideas" },
+  { href: `${base}health-maximisation/`, label: "Health Maximisation" },
+  { href: `${base}books/`, label: "Works" },
+  { href: `${base}lexicon/`, label: "Lexicon" },
+  { href: `${base}shayari/`, label: "Shayari" },
+  { href: `${base}about/`, label: "About" },
+];
 ---
 
-<BaseLayout title="Page Not Found">
-  <section class="not-found">
-    <Seal variant="geometric" mode="dark" size={90} class="not-found__seal" />
-    <div class="eyebrow">404</div>
-    <h1 class="not-found__title">This tier does not exist</h1>
-    <p class="not-found__desc">The page you're looking for has moved, or never existed at this address.</p>
-    <a href={base} class="button button--solid">Return home</a>
+<BaseLayout title="Page not found">
+  <section class="nf">
+    <TierField cx={50} cy={48} scale={1.4} class="nf__field" />
+
+    <div class="nf__inner">
+      <Seal variant="geometric" mode="dark" size={82} class="nf__seal" />
+      <div class="eyebrow" data-reveal="fade">Error 404</div>
+      <h1 class="nf__title" data-reveal>This tier does not exist</h1>
+      <p class="nf__body" data-reveal data-reveal-delay="100">
+        The page has moved, or was never at this address. Everything the site holds is one of these:
+      </p>
+
+      <nav class="nf__routes" data-stagger data-reveal-delay="180">
+        {routes.map((r) => <a href={r.href} class="nf__route">{r.label}</a>)}
+      </nav>
+
+      <a href={base} class="button button--solid nf__home" data-reveal data-reveal-delay="300">Return to the centre</a>
+    </div>
   </section>
 </BaseLayout>
 
 <style>
-  .not-found {
-    background: var(--ink);
-    color: var(--parchment);
-    min-height: 70vh;
+  .nf {
+    position: relative;
+    overflow: hidden;
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(80% 70% at 50% 46%, var(--ink-raised) 0%, var(--ink) 44%, var(--void) 100%);
+    padding: clamp(70px, 12vh, 130px) var(--section-pad-x);
+    text-align: center;
+  }
+
+  .nf__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 80px var(--section-pad-x);
   }
 
-  .not-found__seal {
-    margin-bottom: 32px;
+  .nf__seal {
+    margin-bottom: 28px;
   }
 
-  .not-found__title {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(28px, 4.4vw, 42px);
-    margin: 16px 0 14px;
+  .nf__title {
+    font-size: var(--step-xl);
+    margin: 16px 0 18px;
+    color: var(--ink-text);
   }
 
-  .not-found__desc {
+  .nf__body {
+    font-size: var(--step-md);
+    line-height: 1.65;
     color: var(--ink-text-muted);
-    margin: 0 0 32px;
+    margin: 0 0 30px;
   }
 
-  .button {
-    display: inline-block;
-    padding: 13px 26px;
-    border-radius: var(--radius-sm);
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 500;
+  .nf__routes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 36px;
+  }
+
+  .nf__route {
+    padding: 10px 18px;
+    border: 1px solid var(--ink-hairline);
+    border-radius: 100px;
+    font-size: 13.5px;
     text-decoration: none;
+    color: var(--ink-text-muted);
+    transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out),
+      transform var(--dur-fast) var(--ease-out);
   }
 
-  .button--solid {
-    background: var(--accent);
-    color: #fff;
+  .nf__route:hover {
+    border-color: var(--accent-lum);
+    color: var(--ink-text);
+    transform: translateY(-2px);
   }
 </style>

@@ -13,81 +13,147 @@ interface Props {
   title: string;
   domain: string;
   color: string;
+  /** render the spine edge — gives the object real thickness */
+  spine?: boolean;
 }
 
-const { title, domain, color } = Astro.props;
+const { title, domain, color, spine = true } = Astro.props;
 const label = domainLabels[domain] ?? domain;
 ---
 
-<div class="book-cover" style={`--domain-color: ${color}`}>
-  <div class="book-cover__ring" aria-hidden="true">
-    <svg viewBox="0 0 300 300">
-      <g fill="none" stroke={color} stroke-width="1">
-        <circle cx="150" cy="150" r="70"></circle>
-        <circle cx="150" cy="150" r="115"></circle>
-        <circle cx="150" cy="150" r="160"></circle>
-      </g>
-    </svg>
+<div class="book" style={`--domain: ${color}`}>
+  {spine && <div class="book__spine" aria-hidden="true"></div>}
+
+  <div class="book__face">
+    <div class="book__rings" aria-hidden="true">
+      <svg viewBox="0 0 300 300">
+        <g fill="none" stroke={color} stroke-width="1">
+          <circle cx="150" cy="150" r="52" opacity="0.9"></circle>
+          <circle cx="150" cy="150" r="86" opacity="0.7"></circle>
+          <circle cx="150" cy="150" r="122" opacity="0.5"></circle>
+          <circle cx="150" cy="150" r="162" opacity="0.32"></circle>
+        </g>
+        <circle cx="150" cy="150" r="6" fill={color}></circle>
+      </svg>
+    </div>
+
+    <div class="book__label">{label}</div>
+    <div class="book__title">{title}</div>
+
+    <div class="book__band" aria-hidden="true"></div>
+    <div class="book__foot">
+      <span>Javed Jamil</span>
+      <Seal size={18} mode="foil" animated={false} />
+    </div>
   </div>
-  <div class="book-cover__label eyebrow" style={`color: ${color}`}>{label}</div>
-  <div class="book-cover__title">{title}</div>
-  <div class="book-cover__band"></div>
-  <div class="book-cover__footer">
-    <span>Javed Jamil</span>
-    <Seal size={20} mode="foil" animated={false} />
-  </div>
+
+  <div class="book__gloss" aria-hidden="true"></div>
 </div>
 
 <style>
-  .book-cover {
+  .book {
     position: relative;
     aspect-ratio: 3 / 4.5;
-    background: var(--ink);
-    border: 1px solid var(--ink-hairline);
-    border-radius: 3px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    border-radius: 2px 5px 5px 2px;
+    transform-style: preserve-3d;
+    box-shadow: var(--lift-2);
+    transition: box-shadow var(--dur) var(--ease-out);
   }
 
-  .book-cover__ring {
+  .book:hover {
+    box-shadow: var(--lift-3), 0 0 46px -12px color-mix(in srgb, var(--domain) 55%, transparent);
+  }
+
+  /* the spine edge — a sliver of the domain colour, so a shelf of these reads
+     as a real shelf rather than a grid of rectangles */
+  .book__spine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 9px;
+    border-radius: 2px 0 0 2px;
+    background: linear-gradient(90deg, color-mix(in srgb, var(--domain) 78%, #000) 0%, var(--domain) 55%, color-mix(in srgb, var(--domain) 60%, #000) 100%);
+    z-index: 2;
+  }
+
+  .book__face {
     position: absolute;
     inset: 0;
-    opacity: 0.6;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 2px 5px 5px 2px;
+    background: linear-gradient(150deg, var(--ink-raised) 0%, var(--ink) 48%, var(--void) 100%);
+    border: 1px solid var(--ink-hairline);
+    padding-left: 9px;
+  }
+
+  .book__rings {
+    position: absolute;
+    right: -34%;
+    top: -14%;
+    width: 108%;
+    opacity: 0.55;
     pointer-events: none;
   }
 
-  .book-cover__label {
+  .book__label {
     position: relative;
-    padding: 22px 22px 0;
-    font-size: 9.5px;
+    padding: 20px 20px 0;
+    font-family: var(--font-mono);
+    font-size: 8.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--domain);
+    filter: brightness(1.5);
   }
 
-  .book-cover__title {
+  .book__title {
     position: relative;
     flex: 1;
-    padding: 14px 22px 0;
+    padding: 16px 20px 0;
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 19px;
-    line-height: 1.16;
-    color: var(--parchment);
+    font-size: clamp(0.95rem, 1.35vw, 1.22rem);
+    line-height: 1.14;
+    color: var(--ink-text);
+    letter-spacing: -0.005em;
   }
 
-  .book-cover__band {
-    height: 7px;
-    background: var(--domain-color);
+  .book__band {
+    height: 6px;
+    background: var(--domain);
   }
 
-  .book-cover__footer {
-    background: var(--ink-deep);
-    padding: 12px 16px;
+  .book__foot {
+    background: rgba(4, 6, 14, 0.86);
+    padding: 11px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 8px;
     font-family: var(--font-display);
-    font-size: 12px;
-    color: var(--parchment);
+    font-size: 11.5px;
+    color: var(--ink-text-muted);
+  }
+
+  /* specular sheet that follows the pointer via --gloss-x/y from the tilt engine */
+  .book__gloss {
+    position: absolute;
+    inset: 0;
+    border-radius: 2px 5px 5px 2px;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(
+      44% 44% at var(--gloss-x, 50%) var(--gloss-y, 50%),
+      rgba(255, 255, 255, 0.16) 0%,
+      rgba(255, 255, 255, 0) 72%
+    );
+    transition: opacity var(--dur) var(--ease-out);
+  }
+
+  .book:hover .book__gloss {
+    opacity: 1;
   }
 </style>

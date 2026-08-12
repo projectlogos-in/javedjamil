@@ -1,8 +1,8 @@
 ---
 import { getCollection, getEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import TierField from "../../components/TierField.astro";
 import Seal from "../../components/Seal.astro";
-import CosmicMotif from "../../components/CosmicMotif.astro";
 import BookCover from "../../components/BookCover.astro";
 import { base } from "../../lib/base";
 
@@ -17,44 +17,117 @@ const healthBooks = (await getCollection("books", ({ data }) => data.domain === 
 );
 
 const lexiconEntry = await getEntry("lexicon", "health-maximisation");
+
+// the four moves of the argument, in order
+const propositions = [
+  {
+    n: "I",
+    title: "Health is a process, not a state",
+    body: "The WHO defines health as a state of complete well-being — something reached and then defended. Treat it instead as a process continuously produced or degraded by how a society is ordered.",
+  },
+  {
+    n: "II",
+    title: "Then every policy is a health policy",
+    body: "A tax code, a liquor licence, a labour law, an advertising standard. Each one either sustains that process or erodes it, whether or not it is filed under health.",
+  },
+  {
+    n: "III",
+    title: "The current order optimises against it",
+    body: "Economic fundamentalism commercialises the causes of disease, then commercialises the cures. Restriction and prohibition are words absent from the lexicon of the market.",
+  },
+  {
+    n: "IV",
+    title: "So invert the optimisation target",
+    body: "Put life and health at the centre and subordinate politics and economics to that end. Not as a moral preference — as a measurable objective a civilisation can be audited against.",
+  },
+];
 ---
 
 <BaseLayout
   title="Health Maximisation"
-  description="The Dynamic Paradigm of Health — Dr. Javed Jamil's flagship theory that a civilisation should optimise for health and life, not profit."
+  description="The Dynamic Paradigm of Health — Dr. Javed Jamil's argument that a civilisation should optimise for health and life, not profit."
 >
+  <!-- ---- hero ---- -->
   <section class="hm-hero">
-    <CosmicMotif width={1200} height={520} cx={1080} cy={260} ringCount={4} ringStep={110} showPulseLine class="hm-hero__motif" />
+    <TierField cx={50} cy={48} scale={1.25} class="hm-hero__field" />
+
     <div class="hm-hero__inner">
-      <Seal size={60} mode="dark" class="hm-hero__seal" />
-      <div class="eyebrow">The Dynamic Paradigm</div>
-      <h1 class="hm-hero__title">Health Maximisation</h1>
-      <p class="hm-hero__desc">
-        A civilisation should optimise for health and life, and subordinate politics and economics to that single
-        end. Health is not a static state to be restored, but a living process to be sustained — the founding claim
-        behind Dr. Jamil's entire body of work.
+      <Seal variant="ceremonial" mode="dark" size={112} class="hm-hero__seal" />
+      <div class="eyebrow" data-reveal="fade">The Dynamic Paradigm</div>
+      <h1 class="hm-hero__title reveal-lines" data-reveal="fade">
+        <span class="line"><span>Health in the</span></span>
+        <span class="line"><span>driver's seat</span></span>
+      </h1>
+      <p class="hm-hero__lead" data-reveal data-reveal-delay="240">
+        The claim the whole body of work returns to: a civilisation should optimise for health and life, and
+        subordinate politics and economics to that single end.
       </p>
       {
         lexiconEntry && (
-          <a href={`${base}lexicon/${lexiconEntry.id}/`} class="hm-hero__lexicon-link">
-            Read the full definition in the Lexicon &rarr;
+          <a href={`${base}lexicon/${lexiconEntry.id}/`} class="hm-hero__link link-draw" data-reveal data-reveal-delay="320">
+            The full definition in the Lexicon &rarr;
           </a>
         )
       }
     </div>
   </section>
 
+  <!-- ---- the argument in four moves ---- -->
+  <section class="hm-arg">
+    <div class="hm-arg__inner">
+      <div class="hm-arg__head" data-reveal>
+        <div class="eyebrow">The argument</div>
+        <h2>Four moves</h2>
+      </div>
+
+      <ol class="hm-arg__list">
+        {
+          propositions.map((p) => (
+            <li class="prop" data-reveal>
+              <span class="prop__n">{p.n}</span>
+              <div class="prop__body">
+                <h3 class="prop__title">{p.title}</h3>
+                <p>{p.body}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- ---- the figure ---- -->
+  <section class="hm-figure">
+    <div class="hm-figure__inner">
+      <div class="hm-figure__stat" data-reveal="scale">
+        <span class="hm-figure__num" data-count="80" data-count-suffix="M">0</span>
+        <span class="hm-figure__unit">preventable deaths a year</span>
+      </div>
+      <p class="hm-figure__note" data-reveal>
+        The accounting behind the paradigm — and the number the argument invites you to contest on the evidence
+        rather than the principle.
+      </p>
+    </div>
+  </section>
+
   {
     relatedPosts.length > 0 && (
-      <section class="hm-section">
-        <div class="hm-section__inner">
-          <div class="eyebrow">Essays &amp; Series</div>
-          <div class="hm-section__list">
-            {relatedPosts.map((post) => (
+      <section class="hm-reading">
+        <div class="hm-reading__inner">
+          <div class="hm-reading__head" data-reveal>
+            <div class="eyebrow">Essays &amp; series</div>
+            <h2>Where the case is made</h2>
+          </div>
+          <div class="hm-reading__list" data-stagger>
+            {relatedPosts.map((post, i) => (
               <a href={`${base}ideas/${post.id}/`} class="hm-row">
-                <span class="hm-row__title">{post.data.title}</span>
-                <time datetime={post.data.date.toISOString()}>
-                  {post.data.date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}
+                <span class="hm-row__n">{String(i + 1).padStart(2, "0")}</span>
+                <span class="hm-row__main">
+                  <span class="hm-row__title">{post.data.title}</span>
+                  {post.data.excerpt && <span class="hm-row__excerpt">{post.data.excerpt}</span>}
+                </span>
+                <time class="hm-row__date" datetime={post.data.date.toISOString()}>
+                  {post.data.date.toLocaleDateString("en-GB", { year: "numeric", month: "short" })}
                 </time>
               </a>
             ))}
@@ -66,12 +139,15 @@ const lexiconEntry = await getEntry("lexicon", "health-maximisation");
 
   {
     healthBooks.length > 0 && (
-      <section class="hm-books">
-        <div class="hm-books__inner">
-          <div class="eyebrow">The Health Shelf</div>
-          <div class="hm-books__grid">
+      <section class="hm-shelf">
+        <div class="hm-shelf__inner">
+          <div class="hm-shelf__head" data-reveal>
+            <div class="eyebrow">The Health shelf</div>
+            <h2>{healthBooks.length} titles on the paradigm</h2>
+          </div>
+          <div class="hm-shelf__grid" data-stagger>
             {healthBooks.map((book) => (
-              <a href={`${base}books/${book.id}/`} class="hm-books__item">
+              <a href={`${base}books/${book.id}/`} class="hm-shelf__item" data-tilt="10">
                 <BookCover title={book.data.title} domain={book.data.domain} color={book.data.color} />
               </a>
             ))}
@@ -83,21 +159,18 @@ const lexiconEntry = await getEntry("lexicon", "health-maximisation");
 </BaseLayout>
 
 <style>
+  /* ---- hero ---- */
   .hm-hero {
     position: relative;
     overflow: hidden;
-    background: var(--ink);
-    color: var(--parchment);
-    padding: 90px var(--section-pad-x) 80px;
+    background: radial-gradient(90% 80% at 50% 46%, var(--ink-raised) 0%, var(--ink) 46%, var(--void) 100%);
+    padding: clamp(70px, 12vh, 130px) var(--section-pad-x) clamp(70px, 12vh, 130px);
     text-align: center;
-  }
-
-  .hm-hero__motif {
-    opacity: 0.5;
   }
 
   .hm-hero__inner {
     position: relative;
+    z-index: 2;
     max-width: 720px;
     margin: 0 auto;
     display: flex;
@@ -106,89 +179,274 @@ const lexiconEntry = await getEntry("lexicon", "health-maximisation");
   }
 
   .hm-hero__seal {
-    margin-bottom: 28px;
+    margin-bottom: 30px;
   }
 
   .hm-hero__title {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(34px, 5.5vw, 58px);
-    line-height: 1.02;
-    margin: 16px 0 24px;
+    font-size: var(--step-xxl);
+    margin: 18px 0 26px;
+    color: var(--ink-text);
   }
 
-  .hm-hero__desc {
-    font-size: 17px;
-    line-height: 1.65;
+  .hm-hero__title .line:nth-child(2) > span {
+    color: transparent;
+    background: linear-gradient(96deg, var(--ink-text) 20%, var(--accent-lum) 92%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .hm-hero__lead {
+    font-size: var(--step-md);
+    line-height: 1.66;
     color: var(--ink-text-muted);
-    margin: 0 0 28px;
+    margin: 0 0 26px;
   }
 
-  .hm-hero__lexicon-link {
-    color: var(--accent);
+  .hm-hero__link {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-lum);
     text-decoration: none;
-    font-size: 14px;
   }
 
-  .hm-hero__lexicon-link:hover {
-    text-decoration: underline;
-  }
-
-  .hm-section {
+  /* ---- argument ---- */
+  .hm-arg {
     background: var(--parchment);
-    padding: 56px var(--section-pad-x);
-    border-bottom: 1px solid var(--light-hairline);
+    color: var(--graphite);
+    padding: clamp(60px, 10vh, 120px) var(--section-pad-x);
   }
 
-  .hm-section__inner,
-  .hm-books__inner {
+  .hm-arg__inner {
     max-width: var(--content-max);
     margin: 0 auto;
   }
 
-  .hm-section .eyebrow,
-  .hm-books .eyebrow {
-    margin-bottom: 20px;
+  .hm-arg__head {
+    margin-bottom: 44px;
   }
 
-  .hm-section__list {
+  .hm-arg__head h2 {
+    font-size: var(--step-xl);
+    margin-top: 16px;
+  }
+
+  .hm-arg__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: grid;
     gap: 2px;
+    counter-reset: prop;
+  }
+
+  .prop {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 30px;
+    padding: 32px 8px;
+    border-top: 1px solid var(--light-hairline);
+    position: relative;
+  }
+
+  .prop:last-child {
+    border-bottom: 1px solid var(--light-hairline);
+  }
+
+  .prop__n {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.5;
+  }
+
+  .prop__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+    line-height: 1.16;
+    margin: 0 0 12px;
+  }
+
+  .prop__body p {
+    font-size: clamp(1rem, 1.3vw, 1.12rem);
+    line-height: 1.66;
+    color: var(--light-text-muted);
+    max-width: 62ch;
+    margin: 0;
+  }
+
+  /* ---- figure ---- */
+  .hm-figure {
+    background: var(--accent);
+    color: #fff;
+    padding: clamp(56px, 9vh, 100px) var(--section-pad-x);
+  }
+
+  .hm-figure__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(30px, 6vw, 80px);
+    align-items: center;
+  }
+
+  .hm-figure__stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hm-figure__num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(4rem, 11vw, 9rem);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hm-figure__unit {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.82;
+    margin-top: 16px;
+  }
+
+  .hm-figure__note {
+    font-size: clamp(1.05rem, 1.5vw, 1.28rem);
+    line-height: 1.66;
+    margin: 0;
+    max-width: 46ch;
+    opacity: 0.94;
+  }
+
+  /* ---- reading ---- */
+  .hm-reading {
+    background: var(--void);
+    padding: clamp(56px, 9vh, 100px) var(--section-pad-x);
+  }
+
+  .hm-reading__inner,
+  .hm-shelf__inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+
+  .hm-reading__head,
+  .hm-shelf__head {
+    margin-bottom: 32px;
+  }
+
+  .hm-reading__head h2,
+  .hm-shelf__head h2 {
+    font-size: var(--step-lg);
+    margin-top: 14px;
+    color: var(--ink-text);
+  }
+
+  .hm-reading__list {
+    border-top: 1px solid var(--ink-hairline);
   }
 
   .hm-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 4px;
-    border-bottom: 1px solid var(--light-hairline);
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    gap: 22px;
+    align-items: baseline;
+    padding: 24px 8px;
+    border-bottom: 1px solid var(--ink-hairline);
     text-decoration: none;
-    color: var(--ink);
+    color: var(--ink-text);
+    transition: padding-left var(--dur) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+  }
+
+  .hm-row:hover {
+    padding-left: 20px;
+    background: rgba(47, 167, 149, 0.06);
+  }
+
+  .hm-row__n {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent-lum);
   }
 
   .hm-row__title {
+    display: block;
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 17px;
+    font-size: clamp(1.08rem, 1.8vw, 1.35rem);
+    line-height: 1.2;
+    margin-bottom: 7px;
   }
 
-  .hm-row:hover .hm-row__title {
-    color: var(--accent);
+  .hm-row__excerpt {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-text-faint);
+    max-width: 68ch;
   }
 
-  .hm-row time {
+  .hm-row__date {
     font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--light-text-faint);
+    font-size: 10.5px;
+    color: var(--ink-text-faint);
+    white-space: nowrap;
   }
 
-  .hm-books {
-    background: var(--parchment);
-    padding: 56px var(--section-pad-x) 100px;
+  /* ---- shelf ---- */
+  .hm-shelf {
+    background: var(--void);
+    padding: 0 var(--section-pad-x) clamp(70px, 11vh, 130px);
   }
 
-  .hm-books__grid {
+  .hm-shelf__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+    gap: clamp(18px, 2.6vw, 32px);
+    perspective: 1500px;
+  }
+
+  .hm-shelf__item {
+    display: block;
+    text-decoration: none;
+    transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    transform-style: preserve-3d;
+    transition: transform 0.45s var(--ease-out);
+  }
+
+  @media (max-width: 760px) {
+    .prop {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .hm-figure__inner {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .hm-row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .hm-row__date {
+      grid-row: 1;
+    }
+
+    .hm-shelf__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 </style>

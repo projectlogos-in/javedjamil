@@ -2,15 +2,27 @@
 import { getCollection, render } from "astro:content";
 import ShayariLayout from "../../layouts/ShayariLayout.astro";
 
+import { base } from "../../lib/base";
+
 export async function getStaticPaths() {
-  const poems = await getCollection("shayari", ({ data }) => !data.draft);
-  return poems.map((poem) => ({ params: { slug: poem.id }, props: { poem } }));
+  const poems = (await getCollection("shayari", ({ data }) => !data.draft)).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  );
+  return poems.map((poem, i) => ({
+    params: { slug: poem.id },
+    props: { poem, prev: poems[i - 1], next: poems[i + 1] },
+  }));
 }
 
-const { poem } = Astro.props;
+const { poem, prev, next } = Astro.props;
 const { Content } = await render(poem);
 ---
 
-<ShayariLayout title={poem.data.title} date={poem.data.date}>
+<ShayariLayout
+  title={poem.data.title}
+  date={poem.data.date}
+  prevHref={prev ? `${base}shayari/${prev.id}/` : undefined}
+  nextHref={next ? `${base}shayari/${next.id}/` : undefined}
+>
   <Content />
 </ShayariLayout>

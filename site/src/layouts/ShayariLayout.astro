@@ -1,70 +1,168 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import TierField from "../components/TierField.astro";
+import { base } from "../lib/base";
 
 interface Props {
   title: string;
   date: Date;
+  prevHref?: string;
+  nextHref?: string;
 }
 
-const { title, date } = Astro.props;
-const dateLabel = date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+const { title, date, prevHref, nextHref } = Astro.props;
+const dateLabel = date.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" });
 ---
 
 <BaseLayout title={title}>
-  <article class="shayari">
-    <header class="shayari__header">
-      <div class="eyebrow">Shayari</div>
-      <h1 class="shayari__title">{title}</h1>
-      <time datetime={date.toISOString()} class="shayari__date">{dateLabel}</time>
-    </header>
+  <article class="poem">
+    <TierField cx={50} cy={40} scale={1.5} pulseLine={false} class="poem__field" />
 
-    <div class="shayari__body" dir="rtl" lang="ur">
-      <slot />
+    <div class="poem__inner">
+      <a href={`${base}shayari/`} class="poem__back link-draw">&larr; Shayari</a>
+
+      <header class="poem__head">
+        <div class="eyebrow eyebrow--gold" data-reveal="fade">Ghazal</div>
+        <h1 class="poem__title" data-reveal>{title}</h1>
+        <time datetime={date.toISOString()} class="poem__date" data-reveal data-reveal-delay="100">{dateLabel}</time>
+        <span class="poem__rule" aria-hidden="true" data-reveal="scale" data-reveal-delay="150"></span>
+      </header>
+
+      <div class="poem__body" dir="rtl" lang="ur" data-reveal data-reveal-delay="200">
+        <slot />
+      </div>
+
+      <nav class="poem__pager" aria-label="Poem navigation">
+        {prevHref ? <a href={prevHref} class="poem__pager-link">&larr; Previous</a> : <span />}
+        {nextHref ? <a href={nextHref} class="poem__pager-link">Next &rarr;</a> : <span />}
+      </nav>
     </div>
   </article>
 </BaseLayout>
 
 <style>
-  .shayari {
-    background: var(--ink);
-    color: var(--parchment);
-    min-height: 60vh;
-    padding: 90px var(--section-pad-x) 110px;
+  .poem {
+    position: relative;
+    overflow: hidden;
+    min-height: 84vh;
+    background: radial-gradient(80% 70% at 50% 34%, var(--ink-raised) 0%, var(--ink) 44%, var(--void) 100%);
+    padding: clamp(44px, 7vh, 76px) var(--section-pad-x) clamp(70px, 11vh, 120px);
   }
 
-  .shayari__header {
-    max-width: var(--reading-max);
-    margin: 0 auto 56px;
-    text-align: center;
+  .poem__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin: 0 auto;
   }
 
-  .shayari__title {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(30px, 4.4vw, 46px);
-    line-height: 1.06;
-    margin: 16px 0 12px;
-  }
-
-  .shayari__date {
+  .poem__back {
+    display: inline-block;
     font-family: var(--font-mono);
     font-size: 11px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-text-faint);
+    text-decoration: none;
+    margin-bottom: 52px;
+  }
+
+  .poem__back:hover {
+    color: var(--gold-lum);
+  }
+
+  .poem__head {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .poem__title {
+    font-size: clamp(1.8rem, 4.4vw, 3.1rem);
+    line-height: 1.08;
+    margin: 16px 0 14px;
+    color: var(--ink-text);
+  }
+
+  .poem__date {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     color: var(--ink-text-faint);
   }
 
-  .shayari__body {
-    max-width: var(--reading-max);
-    margin: 0 auto;
-    text-align: center;
+  .poem__rule {
+    display: block;
+    width: 54px;
+    height: 1px;
+    margin: 30px auto 0;
+    background: linear-gradient(90deg, transparent, var(--gold-lum), transparent);
   }
 
-  .shayari__body :global(p),
-  .shayari__body :global(.poem) {
+  /* the verse itself — Nastaliq needs generous leading and no competition */
+  .poem__body {
+    text-align: center;
     font-family: var(--font-urdu);
-    font-size: clamp(24px, 3.4vw, 32px);
-    line-height: 2.3;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 2.5;
     color: #ede7da;
-    margin: 0 0 20px;
+  }
+
+  .poem__body :global(p) {
+    margin: 0 0 30px;
+  }
+
+  .poem__body :global(strong) {
+    font-weight: 400;
+    color: var(--gold-lum);
+  }
+
+  .poem__body :global(em) {
+    font-style: normal;
+    color: var(--ink-text-muted);
+  }
+
+  .poem__body :global(img) {
+    margin: 26px auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--lift-2);
+  }
+
+  .poem__body :global(iframe) {
+    max-width: 100%;
+    margin: 26px auto;
+    border: 0;
+    border-radius: var(--radius-md);
+  }
+
+  .poem__body :global(hr) {
+    border: 0;
+    height: 1px;
+    width: 44px;
+    margin: 40px auto;
+    background: var(--ink-hairline-strong);
+  }
+
+  .poem__pager {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 64px;
+    padding-top: 26px;
+    border-top: 1px solid var(--ink-hairline);
+  }
+
+  .poem__pager-link {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-text-faint);
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+
+  .poem__pager-link:hover {
+    color: var(--gold-lum);
   }
 </style>

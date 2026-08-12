@@ -1,0 +1,125 @@
+---
+/*
+  Shared masthead for interior pages. Carries the tier field at low intensity
+  so every section of the site sits inside the same cosmology as the home page,
+  without competing with the content underneath it.
+*/
+import TierField from "./TierField.astro";
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead?: string;
+  /** small mono facts rendered under the lead, e.g. "18 titles" */
+  meta?: string[];
+  align?: "left" | "center";
+  size?: "sm" | "lg";
+}
+
+const { eyebrow, title, lead, meta = [], align = "left", size = "lg" } = Astro.props;
+---
+
+<header class:list={["page-hero", `page-hero--${align}`, `page-hero--${size}`]}>
+  <TierField cx={align === "center" ? 50 : 82} cy={44} scale={0.95} pulseLine={false} class="page-hero__field" />
+
+  <div class="page-hero__inner">
+    <div class="eyebrow" data-reveal="fade">{eyebrow}</div>
+    <h1 class="page-hero__title" data-reveal data-reveal-delay="80">{title}</h1>
+    {lead && <p class="page-hero__lead" data-reveal data-reveal-delay="160">{lead}</p>}
+    {
+      meta.length > 0 && (
+        <div class="page-hero__meta" data-reveal data-reveal-delay="220">
+          {meta.map((m, i) => (
+            <>
+              {i > 0 && <span class="page-hero__meta-dot" aria-hidden="true">&middot;</span>}
+              <span>{m}</span>
+            </>
+          ))}
+        </div>
+      )
+    }
+    <slot />
+  </div>
+</header>
+
+<style>
+  .page-hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--ink) 0%, var(--void) 100%);
+    padding: clamp(70px, 12vh, 130px) var(--section-pad-x) clamp(60px, 10vh, 110px);
+  }
+
+  .page-hero--sm {
+    padding-top: clamp(56px, 8vh, 88px);
+    padding-bottom: clamp(48px, 7vh, 76px);
+  }
+
+  .page-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(100deg, var(--void) 0%, rgba(4, 6, 14, 0.6) 32%, rgba(4, 6, 14, 0) 66%);
+  }
+
+  .page-hero--center::after {
+    background: radial-gradient(70% 70% at 50% 50%, rgba(4, 6, 14, 0.7) 0%, rgba(4, 6, 14, 0) 100%);
+  }
+
+  .page-hero__inner {
+    position: relative;
+    z-index: 2;
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+
+  .page-hero--center .page-hero__inner {
+    text-align: center;
+    max-width: 780px;
+  }
+
+  .page-hero__title {
+    font-size: var(--step-xxl);
+    margin: 18px 0 0;
+    color: var(--ink-text);
+    max-width: 20ch;
+  }
+
+  .page-hero--center .page-hero__title {
+    margin-inline: auto;
+  }
+
+  .page-hero__lead {
+    font-size: var(--step-md);
+    line-height: 1.65;
+    color: var(--ink-text-muted);
+    max-width: 58ch;
+    margin: 22px 0 0;
+  }
+
+  .page-hero--center .page-hero__lead {
+    margin-inline: auto;
+  }
+
+  .page-hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 26px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-text-faint);
+  }
+
+  .page-hero--center .page-hero__meta {
+    justify-content: center;
+  }
+
+  .page-hero__meta-dot {
+    opacity: 0.45;
+  }
+</style>
