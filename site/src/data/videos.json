@@ -1,6 +1,8 @@
 {
   "channelId": "UCPtmlR5z2olepmeLM8K-3iw",
   "handle": "DiscoverIman",
+  "source": "rss",
+  "complete": false,
   "fetched": "2026-08-13",
   "videos": [
     {
@@ -8,6 +10,7 @@
       "title": "Must Listen | Tarana-e-Muslim (Islamic Anthem) by Dr. Javed Jamil",
       "published": "2026-07-31",
       "thumb": "https://i4.ytimg.com/vi/_StZQ47VyDc/hqdefault.jpg",
+      "duration": null,
       "blurb": "This is a revolutionary and heartwarming Tarana (anthem) for Muslims to read, sing, and share as widely as possible. It conveys Islam's timeless message of the unity of humankind and the need for universal peace—a message delivered through all the Messengers a"
     },
     {
@@ -15,6 +18,7 @@
       "title": "Contemporary Sciences in the Light of Quran | Dr Javed Jamil",
       "published": "2026-07-09",
       "thumb": "https://i3.ytimg.com/vi/vYe7MmWqChY/hqdefault.jpg",
+      "duration": null,
       "blurb": "Please watch, comment, subscribe and share."
     },
     {
@@ -22,6 +26,7 @@
       "title": "Hajj: A Symbol of Universal Brotherhood & Peace | Urdu Lecture by Dr. Javed Jamil",
       "published": "2026-05-27",
       "thumb": "https://i1.ytimg.com/vi/4cH9gZpRN8k/hqdefault.jpg",
+      "duration": null,
       "blurb": "What is the deeper meaning of Hajj beyond pilgrimage and ritual?"
     },
     {
@@ -29,6 +34,7 @@
       "title": "Hajj: Symbol of Universal Brotherhood and Peace | Dr. Javed Jamil",
       "published": "2026-05-08",
       "thumb": "https://i1.ytimg.com/vi/P8vznouhI0E/hqdefault.jpg",
+      "duration": null,
       "blurb": "Islam, literally meaning peace through total submission to One God, is founded on five pillars designed to establish physical, mental, spiritual, social, and global peace. While faith and prayer strengthen the individual, fasting and Zakah cultivate social res"
     },
     {
@@ -36,6 +42,7 @@
       "title": "Future of Muslims in India | Jamat-e-Islami | Dr. Javed Jamil",
       "published": "2026-05-02",
       "thumb": "https://i2.ytimg.com/vi/isdAv42_HfQ/hqdefault.jpg",
+      "duration": null,
       "blurb": "Can religion become a force for peace rather than division?"
     },
     {
@@ -43,6 +50,7 @@
       "title": "Heart-Touching Urdu Poetry on Life's Deepest Questions | \"Jawab Zeest Ko...\"",
       "published": "2026-04-18",
       "thumb": "https://i3.ytimg.com/vi/vuhfe3uo-2k/hqdefault.jpg",
+      "duration": null,
       "blurb": "“Tamam umr isi intezar mein guzri, kabhi kahin koi lamha sukoon ka mil jaye.”"
     },
     {
@@ -50,6 +58,7 @@
       "title": "Zakat: Islamic System of Economic Justice | Dr. Javed Jamil",
       "published": "2026-03-16",
       "thumb": "https://i2.ytimg.com/vi/myHCNLSzWFI/hqdefault.jpg",
+      "duration": null,
       "blurb": "What is the deeper philosophy behind \"Zakat\", one of the fundamental pillars of Islam?"
     },
     {
@@ -57,6 +66,7 @@
       "title": "Haque Nahi Mitne Wala !!! Poetry by Dr. Javed Jamil  #geopolitics #poetry #shorts",
       "published": "2026-03-11",
       "thumb": "https://i1.ytimg.com/vi/pPU68miPxZM/hqdefault.jpg",
+      "duration": null,
       "blurb": "Some powerful ashaar by Dr. Javed Jamil reflecting on truth and resilience in contemporary situation."
     },
     {
@@ -64,6 +74,7 @@
       "title": "Mass Exodus from UN needed unless it abrogates the Veto Powerof the Big 5: Dr Javed Jamil",
       "published": "2026-03-09",
       "thumb": "https://i3.ytimg.com/vi/RKHe9gjQWeE/hqdefault.jpg",
+      "duration": null,
       "blurb": "Is the UN Just an Organisation of the Big Five ? Mass Exodus from UN needed unless it abrogates the Veto Power of the Big 5"
     },
     {
@@ -71,6 +82,7 @@
       "title": "Prayer and Fasting in Islam:God loves, Man Benefits",
       "published": "2026-03-03",
       "thumb": "https://i2.ytimg.com/vi/YP8PsA_WZKE/hqdefault.jpg",
+      "duration": null,
       "blurb": "Prayer and Fasting in Islam:God loves, Man Benefits"
     },
     {
@@ -78,6 +90,7 @@
       "title": "The Spectrum of God’s Signs | Ep. 08",
       "published": "2026-02-26",
       "thumb": "https://i1.ytimg.com/vi/xoaFlAVKnyc/hqdefault.jpg",
+      "duration": null,
       "blurb": "This video presents Excerpt (8) from A Systematic Study of the Holy Qur’an. Surah Fatir (35:27–28) points to rain, mountains, fruits, and human diversity as signs of Divine wisdom. From one water emerge countless colours and forms. The verses conclude with a p"
     },
     {
@@ -85,6 +98,7 @@
       "title": "Quran and Mechanism of Cloud Formation | Ep. 7",
       "published": "2026-02-25",
       "thumb": "https://i4.ytimg.com/vi/gxzaWTObKl8/hqdefault.jpg",
+      "duration": null,
       "blurb": "Quran and Mechanism of Cloud Formation | Ep. 7"
     },
     {
@@ -92,6 +106,7 @@
       "title": "Allah: The Absolute Knower Beyond All Limits",
       "published": "2026-02-24",
       "thumb": "https://i1.ytimg.com/vi/D9HrT4J6NLw/hqdefault.jpg",
+      "duration": null,
       "blurb": "This powerful excerpt from A Systematic Study of the Qur’an explores a profound reality: nothing escapes Allah’s knowledge. Whether hidden whispers or the vast systems of the universe, He is ever-present, fully aware, and in complete command."
     },
     {
@@ -99,6 +114,7 @@
       "title": "Surah Fatiha: Understanding God’s Lordship, Mercy, and Judgment | Ramadan Special Series Ep. 5",
       "published": "2026-02-23",
       "thumb": "https://i2.ytimg.com/vi/aws9HVdrfbY/hqdefault.jpg",
+      "duration": null,
       "blurb": "This video explores Surah Al-Fatiha as the Qur’an’s introduction to God as the Absolute Sovereign and Sustainer of the universe. It explains how God continuously provides, governs, and maintains the cosmic order, while human beings—endowed with free will—are a"
     }
   ]
