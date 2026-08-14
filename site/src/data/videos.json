@@ -1,121 +1,521 @@
 {
   "channelId": "UCPtmlR5z2olepmeLM8K-3iw",
   "handle": "DiscoverIman",
-  "source": "rss",
-  "complete": false,
-  "fetched": "2026-08-13",
+  "source": "api",
+  "complete": true,
+  "fetched": "2026-08-14",
   "videos": [
     {
       "id": "_StZQ47VyDc",
       "title": "Must Listen | Tarana-e-Muslim (Islamic Anthem) by Dr. Javed Jamil",
       "published": "2026-07-31",
-      "thumb": "https://i4.ytimg.com/vi/_StZQ47VyDc/hqdefault.jpg",
-      "duration": null,
+      "thumb": "https://i.ytimg.com/vi/_StZQ47VyDc/maxresdefault.jpg",
+      "duration": "6:08",
       "blurb": "This is a revolutionary and heartwarming Tarana (anthem) for Muslims to read, sing, and share as widely as possible. It conveys Islam's timeless message of the unity of humankind and the need for universal peace—a message delivered through all the Messengers a"
     },
     {
       "id": "vYe7MmWqChY",
       "title": "Contemporary Sciences in the Light of Quran | Dr Javed Jamil",
       "published": "2026-07-09",
-      "thumb": "https://i3.ytimg.com/vi/vYe7MmWqChY/hqdefault.jpg",
-      "duration": null,
+      "thumb": "https://i.ytimg.com/vi/vYe7MmWqChY/maxresdefault.jpg",
+      "duration": "1:37:41",
       "blurb": "Please watch, comment, subscribe and share."
     },
     {
       "id": "4cH9gZpRN8k",
       "title": "Hajj: A Symbol of Universal Brotherhood & Peace | Urdu Lecture by Dr. Javed Jamil",
       "published": "2026-05-27",
-      "thumb": "https://i1.ytimg.com/vi/4cH9gZpRN8k/hqdefault.jpg",
-      "duration": null,
+      "thumb": "https://i.ytimg.com/vi/4cH9gZpRN8k/maxresdefault.jpg",
+      "duration": "6:55",
       "blurb": "What is the deeper meaning of Hajj beyond pilgrimage and ritual?"
     },
     {
       "id": "P8vznouhI0E",
       "title": "Hajj: Symbol of Universal Brotherhood and Peace | Dr. Javed Jamil",
       "published": "2026-05-08",
-      "thumb": "https://i1.ytimg.com/vi/P8vznouhI0E/hqdefault.jpg",
-      "duration": null,
+      "thumb": "https://i.ytimg.com/vi/P8vznouhI0E/maxresdefault.jpg",
+      "duration": "8:57",
       "blurb": "Islam, literally meaning peace through total submission to One God, is founded on five pillars designed to establish physical, mental, spiritual, social, and global peace. While faith and prayer strengthen the individual, fasting and Zakah cultivate social res"
     },
     {
       "id": "isdAv42_HfQ",
       "title": "Future of Muslims in India | Jamat-e-Islami | Dr. Javed Jamil",
       "published": "2026-05-02",
-      "thumb": "https://i2.ytimg.com/vi/isdAv42_HfQ/hqdefault.jpg",
-      "duration": null,
+      "thumb": "https://i.ytimg.com/vi/isdAv42_HfQ/maxresdefault.jpg",
+      "duration": "16:14",
       "blurb": "Can religion become a force for peace rather than division?"
     },
     {
       "id": "vuhfe3uo-2k",
       "title": "Heart-Touching Urdu Poetry on Life's Deepest Questions | \"Jawab Zeest Ko...\"",
       "published": "2026-04-18",
-      "thumb": "https://i3.ytimg.com/vi/vuhfe3uo-2k/hqdefault.jpg",
-      "duration": null,
+      "thumb": "https://i.ytimg.com/vi/vuhfe3uo-2k/maxresdefault.jpg",
+      "duration": "2:42",
       "blurb": "“Tamam umr isi intezar mein guzri, kabhi kahin koi lamha sukoon ka mil jaye.”"
     },
     {
       "id": "myHCNLSzWFI",
       "title": "Zakat: Islamic System of Economic Justice | Dr. Javed Jamil",
       "published": "2026-03-16",
-      "thumb": "https://i2.ytimg.com/vi/myHCNLSzWFI/hqdefault.jpg",
-      "duration": null,
+      "thumb": "https://i.ytimg.com/vi/myHCNLSzWFI/maxresdefault.jpg",
+      "duration": "16:19",
       "blurb": "What is the deeper philosophy behind \"Zakat\", one of the fundamental pillars of Islam?"
     },
     {
       "id": "pPU68miPxZM",
       "title": "Haque Nahi Mitne Wala !!! Poetry by Dr. Javed Jamil  #geopolitics #poetry #shorts",
       "published": "2026-03-11",
-      "thumb": "https://i1.ytimg.com/vi/pPU68miPxZM/hqdefault.jpg",
-      "duration": null,
+      "thumb": "https://i.ytimg.com/vi/pPU68miPxZM/maxresdefault.jpg",
+      "duration": "1:16",
       "blurb": "Some powerful ashaar by Dr. Javed Jamil reflecting on truth and resilience in contemporary situation."
     },
     {
       "id": "RKHe9gjQWeE",
       "title": "Mass Exodus from UN needed unless it abrogates the Veto Powerof the Big 5: Dr Javed Jamil",
       "published": "2026-03-09",
-      "thumb": "https://i3.ytimg.com/vi/RKHe9gjQWeE/hqdefault.jpg",
-      "duration": null,
+      "thumb": "https://i.ytimg.com/vi/RKHe9gjQWeE/maxresdefault.jpg",
+      "duration": "5:44",
       "blurb": "Is the UN Just an Organisation of the Big Five ? Mass Exodus from UN needed unless it abrogates the Veto Power of the Big 5"
     },
     {
       "id": "YP8PsA_WZKE",
       "title": "Prayer and Fasting in Islam:God loves, Man Benefits",
       "published": "2026-03-03",
-      "thumb": "https://i2.ytimg.com/vi/YP8PsA_WZKE/hqdefault.jpg",
-      "duration": null,
+      "thumb": "https://i.ytimg.com/vi/YP8PsA_WZKE/maxresdefault.jpg",
+      "duration": "7:00",
       "blurb": "Prayer and Fasting in Islam:God loves, Man Benefits"
     },
     {
       "id": "xoaFlAVKnyc",
       "title": "The Spectrum of God’s Signs | Ep. 08",
       "published": "2026-02-26",
-      "thumb": "https://i1.ytimg.com/vi/xoaFlAVKnyc/hqdefault.jpg",
-      "duration": null,
+      "thumb": "https://i.ytimg.com/vi/xoaFlAVKnyc/maxresdefault.jpg",
+      "duration": "3:36",
       "blurb": "This video presents Excerpt (8) from A Systematic Study of the Holy Qur’an. Surah Fatir (35:27–28) points to rain, mountains, fruits, and human diversity as signs of Divine wisdom. From one water emerge countless colours and forms. The verses conclude with a p"
     },
     {
       "id": "gxzaWTObKl8",
       "title": "Quran and Mechanism of Cloud Formation | Ep. 7",
       "published": "2026-02-25",
-      "thumb": "https://i4.ytimg.com/vi/gxzaWTObKl8/hqdefault.jpg",
-      "duration": null,
+      "thumb": "https://i.ytimg.com/vi/gxzaWTObKl8/maxresdefault.jpg",
+      "duration": "4:51",
       "blurb": "Quran and Mechanism of Cloud Formation | Ep. 7"
     },
     {
       "id": "D9HrT4J6NLw",
       "title": "Allah: The Absolute Knower Beyond All Limits",
       "published": "2026-02-24",
-      "thumb": "https://i1.ytimg.com/vi/D9HrT4J6NLw/hqdefault.jpg",
-      "duration": null,
+      "thumb": "https://i.ytimg.com/vi/D9HrT4J6NLw/maxresdefault.jpg",
+      "duration": "6:13",
       "blurb": "This powerful excerpt from A Systematic Study of the Qur’an explores a profound reality: nothing escapes Allah’s knowledge. Whether hidden whispers or the vast systems of the universe, He is ever-present, fully aware, and in complete command."
     },
     {
       "id": "aws9HVdrfbY",
       "title": "Surah Fatiha: Understanding God’s Lordship, Mercy, and Judgment | Ramadan Special Series Ep. 5",
       "published": "2026-02-23",
-      "thumb": "https://i2.ytimg.com/vi/aws9HVdrfbY/hqdefault.jpg",
-      "duration": null,
+      "thumb": "https://i.ytimg.com/vi/aws9HVdrfbY/maxresdefault.jpg",
+      "duration": "7:55",
       "blurb": "This video explores Surah Al-Fatiha as the Qur’an’s introduction to God as the Absolute Sovereign and Sustainer of the universe. It explains how God continuously provides, governs, and maintains the cosmic order, while human beings—endowed with free will—are a"
+    },
+    {
+      "id": "fqCjs2ZVdPg",
+      "title": "The Majesty of Ayat-al-Kursi: Meaning & Reflection | Ramadan Special Series Ep. 4",
+      "published": "2026-02-22",
+      "thumb": "https://i.ytimg.com/vi/fqCjs2ZVdPg/maxresdefault.jpg",
+      "duration": "3:58",
+      "blurb": "This video reflects on how human vision and understanding are limited by time, space, and physical laws, while God, the Ever-Living and All-Knowing, sees the past, present, and future without restriction."
+    },
+    {
+      "id": "SuXTOhNjpg0",
+      "title": "Allah: The Supreme Creator of Everything | Ramadan Special Series Ep. 3",
+      "published": "2026-02-21",
+      "thumb": "https://i.ytimg.com/vi/SuXTOhNjpg0/maxresdefault.jpg",
+      "duration": "9:39",
+      "blurb": "Who is God, and what does the universe reveal about Him?"
+    },
+    {
+      "id": "8b9RGgXI4rA",
+      "title": "Islam a Framework for Holistic Peace | Excerpts from A Systematic Study of the Holy Qur'an Ep.2",
+      "published": "2026-02-20",
+      "thumb": "https://i.ytimg.com/vi/8b9RGgXI4rA/maxresdefault.jpg",
+      "duration": "3:38",
+      "blurb": "Is Islam only a personal faith — or does it offer a complete system for human civilization?"
+    },
+    {
+      "id": "0fDvRmI6jI4",
+      "title": "The Qur’an as a Holistic System for Humanity | Dr. Javed Jamil",
+      "published": "2026-02-19",
+      "thumb": "https://i.ytimg.com/vi/0fDvRmI6jI4/maxresdefault.jpg",
+      "duration": "4:35",
+      "blurb": "This video features selected excerpts from A Systematic Study of the Holy Qur’an, presenting the Qur’an as a comprehensive framework for life. Dr. Javed Jamil explores it as a guide to the Divine systems governing the universe, society, and human conduct—argui"
+    },
+    {
+      "id": "_ig_wqfNpuE",
+      "title": "Breastfeeding for Two Years: An Essential Appeal | Dr. Javed Jamil",
+      "published": "2026-02-18",
+      "thumb": "https://i.ytimg.com/vi/_ig_wqfNpuE/maxresdefault.jpg",
+      "duration": "1:42",
+      "blurb": "Breastfeeding is not only a biological necessity but also a moral and spiritual responsibility. Dr. Javed Jamil highlights the Qur’anic guidance encouraging mothers to breastfeed for two full years, emphasizing its profound benefits for a child’s physical, emo"
+    },
+    {
+      "id": "_hLPy46faG4",
+      "title": "Ramadan Beyond Fasting: A Revolution of Soul and Society | Dr. Javed Jamil",
+      "published": "2026-02-18",
+      "thumb": "https://i.ytimg.com/vi/_hLPy46faG4/maxresdefault.jpg",
+      "duration": "14:59",
+      "blurb": "Ramadan is far more than abstaining from food and drink—it is a comprehensive revolution of the soul, intellect, and society. It marks the beginning of the Quran’s revelation and serves as an annual process of moral renewal, spiritual discipline, and social re"
+    },
+    {
+      "id": "Nf439w8N7Wo",
+      "title": "The Month of Moral and Civilisational Revolution | Dr. Javed Jamil",
+      "published": "2026-02-16",
+      "thumb": "https://i.ytimg.com/vi/Nf439w8N7Wo/maxresdefault.jpg",
+      "duration": "9:27",
+      "blurb": "Is Ramadan only a period of fasting—or a deeper moral and civilisational revolution?"
+    },
+    {
+      "id": "FJFJ52z1WIs",
+      "title": "Religion Unites, Communalism Divides | Dr. Javed Jamil",
+      "published": "2026-02-11",
+      "thumb": "https://i.ytimg.com/vi/FJFJ52z1WIs/maxresdefault.jpg",
+      "duration": "13:48",
+      "blurb": "Is religion a force for peace—or has it been misused to divide societies? In this thought-provoking address, Dr. Javed Jamil explains how true religious morality fosters unity, harmony, and social stability, while communalism emerges from the political and eco"
+    },
+    {
+      "id": "naFEZHVKJuQ",
+      "title": "Rab Se Dil-e-Nada'n Ke Sawalaat Hain Kuchh Aur | Ghazal by Dr. Javed Jamil",
+      "published": "2026-02-06",
+      "thumb": "https://i.ytimg.com/vi/naFEZHVKJuQ/maxresdefault.jpg",
+      "duration": "2:31",
+      "blurb": "In this YouTube Short, renowned scholar, author, and poet Dr. Javed Jamil recites a powerful ghazal from his poetry collection Khirad Bhi Junoon Bhi, reflecting the depth, introspection, and emotional resonance of contemporary Urdu literature."
+    },
+    {
+      "id": "UnuXsOlPZfA",
+      "title": "Islam, Not Christianity: The World’s Largest Faith in Practice | Dr. Javed Jamil",
+      "published": "2026-02-04",
+      "thumb": "https://i.ytimg.com/vi/UnuXsOlPZfA/maxresdefault.jpg",
+      "duration": "15:58",
+      "blurb": "Is Islam truly the world’s largest religion — and has the global narrative been misleading?"
+    },
+    {
+      "id": "kh5sDdJ93qY",
+      "title": "Book Launch | A Systematic Study of the Holy Quran (Advanced Version) | Dr. Javed Jamil",
+      "published": "2026-01-31",
+      "thumb": "https://i.ytimg.com/vi/kh5sDdJ93qY/maxresdefault.jpg",
+      "duration": "1:16:48",
+      "blurb": "This edited book launch revisits A Systematic Study of the Holy Quran (Advanced Version) by renowned scholar Dr. Javed Jamil, presenting the Qur’an as a comprehensive framework for life rather than a text limited to ritual or theology."
+    },
+    {
+      "id": "lTt_Ba_aGN8",
+      "title": "Active Breastfeeding: Why It Matters for Mother & Child",
+      "published": "2026-01-30",
+      "thumb": "https://i.ytimg.com/vi/lTt_Ba_aGN8/maxresdefault.jpg",
+      "duration": "0:39",
+      "blurb": "Breastfeeding is more than nourishment — it shapes lifelong health, immunity, and emotional bonding for both mother and child. This short highlights why extended breastfeeding is crucial for well-being and what science says about its profound benefits."
+    },
+    {
+      "id": "HbkxhMAnLcI",
+      "title": "Riwayaton Ka Ehtram | A Ghazal by Dr. Javed Jamil",
+      "published": "2026-01-27",
+      "thumb": "https://i.ytimg.com/vi/HbkxhMAnLcI/maxresdefault.jpg",
+      "duration": "2:44",
+      "blurb": "Renowned thinker, scholar, and poet Dr. Javed Jamil recites one of his profound ghazals from Khirad Bhi Junoon Bhi—a work that bridges intellect and passion, tradition and compassion."
+    },
+    {
+      "id": "o4XtSq59RwE",
+      "title": "Who Created God? Understanding the Ultimate Cause | Dr. Javed Jamil",
+      "published": "2026-01-24",
+      "thumb": "https://i.ytimg.com/vi/o4XtSq59RwE/maxresdefault.jpg",
+      "duration": "2:57",
+      "blurb": "When asked “Who created God?”, Dr. Javed Jamil offers a profound philosophical response rooted in causality, creation, and the limits of time and space. Drawing on scientific reasoning and metaphysical thought, he explains why God cannot be measured by the law"
+    },
+    {
+      "id": "a_LEkdq0vUs",
+      "title": "Iran Protests Explained: What’s Really Happening? | Dr. Javed Jamil",
+      "published": "2026-01-20",
+      "thumb": "https://i.ytimg.com/vi/a_LEkdq0vUs/maxresdefault.jpg",
+      "duration": "9:25",
+      "blurb": "Protests in Iran are often presented through simplified global narratives of “freedom versus authoritarianism.” In this video, Dr. Javed Jamil offers a deeper, more critical reading of the unrest—placing it within Iran’s revolutionary history, internal politic"
+    },
+    {
+      "id": "TvD8YjM3DLc",
+      "title": "How Two Years of Breastfeeding Protects Mothers & Children | Dr. Javed Jamil",
+      "published": "2026-01-13",
+      "thumb": "https://i.ytimg.com/vi/TvD8YjM3DLc/maxresdefault.jpg",
+      "duration": "1:35",
+      "blurb": "Scientific research increasingly shows that breastfeeding for two years significantly lowers a mother’s risk of breast and ovarian cancer, while also improving a child’s long-term health and life expectancy. A powerful reminder of how natural maternal care sha"
+    },
+    {
+      "id": "2vUKmPG5u_Y",
+      "title": "Rationality of Monotheism and Hereafter | Dr. Javed Jamil",
+      "published": "2026-01-10",
+      "thumb": "https://i.ytimg.com/vi/2vUKmPG5u_Y/maxresdefault.jpg",
+      "duration": "47:00",
+      "blurb": "In this lecture, Dr. Javed Jamil reflects on the rational basis of monotheism (Tawhid) and belief in the Hereafter, addressing fundamental questions at the intersection of faith, reason, and ethics."
+    },
+    {
+      "id": "lvPu1QQFCPY",
+      "title": "A Question Atheism Can’t Ignore: What’s the Proof God Doesn’t Exist?",
+      "published": "2026-01-09",
+      "thumb": "https://i.ytimg.com/vi/lvPu1QQFCPY/maxresdefault.jpg",
+      "duration": "2:11",
+      "blurb": "When asked to prove the existence of God using instruments and observation, Dr. Javed Jamil responds with a powerful counter-question: what is the proof that God does not exist? By exposing the limits of human perception and scientific tools, he invites deeper"
+    },
+    {
+      "id": "qg3JaanbpbE",
+      "title": "Breastfeeding and Child Health: Qur’anic Guidance & Medical Science | Dr. Javed Jamil",
+      "published": "2026-01-07",
+      "thumb": "https://i.ytimg.com/vi/qg3JaanbpbE/maxresdefault.jpg",
+      "duration": "7:00",
+      "blurb": "Breastfeeding is not merely a personal choice—it is a fundamental right of every child and a cornerstone of maternal and public health. In this video, renowned scholar and medical professional Dr. Javed Jamil explains the importance of breastfeeding through bo"
+    },
+    {
+      "id": "dEd92WOcMMM",
+      "title": "Cancer Preventive Measures in Islam: Let the World Benefit | Dr. Javed Jamil",
+      "published": "2026-01-05",
+      "thumb": "https://i.ytimg.com/vi/dEd92WOcMMM/maxresdefault.jpg",
+      "duration": "11:18",
+      "blurb": "Renowned scholar and medical professional Dr. Javed Jamil introduces his latest book Cancer Preventive Measures in Islam: Let the World Benefit!, which examines how Islamic principles of living contribute to disease prevention and holistic health."
+    },
+    {
+      "id": "wWAy3FjtnPE",
+      "title": "Gambling: A Silent Destroyer of Faith, Families & Society",
+      "published": "2026-01-01",
+      "thumb": "https://i.ytimg.com/vi/wWAy3FjtnPE/maxresdefault.jpg",
+      "duration": "1:58",
+      "blurb": "Gambling is not mere entertainment—it is a destructive force that erodes faith, families, and social harmony. Condemned by the Qur’an and the Sunnah, it fuels addiction, injustice, and moral decay. A timely reminder of why every form of gambling harms individu"
+    },
+    {
+      "id": "9F2wDriS6ZY",
+      "title": "Does God Exist? Science, Justice, Morality & the Laws of Nature | Dr. Javed Jamil",
+      "published": "2025-12-23",
+      "thumb": "https://i.ytimg.com/vi/9F2wDriS6ZY/maxresdefault.jpg",
+      "duration": "32:48",
+      "blurb": "In response to the recent YouTube debate “Does God Exist?” featuring Javed Akhter & Mufti Shamail, this conversation dives deeper into the heart of the question from several perspectives."
+    },
+    {
+      "id": "zJ4Q2TgLkB8",
+      "title": "Prophet Muhammad (PBUH): The Final Messenger in the Journey of Islam (Urdu Version)",
+      "published": "2025-11-12",
+      "thumb": "https://i.ytimg.com/vi/zJ4Q2TgLkB8/maxresdefault.jpg",
+      "duration": "0:52",
+      "blurb": "Islam did not begin with Prophet Muhammad (PBUH) — He was the Final Messenger in the divine journey that started with Adam (AS)."
+    },
+    {
+      "id": "_XE51Fqwtm0",
+      "title": "Delhi Pollution Crisis: The Truth No One Dares to Tell | Dr. Javed Jamil",
+      "published": "2025-11-08",
+      "thumb": "https://i.ytimg.com/vi/_XE51Fqwtm0/maxresdefault.jpg",
+      "duration": "6:17",
+      "blurb": "Every year, as Delhi sinks into smog, the same story repeats — endless blame, political noise, and no real solutions. But who is truly responsible for this man-made disaster?"
+    },
+    {
+      "id": "uWDY5jH4pNw",
+      "title": "Make Qur’an Explanation a Regular Practice in Mosques – Dr. Javed Jamil",
+      "published": "2025-11-04",
+      "thumb": "https://i.ytimg.com/vi/uWDY5jH4pNw/maxresdefault.jpg",
+      "duration": "0:42",
+      "blurb": "Renowned author and Islamic scholar Dr. Javed Jamil makes a heartfelt appeal to mosque administrators and imams to start regular sessions explaining the meanings and interpretations of the Surahs most frequently recited in daily prayers. He suggests dedicating"
+    },
+    {
+      "id": "Surmd_OIYBQ",
+      "title": "Prophet Muhammad (PBUH): Not the Founder, but the Final Messenger of Islam",
+      "published": "2025-10-28",
+      "thumb": "https://i.ytimg.com/vi/Surmd_OIYBQ/maxresdefault.jpg",
+      "duration": "0:41",
+      "blurb": "Islam did not begin with Prophet Muhammad (PBUH) — he was the Final Messenger in the timeless journey of Divine guidance that began with Adam (AS)."
+    },
+    {
+      "id": "iOqWvGzUX30",
+      "title": "Ban on online gambling welcome, but more needs to be done I Dr. Javed Jamil",
+      "published": "2025-10-21",
+      "thumb": "https://i.ytimg.com/vi/iOqWvGzUX30/maxresdefault.jpg",
+      "duration": "10:33",
+      "blurb": "This video explores the Islamic perspective on gambling through verses from the Qur’an and Hadith, revealing how it destroys faith, families, and society. Once condemned as a satanic act by Allah Himself, gambling has today become a global industry of addictio"
+    },
+    {
+      "id": "NcBYBMyhPHM",
+      "title": "Prophet Muhammad (PBUH): The Best Creation of the Universe, the Ultimate Guide for Humanity",
+      "published": "2025-09-27",
+      "thumb": "https://i.ytimg.com/vi/NcBYBMyhPHM/maxresdefault.jpg",
+      "duration": "18:30",
+      "blurb": "Prophet Muhammad (PBUH): The Final Ambassador of God, the Best of Creation, and Rahmatul lil Aalameen. On the 1500th Birth Anniversary year, we reflect on his mission of mercy, justice, unity, and peace for all humanity."
+    },
+    {
+      "id": "CMATifS-qHE",
+      "title": "Jawaab-e-Shikwa Saani (2): Falak Se Paigham Aaj Ke Muslim Ke Naam I Dr. Javed Jamil",
+      "published": "2025-09-08",
+      "thumb": "https://i.ytimg.com/vi/CMATifS-qHE/maxresdefault.jpg",
+      "duration": "22:13",
+      "blurb": "Jawab-e-Shikwa Saani – A powerful poetic message from Heaven to the Muslim Ummah of today."
+    },
+    {
+      "id": "Lg8g_BUGJ4A",
+      "title": "Muhammad (PBUH) – The Best Role Model for the World I محمد ﷺ – دنیا کے لئے بہترین نمونۂ عمل",
+      "published": "2025-09-05",
+      "thumb": "https://i.ytimg.com/vi/Lg8g_BUGJ4A/maxresdefault.jpg",
+      "duration": "21:04",
+      "blurb": "Discover the extraordinary legacy of Prophet Muhammad (PBUH) – the Epitome of Beneficence and Mercy to all worlds. This video explores his revolutionary mission to establish holistic peace, justice, and dignity for all humanity, grounded in the divine guidance"
+    },
+    {
+      "id": "dboFYDZlBFM",
+      "title": "Freedom of Choice or Exploitation of Human Weakness? | Dr. Javed Jamil",
+      "published": "2025-08-28",
+      "thumb": "https://i.ytimg.com/vi/dboFYDZlBFM/maxresdefault.jpg",
+      "duration": "16:08",
+      "blurb": "This lecture “Nahi Anil Munkar – Part 2” by Dr. Javed Jamil explores the concept of freedom of choice in today’s world and how it is often misused under the influence of globalization, capitalism, and secular ideologies. It highlights how societies are driven "
+    },
+    {
+      "id": "Ct_Q39WxusQ",
+      "title": "Nahi Anil Munkar: Campaign Against Evils | Dr Javed Jamil",
+      "published": "2025-08-01",
+      "thumb": "https://i.ytimg.com/vi/Ct_Q39WxusQ/maxresdefault.jpg",
+      "duration": "14:16",
+      "blurb": "In the Holy Qur’an, Allah commands believers to not only promote goodness (Amr bil Ma’ruf) but also to prevent and stand firmly against evil (Nahi Anil Munkar). While many of us emphasize guiding others toward good deeds, we often neglect the equally vital dut"
+    },
+    {
+      "id": "OSI3f53Zphw",
+      "title": "Book Release: A Systematic Study of the Holy Quran (Advanced Version) - New Delhi - October 2024",
+      "published": "2024-11-13",
+      "thumb": "https://i.ytimg.com/vi/OSI3f53Zphw/maxresdefault.jpg",
+      "duration": "1:47:37",
+      "blurb": "Dr. Javed Jamil’s book, “A Systematic Study of the Holy Quran,” presents the Quran as a comprehensive code of life, offering solutions to modern challenges. The book critiques the current economic system as “economic fundamentalism” and advocates for a three-d"
+    },
+    {
+      "id": "60ODMaRgmlQ",
+      "title": "Naat Rasul_e paak SAAW By Dr Javed Jamil",
+      "published": "2024-09-15",
+      "thumb": "https://i.ytimg.com/vi/60ODMaRgmlQ/maxresdefault.jpg",
+      "duration": "6:17",
+      "blurb": "Muhammed saww - do jahan mein mukammal amno salamati ke payaambar"
+    },
+    {
+      "id": "7jA0oNa4TC4",
+      "title": "Intellectual Crisis of the Muslim Ummah | Dr Javed Jamil",
+      "published": "2024-05-06",
+      "thumb": "https://i.ytimg.com/vi/7jA0oNa4TC4/maxresdefault.jpg",
+      "duration": "7:11",
+      "blurb": "Center for Promotion of Educational and Cultural Advancement of Muslims in India (CEPECAMI) organised its First High Profile International Conference: Intellectual Crisis of the Muslim Ummah: Rethinking Traditional Solution on 6/7 April 2015 at A.M.U Aligarh. "
+    },
+    {
+      "id": "pJ6KA-TV8T4",
+      "title": "Navigating Diversity: The Muslim Vision for India's Future | Dr Javed Jamil",
+      "published": "2024-05-03",
+      "thumb": "https://i.ytimg.com/vi/pJ6KA-TV8T4/maxresdefault.jpg",
+      "duration": "30:56",
+      "blurb": "Dr Javed Jamil explains the solution-oriented participatory paradigm for Muslims to develop socioeconomically in India."
+    },
+    {
+      "id": "s6AdTUNkUBk",
+      "title": "Qur'an  The Eternal Wonder",
+      "published": "2023-10-03",
+      "thumb": "https://i.ytimg.com/vi/s6AdTUNkUBk/sddefault.jpg",
+      "duration": "8:16",
+      "blurb": "In a society plagued by widespread Islamophobia and prejudice against Muslims, where misconceptions about Islam and the Muslim community abound, Nous Network, in partnership with Dr. Javed Jamil, presents a sincere endeavor to shed light on the true principles"
+    },
+    {
+      "id": "i6_17-3nmSA",
+      "title": "Book Introduction: A Systematic Study of the Holy Qur'ān",
+      "published": "2021-01-27",
+      "thumb": "https://i.ytimg.com/vi/i6_17-3nmSA/maxresdefault.jpg",
+      "duration": "18:32",
+      "blurb": ""
+    },
+    {
+      "id": "bto_FczBkJQ",
+      "title": "Book Prelaunch Lecture: A Systematic Study of the Holy Qur'ān | Ibn Arabi Society, Kashmir",
+      "published": "2021-01-19",
+      "thumb": "https://i.ytimg.com/vi/bto_FczBkJQ/maxresdefault.jpg",
+      "duration": "1:19:36",
+      "blurb": "Prelaunch book discussion of my latest book \"A Systematic Study of the Holy Qurān\" organised by Ibn Arabi Society, Kashmir on 18th January 2021."
+    },
+    {
+      "id": "zbvb3PjW5PY",
+      "title": "Rationality of Monotheism and Hereafter | Dr Javed Jamil",
+      "published": "2020-10-05",
+      "thumb": "https://i.ytimg.com/vi/zbvb3PjW5PY/maxresdefault.jpg",
+      "duration": "46:29",
+      "blurb": ""
+    },
+    {
+      "id": "jSDLKuS5BqE",
+      "title": "Why is Alcohol haram in Islam? | Dr Javed Jamil | S1 E6",
+      "published": "2020-09-23",
+      "thumb": "https://i.ytimg.com/vi/jSDLKuS5BqE/maxresdefault.jpg",
+      "duration": "13:57",
+      "blurb": "This is sixth of a series of episodes on the health paradigm in Islam."
+    },
+    {
+      "id": "VmhQVVbYlXI",
+      "title": "Promiscuity vs Polygamy | Dr Javed Jamil | S1 E5",
+      "published": "2020-08-21",
+      "thumb": "https://i.ytimg.com/vi/VmhQVVbYlXI/maxresdefault.jpg",
+      "duration": "10:29",
+      "blurb": "This is fifth of a series of episodes on the health paradigm in Islam. The practices of polygamy and promiscuity are compared."
+    },
+    {
+      "id": "gffyC4OUxXg",
+      "title": "Islamic Model for the Control of AIDS | Dr Javed Jamil | S1 E4",
+      "published": "2020-08-12",
+      "thumb": "https://i.ytimg.com/vi/gffyC4OUxXg/maxresdefault.jpg",
+      "duration": "17:02",
+      "blurb": "This is fourth of a series of episodes on the health paradigm in Islam."
+    },
+    {
+      "id": "3Rysme7ZDGA",
+      "title": "The Science of Namaz | Dr Javed Jamil | S1 E3",
+      "published": "2020-08-01",
+      "thumb": "https://i.ytimg.com/vi/3Rysme7ZDGA/maxresdefault.jpg",
+      "duration": "15:31",
+      "blurb": "This third of a series of episodes on the health paradigm in Islam."
+    },
+    {
+      "id": "DlSzY05uiu0",
+      "title": "Hajj: Symbol of Universal Brotherhood and Peace | Dr Javed Jamil",
+      "published": "2020-07-29",
+      "thumb": "https://i.ytimg.com/vi/DlSzY05uiu0/maxresdefault.jpg",
+      "duration": "9:09",
+      "blurb": "Islam, literally meaning peace and defined as total submission to One God, stands on five pillars. Faith and prayer are primarily meant to ensure physical, mental, social and spiritual peace of individuals. Fasting and Zakah are aimed, in addition, at social a"
+    },
+    {
+      "id": "NCEaYG2RAlo",
+      "title": "Dr Javed Jamil Live Stream",
+      "published": "2020-07-26",
+      "thumb": "https://i.ytimg.com/vi/NCEaYG2RAlo/maxresdefault_live.jpg",
+      "duration": null,
+      "blurb": ""
+    },
+    {
+      "id": "Kc4SfNv_MIQ",
+      "title": "Medical Science Behind Wudhu | Dr Javed Jamil | Quranic Paradigms | S1 E2",
+      "published": "2020-07-23",
+      "thumb": "https://i.ytimg.com/vi/Kc4SfNv_MIQ/maxresdefault.jpg",
+      "duration": "13:29",
+      "blurb": "This is second of a series of episodes on the health paradigm in Islam."
+    },
+    {
+      "id": "dhfnX5yaYAY",
+      "title": "Health System in Islam (Epidemics: Islamic Solution) | Dr Javed Jamil",
+      "published": "2020-07-18",
+      "thumb": "https://i.ytimg.com/vi/dhfnX5yaYAY/maxresdefault.jpg",
+      "duration": "12:08",
+      "blurb": "Health System in Islam (Epidemics: Islamic Solution) | Dr Javed Jamil |"
+    },
+    {
+      "id": "HFVa9XlwV2o",
+      "title": "Alami Nizam-e-No | New World Order | Dr Javed Jamil",
+      "published": "2020-07-04",
+      "thumb": "https://i.ytimg.com/vi/HFVa9XlwV2o/maxresdefault.jpg",
+      "duration": "7:43",
+      "blurb": "Alami Nizam-e-No | New World Order | Dr Javed Jamil"
+    },
+    {
+      "id": "Dl0zsgEZbnU",
+      "title": "High Time Medical Sciences embraced Islam | Dr Javed Jamil",
+      "published": "2020-05-27",
+      "thumb": "https://i.ytimg.com/vi/Dl0zsgEZbnU/maxresdefault.jpg",
+      "duration": "5:53",
+      "blurb": "In the wake of Covid-19 outbreak, the latest news is that China has imposed ban on the meat of wild animals, specifically lions, bats, snakes and pangoins. These are all the animals the meat of which is prohibited in Islam. Almost all the other viral outbreaks"
     }
   ]
 }
